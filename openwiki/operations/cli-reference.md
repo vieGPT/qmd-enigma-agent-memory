@@ -5,7 +5,7 @@ description: Reference for the qmd CLI, covering the top-level dispatch in src/c
 tags: [cli, reference, commands, qmd, configuration, operations]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T08:48:37.585Z
+    at: 2026-11-07T09:11:07.517Z
 sources:
   - id: openwiki-source-d7caacca970236de3bb29afe
     resource: repo://bin/qmd
@@ -29,7 +29,7 @@ sources:
     resource: repo://test/cli-lazy-llm-import.test.ts
   - id: openwiki-source-1c0a71c46a0594c7a43890a4
     resource: repo://test/cli.test.ts
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T08:48:37.585Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:11:07.517Z" }
 ---
 
 # CLI Command Reference
@@ -182,7 +182,7 @@ Unknown subcommands exit 1 after printing the doctor hint. The help text in the 
 
 #### `collection include` and `exclude`
 
-These set `includeByDefault` on the collection through `updateCollectionSettings` ([src/cli/qmd.ts](repo://src/cli/qmd.ts#L4839-L4858)). The flag controls which collections are picked when no explicit collection is given. Default selection goes through `getDefaultCollectionNames()`, which returns the collections marked as included by default ([src/collections.ts](repo://src/collections.ts#L276-L279)).
+These set `includeByDefault` on the collection through `updateCollectionSettings` ([src/cli/qmd.ts](repo://src/cli/qmd.ts#L4839-L4858)). The flag controls which collections are picked when no explicit collection is given. Default selection goes through `getDefaultCollections()`, which keeps every collection whose `includeByDefault` is not `false`, and `getDefaultCollectionNames()`, which maps that list to names ([src/collections.ts](repo://src/collections.ts#L270-L277), [src/collections.ts](repo://src/collections.ts#L276-L279)). An unset `includeByDefault` is therefore included; only an explicit `false` (set by `collection exclude`) excludes a collection from default selection.
 
 #### `collection show`
 

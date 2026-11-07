@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:d6ee79341a1d5da4a6503de6f019213ce3e4740e2cbca94f0bf0ae698c454040",
+  "pageVersion": "sha256:20422d4fa19edd7507e11892cac8b788157bec7ce6f83be3f22bca1d45324733",
   "claims": [
     {
       "id": "claim_0aaa073435e84dcb84ccf0fb5ad88a56",
@@ -260,11 +260,15 @@
     },
     {
       "id": "claim_cc9e0bd467de469e91e669e55f2592fa",
-      "statement": "Shutdown disposes embedding contexts, rerank contexts, then models and the Llama runtime in that order, with each disposal bounded by a 1-second timeout that logs a warning and continues.",
+      "statement": "Shutdown disposes embedding contexts, rerank contexts, then models and the Llama runtime in that order; each disposal is raced against a 1-second timeout, and a timeout or error logs a warning and lets shutdown continue.",
       "evidence": [
         {
           "resource": "repo://src/llm.ts#L1864-L1925",
           "version": "repo-lines-v1:sha256:abdc9ba952e9d6a76c4864999e734cdfaa3ae63a618146a23d8d13203a29e4a5:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1Y2M2NzU0NDQ4MTg3YjEyNGVkZmM5MjI0NWFjODMyNjEwMjI0ZTYwMWUwMDg2YmUwZTJjZTQyNWUxODY4N2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3Njg4NGNjM2U5ZDIyMzBiNjAxMmM4ZjZjZTgwNTRjMTFhZDYxMDEwOTg2Nzc3MWI5MGMzYzVjMDgwM2I2NDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlZWVmZGQ1MTEzZDk5MDU2ZjFlMTlkZTFiN2Q1YmVkZTZlMGEzMDFmOWU4ZjdiZTRlYWQzZjhmOGRhODY2YzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljNWY2OWUyNTgyOThkNjk4ZGQ5OWRkNTJiNmU2MDU0NTk3ZTEyY2QxNzRlNGE3M2JiYTU0ZTU1OGY1NjU5ZjEifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L785-L800",
+          "version": "repo-lines-v1:sha256:2c0b94f60404164c8a525398cd5bb00cf89e0d385267e3a29cd76177734cfd4c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljOWUzODNiYTNiZDI3Mzk3NzA3ZDEzMmEyOTgzOTgyYjVhYTZmNTIyMzk2ZjJmN2RiYmI3NmI0MGZlOWUyZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0YWY2YTQ2YWM4ZWM2ZDIyYWQyYTBkOGRlYjM1NGFhZjQyZjcyOTgzZGIyZmYzMzkyODE1MjFmZTYwM2NmOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4Y2VkZWY0MDMzMzI2MTZmYzQyZDdiNjIxYzA5YjVlYjRhOGZkMzc5YTQxYzgxZWVlY2QyZTBhY2JjNGMyNjMifQ"
         }
       ]
     },
@@ -335,10 +339,30 @@
           "version": "repo-lines-v1:sha256:dd6e97ad2913fd2dea25eff770c8a75d9997d83991ba7be5ad7310f461c8053e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDg3MzU5MjE3NWI5MmM0ZTU3OGQyMTliOWQxNGIyNTQ1MGQ3YjIxNWFlMGIxOWYzYTljMDU2MDZjYmRiM2EyYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBmNjU4YTc1MTk0NDk0NDA1ODcxOGQ1NjI0ODA0OTJlOTc3MmZjODU5Njg0MTM0ODNiOTU3OWViZjBjNmFkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODdhNWY5OGNhZDA2NThhNGFiOWM1MjBiYWI3NDNiMDllZjU4NGM1ZWVhMTNmMzliMDIwYmMyOGZmOGNkYWY2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGM1YzE2MWJmZGUyNWY5NmVmOGYxOGY5NGQxNjc2NTY1N2ZjOTk2MmYxYzc3MjA2N2M2NmYxM2Q5N2NiYmI0YiJ9"
         }
       ]
+    },
+    {
+      "id": "claim_6ff7304c1c6d420cba8a259062245eb5",
+      "statement": "convert_gguf.py calls the Hugging Face login only when the HF_TOKEN environment variable is set and nonempty; otherwise it performs no explicit login.",
+      "evidence": [
+        {
+          "resource": "repo://finetune/convert_gguf.py#L111-L115",
+          "version": "repo-lines-v1:sha256:222804203cde2bf9bce8ecb71d909ce0b8e7b821e420627e279f26b667eda8fa:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGU2ZDFkNjZkZmY3NjkzMTJhM2QzNzk3ODUwMzE0MzIwZTE5YTk4MWQ5ZDkxODUyMDNkMTVlYWVmMjI5ODM4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTQ5ZGRlMTAzMGUwZmFkYmEwOGQxY2MzZGJlMjczNDBhMWMyZjIyNzI0OWYyNjI4MmRiMTY0Y2YxN2M1NGM5OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2EyODUxMjdkNGY2ODE1YWQ2Y2NlNDhmZmUxNmU2YTNjZTZlMGE0YWE0YTg1ODMwOTdiYjBmYWQ0MTY3M2M1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjAyNjZjZDgyZjQ3MmJlYjUwMjU3ZGE3YmVhYzc2ZTkyOTNlOGE2NWI3NzNmNGM5YzFhZTUwY2NhNWM3OWJlNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_15f76b28571a4338a264c040e73fee56",
+      "statement": "prepare_data.py's get_tokenizer reads QMD_BASE_MODEL, defaults it to Qwen/Qwen3-1.7B, and caches the loaded AutoTokenizer in a module-level variable that reloads only when the resolved model name changes.",
+      "evidence": [
+        {
+          "resource": "repo://finetune/dataset/prepare_data.py#L37-L43",
+          "version": "repo-lines-v1:sha256:41af0cb6b9ae4e5c42d50d4dc19f4d5536ab43289dcce7a9f6149c13160883eb:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDI2YmNiY2ZkOTljZDVlYmJkZGM3M2M1MjY5Mzg5ODExNzI4NmZhZmUyZWVlNThjMjE4NjY5YzdmMDY4OWRiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTg2ZmZjZDBiOWRiOWIxNmUwNGVlM2YxMzZiOWUyMDhkMjMyNmU4ZWQ5MmUwNjBjYTc4NjE2MWYwMjRmMTU5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTM2ZWM0OWIyNzQ0ODEzMDI4ZGJlNmY3ODc2YmZhNjIwZTNlMGM1ZGMyYzM1NTk3NGI1ODg0ZTYwMDlhNWY4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzIxNjdiMGIxNjFjZjIyNThmMWFhZGE4ODY3YWUyMDUzYzQyYWZlZDNkN2Q5OTUzY2QxOTEzYTFkN2FmZjhiMiJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T08:48:37.585Z"
+    "at": "2026-11-07T09:11:07.517Z"
   }
 }

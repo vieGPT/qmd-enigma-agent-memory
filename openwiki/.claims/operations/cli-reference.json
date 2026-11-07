@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:68420550059bc0b4e54c33d885ab6d1ab8d7ef099865ac51e0909675cd5a0f1b",
+  "pageVersion": "sha256:a47be89ac00111af62a5961fda2590696b8decf46b13ab912ff7bff8206ee8ad",
   "claims": [
     {
       "id": "claim_c16bbf370f16494889d137c598c3dee7",
@@ -196,11 +196,15 @@
     },
     {
       "id": "claim_59049f0cfcd147968f48a22f00be5cb9",
-      "statement": "collection include and exclude toggle includeByDefault on the collection; getDefaultCollectionNames returns the collections marked included by default, which governs default collection selection.",
+      "statement": "collection include and exclude toggle includeByDefault on the collection. getDefaultCollections keeps every collection whose includeByDefault is not false, so an unset includeByDefault counts as included and only an explicit false excludes a collection; getDefaultCollectionNames maps that list to names and governs default collection selection.",
       "evidence": [
         {
           "resource": "repo://src/cli/qmd.ts#L4839-L4858",
           "version": "repo-lines-v1:sha256:0ef0e7f2ce4cb4f1ec88e0bf41ab97bf942793ae81cad59f60053b41c462f93b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0ZTNkMzBiOTk0NmIyZDI5MzBkYmUxMzNjMjcwMTA1OWIwMjk2Yzg4YThjNjQwNDZjNjQwZTVhNWRhNDE4MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwODk3M2NhN2NkOTY2Zjk0ODI1MzA2OWE5ZTM0Y2VhZGRmYWE1YWZjYjM1Yzg2ZDc1ZDMwNDBhODBiYmMxNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NjgyOGY0NDU3MGQ5NDcyYmRkNWY1MmQ4YTJhOGY5ZjhmMzk2MjkyMTQ4NWMwZDdkOTg5NzVkM2UzMWU4MzkifQ"
+        },
+        {
+          "resource": "repo://src/collections.ts#L270-L277",
+          "version": "repo-lines-v1:sha256:54a626d10cf3559dcfb4615b1802a4d9da170cd449b1435f6daf23b0e1465145:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmY3ZDY0OWM3YmZkNTM0NDQzMjg0MTg0ZDBhY2UzNmMyMmIxZGRlMTU3ZmM1YmJiYmQyNzExOTk3YzEwMGNmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2NmZDIxZmI5ZTNkZjUwNWM3MjVhOTIyYmFkYmZjNTY4MmEyNjRmNWFmNjI1MTZmNWE1ZjZkZTNhOTM2OGI1YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2EzOWZlOTIyOTJjNjRiY2VmM2FjOTE5NDQzZTg5N2YzM2RkNmU4OWUxNTA0YzEzYzU2ODA4ZmY4Y2QxZDUyYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc5MjllOTFlMGY5OWMzZTgyNWRlNjliNDM1ZmI2NDg0ZDFiMGExZGYyZjQ2NTYxYWJmMWEyOWYwNDE4OGI4OCJ9"
         },
         {
           "resource": "repo://src/collections.ts#L276-L279",
@@ -435,6 +439,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T08:48:37.585Z"
+    "at": "2026-11-07T09:11:07.517Z"
   }
 }

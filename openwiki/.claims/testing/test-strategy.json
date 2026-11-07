@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:a36ace96ebccc7b8ea4c00ddc49e94cc2a864ded5dee42e3c62cc5220e71175d",
+  "pageVersion": "sha256:4c5eb40f9d048905cc2910c74ec9276046111ae004a61ab9591c55675e2012c3",
   "claims": [
     {
       "id": "claim_452b6df7c2c64592bbbbc6adb4b6aefe",
@@ -242,11 +242,15 @@
     },
     {
       "id": "claim_d4bc8e2889134d0aa7558ba963780e59",
-      "statement": "The trust test suite guards project-local update hooks so that shell commands declared in a cloned .qmd/index.yml do not run unattended when a user runs qmd update.",
+      "statement": "The update-hook-trust suite pins decideHookGate behaviour for project-local update hooks: an untrusted hook set in a .qmd/index.yml is skipped when running non-interactively and prompts when interactive, a previously approved hook set runs unattended, and the user's global config always runs.",
       "evidence": [
         {
-          "resource": "repo://test/update-hook-trust.test.ts#L1-L30",
-          "version": "repo-lines-v1:sha256:e77603b8d8be8ef83bf02f1a16bb2322de70f820fcdc56d6fb9d48198f3c2dd5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2MTkyODQxOTBhMTA5OThjZGI1Nzg0ZDQ0NTMyMDdhZWIzOTJlMGM4ZTJjMjhjMmE3YzJiMGNjNTkwNmQyZjYifQ"
+          "resource": "repo://src/trust.ts#L283-L303",
+          "version": "repo-lines-v1:sha256:98df7ac13147e4a6a69ce6c0d49e35ce6dc106e9c84d0ef24dd8def095c93829:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkNzdmYTg3N2NhNWVkNmFiOTY4NjI3ODE5Y2M3YmJkNTMxNThkMTYxZTAxZWU5MzA4YzEyYTg0NjAxNmViZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1YjdjMTIwZmJjYWNmZDA0ZjI2YjJlNGFhY2JlMDgyNzdiMGZmZjk5ZDFiYTA0MDMzMDVkZjEzMWNkNDFjOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhMTkyN2Y1OWFkODQ3OWFlMzhkYzgyMmMwZjk0YjJkNmJhMDY3NmIxOWI3YTdlMzIzZmE4NWM3YmI1NmVmNjUifQ"
+        },
+        {
+          "resource": "repo://test/update-hook-trust.test.ts#L146-L171",
+          "version": "repo-lines-v1:sha256:806de4c7bff1f50dcf332dc06141b89a2a40e59284cb185adb88e5c6feb1d956:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmNTU0OTk1Y2FiNDg0YTE1MzBhNWQyMGFmMzE0NmFjYzkwZDhjMWU1YjhiNjIyYThmNDdkYzZhZjViMzJkNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlYzA1MzQxNzlmMWU3MThiYjhkODEwYTE4OWZmYTc0ZGQyMjcyM2EyODk4YmViMTc3ZTViYTc4YjE4N2RjMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwNjk1MzVjNGJjOTg2YjIxMjE4MWEwYTQ3ZWE4NDBhNWVjZjBjNGUwNGQ0N2E4YTM5ZWEzMGVjN2ZjY2EzOTIifQ"
         }
       ]
     },
@@ -259,10 +263,24 @@
           "version": "repo-lines-v1:sha256:7d6571e7570c2b6fe4f7cb5e827f81f8775ef61e33f5fa2701f35968d6216cdc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxOGVlYTE4MDFkYzJmZWE0MGQ2NjI3MzUyNTgwODM2NGQxMWEyNWRiMzJjZTBiZDA5ZDExN2NkZTVjNDBhMDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiYWQzZjA5OGQ5NGJlMGI1ZjUxMzllNjE3MmU1M2E5NzUzOGY3NWJjOGU4ZDk0N2NiZmQ4MTI0M2U3YjkwMjUifQ"
         }
       ]
+    },
+    {
+      "id": "claim_97d71e76436d45baa508cc5640436f83",
+      "statement": "Editing an approved hook command changes the hook digest and re-arms the gate so that unattended runs skip again; setting QMD_TRUST_UPDATE_HOOKS to a truthy value opts unattended runs back in, while the values 0, false, off, no, and empty do not.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L283-L303",
+          "version": "repo-lines-v1:sha256:98df7ac13147e4a6a69ce6c0d49e35ce6dc106e9c84d0ef24dd8def095c93829:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkNzdmYTg3N2NhNWVkNmFiOTY4NjI3ODE5Y2M3YmJkNTMxNThkMTYxZTAxZWU5MzA4YzEyYTg0NjAxNmViZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1YjdjMTIwZmJjYWNmZDA0ZjI2YjJlNGFhY2JlMDgyNzdiMGZmZjk5ZDFiYTA0MDMzMDVkZjEzMWNkNDFjOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhMTkyN2Y1OWFkODQ3OWFlMzhkYzgyMmMwZjk0YjJkNmJhMDY3NmIxOWI3YTdlMzIzZmE4NWM3YmI1NmVmNjUifQ"
+        },
+        {
+          "resource": "repo://test/update-hook-trust.test.ts#L172-L204",
+          "version": "repo-lines-v1:sha256:650fd38996dd7b7d7781695d14d84fbc864db8c07692862aaa03e28f4a52767b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwNjAzMWI2Y2I5YTM1ZWNhMTRlNDA4MmM1NzFmNGY3NGFkYTcxZGVjMTk4YWExMzk5ODIyYjQ0ODMyODVkZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlYzA1MzQxNzlmMWU3MThiYjhkODEwYTE4OWZmYTc0ZGQyMjcyM2EyODk4YmViMTc3ZTViYTc4YjE4N2RjMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmOGJjNzMwODRiODM5YTMyYmYyMDNmNjhhZmUwYWJiNjU1NjY4NmI5NzVlODBlMDUxY2VmM2FkZjVmOTIwNTkifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T08:48:37.585Z"
+    "at": "2026-11-07T09:11:07.517Z"
   }
 }

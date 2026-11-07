@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:63d7c2834081d80720c47cc3ee1384a77b596919d36342d48ea66476c4dc85a7",
+  "pageVersion": "sha256:d1035d83634624573af6192cb6558e46caec69f066cb1cedf51d4260a405b8b1",
   "claims": [
     {
       "id": "claim_7dfbcc0a42f14352a4174b0530fb4969",
       "statement": "The global config directory is resolved in order: QMD_CONFIG_DIR if set, then XDG_CONFIG_HOME/qmd if set, then qmdHomedir()/.config/qmd; the file read is <dir>/<indexName>.yml with default index name 'index'.",
       "evidence": [
         {
-          "resource": "repo://src/collections.ts",
-          "version": "repo-file-v1:sha256:d77698845a7185b804df5d5d12ba3cb9f2e8731b9a43b1a55416c651d3850245"
+          "resource": "repo://src/collections.ts#L119-L133",
+          "version": "repo-lines-v1:sha256:f591b5b8808429270f7a270db2371d74d030d6406c120cd2ac5944463f6c2195:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1OGM5NzU5NzFhODU5MTkyOTA5M2FmNzkwYTJmZGQwNDA3MDJiYTYxNzBhNWRiMjRmOTcwN2I0ZDBkOWU5MDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyZDg1YjFiNDlhNGRlZDhiMTYxNTAwYjhiNDZhYjZmNjNhMzA3YTM5ZmU1NTdhNGYzY2VmNDc4NmRhNmYyN2EifQ"
         },
         {
-          "resource": "repo://src/paths.ts",
-          "version": "repo-file-v1:sha256:41dc742d94891a377d1235dd3a9a33a59934f8cea11ab4f7ad76c1b9f781e3a5"
+          "resource": "repo://src/collections.ts#L69-L70",
+          "version": "repo-lines-v1:sha256:840080ff4fbe5afeb47df96846eaf21279c447e5c08d1d0d6f326ce38694a1bb:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzkxZDdhZTQ2ZThhOTljMDI1NzU0ZjBjYWE2MTZlNDIyYjZiZDMyMmIxM2YwZDY3ZWFhYzk1NjdjNzYyNTI1ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzNhYmViNzBiNDZjN2M2YzUzNjI1YmZiYzcxODg4NjhhNmE3YjE1OTJkNjAyOTExOGQ2NmNlOGU4MWY2NjRhOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmZmMThhODQ3MjVjNjA5ZmNlNWMzYWNkM2EyYTlhYTYxYmI0YTg5MzIyZjE0MWQ4YTY4ZjJkOTJiMTljNDdiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODRmYjMwNWNiZjQzZWZkMDVhZmU0YjhkZTM2M2JkYjI3N2MwOGM1NDc0MThjNDk2ZmFlNjJjMDc1MWIyOTcyMyJ9"
         },
         {
-          "resource": "repo://test/collections-config.test.ts",
-          "version": "repo-file-v1:sha256:942a6eadcdb9d398496291454951fd102feadaa1d457a02a6aa13c1c132bdd0d"
+          "resource": "repo://src/paths.ts#L3-L5",
+          "version": "repo-lines-v1:sha256:c79153629ef194dfbab0741b963fe16d17ed6dfec4cc81d862cbc7ce597e8aec:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWU1NDMzZThkYTZkMTVhZjczYjlmMGNkOWU3NzhlY2RiYWVjMTNjOTRmM2I0M2ZiZGZhZjkwMDZiNTU2ODFlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGVkYzllNWE1ODU1ZjZjYzVjNWFhMmMxNGVmN2E0NjBiYTg2YmI3NjVkNDc3ZTczZmM3MTQ3NzI3NmU5OGU4NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
         }
       ]
     },
@@ -225,6 +225,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T08:48:37.585Z"
+    "at": "2026-11-07T09:11:07.517Z"
   }
 }

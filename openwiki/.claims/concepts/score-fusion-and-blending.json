@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:ed0aa967ee46710f63378e45acd5b8247b080cd18fa1332c998c06db0ee39fdb",
+  "pageVersion": "sha256:3fd64a98d85276b59c9791c60a2b656e7ea787de3d09dc5eec02f469498ce67c",
   "claims": [
     {
       "id": "claim_029f5f20e59743738908a18396e77389",
@@ -46,7 +46,7 @@
     },
     {
       "id": "claim_d9bda81969b140089cfb019191bf4e1a",
-      "statement": "The default candidate limit is RERANK_CANDIDATE_LIMIT = 40 for hybridQuery and structuredSearch, and the fused list is sliced to candidateLimit before chunk selection and reranking. The README's 'top 30 candidates' is stale; the MCP candidateLimit schema and CLI help also default to 40.",
+      "statement": "The default candidate limit is RERANK_CANDIDATE_LIMIT = 40 for hybridQuery and structuredSearch; both slice the fused list to candidateLimit before chunk selection and reranking. The README's 'top 30 candidates' is stale. The MCP candidateLimit schema description also states a default of 40, and the CLI candidateLimit option type carries an internal comment with the same default (not rendered help output).",
       "evidence": [
         {
           "resource": "repo://README.md#L551-L551",
@@ -71,6 +71,14 @@
         {
           "resource": "repo://src/store.ts#L6402-L6402",
           "version": "repo-lines-v1:sha256:a08307b5adfc40b22dc277916d57d333f0c2797a59d070679055552eab29ef44:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTA4MzA3YjVhZGZjNDBiMjJkYzI3NzkxNmQ1N2QzMzNmMGMyNzk3YTU5ZDA3MDY3OTA1NTU1MmVhYjI5ZWY0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTA4MzA3YjVhZGZjNDBiMjJkYzI3NzkxNmQ1N2QzMzNmMGMyNzk3YTU5ZDA3MDY3OTA1NTU1MmVhYjI5ZWY0NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmYwZDUwYTlkNTlkNGY2YzY0YWE4OGFkMTBjYTEzNDk3MjFkOTNkNjIyZDFiNGIxOGIxNWZlMzJkY2RkMjg2OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWEzNWVhMWI3MDdlYjJmYTkzYzM4OTk3YzFiOTFkM2Y2ZTVmZTNlODIwM2JhOGUwZjA1M2NkYjU5NmVhMzBjZSJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6682-L6689",
+          "version": "repo-lines-v1:sha256:f05bd52bf0d16e63136d3fa646ee25e9a8c6bc42e774512912796e59828448d2:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBlYmNiYTMzNmYyYmZjY2UxODRmZTJiZTY0MTMzNzNiZjA0YTE5M2ZkOWFhNTA0MWM2MWVlYzZmZGVjOGIyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzNhNDZkYWI4NjMxMzI1ZDhhZWM2ZjMwMmEwMThhYjdlMmQ5NjMxZjdmMmI5YzA5MWIzZTYwYjFlMDUxMWUzNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTJlYjllZDllNTQ2Y2ViNTNmM2ExZWJiY2UxYzk3NWI0MDFkMWFjZjQ4YjYyMjdiZDI4OTkzMjY3NjViMmNlYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2EwMTU0ZjlmNWFiYjRmZjM0ZjI1Mzk2OWViYWQ0NzBmOGFjNTk4MmJkYWYzZjMxNjZhOTE3OGM1YmQ0YjdjYSJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6786-L6794",
+          "version": "repo-lines-v1:sha256:b348e95d1c023dc1aef8c329c82a6ac062acecbc9ef4433b3d3ee3ed902f1fd6:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQ5YWZmN2JhNDIwNjliMWFlYjRkMTEwY2E0MTFhMmJlYWI5Yzk4NmE4YzJhYzg4Nzk0YWRhYTIyODVhODhmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzllMGVmMTA1MDFiOWU4YzFlNDIzMDdkYWE1N2U3ZjRhNzA2NGZiZGRlZTY1ODJiNDM1N2ZlOWNlNTMxNTE0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTdkODYzMmU1NGU5Mjk4YWJiOTU4NzI3ZTJkNTE0MDhhYmFmMTM2NjAzNTM3OTEwMTQwYWJmNjViMzBhYjYxMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzdkOGJjYThlMTU3ZjhkZDQxNWIwODcxN2JlYzZiZjAzOWRkNWIxNmVkOGU4NjkyYWI0OWM5ZjI0ZjhiMTgwMSJ9"
         }
       ]
     },
@@ -255,6 +263,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T08:48:37.585Z"
+    "at": "2026-11-07T09:11:07.517Z"
   }
 }

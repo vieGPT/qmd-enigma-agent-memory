@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:0eafb09622834d0d0a1964b939705b9e5aa71a1f067c3ce775dd2d07aea1d3f1",
+  "pageVersion": "sha256:fb137f57c578d52b05f690e5aaa3034885d7127efab8e06b408f512150aa22b0",
   "claims": [
     {
       "id": "claim_d48dd003cdb54f93a79b623238af1277",
@@ -198,15 +198,15 @@
     },
     {
       "id": "claim_ff4f1ed061654e61b19943e6fbf5be91",
-      "statement": "The qmd embed command takes a process-level lock stored as .qmd-embed.lock next to the index database; stale locks are recovered by checking whether the recorded PID still belongs to a live qmd process.",
+      "statement": "qmd embed takes an exclusive process-level lock in .qmd-embed.lock beside the index database. When the lock file already exists, tryAcquireEmbedLock reads the recorded PID and treats the lock as held only if isLiveEmbedLockHolder accepts it, which delegates to isQmdMcpPid (the PID is alive and its command line looks like qmd). Otherwise the lock is stale: the file is removed and the create is retried once; if a live holder still owns it, the function returns null so the second embed is skipped.",
       "evidence": [
         {
-          "resource": "repo://src/cli/embed-lock.ts#L1-L40",
-          "version": "repo-lines-v1:sha256:e0564b187838b79538d781dd8c18084650070dbdf2362fe7725d466eb499c5e9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwOTIzYjY4ZDk2ZmQ2ZDRkZjlhZGIwMDJkNzRiOTFlOTY3MTg0ZjczZGQ1ZjVhNDE2NTc5NmI1MzI5OWEyYmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiYjNkYWUxMjFkYmMxZTNkMTdkNmI0MDM3MWEwM2MyMjg0MDI1MmQzMGY5YmEwNWEwOWJkZmQ5NDVmNzY4MjkifQ"
+          "resource": "repo://src/cli/embed-lock.ts#L36-L87",
+          "version": "repo-lines-v1:sha256:aea18b5d23dc840bb1695e1ef52dd29538c9c54d2f71cef4403dd05a91d4082d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkMjJiMmE2MDdkMjk3N2M3ZDE5ZmEyYzg4OGYyN2Y0ZDE1NzI0NGYwMGFhZjlkNjEyNjNhODQ5MjE3MmUzNzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMifQ"
         },
         {
-          "resource": "repo://src/cli/mcp-pid.ts#L1-L30",
-          "version": "repo-lines-v1:sha256:f07d75339c1d890bba36a42604e8147d82bdd6285194448c8cef3117412e0e26:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3NTk0YzNjZTQ4NTVkYzQwNjhlMjFjYTNjZWEyNWNmNDkxZDYwZTM1M2NiMjBkYjM4YjdkNGQ5Zjc3MTQ2MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA4OTRkMzkwZjJiMzBhNGNhNmQyZjlhNTk1OWRiYmU3Nzg5ZmU0ZTMxZTU1YThjMjU3NGExMmZhNjcyN2YyNmIifQ"
+          "resource": "repo://src/cli/mcp-pid.ts#L74-L86",
+          "version": "repo-lines-v1:sha256:ffad7fdfa503117a80ad2d417b183cc28e3748da56227d293d6ac41fcaf71b74:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViYTlkNGZkOTFkOWVmNzIzMDliNGRjYmIzMDczZjExYzZhZjNmNjljOWJiMTA0OGFlNDM3MGUxODdmZmNjMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2YzdhOGRmNGI0Nzg3MDc3ZDNlYjBlNjg4MjNiNzFhODA1MTc3NWM3NzgzMjRjNjdlZjNmMmEwMWY5NGU1ZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     },
@@ -236,19 +236,27 @@
     },
     {
       "id": "claim_3720fb0be3f74c538cc6ae67287e0831",
-      "statement": "The bench harness runs fixture queries against four backends (bm25, vector, hybrid, full) and scores results with precision at k, recall, MRR, and F1; it fails fast when the target collection is missing or empty.",
+      "statement": "The bench harness runs each fixture query against four backends (bm25, vector, hybrid, full) and scores each result with scoreResults (precision at k, recall, MRR, F1). runBenchmark calls assertBenchCollectionReady after opening the store and before the query loop, so a fixture collection that is missing, or has no active documents, throws before any search runs; with no collection named, the run fails only when no collection has indexed documents.",
       "evidence": [
         {
-          "resource": "repo://src/bench/bench.ts#L1-L40",
-          "version": "repo-lines-v1:sha256:2d75987d39626de9c33a7b43c6f471221934887d56835aae7f6664f52b76b836:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhMmJhNWZmMGM2NzEwMjRhMjFkZTIxMGQ3ZDE1NWU4MWIxMzY0NTZkZTM2MDZmYjFmNmFmYWVjMjNiM2ZmNmEifQ"
+          "resource": "repo://src/bench/bench.ts#L167-L195",
+          "version": "repo-lines-v1:sha256:05a90f5c355eb736a73e3194bf9711b34073858cda17709ff0638b5f5197d8aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YmJiODEzZjAxOGM2OGNmODk1MDg0MDI1NzVjNjcwZDNiN2YzNzdmMjA5NzkyMDVkYWE3MzBjMTExYjA2ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOWUxMjU0NjQyNTU3NmQzZGVhZThjOWI5ZGJmMTI4ZDVkNmRkYWY1ZDdmZTg1NzkzNDkyN2RlZmZhM2I5ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4YTkxNzU5NzJmZTE1ZTJhOTY0MWFiMTMxZjU3MWU2YzdjYWJjYTA2ODM3NjJlYmE1ZjIzNTNlNDgzYzNkNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyNDgzODY1YmJkYTlmMGU1YTNiY2U2NzYzOWJlNGM0OWQyOWYxMDZkOWQ0MjRmZDExOGFmZjk4MDhiZjY1NzIifQ"
+        },
+        {
+          "resource": "repo://src/bench/bench.ts#L283-L310",
+          "version": "repo-lines-v1:sha256:89b326542d21d350f46aae27b5c6625515bed1e253deb06f17b9046fb324b7f0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyOWI3ODRiYzlkM2ViYTc3ZTNlNDBjN2YyN2U5YzQ4NDQxOTRkNTY5ODBlYzE3YTM5N2VjNGIxYTAzZDdiMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmZjQ0YjRhOWE4MjQ2ZDYzNTFjMjZhMThkZDc3OTc0N2RlZTI2ODhkNjc0NzVjNDhmZTk3ZDlkOTI1N2I2MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2YzQ3MWVmOWNhZTQwYmNjMTMzM2QxOTljMGY5Yzg4OWU5M2I0ZmNjOGI0MDY5MTU3NTczZjI5MjE0MjI2MzUifQ"
+        },
+        {
+          "resource": "repo://src/bench/bench.ts#L359-L364",
+          "version": "repo-lines-v1:sha256:80764bbcea61f909343fa3182fa6f4f9da5e0a352bcc78c96be3bee67491795e:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDY1OTVmNGVlNWZmNjNkNTA5NTA0MTlkYzM0NDE0NTEzODUxZGM5NzM2ZmQxN2E0ZjdiZmE5MzBiMjYxYjZmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjhiMDFiYjA1YjZiNzQ3OGU0MjA1NDA2ZTc2NzlkZDNkYTRhM2NhY2Q3NTc3MmQ3ZmViYTE3YTliODhjYmYxMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2Q1N2M1Y2MwMjljMTlmZjkwYmYyZDJlNWJjODQ5OGVkY2Y3ZTg2OWJhODcyMTg3MGUxNWNlYWEyZWFjODgwZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmFhMzNmMTU1MzFlZGY5OGUzODNmZmNjNjgxMzBkZDJkYjZjYTI2YjIwYmRiZGI2NmUwNzEzM2ExNWE5ZGUxMyJ9"
         },
         {
           "resource": "repo://src/bench/score.ts#L1-L30",
           "version": "repo-lines-v1:sha256:611806a74e4fa3ede13c1a9571aa66287cdc5371694a2d1426cee5aa7b310872:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzYzAxYjE4Mzk3MjU5YjE4OGQ5OThkZTRiZTlkOWI3YjE1NDgyYzNhZGVmODVhNGM4YTAyZGY4NDRmOTZkYjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2MmM0ZmZlZGM1NzYzNTZmYzllZGE5N2E2NTY3MzU1YTFiOTZkNzQ3NTk0MTEyMWM0ZTcxMDY5ODYyZDQ4NjYifQ"
         },
         {
-          "resource": "repo://test/bench-guard.test.ts#L1-L20",
-          "version": "repo-lines-v1:sha256:de85df9aa2c5cc04e5508f11c5832045563e90e85855951712e04e64bc85e3b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhZDdhNTg1NTc2YmM3N2IwNGNkZTQ2MDE3MjliNTdlYjBiYjYzNDAyYWYxYTNjMmQ5Mjc1YTlmYzBlNDlhZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwNWE5Yjk2OThiZjlmMzk2Yzk0NTI3YjUxMWViNGFjOWExNWExZWYzODdkZTExMTgwYmU2YzNhYTExOTEyMDkifQ"
+          "resource": "repo://test/bench-guard.test.ts#L123-L172",
+          "version": "repo-lines-v1:sha256:192215e89a2212c2f59e64d8d34ea28f15f48eeca6b81f5a2b564ca8cdc79ceb:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyMzkyNGM4MTUxZjRjMjMwNWQ1ZTJkZjJhMGE1ZWVmNDJiOWYxNTUzY2RlY2NhOGM3ZjlhMjVkZDU1OTQ4M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmNzkxY2U3NmExZGMwMzlkOTlkOGNhYTJhNWM0NmQ1ZjQ4NmI0ZWU2MjI4M2FlOTcwMGE3ZjI4OTAxYWU1YjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjYjUwMzczNTM5YTg4OTA5MjBhM2FlYjJjYzEzNzQzNGY4NmMzNDViZTQ2OTJiZjVmMzE2YTEwMTBiNWQ0ZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyM2NkMTllNmU2YWM2OTRhMDdiMjgyNDhiZjM3OWVkNDBkMmFiOGY5NjJlMzRhMDc4MzczNzVhMjZlMTllY2YifQ"
         }
       ]
     },
@@ -289,10 +297,28 @@
           "version": "repo-lines-v1:sha256:08846c6d595279fc490b1e1b0649bec7e56f6d98dc958de4d8fa32fb64174589:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkOTVmYzA0YTgwYzk1MmY0OWNlNDE4ODYyN2M1M2IwZmJlOGM0NDA0MWI5NTJkNTkyYWNkMWRlOTk4NjE0NjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5YTcwYmE1NWQ0NzhkYWE4YzU1NmEwMDRlNDAxMGU0MDUwMDliZjE3ZmE2MGQyMzY1ZGIxMTMxODRjZTRiMTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViOTZhZWMyMWNkMDJjMGFhZWYwYjAxZDY0M2ZjZTBiNTg0MzQ0MDU0MWUzZTE1ZmZmY2VmY2RlOGZlMTRhMDcifQ"
         }
       ]
+    },
+    {
+      "id": "claim_59bef49dcea6496786053d5801a2f2ff",
+      "statement": "In the bench harness, an exception thrown by a backend inside runQuery is caught and recorded as a zero-score result with all expected files unmatched, so a per-backend failure does not stop the run. The only run-level signal for an all-zero summary is a stderr warning from allZeroBenchWarning, which does not change the exit path.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/bench.ts#L167-L195",
+          "version": "repo-lines-v1:sha256:05a90f5c355eb736a73e3194bf9711b34073858cda17709ff0638b5f5197d8aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YmJiODEzZjAxOGM2OGNmODk1MDg0MDI1NzVjNjcwZDNiN2YzNzdmMjA5NzkyMDVkYWE3MzBjMTExYjA2ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOWUxMjU0NjQyNTU3NmQzZGVhZThjOWI5ZGJmMTI4ZDVkNmRkYWY1ZDdmZTg1NzkzNDkyN2RlZmZhM2I5ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4YTkxNzU5NzJmZTE1ZTJhOTY0MWFiMTMxZjU3MWU2YzdjYWJjYTA2ODM3NjJlYmE1ZjIzNTNlNDgzYzNkNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyNDgzODY1YmJkYTlmMGU1YTNiY2U2NzYzOWJlNGM0OWQyOWYxMDZkOWQ0MjRmZDExOGFmZjk4MDhiZjY1NzIifQ"
+        },
+        {
+          "resource": "repo://src/bench/bench.ts#L396-L400",
+          "version": "repo-lines-v1:sha256:f7a59d6d60123a1af12853c800020f20fdc2c538db438c05a78c0c901744605c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhMmNiMjVhMTIyYjQ0MjIxYTYyMzRlYzY2MGE3YjVmYjdmOWJkZTdiM2I5ZTJiM2M1NTlhMGQ5NmZhYzczOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzdiNGEwZGMzN2MyYmUzNGI0NGYwNmRkMTE1M2JkMTY4MzU3MTJlY2VmZjllYzM4OTE2ZGRlZjg1NmNjMWYwMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjk1MmRkNjc5NTViYjg0NjI4N2NjMmRkOTUyMTcxY2I4NDI4NzFiOWMyMzg5MWIyYjg4ZDVjYWZhYTFiNTVjNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzE3ZGJhNmY2MDNkM2JkZjNmYjg5OWYyOGIyYWE4NjQ5NzljYmU3ZmE5YmU2ZWQ2YjFlZTZiZTE4MDQ3MTY2MSJ9"
+        },
+        {
+          "resource": "repo://test/bench-guard.test.ts#L173-L209",
+          "version": "repo-lines-v1:sha256:5803c277e7a5f8b52425053d62fed4fc990eba05d8c92f03f8bbd4c7effcdb57:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmNWEyNjAyYzdiOGYzMDZjNTYwZDUyMTY0MjI5NzgxZTczODFkMWFmZDM0NjRkMDMzNWYwZGMwMGRkYWE5YzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3OWExZjFlM2U1OTA5Yjg2NmE1ZTRjMDA5OGVjZTI3YTgyZGRlZThjZmRkY2ZmODdkMTcxY2YzY2Q0YjY0OGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T08:48:37.585Z"
+    "at": "2026-11-07T09:11:07.517Z"
   }
 }

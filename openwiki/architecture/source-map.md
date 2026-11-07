@@ -5,7 +5,7 @@ description: Maps each owned module under src/, bin/, scripts/, tools/ and test/
 tags: [architecture, source-map, modules, navigation, qmd]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T08:48:37.585Z
+    at: 2026-11-07T09:11:07.517Z
 sources:
   - id: openwiki-source-d7caacca970236de3bb29afe
     resource: repo://bin/qmd
@@ -57,7 +57,7 @@ sources:
     resource: repo://test/bench-guard.test.ts
   - id: openwiki-source-26d8b0098d662736e9e84718
     resource: repo://tools/oxlint/anti-slop/index.ts
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T08:48:37.585Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:11:07.517Z" }
 ---
 
 # Source Map
@@ -140,8 +140,8 @@ Use these names to jump to the right region of `src/store.ts`. Line numbers shif
 | `bin/qmd` | Node launcher that is the published `qmd` binary. It selects a runtime and entry point, then spawns or imports it. |
 | `src/cli/qmd.ts` | The CLI command implementation (very large). Dispatches subcommands to the store and formatter. |
 | `src/cli/formatter.ts` | Output formatting for JSON, CSV, XML, Markdown, file lists, and colored terminal output. |
-| `src/cli/embed-lock.ts` | Process-level exclusive lock for `qmd embed`, stored next to the index database. |
-| `src/cli/mcp-pid.ts` | Pid file identity helpers for the MCP HTTP daemon, so a stale PID is not signalled. |
+| `src/cli/embed-lock.ts` | Process-level exclusive lock for `qmd embed`, stored as `.qmd-embed.lock` next to the index database. `tryAcquireEmbedLock` treats an existing lock as stale unless its recorded PID is a live qmd process, removes stale locks, and retries once. |
+| `src/cli/mcp-pid.ts` | Pid file identity helpers for the MCP HTTP daemon and the embed lock. `isQmdMcpPid` requires the PID to be alive and its command line to look like qmd, so a stale PID is not signalled. |
 | `src/cli/version.ts` | Reads the commit stamped at build time for `qmd --version`. |
 
 ## MCP server under src/mcp/
@@ -156,7 +156,7 @@ Use these names to jump to the right region of `src/store.ts`. Line numbers shif
 
 | Path | Responsibility |
 | --- | --- |
-| `src/bench/bench.ts` | Runs fixture queries against four backends (`bm25`, `vector`, `hybrid`, `full`) and reports the results. |
+| `src/bench/bench.ts` | Runs fixture queries against four backends (`bm25`, `vector`, `hybrid`, `full`) and reports the results. `assertBenchCollectionReady` runs before any query and stops the run when the fixture's collection is missing or has no indexed documents. A backend that throws scores zero for that query instead of failing the run. |
 | `src/bench/score.ts` | Computes precision at k, recall, MRR, and F1 against expected files, with path normalization. |
 | `src/bench/types.ts` | Fixture and result types, including query types `exact`, `semantic`, `topical`, `cross-domain`, and `alias`. |
 | `src/bench/fixtures/example.json` | Example benchmark fixture for the harness. |

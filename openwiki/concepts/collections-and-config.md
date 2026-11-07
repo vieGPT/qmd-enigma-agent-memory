@@ -5,7 +5,7 @@ description: How QMD locates, parses, edits and syncs its index.yml configuratio
 tags: [configuration, collections, index-yml, sqlite, qmd-config, local-config]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T08:48:37.585Z
+    at: 2026-11-07T09:11:07.517Z
 sources:
   - id: openwiki-source-42af471e8a641ededcf91b9b
     resource: repo://example-index.yml
@@ -25,8 +25,6 @@ sources:
     resource: repo://src/store.ts
   - id: openwiki-source-38655879aa8dbcbddd9d50b3
     resource: repo://src/trust.ts
-  - id: openwiki-source-8fa45c0ecca60b1872e0b4e2
-    resource: repo://test/collections-config.test.ts
   - id: openwiki-source-fcb3128ad6235b0e5bfe6ed8
     resource: repo://test/local-config.test.ts
 generated: { by: "openwiki/0.9.0", at: "2026-11-07T08:48:37.585Z" }

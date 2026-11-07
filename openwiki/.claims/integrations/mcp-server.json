@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:b24a37655f680f3dace45702916aaf3d654ad58fded1f20eb94f13709c1d4528",
+  "pageVersion": "sha256:06da7c71ae243245966f0bec137baefdc74bb7b4befd29ba3c9de24c59ec8174",
   "claims": [
     {
       "id": "claim_83b333702a1548d7913d6dc0a2c99a19",
@@ -185,6 +185,10 @@
           "version": "repo-lines-v1:sha256:5991e9552ce07826b9350c0e58512bc1004c3e9bac47b1ecd90c58d5605a9507:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOThkYzFjYjlhMGRkMTMyNGM0ODA0NjVmNjdiMzRlMTQzN2IxMGNkOTM3MzA1NjhmMzZkZjA4M2RkMTUwZjZkMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTY3N2QyZjAzMWU5OGI1ZTkxMWM1YWQ0ZmI5YjIxODZhOTMyNTIyZThmNDZlZTQwYmFiZmFlM2RhMDBmYzEyMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTRlMWM1YzE4ZjFjOWM1MDhiMjYwNWIyZGFkY2JlNjQwNTJlMDcxOTA3MmJjMzkyMmEzMWU5YWUwYTI2ZTI4NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTllMTUyMTZlOWE5MWE2NjRlNGE4ZjAzYjQ5Nzg3NTNlMDg0YTM0MjI4YjhkZGRhN2JiZjAyNjVmMDQwNTZkMiJ9"
         },
         {
+          "resource": "repo://src/mcp/server.ts#L541-L551",
+          "version": "repo-lines-v1:sha256:4676d87829f001cdc8e29548199008865b87b3d18855c8abeb6d671e93f523e8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1YmI4YzQwMjRiMmY1YzFhZjk4ODYzMGM2YWVlZTVhNTM3ZmNiOGFlNTQ4ZmFkNjgzMDY3N2FhZmUxZGU3OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1Y2RlZjgwODVhZTc0YWI2MzZkNjQ1OWY1YzZkNWZiZmIwZGIyNjRmMWIwZDc1YmFjNTE5YzliM2Y2NzE3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2OTMxYmFkMDZjMGViZWM2ZWEyNmFlNjZmYTBkNWE4NDEwMzZjYmZhODE2YzgxMTM5YmVlZGY3MTkyNjYxZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllNDZlYjY1OGM3YTQ1ZmIxMzg1N2EwODdkN2ZjOGE2ZGI3ZDc3ZDRlNDAyYjQ0OWViYWU1MjhkZDk0OGRhMjIifQ"
+        },
+        {
           "resource": "repo://src/mcp/server.ts#L546-L580",
           "version": "repo-lines-v1:sha256:bd7aefade90253d91255ff99b862cd185c4c934eeef0e04939eb01b5fb6b7a5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkNjE4YTIzZDJjYWE5ODVjOWRkZTZiN2Y1MzM0N2JlYmJjYzgzMWQzMmU5OWMwMGM1MDY5OTg2ODdkMzVlMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwZWZhNDZhNjhhMDE2Yzc0MDQ3NjA2NWRiZWQ1OTdlMjMwNTE2YzA4NmEyZjFlNmMzOWYzZGRhNTFkZmQwMWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4YTFhMzc3ZTFiM2I1N2MwNmQ5MzA2N2UzOGQwMzk1ZDU4NzYxMDhiZjQ3NjhiYzljYjc4ZjdhY2JiZWI5YjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3OTMzYjZkNDFhNzEzM2Y1M2Q0OTE2MTRkNDIxMjMzNzYzNzBjOWU5NjM3MTY0YTA4YTExZmZkYjMxZWQwMmEifQ"
         }
@@ -284,7 +288,7 @@
     },
     {
       "id": "claim_ac200af34e724d17a8f600b6e60f9334",
-      "statement": "Stdio shutdown on stdin end or close runs once, in this order: close the MCP server and transport, wait up to 5000 ms for in-flight handlers, skip the LLM disposal step, then close the store; it sets process.exitCode rather than calling process.exit.",
+      "statement": "Stdio shutdown on stdin end or close runs once, in this order: close the MCP server and transport, wait up to 5000 ms for in-flight handlers, skip the LLM disposal step, then attempt to close the store once; a throw from any step is caught and logged without retry, and it sets process.exitCode rather than calling process.exit.",
       "evidence": [
         {
           "resource": "repo://src/mcp/server.ts#L1032-L1038",
@@ -293,16 +297,20 @@
         {
           "resource": "repo://src/mcp/server.ts#L924-L1000",
           "version": "repo-lines-v1:sha256:9eae296eb9936a8c5da706abeff09d516d7fcd504b0ce050238368341545cbbd:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjODg4YTU5M2JhZTkxZjUzMjk2ODdlOWVlN2U5NmZkMTUwNDNmM2JkMWMwNGJkNjZiN2M0ZmRkNThjYzY2YzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2ZTU0YTE2NTU0NmNmMmRhMjM0Y2RiYzIxYjg5NzExMzNkYzQwZGNlYjEyNDBmZjljNzk1MDIxN2RmNjQ1ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMjUyMDNhZWViMTZiODAwOTE2MGVmNGI2ZGE4MzM3ZDdmYWU4MmM4ZTliMmI2YzdiYjg5ZWYzNGZmYmIyNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1N2YyYzkxYzk3MmFjYzQyZGU3NzhhNDZmOTMyN2JjYzA3NzEyMGYzNDFhYzRjNDZkNzUxZmVmNzNkNzc1NWMifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L956-L979",
+          "version": "repo-lines-v1:sha256:c6903d2b05aed581eff81c62105eb3b65d129184f4da1d40ed0fc3a42c71733e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmNjgzY2I3OWZhMjc2NDBjZDJiYmZmNWVkZDMyYmM2ZDJhM2UyMGNiZTJkYWFkMDc4ZGM1ZjkzZDlkODgwNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzNmZhYWRjOTI1ZmVlYjFjNTc1MDQ3MGJhODNlYzYzYzhkNmQ3ZTM3MjNjZGNkZmNjNjkwYTYyN2Q1MjkxMDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4NTU4NDJlMmIzZDMxOTI0NzY4OWNmM2M1YmRjNzY0MzNkMWYxODQ1YWYxODk5NmM4Y2RmNjNhMTIyOGNjNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzNDljNjc0NmJlODI1NmMwZmQ2Y2U0YzI5OTBmMzRmNGRiZmE2OWFhZDg5NDBlNzM4M2ZjYTk1MzY4N2YxNDgifQ"
         }
       ]
     },
     {
       "id": "claim_a3e8921610f040049b533127004f7489",
-      "statement": "Stdio shutdown failures are logged to stderr and do not stop the remaining steps; a failing step sets exit code 1, while an earlier nonzero exit code is preserved.",
+      "statement": "Stdio shutdown failures are logged to stderr and do not stop the remaining steps; a failing step sets the exit code to 1 even over an earlier nonzero exit code, and an earlier nonzero exit code is preserved only when every teardown step succeeds.",
       "evidence": [
         {
-          "resource": "repo://src/mcp/server.ts#L924-L1000",
-          "version": "repo-lines-v1:sha256:9eae296eb9936a8c5da706abeff09d516d7fcd504b0ce050238368341545cbbd:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjODg4YTU5M2JhZTkxZjUzMjk2ODdlOWVlN2U5NmZkMTUwNDNmM2JkMWMwNGJkNjZiN2M0ZmRkNThjYzY2YzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2ZTU0YTE2NTU0NmNmMmRhMjM0Y2RiYzIxYjg5NzExMzNkYzQwZGNlYjEyNDBmZjljNzk1MDIxN2RmNjQ1ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMjUyMDNhZWViMTZiODAwOTE2MGVmNGI2ZGE4MzM3ZDdmYWU4MmM4ZTliMmI2YzdiYjg5ZWYzNGZmYmIyNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1N2YyYzkxYzk3MmFjYzQyZGU3NzhhNDZmOTMyN2JjYzA3NzEyMGYzNDFhYzRjNDZkNzUxZmVmNzNkNzc1NWMifQ"
+          "resource": "repo://src/mcp/server.ts#L955-L988",
+          "version": "repo-lines-v1:sha256:2ce5db5e2e9b118f15ba7287581470d98154e1b20f4daae2e64c859f373887cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhY2I3MWVkYTliMjg3OTk3NzYxZTM2NTE5MDIwMzg0YzFhYmViNTVmZDFkMzE3M2I1YmMwYWRjODRkMzc5MGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxOTdkM2RkNTY3ZmQxZWRkOTMxNWM3MzIxYzU4ODdiZTI0MWU2NGJkZjU0YzAxNjA3ZjY5NGNlNDg1Mzc0NTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkZTQ4ZDk3Yzk1OGJjYTMyMTAxMjg4NTA4YjRlYzg1YjI1NjA4MzFkMTJkYjYyNmMyMGIzNTc1ZTIxYTQ2ZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2YTBlY2FkOGU3YmU3ZWE5N2M5NDEwZTlmMjgzNTU1MzVkZjBmN2ExY2M5OWE3OTUxMzEwMzM5NDZiMjNlZWYifQ"
         },
         {
           "resource": "repo://test/mcp-stdio-lifecycle.test.ts#L105-L131",
@@ -355,6 +363,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T08:48:37.585Z"
+    "at": "2026-11-07T09:11:07.517Z"
   }
 }

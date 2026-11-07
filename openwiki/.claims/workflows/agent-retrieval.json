@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:fcc7ef286f638c4addbabbaf6f67f551b066871352908c6367fbaa24cf1ff670",
+  "pageVersion": "sha256:0d5c7fab3d55876186a7b7d5f0589373d6f77008703433445fa9e51c36a87650",
   "claims": [
     {
       "id": "claim_f280af0f433546cf9b730b163dd9f34c",
@@ -92,11 +92,15 @@
     },
     {
       "id": "claim_c42a77bffe4247d78b97f4f105ac30ec",
-      "statement": "--filter takes a JSON metadata predicate that is parsed and validated before retrieval (exit 1 on malformed input), and filtered SQL matches only documents whose metadata extraction is current and error-free, so unprocessed documents are excluded and the CLI warns when some are pending.",
+      "statement": "--filter takes a JSON metadata predicate. Malformed JSON and predicates that fail filter-AST validation both print an error (for malformed JSON, with an example) and exit 1 before retrieval runs, via the shared parseCliPredicateFlag helper. Filtered SQL matches only documents whose metadata extraction is current and error-free, so unprocessed documents are excluded and the CLI warns when some are pending.",
       "evidence": [
         {
           "resource": "repo://src/cli/qmd.ts#L3035-L3040",
           "version": "repo-lines-v1:sha256:53602454af1db24e09f99987aae784cf55bfc1f5e7bd702ffcfb1d974670de7f:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmI5ZTJhZmRmYWI0NzhjYjE3NmM4ZTc4ODkzMmUxYmI4YWRmOTZhOTYzNGU5ZTA1OWZhODY4ZmRkYzJlNGU4ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTVhOTY3YTBiNjk4YjU5ZDE1YTdlMjZmM2FjNWIxMWE1OTM3ZDgyZGNhNmNkYzNmOGM3ZmIzNDkyOTQ1MmYzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTIyMGQ1ZjljOTIzYWU5NTBmM2FhZjYyNzc1YTc4YWFiZGZmMmZhYWQwODM2NGM5Zjk2Yzg2NDhiNDU1YjQwNiJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L3059-L3076",
+          "version": "repo-lines-v1:sha256:00d040bc34e7913f332a4fd66796e8fee68a452ebdd9fb0e0f732d25fe212fec:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkMGRiNjgxYTgxNmRkODYwZTBiZjFkZjQwNDdjMDRhZmEzNWZmODIyMDg2Y2YwZWNiMTBjODRmMDM5ZmNhYjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhZDg1ZDg3NzJhZGM3ZmZiMGYzMDRhYzQwYzMxMWIyY2RmNWZkNjY0NGE0YzA2YzRlNWZmN2M0YjNiOGYzYzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3YWIxMjc4ODBiZmVlOGU3ZjE0NzgwZDBlY2JjYmZjM2RjZDY1NjQ5YmYwYjZkYTg1NDUxZjEyZjBiYTA5ZTcifQ"
         },
         {
           "resource": "repo://src/cli/qmd.ts#L3082-L3090",
@@ -263,6 +267,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T08:48:37.585Z"
+    "at": "2026-11-07T09:11:07.517Z"
   }
 }

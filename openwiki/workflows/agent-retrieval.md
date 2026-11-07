@@ -5,7 +5,7 @@ description: How an AI agent should drive the qmd CLI to search, scope, filter, 
 tags: [cli, search, retrieval, agents, get, multi-get, qmd]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T08:48:37.585Z
+    at: 2026-11-07T09:11:07.517Z
 sources:
   - id: openwiki-source-d1106298a9eebadce31f98f8
     resource: repo://src/cli/qmd.ts
@@ -19,7 +19,7 @@ sources:
     resource: repo://src/vec-layout.ts
   - id: openwiki-source-1c0a71c46a0594c7a43890a4
     resource: repo://test/cli.test.ts
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T08:48:37.585Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:11:07.517Z" }
 ---
 
 # Agent Retrieval Workflows (CLI Search and Get)
@@ -92,7 +92,7 @@ Caption: how the collection scope is chosen for search, vsearch, and query.
 
 ## Metadata filters
 
-`--filter` takes a JSON metadata predicate. The CLI parses it with `parseCliMetadataFilter`, which exits 1 with an example when the JSON or the predicate is invalid (`src/cli/qmd.ts` lines 3035-3040). It applies to `search`, `vsearch`, and `query`.
+`--filter` takes a JSON metadata predicate. The CLI parses it with `parseCliMetadataFilter`, which delegates to the shared `parseCliPredicateFlag` helper (`src/cli/qmd.ts` lines 3035-3040 and 3059-3076). Malformed JSON prints the parse error and an example `--filter` value to stderr and exits 1. A JSON value that parses but fails the filter-AST validation in `parseMetadataFilter` prints that validation error and exits 1 as well. The check runs before any retrieval. It applies to `search`, `vsearch`, and `query`.
 
 In the SQL layer, a filtered search keeps only documents whose metadata extraction is current and error-free (`src/store.ts` lines 4762-4766). A document that has not been processed cannot satisfy a filter, even a negative one such as `exists: false`. Because of this, the CLI warns on stderr when some documents lack current metadata and are therefore excluded (`warnPendingMetadata`, `src/cli/qmd.ts` lines 3082-3090). If you see that warning, run `qmd update` before trusting an empty filtered result.
 

@@ -5,10 +5,14 @@ description: How QMD picks its GGUF models for embedding, reranking, and query e
 tags: [llm, llama-cpp, gguf, embeddings, reranking, query-expansion, gpu, configuration]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T08:48:37.585Z
+    at: 2026-11-07T09:11:07.517Z
 sources:
   - id: openwiki-source-d7caacca970236de3bb29afe
     resource: repo://bin/qmd
+  - id: openwiki-source-ed642907e848f935dc4ab3b5
+    resource: repo://finetune/convert_gguf.py
+  - id: openwiki-source-38e7e4dae35d9ee9396e959b
+    resource: repo://finetune/dataset/prepare_data.py
   - id: openwiki-source-e6fe07bce4b1f7f140517032
     resource: repo://finetune/README.md
   - id: openwiki-source-d1106298a9eebadce31f98f8
@@ -21,7 +25,7 @@ sources:
     resource: repo://src/store.ts
   - id: openwiki-source-4de2b04a5a1358ef5e0f7e00
     resource: repo://test/llm.test.ts
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T08:48:37.585Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:11:07.517Z" }
 ---
 
 # Models and LLM Runtime
@@ -41,6 +45,15 @@ Built-in defaults are plain HuggingFace URIs in the `hf:<user>/<repo>/<file>` fo
 | Generate | `hf:tobil/qmd-query-expansion-1.7B-gguf/qmd-query-expansion-1.7B-q4_k_m.gguf` | A query-expansion model fine-tuned from Qwen3-1.7B. The fine-tuning setup is documented under `finetune/`. This page does not describe its weights or training artifacts. |
 
 The defaults are declared at `src/llm.ts` lines 282-285. Two alternative generation models, LiquidAI LFM2 variants, are exported as constants (`LFM2_GENERATE_MODEL`, `LFM2_INSTRUCT_MODEL`) but are not defaults. The `finetune/SCORING.md` file explains how expansion output is scored, which is useful context when choosing a generation model.
+
+### Fine-tuning source configuration
+
+The fine-tuning scripts under `finetune/` read two environment variables. This describes source behavior only; it does not describe the published weights or any training artifacts.
+
+- `HF_TOKEN` is read by `finetune/convert_gguf.py` (lines 111-115). The script calls the Hugging Face `login` only when the variable is set and nonempty. When it is unset or empty, no explicit login happens and the script runs without one.
+- `QMD_BASE_MODEL` is read by `get_tokenizer` in `finetune/dataset/prepare_data.py` (lines 37-43). It names the tokenizer to load with `AutoTokenizer.from_pretrained` and defaults to `Qwen/Qwen3-1.7B`. The tokenizer is cached in a module-level variable, and it reloads only when the resolved model name differs from the cached one.
+
+These variables affect only the `finetune/` tooling. They are unrelated to the `QMD_*_MODEL` variables that select runtime GGUF models in `src/llm.ts`.
 
 ## Per-role model resolution
 

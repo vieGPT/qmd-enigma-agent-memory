@@ -5,12 +5,14 @@ description: Documents the QMD SQLite store - document and content tables, the F
 tags: [sqlite, schema, fts5, sqlite-vec, vector-index, migrations, storage]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T08:48:37.585Z
+    at: 2026-11-07T09:11:07.517Z
 sources:
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md
   - id: openwiki-source-70d4664310eebb80ab5b564c
     resource: repo://src/db.ts
+  - id: openwiki-source-d4005060e33903e9e292c464
+    resource: repo://src/llm.ts
   - id: openwiki-source-48d8e3f437d4564041e28dbd
     resource: repo://src/metadata-store.ts
   - id: openwiki-source-f71ab9febc3319b82062be1b
@@ -23,7 +25,7 @@ sources:
     resource: repo://test/store-cjk-fts.test.ts
   - id: openwiki-source-1b2040e96c39820577a6b428
     resource: repo://test/store-migrations.test.ts
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T08:48:37.585Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:11:07.517Z" }
 ---
 
 # Storage Schema and Vector Layout
@@ -98,7 +100,9 @@ CJK text is handled separately. `normalizeCjkForFTS` puts a space between every 
 
 The chunking constants are defined in `src/store.ts`. `CHUNK_SIZE_TOKENS` is 900, `CHUNK_OVERLAP_TOKENS` is 135 (15% of 900, floored), and the character fallbacks are `CHUNK_SIZE_CHARS` of 3600 and `CHUNK_OVERLAP_CHARS` of 540 at about four characters per token ([store.ts](repo://src/store.ts#L166-L173)). The README's 900-token chunk size matches the code. The README's 6-character docid also matches `getDocid`.
 
-`content_vectors` has primary key `(hash, seq)` and records `pos`, `model`, `embed_fingerprint`, `total_chunks`, and `embedded_at` ([store.ts](repo://src/store.ts#L1297-L1310)). `getEmbeddingFingerprint` hashes the model, the query and document formatting probes, `chunk_tokens`, and `chunk_overlap_tokens`, and keeps the first 6 hex characters ([store.ts](repo://src/store.ts#L175-L186)). Changing chunk sizes or the model therefore changes the fingerprint. `ensureContentVectorsStatusIndex` creates `idx_content_vectors_model_fingerprint` on `(model, embed_fingerprint, hash, total_chunks)`, skipping it on legacy databases that lack those columns ([store.ts](repo://src/store.ts#L2198-L2210)).
+`content_vectors` has primary key `(hash, seq)` and records `pos`, `model`, `embed_fingerprint`, `total_chunks`, and `embedded_at` ([store.ts](repo://src/store.ts#L1297-L1310)). `getEmbeddingFingerprint` hashes the model, the query and document formatting probes, `chunk_tokens`, and `chunk_overlap_tokens`, and keeps the first 6 hex characters ([store.ts](repo://src/store.ts#L175-L186)). Changing chunk sizes or the model therefore changes the fingerprint.
+
+The query probe is the constant `EMBED_FINGERPRINT_PROBE_QUERY`, with the exact value `__qmd_embedding_query_probe__` ([store.ts](repo://src/store.ts#L160)). It is a fixed sentinel string, not user input. `getEmbeddingFingerprint` passes it through `formatQueryForEmbedding` for the active model, so the fingerprint records the query prompt wrapper as the model expects it. The wrapper differs by model family: the default nomic-style `task: search result | query: ...` form, or the Qwen3-Embedding `Instruct: ... Query: ...` form ([llm.ts](repo://src/llm.ts#L99-L106)). A change to the query prefix format for a model therefore changes the fingerprint even when the model name and chunk sizes stay the same. The document probes (`EMBED_FINGERPRINT_PROBE_TITLE` and `EMBED_FINGERPRINT_PROBE_DOC`) play the same role on the document side ([store.ts](repo://src/store.ts#L161-L162)). `ensureContentVectorsStatusIndex` creates `idx_content_vectors_model_fingerprint` on `(model, embed_fingerprint, hash, total_chunks)`, skipping it on legacy databases that lack those columns ([store.ts](repo://src/store.ts#L2198-L2210)).
 
 ## Vector layout
 

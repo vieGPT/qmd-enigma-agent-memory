@@ -5,7 +5,7 @@ description: Explains QMD's layered architecture, from the bin/qmd launcher thro
 tags: [architecture, layers, launcher, cli, mcp, sdk, sqlite, llm, config, trust]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T08:48:37.585Z
+    at: 2026-11-07T09:11:07.517Z
 sources:
   - id: openwiki-source-d7caacca970236de3bb29afe
     resource: repo://bin/qmd
@@ -25,7 +25,7 @@ sources:
     resource: repo://src/store.ts
   - id: openwiki-source-38655879aa8dbcbddd9d50b3
     resource: repo://src/trust.ts
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T08:48:37.585Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:11:07.517Z" }
 ---
 
 # System Overview
@@ -150,7 +150,8 @@ The `mcp` command dispatches to the server layer. Without `--http` it calls
 `--daemon` it spawns a detached child that writes a PID file
 ([src/cli/qmd.ts#L5068-L5170](repo://src/cli/qmd.ts#L5068-L5170)). The `update` command runs a
 collection's `update:` shell hook through `bash -c`, but only when hooks are allowed
-for the current config ([src/cli/qmd.ts#L941-L961](repo://src/cli/qmd.ts#L941-L961)).
+for the current config ([src/cli/qmd.ts#L941-L961](repo://src/cli/qmd.ts#L941-L961)); the
+`bash -c` spawn itself is at [src/cli/qmd.ts#L964-L967](repo://src/cli/qmd.ts#L964-L967).
 
 ## MCP and HTTP server: `src/mcp/server.ts`
 

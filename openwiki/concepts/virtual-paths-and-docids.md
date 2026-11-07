@@ -5,7 +5,7 @@ description: How QMD expresses documents as qmd:// virtual paths and short #abc1
 tags: [virtual-paths, docid, qmd-uri, document-lookup, retrieval, mcp, cli]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T08:48:37.585Z
+    at: 2026-11-07T09:11:07.517Z
 sources:
   - id: openwiki-source-de49d54b003a7058e0c2124c
     resource: repo://src/cli/formatter.ts
@@ -23,7 +23,7 @@ sources:
     resource: repo://test/store.helpers.unit.test.ts
   - id: openwiki-source-e24288993dd7e95050aee22f
     resource: repo://test/store.test.ts
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T08:48:37.585Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:11:07.517Z" }
 ---
 
 # Virtual Paths and Docids
@@ -43,7 +43,7 @@ The helpers live in one block of `src/store.ts` (lines 746-886). Each has a narr
 - **`resolveVirtualPath`** (lines 843-852) turns a virtual path into an absolute filesystem path. It parses the input, loads the collection by name, joins the relative path onto the collection's `pwd`, and rejects the result if it is not inside that directory. It returns `null` when parsing fails, the collection is unknown, or the path escapes the collection. The test `resolveVirtualPath refuses .. segments that leave the collection` in `test/store.test.ts` (around line 3138) checks the escape case.
 - **`toVirtualPath`** (lines 859-886) goes the other way. It scans collections for one whose `path` prefixes the absolute path, then confirms an active document row exists for the relative path before building a virtual path. It returns `null` if no collection matches or no active document is stored. Within `src/`, `toVirtualPath` is only exposed through the store API (`src/store.ts` around line 2657) and has no internal caller. Its behaviour for paths with punctuation is covered by `test/path-fidelity.test.ts`.
 
-The stored `documents` rows keep literal filesystem paths rather than slugified ones. `test/path-fidelity.test.ts` documents the failures this avoids, such as `--full-path` falling back on a slug and `toVirtualPath` returning `null` for names containing `&`, `(`, or `[`.
+The stored `documents` rows keep literal filesystem paths rather than slugified ones. `test/path-fidelity.test.ts` checks this for names such as `Budget & Revenue (Q4) [2024].md`, `# Meeting - 234232 3432 __ 5.md`, and `subdir/Notes #42 - foo@bar.md`. The store-level test `reindexCollection stores literal relative paths, not handalized slugs` (lines 160-187) asserts the literal `documents.path` values. The `toVirtualPath returns non-null for crazy-named files` test (lines 191-204) asserts that `toVirtualPath` returns `qmd://crazytest/Budget & Revenue (Q4) [2024].md`. The `get --full-path` case (lines 245-262) asserts that the header shows an on-disk path that exists, and the `get <actual-fs-path>` cases (lines 264-283) assert that a filesystem path resolves to the stored document. Together they guard the failures listed in the file header, such as `--full-path` falling back on a slug and `toVirtualPath` returning `null` for names containing `&`, `(`, or `[`.
 
 ## Docid helpers
 
@@ -111,10 +111,10 @@ The SDK wrapper in `src/index.ts` routes `get` to `findDocument` and `getDocumen
 
 `findDocuments` (`src/store.ts` 5849-5948) chooses one of two branches from the pattern.
 
-- If the pattern contains a comma and no `*`, `?`, or `{`, or if `isDocid` accepts the whole pattern, it splits the pattern on commas and resolves each name with `resolveCommaListName`. Names that do not resolve are added to `errors` as `File not found: <name>`.
+- If the pattern contains a comma and no `*`, `?`, or `{`, or if `isDocid` accepts the whole pattern, it splits the pattern on commas and resolves each name with `resolveCommaListName` (`src/store.ts` 5854-5901). A name with no match is added to `errors` as `File not found: <name>`. A name with several matches is added to `errors` as `Ambiguous path <name>: <candidate virtual paths>`, and no document is returned for it.
 - Otherwise the pattern is treated as a glob and matched with `matchFilesByGlob` (`src/store.ts` 4058-4096), which tests the glob against the virtual path, the relative path, and the `collection/path` form. A glob that matches nothing yields `No files matched pattern`.
 
-`resolveCommaListName` (`src/store.ts` 5791-5846) applies a fixed order. A docid or exact `qmd://` URI is matched exactly. Otherwise it tries an exact `collection/path`, then an exact document `path`, then a path-boundary suffix `%/<name>`. The suffix match is anchored at a slash, so `NTAX.md` cannot select `SYNTAX.md`, and multiple hits at one tier are reported rather than silently truncated.
+`resolveCommaListName` (`src/store.ts` 5791-5846) applies a fixed order. A docid or exact `qmd://` URI is matched exactly. Otherwise it tries an exact `collection/path`, then an exact document `path`, then a path-boundary suffix `%/<name>`. The suffix match is anchored at a slash, so `NTAX.md` cannot select `SYNTAX.md`. Each tier either returns (one hit is a match, and two or more hits are an `Ambiguous path` error that lists the candidate `qmd://` paths, instead of picking one or using `LIMIT 1`) or falls through to the next tier when it has no hits. When every tier is empty the result is `File not found: <name>`, with up to three similar paths appended when `findSimilarFiles` finds any (`src/store.ts` 5764-5787).
 
 Each matched document is then checked against `maxBytes`. A document whose body length exceeds the limit is returned as `skipped` with a reason, not as an error (inside the row loop of `findDocuments`, `src/store.ts` 5849-5948). The MCP `multi_get` tool echoes a `qmd_get` hint for skipped documents, and it defaults `maxBytes` to 64 KB (`src/mcp/server.ts` 585-640).
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:53aca34b5598afe3300ba1a58324d1988784b007ad4bf4249c4e1a67b52320b1",
+  "pageVersion": "sha256:a22fac413307c3a7e39a15395cc7c548f0e4947f09f5e3f6dcb3719f11713c07",
   "claims": [
     {
       "id": "claim_b7a8351c0842406683eb8245910715fc",
@@ -174,11 +174,15 @@
     },
     {
       "id": "claim_83f9fbc5bffc4df887598cd2f6ab4b70",
-      "statement": "The CLI update command skips collections whose path lies outside an untrusted project-local config and runs a collection's update shell hook through bash only when hooks are allowed.",
+      "statement": "The CLI update command skips collections whose path lies outside an untrusted project-local config and runs a collection's update shell hook through bash -c (spawned via nodeSpawn with the collection directory as cwd) only when hooks are allowed.",
       "evidence": [
         {
           "resource": "repo://src/cli/qmd.ts#L941-L961",
           "version": "repo-lines-v1:sha256:211ac3f2e10ff3313e3c4d96638d23db143f0f657989203d68fac6dc0fe2aef3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyYWE4YWU4NTE3MDVhZGE2MGE4NDNiMzliNTUyYzE1NmIyZGYxYTQzNzRkOGRiNzdkMWViNmQyNWYwMmE3MmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiMzZlY2M3NTk3MDZjZGM3N2ZkNjkxZTJiNjlmNjY0YzU1NTY3ZjMwOGNiOGVkZjMxMTQ0Mzk4N2IwY2QyOGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0MzNhMTBmMTBjOTJiZTU0MmUwMjA4YTc4ZmYyMDgzZTdkOTViMjMxNTYyYzk2YWJmNTU0ZTVhMjVjZTRlMzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkNDAyMjA3ZjAxMTNlZDczYWNlZDY3YzVlNGIxNzI4OTkzZGRhNjc0NjRmODRjMTZhNmRkOWVlZjExMzUzMjQifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L964-L967",
+          "version": "repo-lines-v1:sha256:35b4e0ce2236d129cf1c36f7e7247d29f225517b7d2bb400554de278ac2082a6:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDI2ZWQ0MDk2Zjc3ZWEzZjJkOGFmNGE0ZjQxYzIyOWExNzFlMDg5ZmNhMzcwOGNiNmM2MjlkNTVhZTI2MDQ5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTljMTM1OTA2NjU2MzIzZDFjNWVhNDE2NTRlZTY2YWZiNTg1YWNkY2ZhZWFjYTEyMWQ1ZTMwYmYxOTNlZWRkNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWVhYzBhZTc2ZDY2MDRiMjliMGU0OGExNDBmOWRhOGY2YmY1N2ZhZmViNzhhOWQ1NDg0NDA5NDdmMjM1MTExNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjMxMjQ2ZGQwZmQ5MGVlMmE2ZWI0NTkxYmI0ZTk2NDAzZDQzOTk0YzQxNzFhYWUxM2UzMWVhNmVmYTFlNTYxNCJ9"
         }
       ]
     },
@@ -305,6 +309,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T08:48:37.585Z"
+    "at": "2026-11-07T09:11:07.517Z"
   }
 }

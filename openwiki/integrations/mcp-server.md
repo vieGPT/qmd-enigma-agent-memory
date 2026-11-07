@@ -5,7 +5,7 @@ description: Specifies the QMD MCP server built by createMcpServer and its five 
 tags: [mcp, tools, search, retrieval, stdio, http, metadata, integration]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T08:48:37.585Z
+    at: 2026-11-07T09:11:07.517Z
 sources:
   - id: openwiki-source-d7caacca970236de3bb29afe
     resource: repo://bin/qmd
@@ -25,7 +25,7 @@ sources:
     resource: repo://src/store.ts
   - id: openwiki-source-09c458968f6093bed518d28d
     resource: repo://test/mcp-stdio-lifecycle.test.ts
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T08:48:37.585Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:11:07.517Z" }
 ---
 
 # MCP Server and Tools
@@ -209,7 +209,7 @@ The `collections` parameter on `query` and `metadata` is an array of strings and
 3. `disposeLlm`, which the stdio entry leaves unset because the store disposes its own llama.cpp instance.
 4. `closeStore()`, which is `store.close()`.
 
-The function sets `process.exitCode` instead of calling `process.exit()` so that native teardown runs normally. A failing step is logged to stderr, the remaining steps still run, and the exit code becomes 1; an earlier nonzero exit code is preserved. The shutdown promise is shared by every trigger and never rejects. The stdio lifecycle tests cover ordering, idempotency, failure handling, drain deadlines, and exit codes ([`test/mcp-stdio-lifecycle.test.ts`](../../test/mcp-stdio-lifecycle.test.ts#L64-L270)).
+The function sets `process.exitCode` instead of calling `process.exit()` so that native teardown runs normally. Each step runs inside a guard: a thrown error is logged to stderr as a warning, and the remaining steps still run. A failing step sets the exit code to 1 even when an earlier nonzero exit code was already set. An earlier nonzero exit code is preserved only when every teardown step succeeds. The shutdown promise is shared by every trigger and never rejects. The stdio lifecycle tests cover ordering, idempotency, failure handling, drain deadlines, and exit codes ([`test/mcp-stdio-lifecycle.test.ts`](../../test/mcp-stdio-lifecycle.test.ts#L64-L270)).
 
 ### HTTP
 
@@ -224,7 +224,7 @@ The function sets `process.exitCode` instead of calling `process.exit()` so that
 - Tool argument errors (missing or conflicting `query`/`searches`, invalid `filter` or `match`, no files matched, document not found) return content with `isError: true`. They do not terminate the server.
 - The `query` handler never sends an unvalidated filter to the store; validation happens in the handler and again inside the store's `search` ([`src/index.ts`](../../src/index.ts#L489-L496)).
 - Instructions are the only search-related state the server caches. The server declares no cache hint for `tools/call`, so each tool call reads the current index.
-- Stdio shutdown never leaves a store open after stdin ends, and never calls `process.exit()` inside the teardown path.
+- Stdio shutdown attempts `store.close()` once after stdin ends, and never calls `process.exit()` inside the teardown path. If `store.close()` throws, the failure is logged and shutdown finishes without retrying, so the store can remain open in that case.
 
 ## Documented versus implemented defaults
 

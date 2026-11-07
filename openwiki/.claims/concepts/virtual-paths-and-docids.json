@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:ea96d35fe76f5460ad11b6c14926743924888d867135589cd8275c4e04afe995",
+  "pageVersion": "sha256:32e1d66bdfa12725c2e14fe45064e255f17c40cdc6ac775931e4c7e233a6daa4",
   "claims": [
     {
       "id": "claim_4ad1fab8ee774e36bd035cd406b9ae24",
@@ -224,11 +224,15 @@
     },
     {
       "id": "claim_74354847109041a6a77b0e06f17ce814",
-      "statement": "findDocuments routes a comma-separated list or a single docid through resolveCommaListName and everything else through glob matching; names that do not resolve produce File not found errors and globs that match nothing produce a No files matched error.",
+      "statement": "findDocuments routes a comma-separated list (a comma present and no *, ? or { characters) or an input that is entirely a docid through resolveCommaListName, and everything else through glob matching. A list name with no match produces a File not found error; a list name with several matches produces an Ambiguous path error listing the candidate virtual paths; a glob that matches nothing produces a No files matched error.",
       "evidence": [
         {
-          "resource": "repo://src/store.ts#L5849-L5948",
-          "version": "repo-lines-v1:sha256:d224caf7e1c59f621f76ac9b4f5b84777844ba7ccebf34a01fef719bf4f5ced8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzNDIxNWJjNjgyOWQyZGNjYTQwMTllMGNlODE0NWJjNTBhZDFiNmQ3NDdmYzkyMGE5NzE2ZTE4ZDkwMzA0NTdkIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIyZWViMjQ1MjhlY2NjMjg4ODc5NGQxZjFmMjQ3YjNmMzU0MDk3YjZkMWQ5N2JjNThhZjUwNjhlYTU5ZGQ5N2ViIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0MTVjZTQ0ZTZmN2U4YmNiOTkyYWE2NWJiNTcyN2E0OWJjMzRmNTY1ZjhmNmIzMzgwZmRiYjkxMWRiMzFmODg0In0"
+          "resource": "repo://src/store.ts#L5764-L5787",
+          "version": "repo-lines-v1:sha256:50befdea5bfdca0458eacb006962ac259b9915caf5b4e4ca18f57814e649c7b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiYTUyNjZhYWE0MmRhZTEwY2VkMjUyZTYzYWQxODg5NmMyZWY2NzNhMTUyNzM5NjY3ZDVjYWY3NTY3NTMwNGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0YmE1ZDg1YWJjOTQzZWNjNDdhNjE2ZDc0MmQ2NzM3MjY2MGM3ZjZlMzhiYjNiYTJhN2E3YWUyZDdhNTEwNWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2YzUyNGMzYzRhYTgxNDlkNWFkMzlmODg3YTNmZjQ4M2I0YTIwMmUwYjk2YTlmOTAwNWE1YjhkZDMzMzZlOTQifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L5854-L5901",
+          "version": "repo-lines-v1:sha256:c2e143a87dee3ed7bff8075b86076f055d6c9c7f155a88bf151519d6c6ce5809:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0ZWZjOTAzOTcwNjIwOTYyNjE3NTRmODE4Njk2YmU3MzYyYTQ4YTQyM2UxN2U2NzIwNGRiYWY5ODc5N2MxYmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzYjc1OWRiNWM3Njk2ODA3M2I3NmZhMGE1ZTNhODJiYjYxOWMwZGMwYmIxNjlkY2U4ZGFkMzJlMDA2OGRhZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4OTVhOWQ0ODgwYTA1ZmFjYWJmNzFhOTIxZDViYTI5MjYyMTczOTFlMjU4MzM2MWNmZGU1NTIyZDBmYTVkZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmYjA0YzdmYzQzYTBmZjY2MDA5NTI0NmQ0M2YwODk1ZmVjM2YwYzUyMjMxYmI1MDFiYzI5Y2FiOWQ0NzA0MGYifQ"
         }
       ]
     },
@@ -275,18 +279,26 @@
       "statement": "QMD stores literal filesystem paths rather than slugified ones, so names containing spaces, #, &, or brackets remain resolvable through toVirtualPath, --full-path, and get.",
       "evidence": [
         {
-          "resource": "repo://test/path-fidelity.test.ts#L1-L20",
-          "version": "repo-lines-v1:sha256:db8317f36f43883224c92a5b7610a663b8d13db549027be37363ff281f02fce8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwM2I1ZGQyZGY1ZmVkODdjZjQ5MzE2NDhhNGE5OTM0ZDViZjU3ZjliODA4OTVmNDA0NWNiMmNmZmYxYTI1OWUifQ"
+          "resource": "repo://test/path-fidelity.test.ts#L160-L187",
+          "version": "repo-lines-v1:sha256:c4c74336de9020059fb6c9c938712d63c9100d3960605ee8c8fb6f7e11ef68f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3NjJjMDJjNTJkMGU5MTlkMzE5MDAxNzcxMTUwZjE2YjY3ZTFjNThhYTE0NDNmNGQyYWIzMGMzOWRiYTM4MzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlMDcxZWI3Y2E4MzZlODQ5ZDk3Y2YzODhiODBiYTY2ZDM4YmEyNGZjNjNlODU1ZmRhMTJmZGUyYjY4MzE5MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5MTk4MmM5ODYwMjk0OTgyZjc4OTdmYzg3NDY0Mjc2YmMzZjM5YmFjMWI4ZDM5ZmQyODVhMTFkZmY3ZTc5MmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiNGQzZWZiY2RlMmE2NTFiYTUzYTgxNjc3ZWM2YTgxNjZmYzRlNTAxOTY3NWJmMjg2ODM5ZDdiY2IwMGRjNWEifQ"
         },
         {
-          "resource": "repo://test/path-fidelity.test.ts#L191-L200",
-          "version": "repo-lines-v1:sha256:8344de648b28a3d3ea401d9422680e4b0b4784b06b992744a79f80d55fcd2755:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyNDg2NGMzNTQ2YjNiYmFhZTYwMGM5Yzk3ZTdkMjg5ZDNiNzBmYWZmMDg4MDcxOTAyMjgxYWVkYmQ2M2U5ZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmFmMGExZmI5OGQ5YzMzZmYzNjUyOWU2OWZjZjZlYWJjYjMyNTRmYjdmYjJhMWM3MjVhMjMxMDE4NjNkYmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiNGQzZWZiY2RlMmE2NTFiYTUzYTgxNjc3ZWM2YTgxNjZmYzRlNTAxOTY3NWJmMjg2ODM5ZDdiY2IwMGRjNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlZGJhOWE2NzVkODk3MTA3YWJkMTBmZWQ4Zjk3OTZlYWVhOTk5MWQyYmRiODE4MTNmNTE2ZTc3MzM3MTRhMWMifQ"
+          "resource": "repo://test/path-fidelity.test.ts#L191-L204",
+          "version": "repo-lines-v1:sha256:85e33876ea2471d4486124a1849c5ff2a4e98b9b1c7e7610e948dd97d3cad7b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyNDg2NGMzNTQ2YjNiYmFhZTYwMGM5Yzk3ZTdkMjg5ZDNiNzBmYWZmMDg4MDcxOTAyMjgxYWVkYmQ2M2U5ZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3NGY2NWVkNGE5MTZhZDM5ZDY1NzNiODk3NDhiMTFlZWNkZDQwMTNmMjAzZjlkMzFkZmMzYWI3ZjEzMTkwMzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiNGQzZWZiY2RlMmE2NTFiYTUzYTgxNjc3ZWM2YTgxNjZmYzRlNTAxOTY3NWJmMjg2ODM5ZDdiY2IwMGRjNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3NzlkMTE4ZDZlM2NiZjQ1MDUzOTc0OGRlZTdhNDMwN2FjYmU2NDQ2Y2JhMjk3ZjI3NjBmYTVkMGJiYTFiYzIifQ"
+        },
+        {
+          "resource": "repo://test/path-fidelity.test.ts#L245-L262",
+          "version": "repo-lines-v1:sha256:5ca0b0f1734b0590b5215a6901453d0a66059b8627cf6a3ff954551f78d3b4c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzZjYyMzRjMTgwMTliZmQyNTI2OTM3ZWMzNzQ5MGY2MzBkNWEzZGU1YTQzOWZmYjc0ZDNhNWM3MzA3YjI4N2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkMTY4ZWZmZDFiMDI1NjQwOGNkNGYyNzhmMTdmYmU0MTc4ZDk5ZDBiYTlmMDljMDZkZjRjZjNhMmYxZmI4NTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiMWQxMjE5ODBiMWFjMjlkNzkzNWMwYjE0NDJlNTFlMDk0MWMxN2YyODM5ZmQwNTEzNjE3YjUwNTg5MDQxNWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVjZDk3MDI4MjZjZjE3ZDFkODRjYTE2MzcxMjVkMzFkMGE3NjJmYzIxMzk4MjZjMTg5YzMyNjEwZjk4YmZhMWQifQ"
+        },
+        {
+          "resource": "repo://test/path-fidelity.test.ts#L264-L283",
+          "version": "repo-lines-v1:sha256:eeaf4bf510d2bcfc70a2a186584d491077d12d8f8ffaef978cc02ff0a3253967:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwZWE1ZTgxNmM4NzM3NzZmY2Y5Nzk0MzExMWU3ODA1MTM3ZDQ4YWNjMTk4MWM0MjI1Y2JiM2RkNDMyYzVkN2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlYzFlODY4NTFlMTk0Y2RkNDVkZWU0ZmVkY2E2NWY0YTYxYjY4YjQ0NjcyYzRmZTljMTBhOTRhYmFjZGUxOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg2OGE4MmE5N2E3YWZjYTE4MTY3ZTk5NzU1OGYzMmIzYTZiNTNhOTVhM2FhMjkyMjQyMGUzZjc3Y2ZmYzc2YjQifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T08:48:37.585Z"
+    "at": "2026-11-07T09:11:07.517Z"
   }
 }

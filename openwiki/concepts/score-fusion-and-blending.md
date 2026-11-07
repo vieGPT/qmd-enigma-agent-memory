@@ -5,7 +5,7 @@ description: Explains the scoring math behind hybrid query - backend score conve
 tags: [search, ranking, rrf, reranking, score-fusion, hybrid-query]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T08:48:37.585Z
+    at: 2026-11-07T09:11:07.517Z
 sources:
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md
@@ -23,7 +23,7 @@ sources:
     resource: repo://test/rrf-trace.test.ts
   - id: openwiki-source-e24288993dd7e95050aee22f
     resource: repo://test/store.test.ts
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T08:48:37.585Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:11:07.517Z" }
 ---
 
 # Score Normalization, RRF Fusion, and Position-Aware Blending
@@ -82,7 +82,7 @@ The weight depends only on `queryType`, not on list order. The doc comment state
 
 ## Candidate limit
 
-`RERANK_CANDIDATE_LIMIT = 40` (`src/store.ts` lines 480-482). `hybridQuery` and `structuredSearch` default `candidateLimit` to this value (`src/store.ts` around lines 6271 and 6689). The fused list is sliced with `fused.slice(0, candidateLimit)` before chunking (around line 6402). Only these candidates reach chunk selection and reranking. The MCP `candidateLimit` schema description states a default of 40 (`src/mcp/server.ts` lines 408-410), and the CLI help says the same (`src/cli/qmd.ts` around line 2547). The README's "top 30" is stale.
+`RERANK_CANDIDATE_LIMIT = 40` (`src/store.ts` lines 480-482). `hybridQuery` and `structuredSearch` default `candidateLimit` to this value (`src/store.ts` around lines 6271 and 6689). `structuredSearch` slices its fused list with `fused.slice(0, candidateLimit)` before chunking (`src/store.ts` lines 6786-6794), and `hybridQuery` does the same around line 6402. Only these candidates reach chunk selection and reranking. The MCP `candidateLimit` schema description states a default of 40 (`src/mcp/server.ts` lines 408-410). The CLI's `candidateLimit` option type carries a comment with the same default (`src/cli/qmd.ts` around line 2547); this is an internal option comment, not rendered help output. The README's "top 30" is stale.
 
 ## Chunk selection before reranking
 

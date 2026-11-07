@@ -5,7 +5,7 @@ description: How QMD extracts qmd.metadata frontmatter into indexed rows, valida
 tags: [metadata, filtering, frontmatter, discovery, search, sqlite, mcp, http, sdk]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T08:48:37.585Z
+    at: 2026-11-07T09:11:07.517Z
 sources:
   - id: openwiki-source-ca6cb4b1a14fd7969dfae3ec
     resource: repo://CHANGELOG.md
@@ -31,7 +31,7 @@ sources:
     resource: repo://test/metadata-search.test.ts
   - id: openwiki-source-023a74064508de69470c98e1
     resource: repo://test/metadata-surfaces.test.ts
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T08:48:37.585Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:11:07.517Z" }
 ---
 
 # Metadata Filtering and Discovery
@@ -46,7 +46,7 @@ Metadata filtering lets a caller narrow search to documents whose frontmatter ma
 | Persist metadata rows | `src/metadata-store.ts` | `document_metadata` plus one row per scalar value |
 | Validate untrusted AST | `src/metadata-filter.ts` | `parseMetadataFilter`, `parseMetadataMatch` |
 | Compile AST to parameterized SQL | `src/metadata-filter.ts` | `compileMetadataFilter`, `compileMetadataMatch` |
-| Apply filter to search | `src/store.ts` | FTS and vector legs, metadata attached after fusion |
+| Apply filter to search | `src/store.ts` | FTS and vector legs filter before fusion; metadata attached after selection |
 | Discovery report | `src/metadata-store.ts` | `listMetadata` and collection overviews |
 | Text rendering | `src/metadata-format.ts` | Shared by CLI and the MCP `metadata` tool |
 
@@ -162,6 +162,8 @@ A condition only ever compares values of its operand's type. A string `eq` never
 - `candidates` compiles each condition to a correlated `EXISTS` over `document_metadata_values`, used when search checks its results.
 - `corpus` compiles each condition to an uncorrelated `IN (SELECT document_id ...)`, used when discovery counts documents. SQLite evaluates it once per statement and probes it per document.
 
+Each typed condition carries a `columns.type = '<type>'` guard, so an operand compares only against stored values of its own type. The parser has already enforced the shape that the compiler relies on: ordered operators reject booleans, and a membership array is non-empty, homogeneous, and de-duplicated before its first element selects the type guard.
+
 `compileMetadataMatch` compiles a match against a single `mv` row. For `key` the column is always the string `'string'`, so a number or boolean operand never matches. `key` and `value` text columns are compared directly.
 
 ## How filters enter search
@@ -175,16 +177,17 @@ flowchart TD
   B -- "valid" --> C["compileMetadataFilter in candidates or corpus scope"]
   C --> D["FTS leg filters documents in SQL"]
   C --> F["Vector legs restrict rows to eligible documents"]
-  D --> G["RRF fusion and reranking"]
+  D --> G["RRF fusion of file, title, and body"]
   F --> G
-  G --> H["attachResultMetadata loads metadata in one batch"]
+  G --> R["Chunk rerank, or skipRerank keeps RRF order"]
+  R --> H["attachResultMetadata loads metadata for selected results"]
 ```
 
-Caption: validation happens once at the surface boundary, and the filter reaches both legs. Metadata is attached only to the final results.
+Caption: validation happens once at the surface boundary, and the filter reaches both legs before fusion. Reranking is optional, and metadata is attached only after the final results are selected.
 
 - **Lexical leg.** `searchFTS` in [src/store.ts](../../src/store.ts) adds `dm.extraction_version = current AND dm.extraction_error IS NULL AND <compiled filter>` to the query. When a collection scope or a filter is present, the FTS match CTE is `MATERIALIZED` and has no inner `LIMIT`, so the filter sees the complete match set. An unscoped query keeps the inner `LIMIT`.
 - **Vector leg.** `searchVec` first restricts to collections that hold an eligible row (`metadataEligibleCollections`). `knnVecScanner` then adds `rowid IN (eligible rows)` inside the vec0 scan, so the nearest-neighbor search runs over eligible rows only. `vecDocumentResolver` applies the filter a second time on the document join, because a content hash can belong to both matching and non-matching documents.
-- **Hybrid query.** `hybridQuery` passes the same filter to `searchFTS` for the strong-signal probe and the expansion legs. `attachResultMetadata` runs after RRF and reranking, so `metadata` is not duplicated through fusion.
+- **Hybrid query.** `hybridQuery` passes the same filter to `searchFTS` for the strong-signal probe and the expansion legs, and to `searchVec` for the vector legs. Raw FTS and vector rows already carry `metadata`, but the fusion mapping copies only the file, display path, title, body, and score into its ranked lists, so metadata does not survive fusion. Filtering therefore precedes fusion, while reranking is a later, optional step. After candidates are selected, both the reranked path and the `skipRerank` path return through `attachResultMetadata`, which loads metadata for the final results in one batch. `structuredSearch` follows the same order, with its own `skipRerank` and reranked returns.
 
 ### Top-K completeness is best-effort
 

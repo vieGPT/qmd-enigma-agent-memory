@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:e91cc4db15142678a61ffcc68a4c0f94ab798b903bfcd6c6921e78fac23f6472",
+  "pageVersion": "sha256:15073f9809ce5ef9b3da536cfc8c7608b00facd9d89de0de8831cd0247d06a62",
   "claims": [
     {
       "id": "claim_ad4dcc1b680b439d9696c751be8537ca",
@@ -395,10 +395,28 @@
           "version": "repo-lines-v1:sha256:42a801db2dc293d605b2079b9e13f91e841105fab5d42b0e7d1b529e9a3f4a40:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwMzhkNmUzNjc1MTVmNDZmM2ZmMTU0NmRmODU1NmViYzg4NTVmOWYyN2Q0ZGZmMTc0NmE4MDNiYzhkNTkzZjNmIn0"
         }
       ]
+    },
+    {
+      "id": "claim_152323566b0041a6bf243bab676ff8ac",
+      "statement": "The embedding fingerprint's query probe is the constant EMBED_FINGERPRINT_PROBE_QUERY with the fixed value \"__qmd_embedding_query_probe__\"; getEmbeddingFingerprint passes it through formatQueryForEmbedding for the active model, so the fingerprint captures the model-specific query prompt wrapper, and a change to that wrapper changes the fingerprint even when the model name and chunk sizes are unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L99-L106",
+          "version": "repo-lines-v1:sha256:b64b02880fbc308d63c4bd0f1cc10fe6f4e2cc464583f018bba580330de28d03:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTc3NDc5NmMxOWMyMmM1ZDI3NDUxOGUzYTIwYTQ3MjQxNzNkYWY3YjVjMWNkMDk3YThjODMwMTY4MGE5YjhmZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzk1OGI2N2QxNTNmODdjMzNlMmZmNTQ5NTQ5ZmNiNjA0YTM3MmIzMDgxODVmOGI5YWY2MTdiNGVlZjcxNWZiYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDgzYmU4NzIyMWM3ODNhZmFhYzdkYWEwYjU1YTU5NTU2YzlkNDYzNzNlOTZkZGMyYWQ5ZjRhYWIyZTU0MDEyZCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L160-L160",
+          "version": "repo-lines-v1:sha256:abba0f7d39b76b9165db91967557224457473607f314b1eceab787bbedf25d23:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWJiYTBmN2QzOWI3NmI5MTY1ZGI5MTk2NzU1NzIyNDQ1NzQ3MzYwN2YzMTRiMWVjZWFiNzg3YmJlZGYyNWQyMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWJiYTBmN2QzOWI3NmI5MTY1ZGI5MTk2NzU1NzIyNDQ1NzQ3MzYwN2YzMTRiMWVjZWFiNzg3YmJlZGYyNWQyMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWE0MWMzYWQyZGYzNzlhYjYzZDQ1NGJkMjkwZWQyZWQ0MzhkNTI0ZjJjMWFiZmUxODUwMTFhMTA1OGQxODBiMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWFlMDM3NDQ5YWRhNzZjYzI1OWYyMDY0Y2FiMjU4NzE4ZGIzYjlmZWQyZmVjNWExNmZjMzAwYzJjNzM5MTg0MSJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L175-L186",
+          "version": "repo-lines-v1:sha256:564388f255724a73dcd87b032bfe65f3e1f1ce0d9db8615dbc247181669a60ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmYjY2MzRmMTQ3N2EyNGEyYmMzNWQ1Nzk0N2E0OGY3OTA0NTk0YWM4OTQyZmU5ZTdkNzNlMzJhMjJiNDkzN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViMmFkODJhM2I1ZDdlZWFjZjQwOWM2MzZkMTkyNWRiMDhlYTVhNmU2NGY3MjZmZjIyYWY4MDY4NjZkYzY2YjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyMjY0MTk5YTYyOWY3Yjk1MTFlZmEzNzdmNTM5NTYwYzZhNjA3MjU2MDg5ZTUwODFiMTJkZWI0NGRiNWZkNmUifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T08:48:37.585Z"
+    "at": "2026-11-07T09:11:07.517Z"
   }
 }

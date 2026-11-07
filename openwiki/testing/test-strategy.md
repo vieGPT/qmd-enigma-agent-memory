@@ -5,7 +5,7 @@ description: Maps QMD's test suites (Vitest under Node, Bun test with a preload,
 tags: [testing, vitest, bun-test, ci, github-actions, oxlint, typecheck, package-smoke, evaluation, test-strategy]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:11:07.517Z
+    at: 2026-11-07T09:17:50.280Z
 sources:
   - id: openwiki-source-164e2da859b5277df81c7d94
     resource: repo://.github/workflows/ci.yml
@@ -53,7 +53,7 @@ sources:
     resource: repo://tsconfig.build.json
   - id: openwiki-source-fbadcd8591b65031efaaedce
     resource: repo://vitest.config.ts
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:11:07.517Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:17:50.280Z" }
 ---
 
 # Testing Strategy and Verification
@@ -144,7 +144,7 @@ Each group below names representative files only. Lists are not exhaustive.
 | MCP | Tools, resources, and prompts; HTTP origin guard; PID and stdio lifecycle | `mcp.test.ts`, `mcp-origin-guard.test.ts`, `mcp-pid.test.ts`, `mcp-stdio-lifecycle.test.ts` |
 | SDK | The public `@tobilu/qmd` library API, tested with inline config and no YAML files | `sdk.test.ts` |
 | Metadata | Predicate grammar, metadata persistence and reindex cascades, discovery, and output formatting | `metadata-store.test.ts`, `metadata-filter.test.ts`, `metadata-filter.test-d.ts`, `metadata-search.test.ts`, `metadata-cli.test.ts` |
-| Trust | Project-local `update:` hooks and local config are skipped when run unattended unless that exact set was previously approved | `update-hook-trust.test.ts`, `local-config.test.ts` |
+| Trust | Unattended runs skip a non-empty project-local `update:` hook set that has not been approved, unless `QMD_TRUST_UPDATE_HOOKS` or `QMD_TRUST_LOCAL_CONFIG` is truthy; an empty hook set returns `run`. The user's global config is never gated. | `update-hook-trust.test.ts` |
 | Chunking | Break-point selection, AST-aware chunk boundaries, and code-fence handling | `ast.test.ts`, `ast-chunking.test.ts` |
 | Search evaluation | Known-answer quality checks for BM25, vector, and hybrid RRF retrieval | `eval.test.ts`, `eval-bm25.test.ts` |
 | Bench | Fail-fast checks for missing or empty collections, and scoring | `bench-guard.test.ts`, `bench-score.test.ts` |
@@ -152,7 +152,7 @@ Each group below names representative files only. Lists are not exhaustive.
 
 Some representative assertions worth knowing:
 
-- The Trust group guards against remote-controlled shell execution. `update-hook-trust.test.ts` exercises `decideHookGate` for the `update:` hooks of a project-local `.qmd/index.yml`, which arrives with `git clone`. An untrusted hook set is skipped when no one can be asked ([update-hook-trust.test.ts](../../test/update-hook-trust.test.ts) lines 156-160, with `isInteractive: false`), and prompts on a terminal (lines 151-155). A hook set whose digest was previously approved runs unattended (lines 161-171). The user's own global config always runs (lines 146-150). Editing an approved command re-arms the gate (lines 172-183). `QMD_TRUST_UPDATE_HOOKS` set to a truthy value opts unattended runs back in (lines 184-193), while `0`, `false`, `off`, `no`, and an empty value do not (lines 195-204). The gate logic itself is in [trust.ts](../../src/trust.ts) lines 283-303.
+- The Trust group guards against remote-controlled shell execution. `update-hook-trust.test.ts` exercises `decideHookGate` for the `update:` hooks of a project-local `.qmd/index.yml`, which arrives with `git clone`. An untrusted hook set is skipped when no one can be asked ([update-hook-trust.test.ts](../../test/update-hook-trust.test.ts) lines 156-160, with `isInteractive: false`), and prompts on a terminal (lines 151-155). A hook set whose digest was previously approved runs unattended (lines 161-171). The user's own global config always runs (lines 146-150). Editing an approved command re-arms the gate (lines 172-183). `QMD_TRUST_UPDATE_HOOKS` set to a truthy value opts unattended runs back in (lines 184-193), while `0`, `false`, `off`, `no`, and an empty value do not (lines 195-204). The source also accepts `QMD_TRUST_LOCAL_CONFIG` as an opt-in, which this suite does not exercise. An empty hook set returns `run` before any trust check. The gate logic itself is in [trust.ts](../../src/trust.ts) lines 283-303, with the empty-set and opt-in checks at lines 293-296.
 - The MCP origin-guard tests cover DNS-rebinding protection for the HTTP transport. Predicate tests run everywhere. Live-server tests start `startMcpHttpServer` on an ephemeral port and send spoofed headers. See [MCP Server](../integrations/mcp-server.md).
 - The Bench guard tests check that `assertBenchCollectionReady` throws for a missing collection, a collection with zero indexed documents, and an empty index with no collection name. See [Benchmarking](../operations/benchmarking.md).
 - The packaging test checks that the `tree-sitter` grammar packages are required dependencies rather than optional ones, that the `test:*` scripts are wired as described above, and that the Nix `installPhase` copies `skills/` next to `src/`.

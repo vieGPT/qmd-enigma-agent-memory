@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:fb137f57c578d52b05f690e5aaa3034885d7127efab8e06b408f512150aa22b0",
+  "pageVersion": "sha256:caa119dc4979126ec215e8ea014f2aa3018f356c50828cd2c856c4eac372b593",
   "claims": [
     {
       "id": "claim_d48dd003cdb54f93a79b623238af1277",
@@ -236,23 +236,31 @@
     },
     {
       "id": "claim_3720fb0be3f74c538cc6ae67287e0831",
-      "statement": "The bench harness runs each fixture query against four backends (bm25, vector, hybrid, full) and scores each result with scoreResults (precision at k, recall, MRR, F1). runBenchmark calls assertBenchCollectionReady after opening the store and before the query loop, so a fixture collection that is missing, or has no active documents, throws before any search runs; with no collection named, the run fails only when no collection has indexed documents.",
+      "statement": "The bench harness runs each fixture query against four backends by default (bm25, vector, hybrid, full), with options.backends selecting a subset, and scores each result with scoreResults (precision at k, recall, MRR, F1). runBenchmark calls assertBenchCollectionReady after opening the store and before the query loop, so a fixture collection that is missing, or has no active documents, throws before any search runs; with no collection named, the run fails only when no collection has indexed documents.",
       "evidence": [
         {
-          "resource": "repo://src/bench/bench.ts#L167-L195",
-          "version": "repo-lines-v1:sha256:05a90f5c355eb736a73e3194bf9711b34073858cda17709ff0638b5f5197d8aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YmJiODEzZjAxOGM2OGNmODk1MDg0MDI1NzVjNjcwZDNiN2YzNzdmMjA5NzkyMDVkYWE3MzBjMTExYjA2ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOWUxMjU0NjQyNTU3NmQzZGVhZThjOWI5ZGJmMTI4ZDVkNmRkYWY1ZDdmZTg1NzkzNDkyN2RlZmZhM2I5ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4YTkxNzU5NzJmZTE1ZTJhOTY0MWFiMTMxZjU3MWU2YzdjYWJjYTA2ODM3NjJlYmE1ZjIzNTNlNDgzYzNkNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyNDgzODY1YmJkYTlmMGU1YTNiY2U2NzYzOWJlNGM0OWQyOWYxMDZkOWQ0MjRmZDExOGFmZjk4MDhiZjY1NzIifQ"
+          "resource": "repo://src/bench/bench.ts#L108-L165",
+          "version": "repo-lines-v1:sha256:1e80b7179920d928c896ad5be3bfc8ee9c92f705513d5b687cba6cbcf76893ab:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzN2E3ODc2N2M5MDRmMGZmZGJlMTAwZjIyZWNjZWE1MDU2YmM0NTkyY2FkYWE4MDQ3M2IzMDk2MjllMzQ1NjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMmQyYzBkNmRjNWU3NGQ5MmZhMTRiOTFkYmVhMjY0MDkwYmViMzVmZGI5MTg4ZDliMzQxMTgxZGNlOWY0Y2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyNzliNjgwNTIwZWQ1MjZkY2M0YzhhYTM3MzUyNzU5MGUyODE5NWU0MGZiZTYxMDdlMWU1YjQ5NWE0NTc3MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxMDVmZGYwNmE2YmQ0ZTRhOGU5ZjdkZDU3YzY5Zjg5NzVkZTdkYjk2OGVmYTJkM2ZhZTQyMDJhZTI3ZDkxZGUifQ"
+        },
+        {
+          "resource": "repo://src/bench/bench.ts#L198-L206",
+          "version": "repo-lines-v1:sha256:9473db3230d76f348bcf04adc2a2e3d867fb4e798406a7f332b8157464afcdfd:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQwNDEwNWI0ZTY2YTIzMDhjMTdmNjJmZjM0YzEwZTVlZDYyZjRlNGJhZTg2ZjQ2YjcyYTIxNTRlNTQ3NGU3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhMmNiMjVhMTIyYjQ0MjIxYTYyMzRlYzY2MGE3YjVmYjdmOWJkZTdiM2I5ZTJiM2M1NTlhMGQ5NmZhYzczOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmVlZWZkZDUxMTNkOTkwNTZmMWUxOWRlMWI3ZDViZWRlNmUwYTMwMWY5ZThmN2JlNGVhZDNmOGY4ZGE4NjZjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmJmZDc0M2EyMzc2ZTI0YmYwZWFiYzYyODY4MDQ4ZDQwZDA5MjM2ZjZkM2UwODY0MmEzM2EzZTY0ZjQxMGQ0OCJ9"
         },
         {
           "resource": "repo://src/bench/bench.ts#L283-L310",
           "version": "repo-lines-v1:sha256:89b326542d21d350f46aae27b5c6625515bed1e253deb06f17b9046fb324b7f0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyOWI3ODRiYzlkM2ViYTc3ZTNlNDBjN2YyN2U5YzQ4NDQxOTRkNTY5ODBlYzE3YTM5N2VjNGIxYTAzZDdiMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmZjQ0YjRhOWE4MjQ2ZDYzNTFjMjZhMThkZDc3OTc0N2RlZTI2ODhkNjc0NzVjNDhmZTk3ZDlkOTI1N2I2MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2YzQ3MWVmOWNhZTQwYmNjMTMzM2QxOTljMGY5Yzg4OWU5M2I0ZmNjOGI0MDY5MTU3NTczZjI5MjE0MjI2MzUifQ"
         },
         {
+          "resource": "repo://src/bench/bench.ts#L351-L371",
+          "version": "repo-lines-v1:sha256:7057a2bc6f9e1fe5634ce7067e4f6615166189a66a0579eb1330f7daccbcfc38:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkZGFlYjk0ZTc4Y2Y4YjA0NGEwMWE5OTNjZjNiZTJlZjFlMDY4ZTY0NmY2MGM5MDdkMTIwNGFiZWJhYjU5ODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiODFjODNlYWRjMzVjOTFiODc3ZTUyMjY1NGFiZmE2MzI3NDc2ZWQxOWNjOWJlZDAyNjU3ZmU4YWU1MDQyNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3M2Y0YmU3NzRmMWVkN2U0NWExMGVmZDk0NGJhZjBhMzQwYTU5YzAxYTU5MDA1ZTdlOGEzNGZhN2NkMjM3ZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2MDMzZDNjMWU3NGVkNjkwZWRmMDcwY2JhZWM3MzQwZjNhNTgyZjlmOWRlNjQ3NzkxYWIxNTZmY2VmZDU4NTUifQ"
+        },
+        {
           "resource": "repo://src/bench/bench.ts#L359-L364",
           "version": "repo-lines-v1:sha256:80764bbcea61f909343fa3182fa6f4f9da5e0a352bcc78c96be3bee67491795e:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDY1OTVmNGVlNWZmNjNkNTA5NTA0MTlkYzM0NDE0NTEzODUxZGM5NzM2ZmQxN2E0ZjdiZmE5MzBiMjYxYjZmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjhiMDFiYjA1YjZiNzQ3OGU0MjA1NDA2ZTc2NzlkZDNkYTRhM2NhY2Q3NTc3MmQ3ZmViYTE3YTliODhjYmYxMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2Q1N2M1Y2MwMjljMTlmZjkwYmYyZDJlNWJjODQ5OGVkY2Y3ZTg2OWJhODcyMTg3MGUxNWNlYWEyZWFjODgwZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmFhMzNmMTU1MzFlZGY5OGUzODNmZmNjNjgxMzBkZDJkYjZjYTI2YjIwYmRiZGI2NmUwNzEzM2ExNWE5ZGUxMyJ9"
         },
         {
-          "resource": "repo://src/bench/score.ts#L1-L30",
-          "version": "repo-lines-v1:sha256:611806a74e4fa3ede13c1a9571aa66287cdc5371694a2d1426cee5aa7b310872:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUzYzAxYjE4Mzk3MjU5YjE4OGQ5OThkZTRiZTlkOWI3YjE1NDgyYzNhZGVmODVhNGM4YTAyZGY4NDRmOTZkYjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2MmM0ZmZlZGM1NzYzNTZmYzllZGE5N2E2NTY3MzU1YTFiOTZkNzQ3NTk0MTEyMWM0ZTcxMDY5ODYyZDQ4NjYifQ"
+          "resource": "repo://src/bench/score.ts#L61-L110",
+          "version": "repo-lines-v1:sha256:75ba9fb252ffa6742f758ef07e6f65a0f2a0a82b0f5e59b17efc68433b5372f6:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MzU4YTU4NjRkOTQ2ZGUyNmQwMWE4ODE1NzJiNjQyMGZlNWJlMzBjZjM2NDljZGM2Y2ZkNTkyN2U0ZWM4Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwOWZhNWRkYmFmN2FiYWVlMWNiNjljNTRlNmNlNWMwNWEwODhmN2ViNzQzNDYwZmMwODNlYWVkZjI0Y2VmNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
         },
         {
           "resource": "repo://test/bench-guard.test.ts#L123-L172",
@@ -300,25 +308,25 @@
     },
     {
       "id": "claim_59bef49dcea6496786053d5801a2f2ff",
-      "statement": "In the bench harness, an exception thrown by a backend inside runQuery is caught and recorded as a zero-score result with all expected files unmatched, so a per-backend failure does not stop the run. The only run-level signal for an all-zero summary is a stderr warning from allZeroBenchWarning, which does not change the exit path.",
+      "statement": "In the bench harness, an exception thrown by a backend inside runQuery is caught and recorded as a zero-score result with all expected files unmatched, so a per-backend failure does not stop the run. An all-zero summary is reported only by a stderr warning from allZeroBenchWarning; runBenchmark still returns the result normally, and the warning does not change the exit path.",
       "evidence": [
         {
-          "resource": "repo://src/bench/bench.ts#L167-L195",
-          "version": "repo-lines-v1:sha256:05a90f5c355eb736a73e3194bf9711b34073858cda17709ff0638b5f5197d8aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YmJiODEzZjAxOGM2OGNmODk1MDg0MDI1NzVjNjcwZDNiN2YzNzdmMjA5NzkyMDVkYWE3MzBjMTExYjA2ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOWUxMjU0NjQyNTU3NmQzZGVhZThjOWI5ZGJmMTI4ZDVkNmRkYWY1ZDdmZTg1NzkzNDkyN2RlZmZhM2I5ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4YTkxNzU5NzJmZTE1ZTJhOTY0MWFiMTMxZjU3MWU2YzdjYWJjYTA2ODM3NjJlYmE1ZjIzNTNlNDgzYzNkNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyNDgzODY1YmJkYTlmMGU1YTNiY2U2NzYzOWJlNGM0OWQyOWYxMDZkOWQ0MjRmZDExOGFmZjk4MDhiZjY1NzIifQ"
+          "resource": "repo://src/bench/bench.ts#L167-L206",
+          "version": "repo-lines-v1:sha256:81789cb1414390870ce16ca9a5c34ff72c6be8aee54be2faee931f9f8d244f92:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YmJiODEzZjAxOGM2OGNmODk1MDg0MDI1NzVjNjcwZDNiN2YzNzdmMjA5NzkyMDVkYWE3MzBjMTExYjA2ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4YTkxNzU5NzJmZTE1ZTJhOTY0MWFiMTMxZjU3MWU2YzdjYWJjYTA2ODM3NjJlYmE1ZjIzNTNlNDgzYzNkNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiZmQ3NDNhMjM3NmUyNGJmMGVhYmM2Mjg2ODA0OGQ0MGQwOTIzNmY2ZDNlMDg2NDJhMzNhM2U2NGY0MTBkNDgifQ"
         },
         {
-          "resource": "repo://src/bench/bench.ts#L396-L400",
-          "version": "repo-lines-v1:sha256:f7a59d6d60123a1af12853c800020f20fdc2c538db438c05a78c0c901744605c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhMmNiMjVhMTIyYjQ0MjIxYTYyMzRlYzY2MGE3YjVmYjdmOWJkZTdiM2I5ZTJiM2M1NTlhMGQ5NmZhYzczOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzdiNGEwZGMzN2MyYmUzNGI0NGYwNmRkMTE1M2JkMTY4MzU3MTJlY2VmZjllYzM4OTE2ZGRlZjg1NmNjMWYwMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjk1MmRkNjc5NTViYjg0NjI4N2NjMmRkOTUyMTcxY2I4NDI4NzFiOWMyMzg5MWIyYjg4ZDVjYWZhYTFiNTVjNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzE3ZGJhNmY2MDNkM2JkZjNmYjg5OWYyOGIyYWE4NjQ5NzljYmU3ZmE5YmU2ZWQ2YjFlZTZiZTE4MDQ3MTY2MSJ9"
+          "resource": "repo://src/bench/bench.ts#L398-L419",
+          "version": "repo-lines-v1:sha256:da4f74a4d639d99588c2b449b742d06ff89923a5493fab55779f673947844f0d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5NzhlNTI0MDcwNjE5MjZhNTY1OGNkNmNjYWEzYTIwZmE1OWRmNGJkYjI5MTI0ODJhMjE2NjgwNTQ3ZjQzNDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzZjNiMzVjZWEwNzczN2Q1NmUxZjA1MzMzMzFiOTVjNjRiZTViOWY5ZTVhZDM1NTY3YWQzZGRhYzI4MjA4NmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         },
         {
-          "resource": "repo://test/bench-guard.test.ts#L173-L209",
-          "version": "repo-lines-v1:sha256:5803c277e7a5f8b52425053d62fed4fc990eba05d8c92f03f8bbd4c7effcdb57:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmNWEyNjAyYzdiOGYzMDZjNTYwZDUyMTY0MjI5NzgxZTczODFkMWFmZDM0NjRkMDMzNWYwZGMwMGRkYWE5YzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3OWExZjFlM2U1OTA5Yjg2NmE1ZTRjMDA5OGVjZTI3YTgyZGRlZThjZmRkY2ZmODdkMTcxY2YzY2Q0YjY0OGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "resource": "repo://test/bench-guard.test.ts#L178-L204",
+          "version": "repo-lines-v1:sha256:df5c0947bf6258b2808e162ed093eff1df47ab3c4fa6acdf9d09e456fed590b3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4YTE1YjZmNTlkODgzYjc0YTljMTM1MWQyMDI1ZjIzZDZlMDZlMjI2OGNhYjkyYmVmNDEzZGQ0ZTlmNjlmM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxNDU4ODA4NjI3NWRmZmIxODQwMmY3NzJiMDZmMDc2YmQxYzk3MDEwZGM0YzU0ZTk5ZmU5ZDBhN2UyYjg0ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyMGZjOWU2N2RiMDdlZDIzOWJiM2FkMjMxMmVhYWI5YTcwZTFmNmZiYTAxMjg4YjBiYTZlNjFkN2Y4ZWU3ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyM2NkMTllNmU2YWM2OTRhMDdiMjgyNDhiZjM3OWVkNDBkMmFiOGY5NjJlMzRhMDc4MzczNzVhMjZlMTllY2YifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:11:07.517Z"
+    "at": "2026-11-07T09:17:50.280Z"
   }
 }

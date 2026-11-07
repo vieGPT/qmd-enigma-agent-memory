@@ -5,7 +5,7 @@ description: How QMD extracts qmd.metadata frontmatter into indexed rows, valida
 tags: [metadata, filtering, frontmatter, discovery, search, sqlite, mcp, http, sdk]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:11:07.517Z
+    at: 2026-11-07T09:17:50.280Z
 sources:
   - id: openwiki-source-ca6cb4b1a14fd7969dfae3ec
     resource: repo://CHANGELOG.md

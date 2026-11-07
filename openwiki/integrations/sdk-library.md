@@ -3,10 +3,9 @@ type: "Reference"
 title: "SDK / Library Usage"
 description: "How to use the @tobilu/qmd programmatic API: createStore() options and modes (YAML configPath, inline config, DB-only), the QMDStore search, retrieval, collection, context, indexing, and close methods, config-to-SQLite reconciliation, LLM resource lifecycle, and default DB path rules."
 tags: [sdk, library, api, createstore, qmdstore, configuration, lifecycle, typescript]
-openwiki_generated: true
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:11:07.517Z
+    at: 2026-11-07T09:17:50.280Z
 sources:
   - id: openwiki-source-5b54a58d1b51cd490b0e7162
     resource: repo://package.json

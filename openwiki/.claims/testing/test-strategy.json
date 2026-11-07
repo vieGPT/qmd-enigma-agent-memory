@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:4c5eb40f9d048905cc2910c74ec9276046111ae004a61ab9591c55675e2012c3",
+  "pageVersion": "sha256:95d37b9aa466a6c76e04691d0d80bf6d23050598281f8505b275b87a61d43174",
   "claims": [
     {
       "id": "claim_452b6df7c2c64592bbbbc6adb4b6aefe",
@@ -277,10 +277,24 @@
           "version": "repo-lines-v1:sha256:650fd38996dd7b7d7781695d14d84fbc864db8c07692862aaa03e28f4a52767b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwNjAzMWI2Y2I5YTM1ZWNhMTRlNDA4MmM1NzFmNGY3NGFkYTcxZGVjMTk4YWExMzk5ODIyYjQ0ODMyODVkZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlYzA1MzQxNzlmMWU3MThiYjhkODEwYTE4OWZmYTc0ZGQyMjcyM2EyODk4YmViMTc3ZTViYTc4YjE4N2RjMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmOGJjNzMwODRiODM5YTMyYmYyMDNmNjhhZmUwYWJiNjU1NjY4NmI5NzVlODBlMDUxY2VmM2FkZjVmOTIwNTkifQ"
         }
       ]
+    },
+    {
+      "id": "claim_c23716ffae3e4814b2287457b3b85ecd",
+      "statement": "decideHookGate returns run for an empty hook set, and for a non-empty set returns run when QMD_TRUST_UPDATE_HOOKS or QMD_TRUST_LOCAL_CONFIG is truthy or the config is not project-local (the global config); otherwise it returns run only if the hook digest is already approved, and returns prompt when interactive or skip when non-interactive.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L283-L303",
+          "version": "repo-lines-v1:sha256:98df7ac13147e4a6a69ce6c0d49e35ce6dc106e9c84d0ef24dd8def095c93829:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkNzdmYTg3N2NhNWVkNmFiOTY4NjI3ODE5Y2M3YmJkNTMxNThkMTYxZTAxZWU5MzA4YzEyYTg0NjAxNmViZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1YjdjMTIwZmJjYWNmZDA0ZjI2YjJlNGFhY2JlMDgyNzdiMGZmZjk5ZDFiYTA0MDMzMDVkZjEzMWNkNDFjOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhMTkyN2Y1OWFkODQ3OWFlMzhkYzgyMmMwZjk0YjJkNmJhMDY3NmIxOWI3YTdlMzIzZmE4NWM3YmI1NmVmNjUifQ"
+        },
+        {
+          "resource": "repo://test/update-hook-trust.test.ts#L141-L171",
+          "version": "repo-lines-v1:sha256:6f80c2f4e1fdb8710063caeb7617bd3ff12249baa2b56684dbeb348349dc6027:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmNGNiMjc1Y2M5OTJmYjk3NDY0ZjI2ODFiMDVlNzIxM2NhNTgzOWU5OWE3ZTY3NDY0YmMwYjdkYWU3ZDcyODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3YTA1NDlmNDhiNDVlMTIyYmM1MTEzODk4OTVkZDAzNDk0MTlkZDdkYzNlODBiYmEyMzBmMjBiZGI1M2YzYjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwNjk1MzVjNGJjOTg2YjIxMjE4MWEwYTQ3ZWE4NDBhNWVjZjBjNGUwNGQ0N2E4YTM5ZWEzMGVjN2ZjY2EzOTIifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:11:07.517Z"
+    "at": "2026-11-07T09:17:50.280Z"
   }
 }

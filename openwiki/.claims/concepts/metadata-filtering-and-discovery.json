@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:3b269e904d64fc509eb373bc51a2c84c544888028ae5d0da2d9c8ad2630a94b4",
+  "pageVersion": "sha256:fd7d2852fef7eada21097ea92de41b0fd889f87985d1e4af0c752d8dace03caa",
   "claims": [
     {
       "id": "claim_04d5095aec0e4113b8dc4c4daf167f18",
@@ -204,7 +204,7 @@
     },
     {
       "id": "claim_58b56ad562f64783b55dcb96250ae74f",
-      "statement": "Filters are applied inside each retrieval leg before RRF fusion and reranking: the FTS leg adds the compiled filter and the current, error-free extraction gate, and the vector legs restrict scans to eligible rows. Fusion ranked lists carry only file, title, body, and score, so metadata does not survive fusion; metadata is attached in one batch to the final results after selection on both the reranked and skipRerank paths, and reranking is not always the first step.",
+      "statement": "Filters are applied inside each retrieval leg before RRF fusion and reranking: the FTS leg adds the compiled filter and the current, error-free extraction gate, and the vector legs restrict scans to eligible rows. Fusion ranked lists carry only file, display path, title, body, and score, so metadata does not survive fusion; metadata is attached in one batch to the final results after selection on both the reranked and skipRerank paths, and reranking is not always the first step.",
       "evidence": [
         {
           "resource": "repo://src/store.ts#L4762-L4766",
@@ -439,6 +439,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:11:07.517Z"
+    "at": "2026-11-07T09:17:50.280Z"
   }
 }

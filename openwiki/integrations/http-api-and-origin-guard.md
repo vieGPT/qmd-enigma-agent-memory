@@ -3,10 +3,9 @@ type: "Reference"
 title: "HTTP Transport, REST Routes, and Origin/Host Validation"
 description: "How qmd mcp --http serves Streamable HTTP MCP plus /health, /query, /search, and /metadata REST routes behind an Origin/Host guard that defends against DNS rebinding; covers bind resolution, guard rules, env allowlists, and rejection responses."
 tags: [http, rest-api, mcp, origin-validation, host-validation, dns-rebinding, security, qmd]
-openwiki_generated: true
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:11:07.517Z
+    at: 2026-11-07T09:17:50.280Z
 sources:
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md

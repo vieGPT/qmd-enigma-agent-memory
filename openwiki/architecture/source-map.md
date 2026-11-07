@@ -5,7 +5,7 @@ description: Maps each owned module under src/, bin/, scripts/, tools/ and test/
 tags: [architecture, source-map, modules, navigation, qmd]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:11:07.517Z
+    at: 2026-11-07T09:17:50.280Z
 sources:
   - id: openwiki-source-d7caacca970236de3bb29afe
     resource: repo://bin/qmd
@@ -57,7 +57,7 @@ sources:
     resource: repo://test/bench-guard.test.ts
   - id: openwiki-source-26d8b0098d662736e9e84718
     resource: repo://tools/oxlint/anti-slop/index.ts
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:11:07.517Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:17:50.280Z" }
 ---
 
 # Source Map
@@ -156,7 +156,7 @@ Use these names to jump to the right region of `src/store.ts`. Line numbers shif
 
 | Path | Responsibility |
 | --- | --- |
-| `src/bench/bench.ts` | Runs fixture queries against four backends (`bm25`, `vector`, `hybrid`, `full`) and reports the results. `assertBenchCollectionReady` runs before any query and stops the run when the fixture's collection is missing or has no indexed documents. A backend that throws scores zero for that query instead of failing the run. |
+| `src/bench/bench.ts` | Runs fixture queries against four backends by default (`bm25`, `vector`, `hybrid`, `full`), and `options.backends` can select a subset. It reports the results. `assertBenchCollectionReady` runs before any query and stops the run when the fixture's collection is missing or has no indexed documents. A backend that throws scores zero for that query instead of failing the run. If every backend summary is zero, the run writes a warning to stderr but still returns the result normally. |
 | `src/bench/score.ts` | Computes precision at k, recall, MRR, and F1 against expected files, with path normalization. |
 | `src/bench/types.ts` | Fixture and result types, including query types `exact`, `semantic`, `topical`, `cross-domain`, and `alias`. |
 | `src/bench/fixtures/example.json` | Example benchmark fixture for the harness. |

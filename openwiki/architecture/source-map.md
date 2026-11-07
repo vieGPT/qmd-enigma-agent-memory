@@ -5,7 +5,7 @@ description: Maps each owned module under src/, bin/, scripts/, tools/ and test/
 tags: [architecture, source-map, modules, navigation, qmd]
 verified:
   - by: openwiki/0.9.0
-    at: 2026-11-07T09:17:50.280Z
+    at: 2026-11-07T09:23:23.449Z
 sources:
   - id: openwiki-source-d7caacca970236de3bb29afe
     resource: repo://bin/qmd
@@ -29,6 +29,8 @@ sources:
     resource: repo://src/cli/embed-lock.ts
   - id: openwiki-source-aa5d2914288251ad1ce83ef3
     resource: repo://src/cli/mcp-pid.ts
+  - id: openwiki-source-d1106298a9eebadce31f98f8
+    resource: repo://src/cli/qmd.ts
   - id: openwiki-source-eddba91d2d5c641379f3938c
     resource: repo://src/cli/version.ts
   - id: openwiki-source-d4005060e33903e9e292c464
@@ -57,7 +59,7 @@ sources:
     resource: repo://test/bench-guard.test.ts
   - id: openwiki-source-26d8b0098d662736e9e84718
     resource: repo://tools/oxlint/anti-slop/index.ts
-generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:17:50.280Z" }
+generated: { by: "openwiki/0.9.0", at: "2026-11-07T09:23:23.449Z" }
 ---
 
 # Source Map
@@ -140,7 +142,7 @@ Use these names to jump to the right region of `src/store.ts`. Line numbers shif
 | `bin/qmd` | Node launcher that is the published `qmd` binary. It selects a runtime and entry point, then spawns or imports it. |
 | `src/cli/qmd.ts` | The CLI command implementation (very large). Dispatches subcommands to the store and formatter. |
 | `src/cli/formatter.ts` | Output formatting for JSON, CSV, XML, Markdown, file lists, and colored terminal output. |
-| `src/cli/embed-lock.ts` | Process-level exclusive lock for `qmd embed`, stored as `.qmd-embed.lock` next to the index database. `tryAcquireEmbedLock` treats an existing lock as stale unless its recorded PID is a live qmd process, removes stale locks, and retries once. |
+| `src/cli/embed-lock.ts` | Process-level exclusive lock for `qmd embed`, stored as `.qmd-embed.lock` beside the index database (`embedLockPathForDb`). When the lock file exists, `tryAcquireEmbedLock` reads the recorded PID and treats the holder as live through `isLiveEmbedLockHolder`, which counts the current process's own PID as live and otherwise defers to `isQmdMcpPid`. A recorded PID that is not a live qmd process, or an unreadable PID, is treated as stale: the file is removed and one more create attempt is made. If that attempt also finds a lock file, the function returns `null`, even when it just removed a stale file. `vectorIndex` in `src/cli/qmd.ts` acquires the lock before embedding; when no lock is obtained, it prints the busy message, closes the database, and returns without embedding. |
 | `src/cli/mcp-pid.ts` | Pid file identity helpers for the MCP HTTP daemon and the embed lock. `isQmdMcpPid` requires the PID to be alive and its command line to look like qmd, so a stale PID is not signalled. |
 | `src/cli/version.ts` | Reads the commit stamped at build time for `qmd --version`. |
 

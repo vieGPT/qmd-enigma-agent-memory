@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:caa119dc4979126ec215e8ea014f2aa3018f356c50828cd2c856c4eac372b593",
+  "pageVersion": "sha256:cf1017fb0dafc0e978d53b4ba539d56d6f317455515df35c4c749c8f28ef6bfe",
   "claims": [
     {
       "id": "claim_d48dd003cdb54f93a79b623238af1277",
@@ -198,15 +198,23 @@
     },
     {
       "id": "claim_ff4f1ed061654e61b19943e6fbf5be91",
-      "statement": "qmd embed takes an exclusive process-level lock in .qmd-embed.lock beside the index database. When the lock file already exists, tryAcquireEmbedLock reads the recorded PID and treats the lock as held only if isLiveEmbedLockHolder accepts it, which delegates to isQmdMcpPid (the PID is alive and its command line looks like qmd). Otherwise the lock is stale: the file is removed and the create is retried once; if a live holder still owns it, the function returns null so the second embed is skipped.",
+      "statement": "qmd embed takes an exclusive process-level lock in .qmd-embed.lock beside the index database (embedLockPathForDb). vectorIndex calls tryAcquireEmbedLock before embedding; when no lock is obtained it prints EMBED_LOCK_BUSY_MESSAGE, closes the database, and returns without embedding. When the lock file exists, tryAcquireEmbedLock reads the recorded PID and treats the holder as live through isLiveEmbedLockHolder, which treats the current process's own PID as live and otherwise defers to isQmdMcpPid (the PID is alive and its command line looks like qmd). A recorded PID that is not a live qmd process, or an unreadable PID, is treated as stale: the file is removed and one more create attempt is made. If that second attempt also finds a lock file, the function returns null, even when it just removed a stale file.",
       "evidence": [
         {
-          "resource": "repo://src/cli/embed-lock.ts#L36-L87",
-          "version": "repo-lines-v1:sha256:aea18b5d23dc840bb1695e1ef52dd29538c9c54d2f71cef4403dd05a91d4082d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkMjJiMmE2MDdkMjk3N2M3ZDE5ZmEyYzg4OGYyN2Y0ZDE1NzI0NGYwMGFhZjlkNjEyNjNhODQ5MjE3MmUzNzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMifQ"
+          "resource": "repo://src/cli/embed-lock.ts#L19-L23",
+          "version": "repo-lines-v1:sha256:2b280f0dbe5c2e6619a466dd88dce3707a7974ec0c48297e08f442253dd9510b:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWQ1N2E1MjM0Yjg3OWFmZDE3OTBhZmY5OTc2NjVlNTU4MTMwZmM4MzIzY2M2YzEzNjNjZTIwNDM5NTM1ZjhiOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWVmNjMxNzAxYjBmNmE1ZDY4OTFkZGE1YTY0YjljYjhmNjlkNTJhMDQyZjIzYzYyMDZlMjAzZGQyZjM3ZjNiMyJ9"
+        },
+        {
+          "resource": "repo://src/cli/embed-lock.ts#L36-L96",
+          "version": "repo-lines-v1:sha256:b015e53c83f5a123342b1d0d69c368e012c209cad2618d4a43fb310fb0c2ef83:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkMjJiMmE2MDdkMjk3N2M3ZDE5ZmEyYzg4OGYyN2Y0ZDE1NzI0NGYwMGFhZjlkNjEyNjNhODQ5MjE3MmUzNzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzZDg4NjljYmEyMjJlMDAwM2IwZjI1YmExODMxM2I1Nzc3YTU1MDkxZDdmZjE4NjA5OTZkODg3NzY1OTI0ODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzZTJkYzg2ODBkYTZiZWM3MmViMTliZjNmYWNhMWNmMjYxOGI3ZTQ4N2YyNmQ2YWM5ODJiYjNiOWRmN2NjMWYifQ"
         },
         {
           "resource": "repo://src/cli/mcp-pid.ts#L74-L86",
           "version": "repo-lines-v1:sha256:ffad7fdfa503117a80ad2d417b183cc28e3748da56227d293d6ac41fcaf71b74:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViYTlkNGZkOTFkOWVmNzIzMDliNGRjYmIzMDczZjExYzZhZjNmNjljOWJiMTA0OGFlNDM3MGUxODdmZmNjMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2YzdhOGRmNGI0Nzg3MDc3ZDNlYjBlNjg4MjNiNzFhODA1MTc3NWM3NzgzMjRjNjdlZjNmMmEwMWY5NGU1ZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L2398-L2403",
+          "version": "repo-lines-v1:sha256:76304011383e86b4d2ec3856d123aa7587fe13f138eab939e212640166057004:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmEyYjVhYzk4NzhhNjQ5MTU4ZmZkNzFiZDY3MWQ2MWFlNTZjOWI5MzQwNTBmMDQzNTJkNjI2NjM4ZWJjMDA1YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWM1ZTNiZmEyM2Q0N2Q4MTE5NWMxMjEwYjJkMWE0MGY0YTIyZTQwNjY1NzlhNzNmZjBjM2YyZmFhNmMyMTFmNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTljYmNiYjNhODQzY2ZlNmUzNjQ1NDUyNTQ1NDA4MzAwODNkNDM5MTU1OGYxNGVlYmJlNTBiZGY5Yjg2NjU2YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDMwNjczZmEwNjNiOGEzYzVlMzViNTcyZGZiZWY5OGFjNzU0OTMzNTliMzFiN2IxOGY5YjFkZjJmMzgxYjM2YSJ9"
         }
       ]
     },
@@ -327,6 +335,6 @@
   ],
   "verification": {
     "by": "openwiki/0.9.0",
-    "at": "2026-11-07T09:17:50.280Z"
+    "at": "2026-11-07T09:23:23.449Z"
   }
 }

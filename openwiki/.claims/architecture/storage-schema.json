@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e91cc4db15142678a61ffcc68a4c0f94ab798b903bfcd6c6921e78fac23f6472",
+  "claims": [
+    {
+      "id": "claim_ad4dcc1b680b439d9696c751be8537ca",
+      "statement": "The store opens one SQLite file per index, by default at ~/.cache/qmd/index.sqlite, and every connection is opened through openDatabase, which sets busy_timeout (default 120000 ms, overridable by QMD_SQLITE_BUSY_TIMEOUT) and enables WAL with bounded retry.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L1-L400",
+          "version": "repo-lines-v1:sha256:519fb4e3d33df7bfe78d35f47ec70fa2f220ef67693d26156abea2e880ae38c2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3NzA5NzQ0MjBiMzczYjAyNzFmZGE0MjY1MzQ0YjE0Yjg4NWJhYzI4ZTlhNDFiMDAzMTE4MGNhMTg0Y2VkNGMyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0N2MwNmM1NjFkNWMzMjczNDM2ODUyNjhhNDZiMzM5MWYzOTk4ZWVlODkwZDJiZTUxZjBkMjFjYzRhNTNhZTZkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyMGI4ZWYxN2JiZmIxN2UzNjJkY2E3YWNkMDY3NmE1MWMyMTYwNDYzMjEyYmQ2ZWQ2OWEwOThkMDBiN2Q2NzBjIn0"
+        },
+        {
+          "resource": "repo://src/db.ts#L116-L124",
+          "version": "repo-lines-v1:sha256:dcedec11973ad327c8b2b9979dd5f89d46849da6f90f343f9e0555a8f65b091b:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODNiNTg4MWFiMjI0OWMwOTIyNzY3OTRjNGE3ZWM5MzQ2YzNmNmRkNDI0MjY3NWE3ZjA3YWQ0MTliMTY3ZmIzYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzk2Y2E5OGM2MWJiMmZjMjA2YmYyNDc0MTM3ZWZhMzIzYzFmMTUxNzY0MjRhM2VkOGI0MTYyNDRhZTQwMTY4NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTk3Y2ZmYmM5YjQ2ZDNkNDY5ZjMxODg5NDE0MTY5N2U3NDlmNGUwNDJjN2EyNGM2MDc1MmJmMjk5MDc0MzZmYiJ9"
+        },
+        {
+          "resource": "repo://src/db.ts#L84-L103",
+          "version": "repo-lines-v1:sha256:97c345a56aa824a64b606a1cfe3ca61cec7a4127a26b1689f9285073c342fd70:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmYzJjYTg5YWUzMTU3OGIyMzUxMDVjYzlhNWMyYWFmYjYwMzI4MTY3ZWFjZGI0ZjY1ZDUyOTk0ZTIzNzIzZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmYwZjA3MzY4M2ZhZDIyZTc4YmY5MTA0ODAwZTMyM2Y0M2Q4NjNjMWZiMDBmY2ZiY2YxNTNmYmJkY2RhNWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyMWY4NDhkZWQ4MGM0MmZiZDk5ZGUwYmMyMjIwZDk4NWQ5ZTFmMTg5M2FmYTQyOGMxMDNjMmRjNTBmYzNhNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlMTNlMTMxM2Q2NWEwNjMzMzlhZGI2ZWZkMWJjYWRmOGYzMWM5Nzk4YzUzM2YzNDZlZjdiMTg2YTQzZDA3ZmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_040ff2dc804f408583c00838feb9f4e5",
+      "statement": "initializeDatabase loads sqlite-vec but treats a load failure as non-fatal: it records the unavailable reason, keeps FTS working, and sets PRAGMA foreign_keys = ON.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1237-L1249",
+          "version": "repo-lines-v1:sha256:29ea9e0072364fed7f4125c5aeb781a7e16060a2e10f918258c954e04521549f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkNzg5YmM1ZTA2YTIzNTc1YzVkZDU1ZGQyMDBlY2QwYTAxOTgwNTY3OGQ2NDMzZWMzZDU3MjNkMDNmYWE0MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjNzJkNWJkNGYyNDQzYWRjMTYyNGM2ZTFlMGJkODBiMGY0MmFmYjk0OTJlYTc1ZTYwOTQ5ZTdjYjUwYmVlYzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4MWE5OWYzZTU0MmU5MmNmYTkyOGUzNzg1MmNiNzU3OWZjZDYxMGM2NWQ2ZjRhNjAwNTEyYWUxZmI2MGQ1MjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4f63820f07c94ba88b974b15105d0eb5",
+      "statement": "initializeDatabase drops the legacy collections and path_contexts tables on every open, so the README schema listing them as current is stale; collection definitions live in store_collections.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L1-L400",
+          "version": "repo-lines-v1:sha256:519fb4e3d33df7bfe78d35f47ec70fa2f220ef67693d26156abea2e880ae38c2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3NzA5NzQ0MjBiMzczYjAyNzFmZGE0MjY1MzQ0YjE0Yjg4NWJhYzI4ZTlhNDFiMDAzMTE4MGNhMTg0Y2VkNGMyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0N2MwNmM1NjFkNWMzMjczNDM2ODUyNjhhNDZiMzM5MWYzOTk4ZWVlODkwZDJiZTUxZjBkMjFjYzRhNTNhZTZkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyMGI4ZWYxN2JiZmIxN2UzNjJkY2E3YWNkMDY3NmE1MWMyMTYwNDYzMjEyYmQ2ZWQ2OWEwOThkMDBiN2Q2NzBjIn0"
+        },
+        {
+          "resource": "repo://src/store.ts#L1250-L1253",
+          "version": "repo-lines-v1:sha256:6665536266e6b7b895198759b89fbc4661e0d3f43b105f8271fccf77c7db3a2b:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQwMzg2ODFjNWM2NjE1ZTgzNTUxNGU1YjI1ODQ3ZTY3ZWFhZDUwNTY4ZGZjMDc5OGRjN2UwZWNhMmNkNzVlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjEzODQyMjlhOGRkMzZjZjYzNzk4NmEyOGRlYWIwODc3ZTA5OTQ1MjlhZWM2MzAzMGVhYjgyNjgxNGIwM2YzZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWNhNmMzNDM4ZjNkODA4MGM0YmU0YmUzM2I0OGZhMjA0ZjNlMGQzZTM1NWI1MWU4YjI2M2NhYmIzNjg0MTcwOCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L1318-L1329",
+          "version": "repo-lines-v1:sha256:625555f0f37901f1321d5bd3f71e5fed0846d726c8a4f94f7fac3a6a647e8434:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlYTU1NmM5NjgxYjc2Zjk5OGMyYjdhZGJlMGI1MTQ3OTQzMWZmODQ2Nzg5OTU3ZWM2NTNlNzIxZjdiYjc0MjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3YWUxZjdkMDljYWUxMjU5OWNjNjA4NGVmMTljZTQ4OWZmNTQ2YWJkZjAxMTY2MmZmZTEyNjYwNjY1MWMxNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkNjY4MjQwNjA3YmZhZDBhNzQ1YWQzYzM4OWJlMjZiYjJhNzM3NTE0ZGZlODUxOWM4NzUyMWNhY2E0YWJmMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhZTU1ZjEzMWIwODQ0OWI1ZmJjMjBkMWMxNjg0NmE3MWQzNTVkMDVkYmUyNDlhMDBlNzk1Njg5ZDI4MmEyNmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c5cc665751b0419c803a279a199f3043",
+      "statement": "documents_fts is an FTS5 table over filepath, title and body tokenized with porter unicode61, and its rowid equals documents.id.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1076-L1081",
+          "version": "repo-lines-v1:sha256:53e6884cd9b0db172b91ef3e2db96221a3e6f6fe9de3a27f60a1270409786b98:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2RiZDM4N2YzNjFjMGIyMDk0ODkxNDY1NWM4ZTlhZjBkYmE0OTdiMDg3N2ViNGI5MDU2MmJkODZmNmJjODgxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGFkMjk1MjUzNmZjNjAwMGFkOTE1NjZiZDk1M2YyNWJjOTU5NjEwZTgxMWE1MjlhOWJlZjhiNGYwN2MxYzhjZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2ZkZWIzYzY5YjJhZTIwNzY2ZjVjYWQ1MTBjZmRiYWUzZmJkNDJlMjgzNDZmZWY4MWQzM2UzZWNkNGY4NjhkZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWFjNmIzZDkxN2U3MGE5MGY4YjczMTA4MTU5YmY0MmU5NDQwOGM1MzA5NjFhOWZkMTAwMWZjNDRmODM1ZmNiZCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L964-L1010",
+          "version": "repo-lines-v1:sha256:0fab4d80beddfe25e616d9b081c86ea596a99b3472726ab3bb82c81bb4b25344:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiODYxODQ2MjU3YWQzZGVjYmQyZWFmOGUzNmVhZTYxMjk5MThmNDBiNjE2NGYwMTlkYzNiYWQ4ZWZlZWJiODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjYTQzMDhiYTc0YTEwMjg3MWVkNjJkMzJlZGUxZDE3Njc1NzJjMGM5OWY0MTg5OTdkMmRjMGQ1MWM0OTM0ZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzZWZjYmRmMTkzYzk3YjdmNjk3ODk2ZTQwZDRlMzYwOTVjMzg3MzdkYzc4NzVhN2JlOWY3YjBmYzhlODM3YTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiMWE2N2I3M2NkOGI0ODEyN2ZiN2ZkNWMxMTIzZjk3MDUyOWRkZmNiZjg3Mjg0Njk4NGQ5YTRlODUwNDJkMDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f48c1155b27a4e8f9a8d55921c37e955",
+      "statement": "Three triggers (documents_ai, documents_au, documents_ad) keep documents_fts in step with direct writes to documents, and production indexing rebuilds FTS in TypeScript instead so it can normalize CJK text first.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L952-L1010",
+          "version": "repo-lines-v1:sha256:e3792b2d94192cdeb07450489b285a189957204d26863852314410b270a821be:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2N2VhZTQwYWM0ZGQ2ZDNhODM3NGM1NDQ2NGY5NGMyMzFjYWFiM2FjMDYwZjI5MjcxMDYwYmNjYTAxMTRhNGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjYTQzMDhiYTc0YTEwMjg3MWVkNjJkMzJlZGUxZDE3Njc1NzJjMGM5OWY0MTg5OTdkMmRjMGQ1MWM0OTM0ZTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiYWVkOTJhNTJmNTRiNmFiMjU0NmMxODY2MjI1ODAyZjYxNmI0NDZlNjAxMWNkODQ0MmY2ZjQzNTcxZjFhNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiMWE2N2I3M2NkOGI0ODEyN2ZiN2ZkNWMxMTIzZjk3MDUyOWRkZmNiZjg3Mjg0Njk4NGQ5YTRlODUwNDJkMDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b21a729321ae496eb497f200c819b062",
+      "statement": "The documents table maps a (collection, path) pair to a content hash with an active flag, a unique (collection, path) constraint, and a foreign key to content(hash) with ON DELETE CASCADE.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1257-L1284",
+          "version": "repo-lines-v1:sha256:83806a24ef379504cb5dd1eab101717a95cbc255cf31e48ffb75a90b1e5633ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmMzViNWM2YzZlZDQ1Y2RhY2VlNTBlZmEwMzZhYTQyOTM1YTc4NmRjZjQxNGM0YmQzZWRkMTFlMzExYjJmZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjYTZjMzQzOGYzZDgwODBjNGJlNGJlMzNiNDhmYTIwNGYzZTBkM2UzNTViNTFlOGIyNjNjYWJiMzY4NDE3MDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxMWIwYjUxYTFkNmI5ZDFkMjViMmI4ZjlkNGM3M2NkMmJlZWJkNmI2ODQyNDA3OGU0YzY5YTg5MjI5MzAwYTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_100e7fa129514823b9810b17c44ceaee",
+      "statement": "The short docid is the first 6 characters of the content hash, and the chunking constants are CHUNK_SIZE_TOKENS 900 and CHUNK_OVERLAP_TOKENS 135 (15% of 900), with character fallbacks of 3600 and 540, so the README's 6-character docid and 900-token chunk statements match the code.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L1-L400",
+          "version": "repo-lines-v1:sha256:519fb4e3d33df7bfe78d35f47ec70fa2f220ef67693d26156abea2e880ae38c2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3NzA5NzQ0MjBiMzczYjAyNzFmZGE0MjY1MzQ0YjE0Yjg4NWJhYzI4ZTlhNDFiMDAzMTE4MGNhMTg0Y2VkNGMyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0N2MwNmM1NjFkNWMzMjczNDM2ODUyNjhhNDZiMzM5MWYzOTk4ZWVlODkwZDJiZTUxZjBkMjFjYzRhNTNhZTZkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIyMGI4ZWYxN2JiZmIxN2UzNjJkY2E3YWNkMDY3NmE1MWMyMTYwNDYzMjEyYmQ2ZWQ2OWEwOThkMDBiN2Q2NzBjIn0"
+        },
+        {
+          "resource": "repo://src/store.ts#L166-L173",
+          "version": "repo-lines-v1:sha256:a0df8c015a8114a6f4e6600507f45a11bc7ce55be076078c76bba987020947e9:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWMxMTc0OTVhNzM1ODQ5MDQyNDgxMGM0ZGEyMTc0ZTM0NmNlNmM1ZDkwMGMzMGEwZTI5YmE1MjNkZmVjM2EzZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmNhN2FiMTg5ODY0YWZlNWM5ZjIyZjY1MTg2YjE2ZmE2NmQxZjcxNDY2ZmNkNjEwMTg1N2MwMjU3NzcwZGU1NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWZiOTQ5ZTdmN2I5NmRmYTRjYWY1NzIyMjhiN2E4YWVhNGRjZmRiYjM5ODIwN2ZiZWUwYmQxMjM5OTA4YzUwNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjhhMGI4YTM0ZGI4OWYwNWM2OGNkYTFmM2U2NWYzZmJmYTI1N2QxMWZjNjBiZjY0YjAyZjg3OTA5Y2VhNTQyNCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L2727-L2729",
+          "version": "repo-lines-v1:sha256:51c61170eccb6e125dd51155a6821f8c82255bb0e7aefb71d6b8a76675f193ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWE1YjVmNDY0NWE3M2YyODYyNTA5MTU1NzEzYWZjY2NlYmNjNGQ3ZWJlZTdmYTFkNDI0ZDg2NTAwNjZlMzRkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmQxNzhiMmY5NzQ3MDgwYzc2M2FkYTM1ZmUyODk1MTI1ZTA2MDY5NmY4MzhlNzE3MjRhNTdmN2QzNjE4MGJjMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAzNjM1OThkMzcyNTY0OWFmNzI5ZTFkMTdmNWMzZGExYmNkNzY1OTM0MDAwYmZkMzAzNjhjNDI0ZTQzN2Q5NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8fe6d9750afc44179a765e13a57970f7",
+      "statement": "The embedding fingerprint hashes the model, the query and document formatting probes, chunk_tokens and chunk_overlap_tokens, and keeps the first 6 hex characters, so a change in chunk sizes or model changes the fingerprint stored with content_vectors.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1297-L1310",
+          "version": "repo-lines-v1:sha256:5853b152a0bfbbbb6ecae1ffe9d432c3f685f7b1feda2e403e83f55fcd8d70f0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkNzRkZTJiZjdiNzRiZDljMjc2M2Y0YjQ0ZmExYjFiYjBlZTExOGQyNGJiNWI0NmU3YTljMDExODRkN2UyOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkNGE5OGJlYzM1N2IzZjI5YWU0ZjUxYTg2NWI0YTI4MTI0NjZjOTRkZTRjZTNmOTJlZDY5MGRkY2UxMDkyYmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiZmRmNmEyOGNlMjMyNzU3ODY3NTYxZDEzZjUzMGFiYjc4MjFhNGEyNTkyOWNiOWU2MjQwMWEzMTNkMjJiY2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2MWM4NTMzYjg0ZjFlMmZkZjc0YTlkOGI1NTQyOTI5MmJmNmRjMGJkMjNjMzM0OGE0NTRmNGUxYzgwNzJkZjcifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L175-L186",
+          "version": "repo-lines-v1:sha256:564388f255724a73dcd87b032bfe65f3e1f1ce0d9db8615dbc247181669a60ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmYjY2MzRmMTQ3N2EyNGEyYmMzNWQ1Nzk0N2E0OGY3OTA0NTk0YWM4OTQyZmU5ZTdkNzNlMzJhMjJiNDkzN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViMmFkODJhM2I1ZDdlZWFjZjQwOWM2MzZkMTkyNWRiMDhlYTVhNmU2NGY3MjZmZjIyYWY4MDY4NjZkYzY2YjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyMjY0MTk5YTYyOWY3Yjk1MTFlZmEzNzdmNTM5NTYwYzZhNjA3MjU2MDg5ZTUwODFiMTJkZWI0NGRiNWZkNmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_47e9bfa3f7314e81a26a563d791ff7da",
+      "statement": "content_vectors is keyed by (hash, seq) and records pos, model, embed_fingerprint, total_chunks and embedded_at; an index on (model, embed_fingerprint, hash, total_chunks) is created only when the columns exist.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1297-L1310",
+          "version": "repo-lines-v1:sha256:5853b152a0bfbbbb6ecae1ffe9d432c3f685f7b1feda2e403e83f55fcd8d70f0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkNzRkZTJiZjdiNzRiZDljMjc2M2Y0YjQ0ZmExYjFiYjBlZTExOGQyNGJiNWI0NmU3YTljMDExODRkN2UyOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkNGE5OGJlYzM1N2IzZjI5YWU0ZjUxYTg2NWI0YTI4MTI0NjZjOTRkZTRjZTNmOTJlZDY5MGRkY2UxMDkyYmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiZmRmNmEyOGNlMjMyNzU3ODY3NTYxZDEzZjUzMGFiYjc4MjFhNGEyNTkyOWNiOWU2MjQwMWEzMTNkMjJiY2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2MWM4NTMzYjg0ZjFlMmZkZjc0YTlkOGI1NTQyOTI5MmJmNmRjMGJkMjNjMzM0OGE0NTRmNGUxYzgwNzJkZjcifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L2198-L2210",
+          "version": "repo-lines-v1:sha256:17d07b741050f12e30a344bee7600242943a2844633e029bf8e106493b7195bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3YzQ5ZTI5ZDI1OTE3MzAyMjdhZDE3ZWRiMmMxNmJlYWFjNTVmZWU5YzZhYzJhY2Q1MzU2NjU3NTk3NjRkOGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjMTE2MTkzMTZiNDZmNjkyOGYwZWJmN2IyMTU0ODI3Y2E0ZWYyNjQ2NDY4MWM3YjU2ZGU1YzUxZWE4MjViZWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyYjJmZDI0ODA5NDVhZGI3YzgyOGJhZGMzODNiZmEzZWU5NTgwNjcxYTgzZDQxODc2NmM5NDVjOTA5ODRiZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e5fa950498f5400dad1095c5c4d8738d",
+      "statement": "vec-layout.ts is the only module that knows the sqlite-vec table names: vectors_by_collection (VEC_TABLE), vector_rows (VEC_ROWS_TABLE), vector_collection_ids (VEC_COLLECTION_IDS_TABLE), and the legacy vectors_vec (LEGACY_VEC_TABLE).",
+      "evidence": [
+        {
+          "resource": "repo://src/vec-layout.ts#L1-L15",
+          "version": "repo-lines-v1:sha256:0a1e47da7833914a53d6722eb7be964a7dadc14f577b5f119812dd40e370c577:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmN2RhYzY3ZTM0ZDA5MzdlMTIyNDQ3ZGUxZjZhZmE1YjcxYTU1ZTUwYzY1NmM1MjcxMGNhMDgyOGVkZmEzNWMifQ"
+        },
+        {
+          "resource": "repo://src/vec-layout.ts#L19-L22",
+          "version": "repo-lines-v1:sha256:9e260ebb57ca432ef6649d75aa3f941116caba73f023d386f58d4af307c93677:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWJiZDc5YjUwYjJkOWQzNWZkZTQ4NjRiZmEyZmY4ZGI3MDRjNjIyNjQ2YjNjNDhiZmYwNmY5NGIxMjc3YmE1OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmYwNTIyNTFmNDE2ZDY0Mjk2NmZmZGQ5YjlmMDIzMTk5NDM2MGM3NWU5OWU1MjUzZTRhYTAzZTYzMWY3YjI3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmY3ZGFjNjdlMzRkMDkzN2UxMjI0NDdkZTFmNmFmYTViNzFhNTVlNTBjNjU2YzUyNzEwY2EwODI4ZWRmYTM1YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjM0NzM5NTdkZTY2ZjgzN2E4NzAyMTc0ODI1NTZiOTkyNzlkOGU4NTA2YzhhODk5ZjFiMmIzNDhiZmIyZmQzZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0d6c9ba4e7d14fb5b49fb35497e467a0",
+      "statement": "The vector layout uses an integer collection id as the vec0 partition key because vec0 rejects UPDATE on a partition key, so a collection rename is a one-row update on vector_collection_ids; a layout change needs a new permanent table name because renaming a vec0 table leaves shadow tables behind.",
+      "evidence": [
+        {
+          "resource": "repo://src/vec-layout.ts#L1-L15",
+          "version": "repo-lines-v1:sha256:0a1e47da7833914a53d6722eb7be964a7dadc14f577b5f119812dd40e370c577:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmN2RhYzY3ZTM0ZDA5MzdlMTIyNDQ3ZGUxZjZhZmE1YjcxYTU1ZTUwYzY1NmM1MjcxMGNhMDgyOGVkZmEzNWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c759a40f59e4fb6a7141f44c23a88db",
+      "statement": "vecLayout resolves the live layout by checking for the legacy table first: a legacy table wins while it exists, the partitioned layout is reported when only vectors_by_collection exists, and none otherwise, so the drop of the legacy table is the flip.",
+      "evidence": [
+        {
+          "resource": "repo://src/vec-layout.ts#L57-L82",
+          "version": "repo-lines-v1:sha256:5f18f70206e982f1a99c07d4f44ec1eaa6920e706ba2892c55cf1b474729a09c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwN2JlMzA2YjdhNjUyNjhlNjc4OWJmNDk2Y2UwYjM1Zjk3Y2FjMjMzZTg4ZjM4NWFiYzJjYzU1YjAwMGU1MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjYTQxMjM1MjA3MTI4YzQ4YTc3OWMxNmU4Y2M3OWZmMjdmOTNiNjhjZjgyMDczZjEzZDVjNzFlYzAzODI5MmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlOTMxNTc3MmQ4OGYyNzU3MzNjZWE4M2M4OWNkOTU2YjQxMDdhYzM0NWY2NjI0MGE5NGNkMGYwOTZjMDM3NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3b9344da12154083a23f45b3666e8108",
+      "statement": "The partitioned table is a vec0 table declared as collection_id INTEGER PARTITION KEY with embedding float[dims] and cosine distance, and vector_rows maps each rowid to (hash, seq, collection_id) under a unique constraint.",
+      "evidence": [
+        {
+          "resource": "repo://src/vec-layout.ts#L102-L125",
+          "version": "repo-lines-v1:sha256:be6f124a2fc7b7ccc426e65a778fa907224ffbfa84ee00def1e874ecda84b4a3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNTNhYTE1ZThiOTgyOGYxNzJhZDEyNTYwZDM5MjQ0NmQ5OTM4MGUyNGU4ZmMyZDRjYzBhNzY0NGIwN2FkMjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyODVkN2I1ZTM3MTA2MGQwODk5MGJhYzdhM2MyYWM4NmRlYmRiYjA1MzY4MzJkYjVjZjgxZmNlNjJmNzM4YTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fb3dcb9bf15c4ea8a6f12dc64f2a091b",
+      "statement": "Vector search returns no results unless the partitioned vector index exists, so a database still on the legacy layout serves no vector hits until the migration completes.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L4974-L4977",
+          "version": "repo-lines-v1:sha256:29d9fe6dc7e4ddb7e1855c968c56ac377db54e337d9c7fa6a90dee79e38915d2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmYwNDI1ZjA4NzJmNDNlZTQxNTFhYzc1NDRmYzYzZWUzYjU4Yzk3NGFjMmM3MjRjYTA2NjQ3ZmVmNmNhMGNlMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzRkYzA1NWJiYjY5YzVkMzAxNzFmZjA4MjdjOTNlYmFhOTE0Zjg4MTgxNGJhMjljMDE0ODQ4ZDg3NTAzMDIyYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTQ5ZWJlNGYxZmY1MjAzM2EyZmRkNGI4MzQ3YzE0MmUyYTEzMGNkODI2MTI0MTFlN2Y3ZTE1YTA5Nzk3MmFmNCJ9"
+        },
+        {
+          "resource": "repo://src/vec-layout.ts#L85-L87",
+          "version": "repo-lines-v1:sha256:704383bd33bd7966efb640f0b66c0f52b68389a2943e20f5ff7a90f1375ffda5:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGIzMTMyYTFjNDFhNzI2ZTg4ZTRhYTE0YjJiNzFjZjQxOTY4ZjliOTUwN2IwYWY2MDdlMzQyMzBlMGYxZmRjYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmNlMDhkNzhiZTZiNTU1ODgxZWRlODFkZjQ0YjVjYThkNWU4OWM4MDkyNGVlYTJmYzEwYWYxNzM1NDFiZTE1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjAyMzZkZWE1OGVhZTE0MjEyODA1NmIyMTAwM2Q3Yzk2YTE3NzFjYjhiMzFmZjI4OTRlMTBhOGExNmI3ZGRkYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce60414456934092bed59e608f584141",
+      "statement": "Schema steps are gated by PRAGMA user_version: applyVersionedStep returns early when the version is already reached, otherwise runs the step and the version stamp inside one BEGIN IMMEDIATE transaction with a double-checked read, and rolls back on error.",
+      "evidence": [
+        {
+          "resource": "repo://src/store-migrations.ts#L37-L63",
+          "version": "repo-lines-v1:sha256:15a431513ac1b868786a0072d0972d6f7d0083cd26c5216565da80f5427cf516:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZTgyNDk4ZDFmNWUwMzRiYzIyOTZkNjIwOWQzMmUyOWQ5NDFkNTI5OGE5MTM5NzM1MTNiYWI3ZDFkMzMxMTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2YzQwYWI1MzFkNzA1OWNmMmM0NjQ5YmE5NDFjNzc4MTU2MzAwZmEwMTU1ODI2ODEyNDlhNWVlNDk1YzkzMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwMWIxZDQwYzk1YzI5MTI4Y2NhYjUzMDgxMThkMmFhNDg3YTY0MmZjYzgzZDg3OTU5MjA4MWMyMzlmZjE1MWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_69868cd24da547f189b14e6ceeb57d9e",
+      "statement": "FTS_SYNC_TRIGGERS_VERSION is 1 and gates installing the FTS sync triggers, and VECTOR_PARTITION_VERSION is 2 and gates the move from the legacy vectors_vec table to the partitioned layout.",
+      "evidence": [
+        {
+          "resource": "repo://src/store-migrations.ts#L277-L283",
+          "version": "repo-lines-v1:sha256:d10207155c1583c3a5ae370926dd1ba8aef9fb894d1b35bda17e2dc145029971:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmE2MDJjNjI4MzU3M2Q3MzM2N2FlZTgyY2QxY2YyY2U5ZTNhMGU0NWY4Mjg4MDY4NmY4MjMxMzYwMWYyMWEzNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTYxMDMwZDdiZDMyYzgzNjM2N2Y2MmFkZmZlNTkxZTc5MzlhMTY4ZWZhMjA0ZDVkYzhhN2M4YjY5Y2QyZDhjMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzdmNTNjYmFlZGQ2MDJhODViOTI2YmUwMDUyZWZmM2NmMDU1MmMxMTNiMjQ0Nzc3M2JjYmZkOTAzZGM2NDk2OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTZjNzA4MzIxNTE4NGE5YjM5M2JmNzY3M2VmZmVkMTUxN2I1NDg4NzhlODkyMzA0NDk5ZjllYjJjZmY3MjJkNiJ9"
+        },
+        {
+          "resource": "repo://src/store-migrations.ts#L32-L33",
+          "version": "repo-lines-v1:sha256:ae2fab2fb21b4ce557a8456a367a9e3c8ea35e4211db8da322405da0d3b9bfa6:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWJlNGM3MGEwNjJmYmVjNjIxZGQ5ZjhjZDkyMmE3NjZkNTI5YTAxNjliOGMzZmJjNWMwNTg1ZDM5ZmZjMTgzNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzllNjcwYTE2MGQ3NzEyOWExYzIwYmE2NWQzNDg3NDRhM2I3NTQ3ZWJjNzZjZDY5MjAwMmUwYTJhN2JlNjAyMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTk5ZWEzYWU3Yzg1ZWRiOGNhNTM3NDY3MTRmNjBhNjlhMTk1MjRiNDk4OTA0Yzg4ZGM4YTYwMjMzNTZiZDA1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjZjNDBhYjUzMWQ3MDU5Y2YyYzQ2NDliYTk0MWM3NzgxNTYzMDBmYTAxNTU4MjY4MTI0OWE1ZWU0OTVjOTMzNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7a651e30535f46a09967ef3f2da91cb0",
+      "statement": "runStoreMigrations applies the trigger step first, then runs the vector migration when user_version is below 2; on a store already stamped at 2 that still holds a legacy table, it retries the migration as a repair and on failure logs a warning and leaves the legacy table in place instead of blocking the open.",
+      "evidence": [
+        {
+          "resource": "repo://src/store-migrations.ts#L277-L294",
+          "version": "repo-lines-v1:sha256:b2619b8b5d7d2c64def7ed6c0ed85397267e89eb300858827c076be8d272e497:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhNjAyYzYyODM1NzNkNzMzNjdhZWU4MmNkMWNmMmNlOWUzYTBlNDVmODI4ODA2ODZmODIzMTM2MDFmMjFhMzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc3ZjUzY2JhZWRkNjAyYTg1YjkyNmJlMDA1MmVmZjNjZjA1NTJjMTEzYjI0NDc3NzNiY2JmZDkwM2RjNjQ5NjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://test/store-migrations.test.ts#L1-L461",
+          "version": "repo-lines-v1:sha256:7de4ca4a1f7b8c575b2ba2b2621c1d2080f23b6644b693d8276c6e2d83317793:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmNmY1YjQwYjE1ODQ1N2QxNzg2NGYyMTc5MDc4NmRkNWEyZWNkYjY0YjY2YTY1MWY3ODhkNGUyNWNkMzMwM2QyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_aa78d06e10dd4122bb9b36983b13c2a3",
+      "statement": "The deferred branch: migrateVectorLayout returns deferred without touching the legacy table or the version when sqlite-vec is unavailable or the legacy table is unreadable; runStoreMigrations ignores that result, so the deferral is silent and FTS keeps working until a later open with the extension retries.",
+      "evidence": [
+        {
+          "resource": "repo://src/store-migrations.ts#L234-L240",
+          "version": "repo-lines-v1:sha256:b4d1b661d2bf543c2a22975605179c5c9ecb0b944e426068cc85d80d3f6eabe3:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjk3ODdlOTlkMGZkMTczYTE1ZDQ4ZGE2ZmM0ODY0MDJmZjI2NjZiMzc5YTcwNDcwODYyMjNjMDUxNWQ1OGU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmI3ZTkyMzFhYzJiNDY4Y2FjY2RkZjk3ZmQ2NmRmMDJhMzY2ZjAzMGIzZjJkYmVjNWVlOTYwMGJjYzA3ZWRkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWViNDc2MjA3YmU1MWYxZDVmOTU0MzRkYWI3YmM0ZDE3ODYzNjIzMDgzZjJhZDYzOGI3ZmY0YTJiMTE3NGFmMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmMzNDQyZjk1ZGJhYWI0MjYzZTY2YWU1YzY2NTE3MzVjZGZkNjQzZDYxNDIzNmI1YjFkMDBiOWNkZTNlMzkzMiJ9"
+        },
+        {
+          "resource": "repo://src/store-migrations.ts#L277-L283",
+          "version": "repo-lines-v1:sha256:d10207155c1583c3a5ae370926dd1ba8aef9fb894d1b35bda17e2dc145029971:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmE2MDJjNjI4MzU3M2Q3MzM2N2FlZTgyY2QxY2YyY2U5ZTNhMGU0NWY4Mjg4MDY4NmY4MjMxMzYwMWYyMWEzNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTYxMDMwZDdiZDMyYzgzNjM2N2Y2MmFkZmZlNTkxZTc5MzlhMTY4ZWZhMjA0ZDVkYzhhN2M4YjY5Y2QyZDhjMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzdmNTNjYmFlZGQ2MDJhODViOTI2YmUwMDUyZWZmM2NmMDU1MmMxMTNiMjQ0Nzc3M2JjYmZkOTAzZGM2NDk2OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTZjNzA4MzIxNTE4NGE5YjM5M2JmNzY3M2VmZmVkMTUxN2I1NDg4NzhlODkyMzA0NDk5ZjllYjJjZmY3MjJkNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_60c10c6b7b3a4f0dbb94483545e22271",
+      "statement": "The copy step walks the legacy table's chunks in chunk_id order, one chunk per IMMEDIATE transaction, saving the last copied chunk_id in store_config under vector_partition_cursor so an interrupted migration resumes, and two processes take turns on chunks.",
+      "evidence": [
+        {
+          "resource": "repo://src/store-migrations.ts#L1-L19",
+          "version": "repo-lines-v1:sha256:95bebfaebbe7253e4b60583be30fe5c0c3756e9e106f21653ae6362df8ef9302:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MjAwOTY0YTk3ODYzNTUyMmIyYWIwOTBjNjUwNjVkOGVmOGU4NWM0NzMwYmIyZWIwNDYwZDM0YzY3N2RkYmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3Y2U4YTZlMjY2ZDQxYTJjOWMzODA3OTc1YThiZDIzYTU5OWJjYTMxZmZjY2I4M2MyMDg5ZGNlYTc5NjFiNDQifQ"
+        },
+        {
+          "resource": "repo://src/store-migrations.ts#L115-L158",
+          "version": "repo-lines-v1:sha256:584dc6cba4af509a31d6b71f0ff2c4304a7889c5a92c670214a31e49ae767d71:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1MDViZTJiNTYxODM1ZDg4YTljNzJlMjQ4NGZhNDcxZGZkNGFmY2ZhNzJjNWFlMTNlYjA1ODU1ZTFhNWJmZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwOWFhNDNkNmZhMjMwNGYyZTNjMzk2MjE0Yzg4N2U0MzJkMTc3NzdhMDcxZGQ2MjJiMjE5ODE5ZjhkNjRmMmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY0NjA0ZTI2MjFjNWU4MmEyN2U5ZDZiNWMwODkzMDRiMjliZDIxYzI2YjVjZjM4OGNjN2JhZGNiMDg5N2IwM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlZTIxM2QyMzg0NTVmZmVlZDE1OWQyNzQyOGVhMjBmMDQ5NmUyYjk4M2VkY2Q0MGUyYWIxN2E1OGIxZjBlZGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_25ae4eba5bd74f52a57b8d865e1ba328",
+      "statement": "The verify phase is followed by a flip: copyStragglers copies rows the chunk walk missed by key, deleteVectorlessContentVectors removes content_vectors rows with no remaining vector, and the cursor delete, version stamp and DROP of vectors_vec run in one IMMEDIATE transaction, so the drop is the flip.",
+      "evidence": [
+        {
+          "resource": "repo://src/store-migrations.ts#L160-L198",
+          "version": "repo-lines-v1:sha256:6af4049be033c55bcacf3c9abf1719a7def7c0bddd3695b9993ce24bb1b2e6bb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhZWQ0NzRhNmMxZTZlODJlNjlkYzJkNDU1ZTIzNjFiMTlmOTM2MDVmM2RkZjhiMTk5YjYxYTBlNmY4OWIxNjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzNWFmZjkyMjQ0NTc1MWNkNmI4NTA3NDExODYxMGM2NGY4OGU0YzY4Y2VhMjlhN2I2YzY3YjAyYWMzNzBiZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzMTUxMGE4MDA4Y2RiODdiMzJiYWQ0YzlhNTE3YWYyNDBkZDRmY2Q2YjFjNzM2NWUwYTIzZmFlNmU5OWUxZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b73d4cc0590c440499f12dc90797ea69",
+      "statement": "After the flip the migration runs VACUUM; a VACUUM failure only logs a warning advising qmd cleanup, because the migration is already complete, and the final done phase is reported.",
+      "evidence": [
+        {
+          "resource": "repo://src/store-migrations.ts#L234-L266",
+          "version": "repo-lines-v1:sha256:f1143f96b628456609465472fa7d40e0e97f10771bad78ebb0e57f11ba70fb24:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Nzg3ZTk5ZDBmZDE3M2ExNWQ0OGRhNmZjNDg2NDAyZmYyNjY2YjM3OWE3MDQ3MDg2MjIzYzA1MTVkNThlNWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlYjQ3NjIwN2JlNTFmMWQ1Zjk1NDM0ZGFiN2JjNGQxNzg2MzYyMzA4M2YyYWQ2MzhiN2ZmNGEyYjExNzRhZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyNjBjMTMwMDNlYzYxNjU5NDJlNmUwZmFjNmFiZjE4MGY0NjI1ZWYwYWE5YTA3NTFiOTJjNzc4NzY2ZTAyMDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1413b1d88e4446a289e5993682070a4b",
+      "statement": "A legacy table keyed by hash alone, or with unknown dimensions, skips the copy and is dropped inside the version step, while a partitioned table with different dimensions causes the migration to refuse with an error rather than overwrite it.",
+      "evidence": [
+        {
+          "resource": "repo://src/store-migrations.ts#L210-L247",
+          "version": "repo-lines-v1:sha256:f188f0e316517ba4802b906b003e6e718f5f8165df6a14fb013197bf7539fc3d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjYjU3Nzk2N2RjNWFkOWY5ODBhZmIwYmEzMmVmNzhiMDg4Y2U1YzZlYjZmZDgyNDZhYWI0ZWM4OWU0MTYzNDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiZGRhYjhmYmYzZDlmYzliY2I5MzMwYjg4MGQyMjU1NjU2NTA4ZTgwZDk4NGY3Y2ZiOWMzMjg5OTgxMDc4MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU3MWM2NzgzZmUzNTVhYjhjOWNjNWFiNGEwNDgyYTYxMThhZDJiZjJjODM2ODc4OWFiNmNjM2RhNTFkNzgwYTcifQ"
+        },
+        {
+          "resource": "repo://test/store-migrations.test.ts#L1-L461",
+          "version": "repo-lines-v1:sha256:7de4ca4a1f7b8c575b2ba2b2621c1d2080f23b6644b693d8276c6e2d83317793:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmNmY1YjQwYjE1ODQ1N2QxNzg2NGYyMTc5MDc4NmRkNWEyZWNkYjY0YjY2YTY1MWY3ODhkNGUyNWNkMzMwM2QyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_1fc017b441c54bc8babac500b69aec2d",
+      "statement": "The embed path migrates a legacy layout lazily through ensureVecTableInternal and rejects an embedding whose dimensions differ from the existing partitioned table with an 'Embedding dimension mismatch' error.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1557-L1582",
+          "version": "repo-lines-v1:sha256:f28a4a53e4fe42a3c2a48a9bac714611f51c264348b2f7f5832c98eda1acb268:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxOWMzNjE1ZGQzMmFiNGNkNDVkZDg5Y2Y4ZDkzZGNiNDU1Y2QyMTMyNTM0OGMxNjA0Yzg0MDk0MzEyMGIwYmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkNTIyYjFiY2M4Nzg3ZjFiMDFlYzIzN2M5YmM4ZTZlYmI5YjY1MGE2ZGUwNjcxYjlhODEyMTJjYjg2YjA0MGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA3MzE4NTdiOWI3MTA3ZjAxZmFlMDljOTI2NTdkNzU0ZGZiMTIwMTJmNTk3NzU4MGViNGRmYjE5ZDMxMTI1OTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0YTYzNjhjMmNlOTZjNDMyYjY2ODJjMTEwNTBiZWQ5ZGJhMjkwNzUyN2EzOTY4M2Y5MDA5MmRmYTNiYzNlY2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_50a7f3db63864a1ea123f81e8617eccd",
+      "statement": "Partition writes go through upsertPartitionVector, which deletes and reinserts the vec0 row because vec0 ignores OR REPLACE, and PartitionWriter, which inserts vector_rows with INSERT OR IGNORE and writes the vector only when the mapping row is new.",
+      "evidence": [
+        {
+          "resource": "repo://src/vec-layout.ts#L198-L262",
+          "version": "repo-lines-v1:sha256:2f43ecaa26b339bb607360a51453ba323e5006837b706eda1ea62dd75905dc10:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjYjhhZmEzNDRjYjQ0MDkyZmZkZDc3ZDAxMDEyMGNlYzAwMDRlODNhN2Q5YTllNGUwM2FiMTY0YmM5MTE3YWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjYjkyMWM4MzBjOTIwN2M2N2YxMGJkNDdiM2Y2MzM5NDU0ZDc3NDM0Yjc0ZTY1YzA3MzllZDFlNDU0NWUxODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgyMjkzZWUyZTQxOWNjYzI1ZGFjYWMzMzgzY2ZmYmRlMzIxNDFkMDYwM2YyMjhmZGZiNTFhZmUwOWZhNjQzNTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9b3af196726b4ea9a809a6637f4e1127",
+      "statement": "missingPartitionRows reports content_vectors chunks of active documents that have no mapping row in the document's collection partition, which the store uses to copy vectors to a new collection or queue the chunk for re-embedding.",
+      "evidence": [
+        {
+          "resource": "repo://src/vec-layout.ts#L292-L303",
+          "version": "repo-lines-v1:sha256:4d8511a58e048821c916304b7ef75b4a6e474fc85d8856ad35ef19c15c8b1342:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxM2Y2MGM5ZjMzMmI4M2U1OTAwMzc0YWM3Y2JjNzFhNjEyNTI4YzRkM2JhZTkxM2VmNDQ4NzY4M2Y3ZTRjNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZGQ3NWIxMzBjMWRjM2M4ZDZmNzkwZjBhZWNkOGY3ODkxNzA2NjI5ODg1YzczYWE4NGMwNGI0YjQ2MjliOTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d5dcd2565f5a47e6ba8b3b62455753d3",
+      "statement": "removeCollection deletes the collection's vector partition and id, its documents and sync state, orphaned content, and its store_collections row inside one transaction so the mapping stays consistent with the vec0 table.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L4294-L4312",
+          "version": "repo-lines-v1:sha256:8cf987fea2dcec9133de0fa89f02d8addefdb69cef9f155dc4694189aeb6ff68:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlYWQwZjJlNzM2ZjQ2OTAwNDY0ZDIzMjc1YzlmZDA0ZDFkMTFlMTMwM2ViNTNjMGYxMzJmOTJkNGVmNjgxMTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4ZDg1OGI0ZDg0YzNiODc3MzA1NzA2ZmVkNTkxNDNhNDAxMjU0MWRiYTNhZGNhMDhjMjg5NGJiY2U0ZDk0ZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyYjU4NmYyYmY5Y2ZiNTZmOWExZWE1ZWMxZTkzYTAwNzBlNDAzMmFmNTkyZTFhYzlkNDQzMmZmMGZjZTdhZWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlNTIxNGYzY2RjMmY4N2QyMjFlOWE0NGYyYjRiODY0NmQzOTczNTgwNjZkZTc0MjRhZGIxZGU0YjRlNTBjNmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bcb46e724ddb489c9216cd192910f13f",
+      "statement": "Collection path contexts are stored as JSON in store_collections.context and the global context as the store_config key global_context, and getStoreContexts flattens them into collection, path, and context entries.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1318-L1329",
+          "version": "repo-lines-v1:sha256:625555f0f37901f1321d5bd3f71e5fed0846d726c8a4f94f7fac3a6a647e8434:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlYTU1NmM5NjgxYjc2Zjk5OGMyYjdhZGJlMGI1MTQ3OTQzMWZmODQ2Nzg5OTU3ZWM2NTNlNzIxZjdiYjc0MjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3YWUxZjdkMDljYWUxMjU5OWNjNjA4NGVmMTljZTQ4OWZmNTQ2YWJkZjAxMTY2MmZmZTEyNjYwNjY1MWMxNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkNjY4MjQwNjA3YmZhZDBhNzQ1YWQzYzM4OWJlMjZiYjJhNzM3NTE0ZGZlODUxOWM4NzUyMWNhY2E0YWJmMmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhZTU1ZjEzMWIwODQ0OWI1ZmJjMjBkMWMxNjg0NmE3MWQzNTVkMDVkYmUyNDlhMDBlNzk1Njg5ZDI4MmEyNmQifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L1408-L1428",
+          "version": "repo-lines-v1:sha256:7f9560ae24c0aade99a5fcadbd58a0ab917d13440becd8b58eae9e7934e1fbfc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzZGNkOTE4ZjU0ZjdmYzU0M2U0YWY0MTY1NjQ0MWMxNWQwN2JiMzZlYjUxNGRjY2FmNDA0ZjVmMzg0M2UyNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQzMGI3YzdiNDY0ZDA5Y2Y4YTZkMDgxZDIxY2JiNGU4MDQzOTMwOGJhYWFkYzI5YTRlZjVjZDIwYWRmYWM3MjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlMmQ2ZDExMWMwODZjMDY2YWI3MmI2NmFkN2Y1M2NkY2M5NjU5Y2Y2NGM2NThlYWQ1MGEzODBhZTA1MTY1NDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c8a3fe3d086495291eab4e5331b3c6c",
+      "statement": "llm_cache stores results by a text hash key, and setCachedResult prunes the table to the newest 1000 rows on about 1% of writes.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1287-L1295",
+          "version": "repo-lines-v1:sha256:2aa0f89b301886438ee993e500dad65c5938549d3e297f3940cbdabaa955cfbb:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQ5YTU1OGUwNjYxZjFmZDQzYjRhMjg3MTUwNmU5NmViZGY3Y2Y3NGNmZTc2ZmVmMWYzNGJlNmEzNzkwMTcyZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzRjZTY4OWMzOWQ2MDQzNDE3NDVmZWE2Njg3NjlmZjc0ODQ0YjU4MDUwN2EzYTMwNjAzNDY2OTNkZWE2NTQ0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzM0ZWY3MmIxOTRkZjc3MzZhMTE3ZDczMTViYTc3ZDJhZWI3NjBiNDkyMmIxNjBiM2RhNGQwZTA5YzIwMTM4YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDJhZGVjYmMxZmFhNmEzNGRjNTY3MjU4ODI2ZjVlZGE3YWQ5NWUxZjM2OTY0MDQ0YThhZDZkYTFlMjg2NmU0OCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L3127-L3134",
+          "version": "repo-lines-v1:sha256:55ee0e61a3827fcde4b91dad5b4a9978a2fd55d3513668b8c3e128a91198e63d:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjViYzdiYjQxNjhmNzlhMThiYTQ0YjA3NTljOGQwYWFiMzlhYzI3MGIyODBjYjUxYmYxNTE4MzgxNTg5MzM5OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmMzYmRkNzNiZTM2YzZkNDAxY2E4ZmIxNDRjZDg5NzhmYTlkNmRjYzYyN2MwMTdhZTZmZjc0NDdiZjZiNzUxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjNmMmIwMzg4MzA5NDY3ZTUxMjJjNzQzNGFhNzlmODI5OTdlMjM1MzM3N2FkMjRmMzZlMmQwNzYzMWQ4MGFlZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb74d36bc7af4474afd992b688767e21",
+      "statement": "file_sync_state keys each file by (collection, relative_path) and stores mtime_ms, size, content_hash and document_id, serving as an mtime and size fast path for incremental sync.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1338-L1352",
+          "version": "repo-lines-v1:sha256:ef77b2496b75b97cba4f061e63f33b528cf59bca04c1edb101513540f0b9962e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5MDBlZWM3OWI3MjZiYjkyMThkNjk2Nzg3M2YzZDg3YTY1YTFmYjQ4OGQ2ZWQxZDU0MjI3NmJkMzFhYTIwNjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmNGQxZmJlYjJjYzM3YjU3MDQzOGRhNTQxNzAzZDNhZDNmODIxM2ZmYzYxNGUwZmU4NmFlYTQzNzc1OTM3MGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2ODM1ZThiOTM2NzNmOWU3YWFkZTBhM2Y1M2M3MGVjM2FmNGFkMGU5ZGM1Zjc3ZDlmZTc3ZDhhMTIwZDI5MzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4ZTgwNDJhYTJiMjI5MGQyMzYyZGU5ZmJlNTk0YjAyNWNkMGFkM2IzYmEyZjAzOTEwYmVlMzM1ODE1ZWMzMmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ee926a8514334e99a3d7f150e1b42138",
+      "statement": "document_metadata is keyed by document_id with a cascade foreign key to documents, and document_metadata_values holds typed rows keyed by (document_id, key, ordinal) with a CHECK tying each typed column to value_type, plus partial indexes per type.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-store.ts#L41-L86",
+          "version": "repo-lines-v1:sha256:7cd1389fa0917a0352cc2371b61952b75d9c9a759e8d67ab60860c6712651c2c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNTc1NWMwNzU4ODlmM2I1ZGI3NzU0MmQ5MmY3N2M5YWVmY2Q5MWJmM2U2OTlmYjhjMWExNThmNjZhYTMxNzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5Y2VjNDBkMDk1MzY4MGJjMjA3ZTY1M2NjMTNkOTJmODc4ZWU0MDBlYzI5YjdiYmY5MWY1YzlmZmI3NTQxODciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjMWIzZmJkYzExZTA3ODdiZTNhOWY2ZWNiNjRlYzM3MGQ1NTFhMmFmMDlhNjU4NzRkNjE0NjFlNTMzNzhhMDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE3ZThhMDA5OGY4YTU4ZjQ5ZjgzMDdkYmIwMDM0NmY4ZmY0MTcyNDFkMDBmNmFlN2FjNzAwNjQzM2U1ZDg2YTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a444759c2edb49c8be1edf36f7f7c7a8",
+      "statement": "The FTS repair path recreates documents_fts when its schema is legacy (content= external table or a name column instead of filepath) under BEGIN IMMEDIATE, and the CJK rebuild is gated by store_config fts_cjk_normalized_version equal to '1', separate from user_version.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1040-L1121",
+          "version": "repo-lines-v1:sha256:4748f77e11c8789acdf46818373f395be6eaffd526b60ba75a407702bb7169bf:eyJzZWxlY3RlZExpbmVDb3VudCI6ODIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2NTk1ZjRlZTVmZjYzZDUwOTUwNDE5ZGMzNDQxNDUxMzg1MWRjOTczNmZkMTdhNGY3YmZhOTMwYjI2MWI2ZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1YmY3M2FmNGNmMTBlYmJmZDdlOWY2ZGNjNWZlNDcxNGU3ZGVjZDlmYjBmMjA0N2JiYmQwMjA3ZGY0ZDdkNmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4MTA4NjFkZjZjZTZlYmRkYzM3NTlhNzExYmU0MDdiZTk4YjYwZWJmZTJmYTJiMjc5ZDA3MjVjNTVhNTJmZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2YzkzZTZiYmM3ZTMwNmNmYjRiODk3OWY1YTBkYTUxZWY0MDU5MTVkMmJiNTM3OTg5YjhlNDM0YTYwNzBiOTUifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L1141-L1230",
+          "version": "repo-lines-v1:sha256:f07aa9352ed52cf593ffc114db5434406dfcd061123df01dd07faa17afc80f84:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhYjQxNDM4ZDg5M2UxY2Y2MzNhOTQzZWQyZjk5NTFjZTcwZDc2ZWE0NTM0MzdlZTg2ZGQ2NWU2YzIzNmRmOWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2OTIyNDU0YmQzZTc3NWQxZDEyNjQ2ZDgzYWExMjQzMWRkMTY1OTcyYWM3YTliZjRmMzIzODRlNmQ3OWIyMzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5YWVlYzhmODE5ZTBiNjkzMTFhNDdhMTI3OTBiOTBkMmZkNGEwZDQ0NmI2MjE2OWQxYWRjZTE3NmNmYzkwY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzZDM0YjYxYzJkZWYxY2MxOTNiNTZkNDk5YzQwYjczY2MyNTYxMzgwNGExNDMxNjhkNGRjOTJmMTQwYmVlNmMifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L924-L934",
+          "version": "repo-lines-v1:sha256:86acb811b92e34d25450609794f561c11029ae79b072c67f2b5128f0c70f921f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlYmZhNzJmOThmYzFiMTYyNTI1MGVkOWZjNGY2MjdiNTIwNzU5MzE5MjVlNjU0YzQ0ZDY4NTI4MDNmYzZhZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4NGE3Y2FjOTNjN2JhM2FhMTRlMjBkNGI4YzRiMzkxZTdmNDlmYjllZjUxNzliODFkMDQ2NGJjNGFjMmI5YzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhOGQxNjY5OWQ5YzcyN2Q5ODBmYTM3ODM3ZDZmYWU1Y2Q2M2YwMTZiZWI4NjU0OTllYTU4Njc3ZjA1NDllYmEifQ"
+        },
+        {
+          "resource": "repo://test/store-cjk-fts.test.ts#L1-L150",
+          "version": "repo-lines-v1:sha256:42a801db2dc293d605b2079b9e13f91e841105fab5d42b0e7d1b529e9a3f4a40:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwMzhkNmUzNjc1MTVmNDZmM2ZmMTU0NmRmODU1NmViYzg4NTVmOWYyN2Q0ZGZmMTc0NmE4MDNiYzhkNTkzZjNmIn0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

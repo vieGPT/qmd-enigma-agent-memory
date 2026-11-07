@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ea96d35fe76f5460ad11b6c14926743924888d867135589cd8275c4e04afe995",
+  "claims": [
+    {
+      "id": "claim_4ad1fab8ee774e36bd035cd406b9ae24",
+      "statement": "normalizeVirtualPath rewrites only explicitly virtual inputs: a qmd: prefix is reduced to exactly qmd://<rest> with leading slashes collapsed, and a // prefix gains qmd:; any other input, including bare collection/path strings, filesystem paths, and #docid values, is returned trimmed but otherwise unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L767-L785",
+          "version": "repo-lines-v1:sha256:a1d3f8b934539d61347e3362c7d515b9b6e6bc4962d09732396fe20f0884a309:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjNzU0NjdjOGViYTc1N2NkNmIxZmM5NWMxN2VkOTRjMjQ4ZmUxODZiMTE0NjM2OTY0NTA1Yjc0YzY3ZDQwNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzY2QyOTRhYmQzNmQzNjAwNjZkZmZkODQ2MDZjYjQxOGViMTIzNmJjNzc3OTdlM2NhY2Y0ZThmM2IzNGEwYzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIyMzUzMjBiMWQwZDg1ZWJjYWMyMWZhY2YyNWE4ZTkyMWFiMmE4YmYyZWU5NjkyYmI2MTNiODQzZWRkMjlkMmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5MjgzYTMyMmE2NTgxOTcxN2NjZjc0ZGFhMTgwZmZkNGY3MGY3MjU5N2YyOWY5MWRlYTdlZjk1Y2Y2OTlmMmEifQ"
+        },
+        {
+          "resource": "repo://test/store.test.ts#L7118-L7165",
+          "version": "repo-lines-v1:sha256:c3f5823dbca92838c81bb112b5f5663c2a435b5ff2fd82ca6b552cd84ac197ba:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzNDJmMGVjOTU4NTc0MjFmYTUwNTlhNjY3ZDMyY2JhMDdjYmY1NDJmMzdhOTMwZWVkMGY0M2E2ZjRmYjVlZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyMGVhM2Y3NTZhZTdmZjQ5ZjBkNjExOTUyMjNiNzFmNDNjNTYyZDIyOGRlYjMwZDZkODBjMGUwMTVkNWIyOGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1ODY3Mzg0ZDEwZTlmODhkYzJlNzg4ZjZmMGY4Y2IyMjY0OWE0ZTkwYmJiYTJlMGIyYzVhZmVlMzliMzQ3MDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_70953cf647f64fc591828166e885c1e1",
+      "statement": "parseVirtualPath returns collectionName, path (empty string for a collection root), and an optional indexName taken from an index query parameter, and returns null for absolute filesystem paths, ~/ paths, #docid values, and bare relative paths.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L794-L811",
+          "version": "repo-lines-v1:sha256:c7c4feb7b371697eba0b4266d43f92e2f8ad59b520e526a9c81ec1af562d78bb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkYTc3OTYxNjIyMGM5MTdjNDJjODk0ZmJiOWFhMWFlY2QzNGY0NTFiZDkxMDkwYzBhZjgwMjlmZDkzNDRjMTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1YmVjZjE5NWU4NDdhMjU5YzAzNjkyNWZlNmEwNjAwOTUxOTVjNmVkN2NkM2E3NDhhZWI3MmJmZjEyZGMxZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjczOGI3MTVhNzI4NGNiM2Y4Y2I2ZGQ3YmU5MGEwMmM3NTYxNjZkZTRmOTZlMDQ5NTIyYWE4MWFjNDJiZWUyOTcifQ"
+        },
+        {
+          "resource": "repo://test/store.test.ts#L7208-L7267",
+          "version": "repo-lines-v1:sha256:df52c5fc594ce1e40c5ccc005e40d60d1822534227a924f6765ba39e2f663daa:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0YmFmNWFhZWYzMjFiNjE4YjBmNDkxMDA3ODczYmE3MGMxOGNmYmY4ZDI1ZjVlNDI2ZDU2ZjA1ODVhODEwYjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI3NzlkMTE4ZDZlM2NiZjQ1MDUzOTc0OGRlZTdhNDMwN2FjYmU2NDQ2Y2JhMjk3ZjI3NjBmYTVkMGJiYTFiYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjMWZiMTIyODVkODc1NDEyMjYwN2VhNGRkY2NmMDA3YTA3ODkzMmU4NDY1MmQxNjNmZjUwYjMxYmM2MzkzMzAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_13ea6d6783214f67883633f18ede0492",
+      "statement": "buildVirtualPath composes qmd://<collection>/<path> and, when an index name is supplied, appends a URI-encoded ?index= parameter.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L814-L817",
+          "version": "repo-lines-v1:sha256:c801769d50d7f00ea86c18d3d399a59a1af243d4d967325f1d849cebe63c6f1d:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTk3Zjg4MzcyYmFlMzk5YTJiN2FiNzU5NTA1OTU3NDY5MzJlMDU0MjY4ZDkzNGU1NGRhYWI4ZWZmZWRlYjRmZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODFhMGJkYjE2ZDk5MGNiZDM4MWNlNzlkYWU2N2I3MWI3ODU2NjNlNjMzZjhiOTJhNmEwYjk3NDBjY2U1NDNlNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODgyYmY4OTg3NmU2MTcxZTRiZTBiMWFmZWJiMzUwNjYzNWE2NjgwZGE4ZGJmYzA1N2ZlNWU0Yjc3ODA2ODQwOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1aca6a23c40e432bba168bbd3a7cef8b",
+      "statement": "isVirtualPath is a prefix test that returns true only for inputs beginning with qmd: or //; a bare collection/path is deliberately not virtual, so callers must resolve that case against known collection names.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L828-L838",
+          "version": "repo-lines-v1:sha256:dc3c57be786d48a666573eab2e6e722b6dde408c802e3f89cf3b5fd290420309:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0Y2I2ZWExMTlhYTMwNzhjYzYwNTM0Y2IyNGIyMjg2YTU1MzkxNzY4ZjZhNTQxNTUwYWNjODk3MDBkMjFiOTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlOGE3OGZmNmY3NWQ2OWQ0ODlmNDE2MGRlOTg3MDBhZGVkNDkyMzFkMGQyNjhlZmIzN2M5NTJmNzc4YmYzOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlMTk4ODM4YmRkM2VlOGQ4MjkzYTAzY2RiZTZiOGIwMDJiNDVmZWJhNzdlOTJiNGI3NDdhMWVjODIzMzJlYzEifQ"
+        },
+        {
+          "resource": "repo://test/store.helpers.unit.test.ts#L306-L307",
+          "version": "repo-lines-v1:sha256:311f36dff99bfb09451f1057e5e927feaa8ad0a6b2fd1f3d8c2a60b4ea4334a0:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTUzY2ZlNjM2MWVjZTJmZTRmMWI3NmJhMDQ1ZDYxN2NlZGE4M2FhODVmZDRlNGQ3ZjRiYzQ3N2JiY2UxNWE1NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjgwMGYzYzMyM2I0OWY1NmJiNWViNWUyNzA2MzJiMTVhNTJjYTQ2Njg1MzVkZjQxMjk0M2JlMDdjZGMzODdlYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODFiNWE2Y2ZhN2EwMjUwOWI3NTRiN2FhZGM3MzNmMTkwZDdkNWZlYTkyOWU4MGVhZjE2NTU4NTAxM2ZjMDkwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2MzM2JhOGE3NjYxY2U1ZGI3NzBmNjJhZDg3Y2I5M2VhOTUwOThlZjk4ZjcyNzA4NWEzNWZiNzBmNmMxODA3NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_eb90e2b9fb67454982643fcb45099862",
+      "statement": "resolveVirtualPath maps a virtual path to an absolute filesystem path by joining the relative path onto the collection's pwd, and returns null when the path cannot be parsed, the collection is unknown, or the joined path escapes the collection directory.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L843-L852",
+          "version": "repo-lines-v1:sha256:5ea40987a2fc5a28c718bd324a1339aa6de727b3250a3343e3db36484430d4b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2MTBlN2Q2NmZhYzVjMGY0ZGQ3ODYxY2JjYjlhYWY2M2ZjZDljY2I0NmM2MzBiMzk4NzQxMzcyNjU2MGRjNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMjhiNjAyMGMwYzBjNjJlN2Q0ZDZiY2U0MjhkNzIzMDc5MTdlYWExYWU5MTI5MTAwYTE4ZWQxODhhYmJmOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxMTYxMDQ4OGE1ZmJlNjcyOTA2YTkwNGM3YjAyMGEwOTE3MzFmYTNmMDMzZDk1OTRjMTQ1ODJhNWNhNmExNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        },
+        {
+          "resource": "repo://test/store.test.ts#L3138-L3150",
+          "version": "repo-lines-v1:sha256:046960a4193ce52424402d4c07c8e0e1703d7df8c203e7f1615e7dc90a9dc031:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3NGIwZDRkNTBhOTM5NGExY2E2Nzk4ZTVmNTI3Njg1YjkwM2NjMzhmMjg2MmJjZDBmYzIzMDcwMWYzMDhiNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmNWEyNjAyYzdiOGYzMDZjNTYwZDUyMTY0MjI5NzgxZTczODFkMWFmZDM0NjRkMDMzNWYwZGMwMGRkYWE5YzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyMGZjOWU2N2RiMDdlZDIzOWJiM2FkMjMxMmVhYWI5YTcwZTFmNmZiYTAxMjg4YjBiYTZlNjFkN2Y4ZWU3ODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0YzU2ZjAyMTJjODZlMDdjOGE3ZjVmYzRiYzlkMzczOGE5NjBlNmUyNmVhZTQ5MGYxNmY5OGQ4ZTkwYmM2ZjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ac38fbb9aa9d4c4089e22ce4ef52b8e5",
+      "statement": "toVirtualPath returns a qmd:// path for an absolute path only when the path lies under a stored collection and an active documents row exists for the relative path; otherwise it returns null. Within src/ it is exposed through the store API and has no internal caller.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L2653-L2657",
+          "version": "repo-lines-v1:sha256:28bdd9fe347027c49fa68ae71bcd6740a11502f049fa89aee44b61ce6d80492e:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDU1ODI4NTlmOWExYjNjMDA5YzFjZmJjYWJmZGIxN2RhMzBhMTc5ZjA5MTNmYWEyZGExZWY2ZDk1NDhkYTZlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2FiOTE1OGQ0YjU1Njc1YTJhMmY4ZTZmYmIyMmU3M2E4NmYzNWVkZmM5YzA2NTI5OGU5NGNmNjM1N2IzZThkNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2U5N2UyOThkYzNkY2NiMTg3ZjZhMzRjNWJhM2IwMGE0ZDc1N2NiOTFjNTYzMWEwZjMyMWM0ZGNmODhkMzcwNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTFkYzA1MjI5NGZkMGNlNmM3OTdkZjRlNDgzY2QxZGZiZTAzMTRlZWVhNWM4OWQ2OWY0MGQ2Y2VmZmI2MzdiZCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L859-L886",
+          "version": "repo-lines-v1:sha256:3c6a4aa217fefe3547d1deeab6a97344135e8e38b4900fa464c2675ff7643f65:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1NDRkNTQ0MTZjODNjMzY5ZjA3ODhkZGRmNzA3YzAwNGI1MWVmYWU3ZTY4NDJjY2E1ZmM3ODA2ZWMwNWZmZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0MDc1OTczNGI5ZWU2MjhmYzlkNWFiNGUxZDAxYzJiOTJjNDgyOTM4ZmFkZmJhMmExMGM3MDIwMDYxZDRlMmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyODE2ZTE0OWQ2MDhiNDBmYWM5NTlhNzI5Yjc4M2EzYzYxZDcyYWEyZmZmMWFiYWZhYTg5NWI5OTQwMDE1NDUifQ"
+        },
+        {
+          "resource": "repo://test/path-fidelity.test.ts#L191-L200",
+          "version": "repo-lines-v1:sha256:8344de648b28a3d3ea401d9422680e4b0b4784b06b992744a79f80d55fcd2755:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyNDg2NGMzNTQ2YjNiYmFhZTYwMGM5Yzk3ZTdkMjg5ZDNiNzBmYWZmMDg4MDcxOTAyMjgxYWVkYmQ2M2U5ZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmFmMGExZmI5OGQ5YzMzZmYzNjUyOWU2OWZjZjZlYWJjYjMyNTRmYjdmYjJhMWM3MjVhMjMxMDE4NjNkYmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiNGQzZWZiY2RlMmE2NTFiYTUzYTgxNjc3ZWM2YTgxNjZmYzRlNTAxOTY3NWJmMjg2ODM5ZDdiY2IwMGRjNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlZGJhOWE2NzVkODk3MTA3YWJkMTBmZWQ4Zjk3OTZlYWVhOTk5MWQyYmRiODE4MTNmNTE2ZTc3MzM3MTRhMWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a01ab76d1f93406291aec2d532017bd4",
+      "statement": "getDocid returns the first six characters of a document's content hash; src/cli/formatter.ts contains a duplicate getDocid with the same behaviour, so CLI output and store results share the same six-character identifier.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/formatter.ts#L61-L66",
+          "version": "repo-lines-v1:sha256:acc201fb4754845f5575d41eb0fe519c0764c46cf683e31a2688dd36c42b7051:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTZjZjU0OTc1NzFiYzMyMmQ1MjY4NTVhZjJhNTAwNmI1MWUxMWQ4Yzc5MjUzMmM5ZTU5YzZhODQxN2NkOWU5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2Y0NWZkYTI5NTQ0NTE1OWZjNjE0ZGQxYTBiYmYwZmVjMTY2YTI2NTRkNmRkN2NkMmEyNDczM2E1ZmQ0YTY3MCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L2725-L2729",
+          "version": "repo-lines-v1:sha256:6731fc218e4ce1a2cd608fe064a05fb7c7135a364e53cf68f6de4d8fb9bdfe9d:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmE3ZWJjMDc2MGRiN2VjMDQ4OGIzZTQ4YTczNmU0MTNlMmI1OTZmMWFlN2Q2MTU2MmZiNjk2NGU3OTE2NTFmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWVlY2E5YWZjZTVmMjAzNWQ5N2NiODA0YTA2MjgyYTRhMTIyMzllYzVhMjRhYmI2YWVmZWU3MDNlNDhiOGM4MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAzNjM1OThkMzcyNTY0OWFmNzI5ZTFkMTdmNWMzZGExYmNkNzY1OTM0MDAwYmZkMzAzNjhjNDI0ZTQzN2Q5NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_788f4a3a0bae406d98f35a619e3877da",
+      "statement": "normalizeDocid trims its input, strips one matching pair of surrounding single or double quotes, and then strips one leading #, so #abc123, abc123, \"#abc123\", and 'abc123' all normalize to abc123 without validating the characters.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L3984-L4001",
+          "version": "repo-lines-v1:sha256:a3fee5fb7fafd66e8d332c5e4cbe9b09ba4332b78eff686c03766641edbd890a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzNjhkN2I3ZjliZWNiNTlkNzg4ZGM0NDUwODUyZjk5MjE1ZTdjMTA5MzNlNmY0ZDZiODNjYzY3MGUzNDEzMmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMGM4NjIwNGJmNDE2YWNmNzVlMzhmZGNkNzA0Njc4YWJkYzhmOWVjODQyNjM5MWVhNzRmZjYwZmFjNjE1ZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3eb8b17c18444f79ab181209918ec2e0",
+      "statement": "isDocid accepts an input only when its normalized form is at least six characters and consists solely of hexadecimal characters; five-character values, non-hex values such as ghijkl, file names such as abc123.md, and paths are rejected.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L4006-L4013",
+          "version": "repo-lines-v1:sha256:7ed446f7131ddd0e10aa2a070876afe7212a30e210e79286502082c70b3ecc8c:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTlmNDNjODJlZDlkNjVhYmQ4YmNhNTViMDk3MmNmYjliMDFlZDY5ZTc5NWFhNDU3NWE1NTg0NDViOTU4YjA2MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNjMjE2OGJhZDdjYjM1N2FiNmFmYzQ0ODQwMjIzYTBiN2EyNmYyMDQzNGM3ZjdiZGM5N2VkZjI3MTFjN2Y1OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzc5MjllOTFlMGY5OWMzZTgyNWRlNjliNDM1ZmI2NDg0ZDFiMGExZGYyZjQ2NTYxYWJmMWEyOWYwNDE4OGI4OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc5MjllOTFlMGY5OWMzZTgyNWRlNjliNDM1ZmI2NDg0ZDFiMGExZGYyZjQ2NTYxYWJmMWEyOWYwNDE4OGI4OCJ9"
+        },
+        {
+          "resource": "repo://test/store.test.ts#L7318-L7369",
+          "version": "repo-lines-v1:sha256:387174d5e540e5c880933e8ba7f9940cf59af37794d87a188fd6623f6fb95468:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliZjZiNGFkMjM2ZmY5MWIxMDU3NTJlNDUyOTk1YzQ3NDM3YzlkMDM5YWI5MTU3ZmE2MTJhODEwMDQxYzYwMDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiYjhhMDc4ODhiNDFlMTQ0ZTg1OTEwYjk5MzlkZDM4YTU1MjFmMTdjYWYwMDcwZTc1Nzk3OWE1NGM0MmM3NjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyNTI5Y2UwNmVmOWI3NjA5YTQ1YzRmMDY5ZWJkZTMwYzkyNjdmN2MzMmQ4MjQ5MTg5Mjg2NjhkNjMxYWZmM2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4MTdmYmI3M2M5MmIzNmQ1ZTQ4OTZmZjUxYzFiNThlZWMzMzBiYmU5NjFiYTA1ZmM2MjA1Zjg2N2VhMWJjZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0ed1f7f03c1c4accbfe72f093b188ad1",
+      "statement": "findDocumentByDocid returns null for an empty normalized input and otherwise selects the first active document whose hash starts with the normalized prefix; it does not itself call isDocid, so the store-level export relies on callers to validate input first.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L2680-L2682",
+          "version": "repo-lines-v1:sha256:788458a97510457a0707f0baf2e48753b53f012d85db250700d2ef73d9274911:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWMwM2Q1YWRkMzYyY2I3NGY5MTg0NTg4Mzc5NTFiMGU1NTU2YmViMjVkOGVlMmNmOWIxZDM2Mjg5ZjYyNjhjYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmY4MjdhMGMzMmFlZGNkZTM0N2Q3NjcyNjI3Njc3MWNlNmFjMzc4ZTJmNjQyODk2NTJiYWZmYzdhOWUwZDIwYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDBhYzAyNDM5YzhkOWQ0MDUyNzY1YmM2YzdkN2M2MTZmZWQ4OGRjOTY2MDdjNDUxODM1ZjlkMTJiMGY4YTZkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjIyYTE5MGIwY2YyZTJmZDRhMDNlMDU4YTM4NzI4NzUyNDY2ZjRhOWZmNGI4YTc2MjQ1MjA3MDllNGJkNWIzZiJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L4017-L4036",
+          "version": "repo-lines-v1:sha256:7ca4611ba02fb30558dc4037a0676082977a035b3f9f797f8d61bc9970caf393:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkN2RmNDA4NTViYTU5ODc0MDhmZWI3Y2NhNjgyYjA5Yjg2NmI5MWZiNzkxMTNjM2UyMjJlMTQxNzMxYjk1N2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwMGViN2M2NjlkZjg1YTM1YWVjYTVmY2RhMTBkYWNhNjRmYTAxZTZhOWU3NjM3ZDBlNzU2Mjc0ZDJmOTNiODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExMzg4OWM3NDRjYTZjNWIwY2Q1NGUyM2UwZGY4YmJlZjhiZjU3M2Q2MDhmYmI0MDFjNDhiOWExNzliNDlmYzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3aa353a642364fc8a7bf00aa03034abc",
+      "statement": "Docids are displayed with a leading hash in every user-facing surface (CLI get header as qmd://<collection>/<path>  #<docid>, CLI CSV/JSON/XML search fields, and MCP search results and tool descriptions) while normalizeDocid strips that hash on input, so #abc123 and abc123 are interchangeable for lookup.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1339-L1357",
+          "version": "repo-lines-v1:sha256:ce9f0077f947424d7a07702f63613ce021365deb8bbc9eddadb44e9e1616215f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyOGY5NjY4ZTk1NjNmMTgxMGRiNWRiYjUwOGE2ZWQzNjI2NGUzMzhkNDJlNzFlMDY4MjExMWQwYjZkNjk2NzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2NDI3NDUxYmQzNzQ1Y2I4YzRiNzA2OTQyY2U5OWU1ODU2NWRkYzE5N2NjYzI5MjYwNDIzOWM4NTViOWY0NjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU3NjZjYzFiMDM0YTI5NmY1MGNmYWQ5Njg4MTcwODA1YTAwZjgwZWY1YTEwMzc4NGFhMTExMTQ1NDNmY2FjYzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4ZmZlMzVjZGY3MjA4Zjc0MDExOGZmNTIzOTM1Zjk3MGU3MjA0Mzg0ZWQxMzI1Zjc3YmRjM2IzMzI4YmZjYTgifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L2734-L2746",
+          "version": "repo-lines-v1:sha256:cc722934bd64e4754c5a9c62def05dbf262e90fbf7b2e257c971a52fc06f058a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3ODc3YWMzOGVkZGIxZDhhMGE2MDViZjM2NmY5NzU1YWJiMDc2MjdkMTRiZDVmNzlhMzMyYjRlNWRiNDdmYzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2YTVkZDQ1OTMxYWM1M2FkMDNlYzhlNzA0ZTcyZjUyYjI5MzA3NzAxZTYzMDhiMTM2ZGU1YzQ2ZGNiNDM0NTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5MTE3ZTlkMTI5YjllNjUxN2Y4OTcwZmUzYjg4YjAyN2U4ODgzY2MyMDcxYzIwNTJmZWUxYTg3ODIxYTJmN2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2YjIxMTM0YzRhMzhjNjBiZGVkZmQ2Y2VjNDFjYzI5N2Y2N2ZmOTY0YThmNGIzNzdlNDVlZGNhZGM1NWI2ZTkifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L203-L204",
+          "version": "repo-lines-v1:sha256:6700a1dbcd25c71d026443c621bc3c9a140dfe506e9c1c11884c9e49241325a0:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzY2MjIxZWY4MjI0ZGE2ZDY1NTcxOGUyMDNmNjBlOGU0ZTI3ODUyYWFmYTMyZTM4NmFhODQ5N2FlNjliYzM5ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5MzRmNGNjZjI1ZjE2ZWE5YjAyMzRlZTU3YzY3MWNiZGRjMDE2YWIyZjdkNDZkODViMzVjYmNjYTVmMzYyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjM2ZDZjMzJjMzliOGFiZjMwNDNkNmNlODE2NWVlNDU0NjAwMGVkYmIyZTQ1YWMwMjE0OTVkN2U5ZWMxYTU5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDMyOGYwNmI5OTNkMGQ3YWY4YWVmMzZkYjI1ZjE5MWIxMzA4NTUwNDIyMzk2OTZiNWNkZDMzNzQ4MWI0NDk4NyJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L48-L48",
+          "version": "repo-lines-v1:sha256:b5f6d43fa3902785ea3f37199a35ad5c3ff5fa182bc46f476377d867429d31cd:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjVmNmQ0M2ZhMzkwMjc4NWVhM2YzNzE5OWEzNWFkNWMzZmY1ZmExODJiYzQ2ZjQ3NjM3N2Q4Njc0MjlkMzFjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjVmNmQ0M2ZhMzkwMjc4NWVhM2YzNzE5OWEzNWFkNWMzZmY1ZmExODJiYzQ2ZjQ3NjM3N2Q4Njc0MjlkMzFjZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjNjNDRmMzNhYjlmM2U3NTJiMTI5NzE2ZTdlMjAxMDJlMzkxM2U2Mzk4ZTdiZTE4MTc0MmZjMjYzZWY3MDc0NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWIyYTM5Yjg3NDA3NzZmZTVjOGZiZjllYWM2YjY1ZDJmZGU3NWQ4ZDdmNzY5NGI4ZTQwNzk4NTgxNzRmZTQ1ZCJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L484-L484",
+          "version": "repo-lines-v1:sha256:369a32a02bc47c80496262cc0746c4e944a122d68bc91214253f97fcab6229b3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzY5YTMyYTAyYmM0N2M4MDQ5NjI2MmNjMDc0NmM0ZTk0NGExMjJkNjhiYzkxMjE0MjUzZjk3ZmNhYjYyMjliMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzY5YTMyYTAyYmM0N2M4MDQ5NjI2MmNjMDc0NmM0ZTk0NGExMjJkNjhiYzkxMjE0MjUzZjk3ZmNhYjYyMjliMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGY1NDY2ZTFlZTI2OWQ1OTkyOTBlZjdhYTcxNjY4YzMxZDg0OWJhMTZmODU0ODQ1MDZiNTQ1NzllY2E0MGQ2MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2JmZjc0MDkwODdlNTI1YzQ2YmEzNTUzNjcxMzExNDQ2YTgzMDYzYzM0NzZiMWY4ZWM0NGZhZDk1NGE5NmIyMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b7a57ecb08334b88a07e6ac02310e45f",
+      "statement": "findDocument resolves an input in a fixed order: it strips a trailing :<digits> line suffix, takes the docid branch when isDocid accepts the input (a docid miss returns not_found with an empty similarFiles list immediately), expands ~/, then tries an exact qmd:// match, a suffix LIKE match, and a collection-relative or absolute path match, and only on a total miss checks ignore rules before returning not_found with suggestions.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L5565-L5672",
+          "version": "repo-lines-v1:sha256:57b60dfa193dadd79407b4c62330840c13944a4b919172cc2405ff2b62ea862a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxNDI0YjNlYTAwODNmZDczODJhNjM2YmQ0ZDI3NzhiZGQ0NDI5ODIzZWFkYmYyZWM2NDlkODBhN2ExNGE3ZDk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI4NWJlNWVlMjI2MDllY2NjMjA0MGFjNzJmODliZjIzNTgwZjVhYTE2ZjcyNTgwMTg2M2Q3ZmIzZjgyNjhlODM4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmYjg2NDc0YzQxMzFlYjQ5ZjAwZjUyOGJiODBmMTY3NzEwNjRkODM1YmFkMzQ3ZTM4ZTJkNjEwODE1YzY1ZDM0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb1db47b4a1e4e949e7e0967b73e630e",
+      "statement": "A DocumentLookupError is either not_found, carrying the original query and similarFiles, or excluded_by_ignore, carrying the collection, candidate path, and matching ignore rule; the ignore check runs before suggestions are computed, so an ignored file is reported as excluded rather than missing.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L2857-L2874",
+          "version": "repo-lines-v1:sha256:abcab91f3fd570476c1af64817ef2086d2061cd3aa53dbce71efd959ec9da490:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwOTYwMGFkNmY0OTU3NTA0Y2RlNGQyNmNlNWMxNzliYjEzMmUwZmMwYTYwODNiNjIxMWM3ZDMxZmU3YzI3MzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiZmRhY2IwYTQxNWE5MDk0Y2Y5YTQzMTRiNzQ4MDVjZjA1Zjk1YmU5NzIxYjRhMTBlZGRjZWY3YmZjNjVjMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiY2E0ZjBhYjczYjFhYjU1ZDlkZmYzMWUxODJlMGQ5ODliN2QyMmI3MjI4OTEyNTIzY2E1ODY0ZmJmNzFmYzgifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L5513-L5547",
+          "version": "repo-lines-v1:sha256:d6335bf91e74dad3721b2d4c47204ac5aa51ba39c434841b42f4b065e761b982:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkMDE1NDI2NmFlYWNlN2Y2MDI0Nzg5ZmM4ZDJhOTMxYjMyZTliOGFiNTdkNzI2NTgxYTFhMDg4NjEzNWE0MWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4NjkyNjIwZjMzNWQyMDlmZDI3OTI4ZDIxYWJkZTRkNGFjZGQxNDEyM2JjNjlmMzVlMjZmZWJmNTQzZjYxYTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjMDhjYjdiODU0OTI2NGYxNWIyNGMyM2EzOTJiOTQ2YjM0ODM1ZTMyMDg1NGUwYWM1YTA1MzNjNTZjOWMzNmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f92f85eff00941609b77e264321a0b4b",
+      "statement": "findSimilarFiles compares the lowercased query against each active document's relative path with Levenshtein distance, keeps matches within maxDistance, sorts them by distance, and truncates to limit; findDocument invokes it with distance 5 and limit 5 for not-found results.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L4039-L4056",
+          "version": "repo-lines-v1:sha256:cb38e97c97d255d71dd05409edd8afda5e204a475bb54cbdcd96f7af78d1fd37:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0Njk1Mjk4N2M0Njg3MDM2NzNjNjcxMjc2YmE4NTMxOWY0MWJjNmQ2MjAwMTdjMDkyYTM3NjA3ODIxNGI1NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3Njg4YjE3MDg2NDdiN2YxZTczMDM3YTY5NDc2YWEyM2JiNjg2ZDAxYjg4MTZlN2ViYTQ4ZTdiNmZlOGM0MWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkZmI5MWQxZTE4MDU2NjFkM2ExYjY1NDg0YTE4YmYwYmZjNWNkMDgwOTg1NmRiNmQzZjNkNDU4OTI2YjAxMWMifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L5565-L5672",
+          "version": "repo-lines-v1:sha256:57b60dfa193dadd79407b4c62330840c13944a4b919172cc2405ff2b62ea862a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxNDI0YjNlYTAwODNmZDczODJhNjM2YmQ0ZDI3NzhiZGQ0NDI5ODIzZWFkYmYyZWM2NDlkODBhN2ExNGE3ZDk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI4NWJlNWVlMjI2MDllY2NjMjA0MGFjNzJmODliZjIzNTgwZjVhYTE2ZjcyNTgwMTg2M2Q3ZmIzZjgyNjhlODM4IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmYjg2NDc0YzQxMzFlYjQ5ZjAwZjUyOGJiODBmMTY3NzEwNjRkODM1YmFkMzQ3ZTM4ZTJkNjEwODE1YzY1ZDM0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_cbe8689a4dfa4223ada195b0ed62511c",
+      "statement": "The CLI get command strips :from:count or :from suffixes, rewrites virtual inputs through parseVirtualPath and buildVirtualPath (applying an index name when present), prints Document not found plus any similar files to stderr, and exits with status 1 on a lookup error.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1291-L1360",
+          "version": "repo-lines-v1:sha256:aa301b09d610e8abc65ee58565d197b3aad416148ea26f5492f18c86b81bde6a:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwOWI2ZDQxZWI2ODAxNDFmYzcwMjE5YjI0OTZlMWM3NDIwZWMzYTc4NDhjOTU0OTk3ZDlhMmRhNDg3ZGQzNzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4ZWQxNDc4NmZmNDg3ODE2NjA0ZjllMDAxMDU4ZDRhZWIxNGIwM2NkMzk3OWNhMmE4M2FmY2RiM2EzYzdlNzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4MTM3ZTNmZGY0NTRiZGM3MzhkNGVkNmY4YTgyM2NlYmE2NTBkYjgzNzFkZjk5MTVkMDBiZjQ1MjUzN2M5YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkOTliNzEwMWY5N2FhNGY5ZmU5M2M4ZDE0ZjdmNjlmODgxZWM4OGVkZjJlMjI4ZjkxOWMzNzE5YWM4OTYzMTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d10b0550419748e09b7828b8dcbc33ea",
+      "statement": "The MCP get tool strips a trailing :from:count or :from line suffix before calling store.get, lets explicit fromLine and maxLines arguments override the suffix, and returns isError with a Did you mean list of similar files or the ignore-rule details when lookup fails.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L506-L560",
+          "version": "repo-lines-v1:sha256:7b7842b60cdab490bfb723b28d18efbcfedbdea1ce68ef3231c60ab646034daa:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4OTRmOTIyMTEyMzNlMjExOGQ5OGJmMmNlMWFiY2IzMTI1YmQ1MTAwM2UzOGIxMjRjOGQ2YTcxZDZiZWI1MzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2YmVmZGUwNTI1MWVmNTMxNWJjMTZhOGRlM2JmYTIwMmYzYjVjNDdlODcxNDMxOTVmZGY5M2FhZWFlOTQ4NjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzNTA4YTU3NzMyZjgyN2E0ZjJiMDI1NWI0NDIxMjlkYjhkOGU3ZjJjNDE0N2E1ZmJiZWNjNDZjZWFjYWM3OTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmZmJmMjllZDdiZGIxNDQ5ZWZkMzliMWUxNTBlZDE2YWQzZTFiYjdjZjhjMmU4NmQ0ZTNkZGI1MDc1MzRlMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_74354847109041a6a77b0e06f17ce814",
+      "statement": "findDocuments routes a comma-separated list or a single docid through resolveCommaListName and everything else through glob matching; names that do not resolve produce File not found errors and globs that match nothing produce a No files matched error.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L5849-L5948",
+          "version": "repo-lines-v1:sha256:d224caf7e1c59f621f76ac9b4f5b84777844ba7ccebf34a01fef719bf4f5ced8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzNDIxNWJjNjgyOWQyZGNjYTQwMTllMGNlODE0NWJjNTBhZDFiNmQ3NDdmYzkyMGE5NzE2ZTE4ZDkwMzA0NTdkIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIyZWViMjQ1MjhlY2NjMjg4ODc5NGQxZjFmMjQ3YjNmMzU0MDk3YjZkMWQ5N2JjNThhZjUwNjhlYTU5ZGQ5N2ViIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0MTVjZTQ0ZTZmN2U4YmNiOTkyYWE2NWJiNTcyN2E0OWJjMzRmNTY1ZjhmNmIzMzgwZmRiYjkxMWRiMzFmODg0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_38a3be54b1f642378252b8917b0e7919",
+      "statement": "resolveCommaListName matches a docid or qmd:// URI exactly, then an exact collection/path, then an exact document path, then a slash-anchored suffix match; it never uses an unanchored LIKE, so a fragment such as NTAX.md cannot select SYNTAX.md, and ambiguous hits at one tier are reported rather than truncated.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L5791-L5846",
+          "version": "repo-lines-v1:sha256:420ef78d5a0532dc799cc1db5f17299d9bfdc27c5057261aeb24a7093e6877d7:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlZTgwYjVjYjY5Y2QxZTBkOTY1MmVhMjcyMTNkMWJlZjZiNzU3Y2RiMWJlODIxN2E2MzIwMDAxOWZlNTExODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2YzUyNGMzYzRhYTgxNDlkNWFkMzlmODg3YTNmZjQ4M2I0YTIwMmUwYjk2YTlmOTAwNWE1YjhkZDMzMzZlOTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdlOTI0NDJjNDA1ODEzMjY2OGE1OTA5ZmY5OTRmN2VhZDAyNWVmOTBjMWMyYjJjZDg1ZDA4OGFkMzY0MmUzNDYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_de7a8218ad164b0fb03a2ceace763027",
+      "statement": "Multi-get marks a document as skipped, rather than failing, when its body length exceeds maxBytes; the MCP multi_get tool defaults maxBytes to 64 KB and tells the agent to use get for skipped files.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L585-L640",
+          "version": "repo-lines-v1:sha256:8f23fa7794a387007bf76b5b0e8c59fe748dfa13cd7985bb36ac1e283c48f380:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Y2E4OTFiZmY3YWMxZjdjZWFhZTQwZWYwNTEwNjZiZTllZmU0N2I0ZTQyODFlODZjMzE5YmUyYzU1ZWJjZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5NjNhZmEzOTk0YWE2MjEwM2M2NGJkNDU4YTg2OWUwYzg4OWZmZTMyNzRhMjk4MmI5MGZmNTFkYTc5ZjMxMzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0ZjVjNjJiNGI5ZDQ0ZGQxNTRhYTlkNjA1MmJlNDc4YzQyZDcxYjFhOGJkMTZhMDU5YTcxY2IyZjY3MDkwMzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0MmQyOGEzNGQ4MzQ2MGU3ZDhjM2JhNDMwNjZiNTE3ZGM0MDU4N2Y4ZTI4ZmY0N2FmNTQ0NTBkMGEwMGEwZWMifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L5849-L5948",
+          "version": "repo-lines-v1:sha256:d224caf7e1c59f621f76ac9b4f5b84777844ba7ccebf34a01fef719bf4f5ced8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzNDIxNWJjNjgyOWQyZGNjYTQwMTllMGNlODE0NWJjNTBhZDFiNmQ3NDdmYzkyMGE5NzE2ZTE4ZDkwMzA0NTdkIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwMWJhNDcxOWM4MGI2ZmU5MTFiMDkxYTdjMDUxMjRiNjRlZWVjZTk2NGUwOWMwNThlZjhmOTgwNWRhY2E1NDZiIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIyZWViMjQ1MjhlY2NjMjg4ODc5NGQxZjFmMjQ3YjNmMzU0MDk3YjZkMWQ5N2JjNThhZjUwNjhlYTU5ZGQ5N2ViIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0MTVjZTQ0ZTZmN2U4YmNiOTkyYWE2NWJiNTcyN2E0OWJjMzRmNTY1ZjhmNmIzMzgwZmRiYjkxMWRiMzFmODg0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e1f4109de9d44f0b6b5dae9f8013b41",
+      "statement": "The CLI --full-path option prints the on-disk path only when resolveVirtualPath yields a path that exists; otherwise get and multi-get keep the qmd:// URI and #docid and write a warning to stderr.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1344-L1360",
+          "version": "repo-lines-v1:sha256:cf4aaae5674568befc26d4ba33a117de1c8a521a1a3d9f4f7b7835d57082ce4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxZjIxYzhjZmEwZDRmOGY0MmY2MzFmOTYzZDMyMWFmODkxMmU4ZGM1YjQ1ZTllNzk0OTIzZDU5NGFmOTlmYjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4ZWQxNDc4NmZmNDg3ODE2NjA0ZjllMDAxMDU4ZDRhZWIxNGIwM2NkMzk3OWNhMmE4M2FmY2RiM2EzYzdlNzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwYjJmMzE0MTk2ZGEyYmY3NjUxZTNhYjI0NWEwNmRiOTU0YmFiZWYzOThmZjViNGZmZWJiMTgxNjg3ZmYyN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkOTliNzEwMWY5N2FhNGY5ZmU5M2M4ZDE0ZjdmNjlmODgxZWM4OGVkZjJlMjI4ZjkxOWMzNzE5YWM4OTYzMTgifQ"
+        },
+        {
+          "resource": "repo://test/full-path-fallback.test.ts#L163-L196",
+          "version": "repo-lines-v1:sha256:2dfaad3f9a95b0dff145fe43745e4e9a8ebd0a411a6f0af4435048f4e1bf0baa:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwNjNhYzEzMjAwYjg0NGZkMjExZmJmNjM5ODc3M2ZkMzlhNzQ5NmFlY2U3M2I3MTdmNjg2ZGE4ZDBhZWZjNWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyMDY4YjI2YjM3ODUyYTU4MDNhNmRlOTlhMmRkOTE2NGY0YmVhYWFmNWNkYTIxZTVmYWI1YjQwY2U4N2RjOWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0YmMzMzEyODFhNGE0N2JmNGFlNjBjYjgyYjY0NjM3Nzk0YzU0NmIyN2E2Nzc0NjMwYzE3YTJkNTJhYjNiOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3ODNhOGMzOWVmMWIzMzhhNTM4ZGUzZTI1Zjg3YjZlNzNjM2FiYTVmNjNmZDc3MDlmMjcyNWVhYTJmMDk1NTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c0ca11647ecc4de3bad306b9884e54cb",
+      "statement": "QMD stores literal filesystem paths rather than slugified ones, so names containing spaces, #, &, or brackets remain resolvable through toVirtualPath, --full-path, and get.",
+      "evidence": [
+        {
+          "resource": "repo://test/path-fidelity.test.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:db8317f36f43883224c92a5b7610a663b8d13db549027be37363ff281f02fce8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwM2I1ZGQyZGY1ZmVkODdjZjQ5MzE2NDhhNGE5OTM0ZDViZjU3ZjliODA4OTVmNDA0NWNiMmNmZmYxYTI1OWUifQ"
+        },
+        {
+          "resource": "repo://test/path-fidelity.test.ts#L191-L200",
+          "version": "repo-lines-v1:sha256:8344de648b28a3d3ea401d9422680e4b0b4784b06b992744a79f80d55fcd2755:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyNDg2NGMzNTQ2YjNiYmFhZTYwMGM5Yzk3ZTdkMjg5ZDNiNzBmYWZmMDg4MDcxOTAyMjgxYWVkYmQ2M2U5ZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmFmMGExZmI5OGQ5YzMzZmYzNjUyOWU2OWZjZjZlYWJjYjMyNTRmYjdmYjJhMWM3MjVhMjMxMDE4NjNkYmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiNGQzZWZiY2RlMmE2NTFiYTUzYTgxNjc3ZWM2YTgxNjZmYzRlNTAxOTY3NWJmMjg2ODM5ZDdiY2IwMGRjNWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlZGJhOWE2NzVkODk3MTA3YWJkMTBmZWQ4Zjk3OTZlYWVhOTk5MWQyYmRiODE4MTNmNTE2ZTc3MzM3MTRhMWMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

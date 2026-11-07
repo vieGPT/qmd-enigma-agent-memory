@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1c7b730e1f1b8a7d043c252eaeffd75705e527d4ec77f9a4c6fb0411b7b3f80a",
+  "claims": [
+    {
+      "id": "claim_15ff9d23d0ca463abd58399eee5ae7ef",
+      "statement": "hybridQuery in src/store.ts is the orchestrator for plain-text queries: the SDK search({query}) path, the CLI query command, and the MCP query tool all reach it, while search({queries}) instead dispatches to structuredSearch with caller-supplied typed sub-queries.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L3247-L3262",
+          "version": "repo-lines-v1:sha256:6d3730a6b5957cd772b71fff65395235f28b4dfa9ba5481890330bc6b34fc760:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxOWYzMmQ1Mjk0YjIxMGY2OTc1ZTc1YTY2YmQ4MmMzYTk0NTE1NWJmNDFiNDM3MzY2NzQ2NDVhNDc2ZjI0YjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhYTNmMmMzZmI0MzNhZjhlMmRlY2JiODM0OGFjMTlkNzNmN2YxYWFlNGNiYWJmYWViYjMzNWQxMGQ5ZWMzZWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2NmQ4MDgyYzNjMmQ4NGRmZDEwZDlmMjMwZDgyMGQ4OTRlNTdjNzBjYTRlOTQ5Zjg1MGIzZjQ3MDAzZmY0NTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2NWZkZDdmMDI2NzAwZTVlMjFmMzEwYjM1MDExOTlmMjg0MTliZmNjZTE0N2E1ZTViNDVmZTIyZTU2NzE3YmUifQ"
+        },
+        {
+          "resource": "repo://src/index.ts#L489-L528",
+          "version": "repo-lines-v1:sha256:ebf29bc15e9107f4ef41809575faad26a255708ff6dcd00ccd20af7fa46e7cf7:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzMmVhMzFjNGJmZmVlZDg2ZTFlODNjZTRiZTVjMTAzOTc0MWEyNzkzZWU3MzQzMjQ3NDY5MDJmZmRlOTA4MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlM2QxNmVmYTkxOGM3NWFkZmIyMDFmMzY2NmM4YmZiZDdkMDcyMmEzNDE5NmVjMjFiOTFiZDE1MWE3ZWRhZTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2MzM5ODY4M2VmYWUxMDYwOGRmY2I0MjkzMGI1YWY4MzA5ZTlkZmZhNTQ0OWE2NDM1ZGFlNDEwMTU5ZDM1YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmNDZkNjdkNmFlMzEyOThlNDg1ZTUyMDc0ZTIyZGU1OGY1ZGQxOTM3NjEwZGZhYTlmZGE5N2Y2NGFhN2FjNzIifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L431-L470",
+          "version": "repo-lines-v1:sha256:423b42046d0dce3a5e25978673da4e9e7f6da066a587bd2f81f691fe02b07acd:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3NjViY2U1ZjBjZGI5MWZhMzhkNDkwMTBhZjlhZjVkZjNkMWY3YTc1NDk2MjE3ZWU1NWI3ZDEzZDdiMzNiYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwZjEwNzc4MTJhMjVlZWU0ZmI2YTgyZmI3ZDRlZTIwMjZmNDg1ZjczYmRjMmI1NDI0ZmRkOTAyYWE4ZTM3OWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmOWYyNzY0YTdkZTA5YzNjNTdhZTg5NjZkNjU4NjMxMzM3M2Y2ODI1YmM3OWFkMWU3YzhhMWVhZjZkYzJhNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0NzIxNDNhOWI1MWMyNDAwYzk2MGUwMDdiNzVhYWZhMjYxMTQzM2Y5NTE3ZDA3ZTU2ZWUyMGI5MGMxMzM1YjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_66859181dc8a4d158043a22255065aec",
+      "statement": "In the SDK, searchLex runs only the FTS search with no LLM, searchVector runs only the sqlite-vec search using the store's embedding model, and expandQuery returns typed expansion variants without searching; none of these three runs RRF or reranking, which only the hybridQuery path performs.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L531-L540",
+          "version": "repo-lines-v1:sha256:553557e40578e480e28dcb8677e5e1c948eb8eea3ecb1b77307e6e54b53ee13f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2OWM3Mjk3MzE3MWJhN2UwNTQxMzg5NTU3ODA0Y2FlMTJjZjZiZjc1MDI4YWQxOTBkZTNhZDc4YmUwM2M1ZDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkMmY3MmVlYWJiYjNjM2E0NTI1ZTk0OWRlMDc0N2ZmZjExYTkxZTM5Mjg1NjgxZDE1YmY3MTFiMDhhYWI0ZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkwNzlmODcwOGYzNTYyNzlkNzExYzRiZjIyZWU0OTJjZGMzN2QxMGNmMzdiMDM5MjRmNjM2YWVlMWRlNDY4NmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5c3afd4d24c64caf91bbafe67ec8c899",
+      "statement": "search() maps rerank false to skipRerank and passes it through to hybridQuery or structuredSearch, so the reranker is bypassed without changing the search primitives.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L491-L525",
+          "version": "repo-lines-v1:sha256:c0c72685696ecfbd6a9ed98fc83990918874017c12e7012ca4917491c4ce0494:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmMDM5MTcwNDZhMWI3NzA1ZmI3ZDlkZDg5NjY3Zjg5OTkxOTQzNGI5MWE0MmRiMTI0YWJjZDY2MWMzOTY1YjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4MmZmMzM3MTYyYjgzYWQ1ZWQ0MjcwZjllZjgwMDE1YzY1NWVlMTIzN2FiOGNlOGMwZDZlZjk3ZjkzYTFkYjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1ZjJmODE2MjdkMDFmOWM1MjI0YjA1ZWM1MjhjNTMwNDg0ODYwOTVkZjM1OWZlNDhhZDhjODM1NDk4MGMxODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiYzYxNjAzZTlkYjI4NjVjOTllM2JhNjE5NmZlNTg3ZTJiZDdhNDNhNWViMDEyM2M0MTU3MDhlZTU0ZWQ4OTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5f40889cbec445de977440ff7ec65d39",
+      "statement": "The strong-signal bypass in hybridQuery is disabled whenever an intent is supplied, and it fires only when the top normalized BM25 score is at least STRONG_SIGNAL_MIN_SCORE (0.85) and the gap to the second score is at least STRONG_SIGNAL_MIN_GAP (0.15); the constants are declared at store.ts lines 476-482.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L476-L482",
+          "version": "repo-lines-v1:sha256:ce4dd6c64226aed65dfa5e362d3a5344a463ec5d61f4c6451ff82e622e3654a4:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDRmMTVmZWZjNGVhMWYwNGRhODFhYmRlNjQ4OGYwMTY1Y2QzZGIyMzdmYTEzY2JmYWVjYmYzMzQxOGIyNDFmYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2ZkODZlMTc5N2JlMjM0ZGExZGExMDNmOTIwMDcyZGIzYTIwMDhmNTg0MGEzZTcxYzBjZjVlOWM4NWNiNWRjNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTYxODg2ZGM2OTk4ZmJmNGYyZmJiMTY0NTU0Zjg0MmU5OWEzMjRhNjZiOGJmNGMzN2VjMzY0NzJlYjEwNzEyNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTJiZTQ0MDQxZmJhZDk2NzJkYzM1ZTI4NWM1NmU4N2JkOTZjMWE3ZjcyZDNlM2IxMDVmYWYzMDZlNjllMmIxMCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6294-L6297",
+          "version": "repo-lines-v1:sha256:4f5eb39707ca4686c3ce3178b0b91324af95adced22141f9df64e9531d85e722:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IxZTkwOGJjMmIyNTFiYjQ5MTEyODk2ZDUxNTFmMzE0ZTY4YzdjZjMwYmZjOTU0YzZhOTQ5M2ViMzM1M2ZlZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjM3YmMxYzNkODJmMjBkOTVjMWM1NjE4ZmE2ZDJjNjBhNDI3N2E0MjA0MTFjOTY4NTRiOGNlNTUxOTRhYjUxYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTQ4MzY5YzQ5ZWY5ODk4NThiYjg4NzlmN2I5ZjJmZThlMTJkZjBkZTQxN2RmZjE2OGEyZTU1ZWU2Y2U0NDA2OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_143048333a2741b598080557f2ad162e",
+      "statement": "When the strong-signal bypass fires, hybridQuery skips expandQuery entirely (expanded is an empty array) but keeps the BM25 probe list as the original FTS list in fusion, and the original-query vector search still runs.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6300-L6308",
+          "version": "repo-lines-v1:sha256:3813f2a0564c79cff5c6fd7fdc54980c6b3686ae9d6683e52bf60ffad6819748:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjZjOGJmYjg4YzNiMWM1M2UxZmE5YzFhMTFjNWQ4YWUyNTI2OWY0Y2NiNzk3YTRlYzdmZmFmOWM2NTIxNDg4ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGZmNWEzZmQ1ZDJlYzliOWIyYmY4NmM1ZjkyMGQ0ZGZiMTQxOWJkNGM0N2Q4OGQ5YzRiNzc0OTFjYTE1ZGZkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDk1MTI3MThiYWY0OTRlMDAzZDE3ZmUzOGEwMzQxYzljZjAyNmRlYzM5ZDZmZjdmNzYzMTgxYjJjNmM4ZWRkMCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6340-L6360",
+          "version": "repo-lines-v1:sha256:ab75d6a414b2f82960ba4c88e6e74c14db571c6947d138779d3ac866db7b7d28:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyOTdiNGVhMDc4YzUxZDUzZTViYWQyNDY5YjNmZjk3ZDY5NDgwNGY5MjY5YzE0NDdmNWFhYjhmYzM3MTlkMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhNGQ0MDUxMzBlMGVkMTY3MTU5NDkzZjRjYzAyNGNkMTA5NTY5NjI0NDg0Y2ViYmU2NmU1ZGZhOTk2OTk2ZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlMTU0ZDViYmNkY2Q2NTBjODUzNzMwNjRmYmU5NWIzNjQzNzc0OGU0NjA4MWJjNTdjODcxOTNlNDdhYjA3NzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ad03bd783cd04d4687e31289fb7da507",
+      "statement": "The normalized BM25 score is |x|/(1+|x|) from the negative FTS5 bm25 value, so the 0.85 threshold corresponds to a raw BM25 magnitude of about 5.7.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L4778-L4790",
+          "version": "repo-lines-v1:sha256:f7e3bf5b61245b215f1ab2675920f4761ff07481b028ff57fdea6cf37bdda79a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwMDg4ZDkzNGUzYmMzMGZlNTE3MjE0MmMzNGRmMWM2NGNkMTBlNmI1OTMxYzUyZDUxNjUzMjdhNzAyNGFkOGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwYWY2NmFhMmRmYTIwZGM5NTFlNDE2NjUzZWMxZDJlYjk3NTAwNGUzYmUyZTY4OWZiYzMxZjBmNDdkMWJhYjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgwYjdhMDg5M2YwNzZlMzFiNjdhYmFiNzA4OTQ5N2Y3Y2NkNDZhM2Q4M2M1YjEwYmQ3ZmUzY2ZkMDNkYmRhYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiNWMxMjdjM2Y2OWE5YTk4MGYxYzY0MmZhOTM3ODk0MGYyZTE0YTRlOTdhNDFmMGM0YjBjNzcxYjdiZDk2YWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a288a2cf4d743a49ad8826478000873",
+      "statement": "Expansion results are routed by type: lex variants run as FTS searches, and vec and hyde variants (plus the original query) are embedded in one embedBatch call and searched via searchVec with precomputed embeddings; the original query is always searched in both FTS and vector form.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6319-L6376",
+          "version": "repo-lines-v1:sha256:b27e5a1d6965d0dc714c55f5ccf9bf327f34344dcbf3a09550560b64750113ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmNjI1MGRmYmU4OTFkOTU4YzA4ZjUwMWU4MzMyZTViOTIwMTljNjZiZmFhMmU2YjQ5ZTE2YWNiYzQ1MmZjNmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5YTI4MzRlMmNjOTcyZWNiNDBmOTM2NGQyZmFmMmY4ZjQ1M2RlNjgzYzFmMTJiYjQ0N2I3YzEzOTZkNTFhM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3YzgwZDlmNWYzZWJmMzY5ZTRkOTdmODYzMjEwMmU1NjgzYjE1MzgyY2JhNGJhZGRhNWMwNDVkMTlmYmU4OGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMyYjdhNmVjM2YzOGY4NjcyNDE3YTYxZDQ0MDI1ZWRhZjM4Y2YwMTY3NDc2MWU5MjgxYjUxYmJmOGFmOTk1NWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aceb4372d95d4ca7ae8560ece2f6cce1",
+      "statement": "Vector routing is skipped entirely when the store has no vector index, so vec and hyde expansions never execute on FTS-only stores.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L4976-L4985",
+          "version": "repo-lines-v1:sha256:4252a7d492dcc27a1d93b58fab1795baca9fbe64a8d1fc9b665b9acdac4fef4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlMGIyZTE0YzRjYmY2NWRhZWY2N2Y0NzhlZTFhNjhjODUwM2RlZDM0OWExZTkxNjJmMzdlZjkyZTRjZmNiZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OTI3NTU0NDY4YjZiZGE3ZmZjNDY2OGY3YTNkNzFhNDJjMzdlNmUwNGJmOWFjMzY4ODE3NjNhMmZjOTNkMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5MmEwNjFkZDA2ZWE3MDhjNWFhMzAwMzg5NTMzZDY0ZTQ1ODk4OTAzOWNkNTBlZGE1ODcxOGFkNzZhYTQ4NTUifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L6349-L6352",
+          "version": "repo-lines-v1:sha256:92007739c301da058f80cf51713f570a53b931067221c5a3dc786d40abdc97c7:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzMxNzlkZTJjZTFlNjZlNzM4OTc3MGVjZWMxNzMzNzg3M2M0M2IwNGI1Nzk4MjFkNzRiNTY4YzYyMTIzYmI4MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjA1YWNlZjY1OTEzNWEzNjliNGUyZTBhYTFjMzczYjI4ZjE3NzI4ZWRhNzJlMDA1NjI1MjJkMWNjOWE4YzdhYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWQxZDU2YjU1MTUwYzg2OTAyNDU5MDE0ZmIwMTYzYzFiNWMxYmEwZWZjNWU5YjRhYTcyNjg4NTIzMWQ5YzFkNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7accaff819df48b08e16bb09cdf46974",
+      "statement": "The store-level expandQuery reads and writes the llm cache keyed by query and model, excludes intent from both the key and the generation call, drops variants whose text equals the original query, deduplicates entries with uniqueExpansions, and caches only non-empty results.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L5254-L5262",
+          "version": "repo-lines-v1:sha256:ce3e1ac56d85cf58df5d277d4597dff6e8f2e006613b480b0a464f395e28d06c:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2Q1YTJjZTlkZWViMDFmMDg1NzNjODcxYzJiYmU5MzI5ZTE0OGI2NTkwZmZiZWJkNDA0ZDQ3MmUxMWNkZTBjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWYwNDQxYmQ5NjhmNWRjNDQyYjU0NmYwMDg1OTA3N2Y4ZGFmYzc0NzRlOTRmNDRiZmE4NzZjYjJkMWMwOWFhZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2YzZjIwZTg2NTFkY2Y5ZmE2NzUxYWU1MDIwN2NkNzdhYzZmMjA2NTk1MTUyZTdiYmUxZmQzNjg2MmJmNjc5YyJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L5264-L5303",
+          "version": "repo-lines-v1:sha256:369a9e9365759b10f9e05cb08fa77ab6bb9a514615d3170db088442164752114:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1OGZiZDE1NmJhMzU0YzBjZTY4OGIxNWQxOGNiZTcxZjVkOTYwMjFkODYwN2YyYTliNjFkNjA5MTEzMDkxYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJkMGYyZDNhM2FhZGEyNzU4NjQ1NzhkMGE0MzkxNTYzOGQ1NDNmZWNhMmM5NDg1OGRiOTQxMjExZTg2Y2VmMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjNjY4ZGRjYjY0ZTRiZmU3MjRiNzEzY2Q4MGIxMTYzNGY1MDAwMWE3Y2MyZjdkYTI1ZDA5NGRkZDAyZTdiZTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2fcba07cf2594ccda101474a05095e30",
+      "statement": "hybridQuery invalidates the cached expansion when at least one runnable expansion exists and no list other than the original contributed; runnable means lex variants always, and vec or hyde only when the store has a vector index.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L5305-L5312",
+          "version": "repo-lines-v1:sha256:cb2154a0869f06dfac0491b545ee5e851b591e8d6f369465aaf4a5e0b97060cc:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWFmMjJjZjA3MzI1OTJjMjQ3MTQxY2JlNjFlZmExMTAxMjYxMmY1YTMxMjJiOWFmOWJiYWY1MmY1NzI0ZDE5NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZiYmI4NGM1YTk0NjExZjZkMDJkYjExMzkyNGNhZTIzMzA5MGQxMDUwMWNmYWEwMjJkYWM0YTdhNjcxMGVhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWQ4MmU2ZTYzNzdkMjQ1OTZiYjIzMzQ0Zjk2ZWFjNDE1ZDVhYjRhN2VjZWYyNGM1YWIxNjQzOTQ5NWFmNjQxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWYzMmNjMWE0MWY4N2NiNWJkNWNkOWJjNzYxZTg0MzQ0MDM4OTkwZjBkOWI2MDIwNWUzNzU5M2NmYmJkNDJjMyJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6384-L6395",
+          "version": "repo-lines-v1:sha256:79b5eee633f9abbf5a64fdf3ecca3b7e3740a5e8b8f1971ebbda6ac41d0c6ed7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkYWZmMGRmYWZiY2FkMzQ4NTk5NmJmYmY2NGU2M2ZlMTI5MmVmMDM4OTlhNDE2NDQ2YmI3NDBmNDVlMWEzMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjMDg5Yjg1NDBkMWNjYjQ4MzY4NGU0NmM2Y2Q0YjVhOGE5ZGUxNDQwNGUzNjAyNWQzMzQyMDRlMTc5MWRiYWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_845b8cb79d274aa5820d4cbb8fd36190",
+      "statement": "getHybridRrfWeights gives the original FTS list and the original vector list a weight of 2.0 and every expansion-derived list a weight of 1.0 regardless of insertion order.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6237-L6250",
+          "version": "repo-lines-v1:sha256:124b9af2da7efa020f4158b9faf4938a599ed79b9e5d119b291cf3cdcf8a7279:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhYzkzMTgzM2RjMmJiYzM2OGU1ZGJiZTZhYWQwMDIwODQ4YmI1OTZjMDkwN2U2NzljNGJmOTZjNzRhZDlhOTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlZWNhOWFmY2U1ZjIwMzVkOTdjYjgwNGEwNjI4MmE0YTEyMjM5ZWM1YTI0YWJiNmFlZmVlNzAzZTQ4YjhjODIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0M2E1Y2IyOTEyNTYyNjExMDcyNWZiMzMzOTc0YjMyNDg4ZmI0MWYzZmNjOTlmOTZiYjYyMjJhMWZlODg4ZjAifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L6397-L6400",
+          "version": "repo-lines-v1:sha256:9ef07d8a45bc1944a16189601463ada1bbe324f6c46f2001b09675548049f932:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzY1YTU0ZTUxZGMwNzA0ODc4NzcxYmFmY2UxNDM4YmM0MjRiZGZkYzMxYWQ1NGUwMGRhOTEyODhjYTY0MzUxNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjE5NTlmNWY3YmUwNmI1ZmVhZGVjYTJjZmNlMTc3NDcyZTFmZWZiNDBjZTRjMDFkNDBjNTBmNzFiNDNjOTVlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTdkODYzMmU1NGU5Mjk4YWJiOTU4NzI3ZTJkNTE0MDhhYmFmMTM2NjAzNTM3OTEwMTQwYWJmNjViMzBhYjYxMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDRiNmUxNmQ0ZDBhYWQ5NDNiODI2NWZmZDEyYjNjYWU3MTBiZGVhM2Q2ODZjYzc0ZGVkNGZlODk5MzlmMjNmOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_365dab7b38cd4b8c8b7c3e1af6970963",
+      "statement": "reciprocalRankFusion accumulates weight/(60+rank+1) per list, adds a top-rank bonus of 0.05 for rank 0 and 0.02 for ranks 1 and 2, and sorts by the fused score; hybridQuery uses the default k of 60.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L5371-L5415",
+          "version": "repo-lines-v1:sha256:5effd6c8fce44c5eb355c3ce563b236abfb67362191072d7d3b9dd958689d3f0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwMGVjNWQzMjFlOGZmMmIyYWRkOWExYTU4Y2E5OWQxMjAxOWE2ZGFlNjgzM2NkZjE0MGJmYzcwMmZkOGE2ZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1YzAyMmI0NDQxYTg3NzIyMGUwNjIzNTUzOTUzYjI3YjJmODI3NDBhMWNhZDQxYjIzOTFjOWE1NzRhYjA1ZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5OGNiOTI4MDQwYjZjMWE5ZWUyOTQ5ZjU4Y2IwYzJhYTIyNDIxMmEyYWU1YjY4ZGI4MzMwMWM5ZWYxNDNiMGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5c2f3020ed1a49eabb47093055d36eaf",
+      "statement": "hybridQuery slices the fused list to candidateLimit (default RERANK_CANDIDATE_LIMIT of 40) and returns an empty array immediately when no candidates remain, before any chunking, reranking, or blending.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L482-L482",
+          "version": "repo-lines-v1:sha256:3fd86e1797be234da1da103f920072db3a2008f5840a3e71c0cf5e9c85cb5dc4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2ZkODZlMTc5N2JlMjM0ZGExZGExMDNmOTIwMDcyZGIzYTIwMDhmNTg0MGEzZTcxYzBjZjVlOWM4NWNiNWRjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2ZkODZlMTc5N2JlMjM0ZGExZGExMDNmOTIwMDcyZGIzYTIwMDhmNTg0MGEzZTcxYzBjZjVlOWM4NWNiNWRjNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWFlNTYwNDU1MGRjNzAwMTA2NmFhMjFiZjFiMWFmZTBlZWYyMzUzNTY1NDVmMzA1Nzk3NWYyOTc0MmEzNWUxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTJiZTQ0MDQxZmJhZDk2NzJkYzM1ZTI4NWM1NmU4N2JkOTZjMWE3ZjcyZDNlM2IxMDVmYWYzMDZlNjllMmIxMCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6400-L6404",
+          "version": "repo-lines-v1:sha256:97b1fdc51430762f9bcc8073789ada4ee3a42005b8e783358f0e8f366ce2b46f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjE5NTlmNWY3YmUwNmI1ZmVhZGVjYTJjZmNlMTc3NDcyZTFmZWZiNDBjZTRjMDFkNDBjNTBmNzFiNDNjOTVlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzllMGVmMTA1MDFiOWU4YzFlNDIzMDdkYWE1N2U3ZjRhNzA2NGZiZGRlZTY1ODJiNDM1N2ZlOWNlNTMxNTE0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTA5N2FjNmIyODgyNmFlMDdlOTc2ZmY5M2M5NzE1OGMxZmRmNGU2MDRmM2E5MzdjYmFmOTNjNDlhNDJlZjA1YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzBlODNjODA1YmZhZDU5YTI5YzU2MTAzNTlmNDU1ZDA2MzVhZGFiYWM1YmNlMmY2MzU3NTVmYjE1MzQ3ZDZkNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6b8b060baa76486cb21f893bbb9fcbdd",
+      "statement": "Chunk selection picks, for each candidate, the chunk with the most query-term hits, adding 0.5 (INTENT_WEIGHT_CHUNK) per intent-term hit; only that best chunk is sent to the reranker, and candidates whose chunking yields no chunks are excluded from the rerank map.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6406-L6432",
+          "version": "repo-lines-v1:sha256:3d4f7905a3ac9de98b64be1d0642f1c96d584a7d73ccc4f0233789adc60ce82f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlN2ZhY2VkMTU3ZjU0ZTI2NTEwYjkxNTczMWMzZGYzNjAyNmY0OWNmODIzM2U0OGVkZmI4YjE3MzgwNGE0MDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhMzVlYTFiNzA3ZWIyZmE5M2MzODk5N2MxYjkxZDNmNmU1ZmUzZTgyMDNiYThlMGYwNTNjZGI1OTZlYTMwY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0ODA4ZjQxOGY3MGEyYmRkNDQ5MzE4NTBlN2JkN2ZjODg3YWNmNTdkZTQzZGVlOGQ5ZWQ5YWIzYzM2NGRiZmEifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L6485-L6495",
+          "version": "repo-lines-v1:sha256:23641298ffe0207752543d786047cf3995f938329d28f56ee75b2b0c356e1405:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzNDM3OWNiOGQxMjdlNGM1MTdlZWQ4MWQ4NzVkZTYzNmI5OTc1MGRiNDZhZTlkN2JlYjhjMWM1NzQ1MDJhNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUyMjM4NjE0ZGMzMTAxZTY5MjhlNTcyMGEyMTU0NzQ3N2YzNGFjY2Q3OTYyM2M3ZWI0NzY3NWIwODI2ZGRkMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjYTEzMTA5ZmE4MmI4ZGNlMWI3YTYxNTY1MzE4YTBlYTUwY2M0MWIzMTlhYWZiODRjZTVlNmM1ZTk3YWY4NzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4MGU2YmM2MGU2YjJkZjYzNDNmNDFjY2YxY2I4N2RhZjNjNTJjZTVjMTU5MzkwNDU3OTc0MTQxYmE4OTdhZWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_29d3ca5c6f5440d6a9b1f0072bd40ea0",
+      "statement": "With skipRerank, hybridQuery returns before the reranker and blend step, scoring each candidate as 1 divided by its fused rank, keeping candidates without chunks using their full body as the best chunk, and applying dedup, minScore, and limit.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6433-L6470",
+          "version": "repo-lines-v1:sha256:82b8e30c01faa51c5cc920567375ab7edfc57767267b3667ade8752798a448ec:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2NzI3MzZkNjhiMTJhNzQwNDY4NGIzYzY0ZmMyY2MyOWFjZDAxN2EzYjRlMzEyYzQ2MmE2YWRhNDllZDUxZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxMTNjZTk3MTFjODM0M2MxZTQ2MzRiZWVkZTEyY2Q4ZGNlYTkyNzM4Y2VhOGUyZDhkMzhiNmM0MTE2NzA0N2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliNGM3MWY3NmY0YzQxM2NhM2UzMDU4M2Q5NjM1ODNjMWUwYWQxYThkZjdlZjI4YmYwMmUyYzJkNTllN2JmNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2NTU0OWFkM2MzNWEzZjRmOTBjMWVlYTFjMzllMjVhNDBmMGM1OTAxMmRkNWUxMjA0YmJhM2U1ZDdmZGY3N2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_60a7a99123314a9dbec176a753040564",
+      "statement": "The blend step combines the RRF position score 1/rank with the reranker score using a rank-dependent weight: 0.75 for ranks 1 to 3, 0.60 for ranks 4 to 10, and 0.40 otherwise, and sorts the result by blended score descending.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6503-L6520",
+          "version": "repo-lines-v1:sha256:f4bb2719b82f2c83c064081e4ab50cd07a9dd447322884785fa5eb4fd5a9fc19:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwMjE3YmNjZmI5OGY0Mzk3NDNjZjJhNTNiOWViNTUyZjI4OThjNWQ3ZjdiYjMxN2Q5OGMxODQ2ZDBkMzA1ZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2MTMzMDgxMzQ5OTA2NTQxMzAzYmUzMmE5YzUzMjYwZTg4MDEyMDgyMjgwOThkMzY1YmQxNmE1YmJiMWJjYjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyY2EzYTIzMmUyN2M5NzNlYjlhOTNjNmNkNjg4OTgxZjdkNDI0YWJlYTk1YWM2N2FjNWU0MDM3NTQ0M2JiMDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjNmY0NzkyNTIzNTFmYWRmODJiYzI5ZmQ3NThiM2MxNTNkMWM5YzgxYmNkYTYyOGU3ZDJmODNlZDk0ZjA1ODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b1184bacd7754f40944f7c239a3d8106",
+      "statement": "The final step deduplicates results by file, drops results below minScore (default 0), slices to limit (default 10), and attaches document metadata last in one batch so metadata is not carried through the intermediate lists.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6222-L6231",
+          "version": "repo-lines-v1:sha256:c59f579a94383b6c15d4779f7c16966f4607f104ba0e55f877877fb646bb1f04:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmZGJlYjNkNGJmNTk4ZTFiM2FkN2FmNWY3YWRkZDE4MzY1MjRiNDVkZTkyMWI0ODk0ZGE3NGVlOGQ0NDhiMWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3ZmVmOTkwZGEyNTc4MjBhZjI4M2NmNzYwZDMyYjJlZmExYzMzZjBiZGViMzIxZjMzMjM1ZDkyZjhjZWYwYjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkOGExNDkxNzAyNTEzNjIwMWU1ZTExMjkxZWYxMjYxNjZhMzkyYmY4OTk3MWRhOGMyMGYxZjg3YjBhZGFhMWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2N2Y3OWZmMWRmMTgwNzA5MTMyZGI2ZDU5Y2UwYTkxN2EyODg5NmM3ODFlZjQxN2M0OGRmYTIxZTVkZWVmNDYifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L6550-L6562",
+          "version": "repo-lines-v1:sha256:f735b04f38c7b5d6beef523227e2b7cff4cc9f60cb01d7a158d46569af02a05f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5ZGFhZjRjZThjMzZlNDBkY2IwZWU4NmJmN2EwYmFjNDYwNDIwMDViYmIyNTVlNjA3NDI0OGUzMWEyZDVlMmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwMzc4OWIzZGNjYTk2YTJlY2IzNDFhZDVlM2MxNGYwY2U1NTFjMWMyYjc4MzM3YmRlZDk3YjQ4YWJmNTdmNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiNGU1ZTc1NmFiMmZjNDRjYTliNzczMTQ4NGRmZWM1ZDFjNmY3MjJiNmU2NDg0NzhlYzU2N2ViY2E4OThmY2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_25ba6619b2224e5281c99b1ed9b5f3b4",
+      "statement": "The reranker prepends intent to the query when present and caches scores per chunk text, so identical chunks across files are scored once and cached results are reused.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L5319-L5350",
+          "version": "repo-lines-v1:sha256:f2b938f707b254025651e4de22d4b0fe0f0bc3d9b8491df782c4c796ef7d3e48:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5NzA0YjYxYWEwOWNlYWE1NDM0NTIxODJiMjA0ODhhYzhkNDExOGI4ZDc2YzUzNjlkYTkwZGMxODQxZmIyZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhNmYxNWY2YjU4YjU2MTEzMDU5NTAxNWMwODdkYWUwNzYyYjRlNTdmYmNlOGNmMGYyMGM5NmI2MTkyNDc2ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlOWViMjM2NTZjOGVlMTMyY2YwNzNiMmNlM2M5ZjljY2VmNzEwYTdlMzhmODYwMmMzYmUxMWExMjg2MTNhZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d534f2d1158042cbb95f1b034963b186",
+      "statement": "The BM25 probe, the expansion legs, and the vector legs all receive the same collection and metadata filter at the SQL level, so the strong-signal decision is computed only over eligible documents.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L4710-L4720",
+          "version": "repo-lines-v1:sha256:9065576c6a5e2f3e47831b44802a711b1bc432daa21f35c8cf105f57fce31a70:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyNmE3YjJmZmMwZGY3ZTU1Zjk2Nzg3MmM2MDVlNzJlYTI4MWU2Y2NhODcwMGM1MzE3MTdhNzBlMjg3MTFjMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YjkwMjk5YTQ1NzQ4OWY0ZWJlY2QzYzVlYThiMWJiMjJlNzQ2ZjNmNDVlMTVmZmVmNGRkMGRmYTYzMTY0OGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlOTA5NzFmNmZiMzI3NDA1NjE4NmMyZmFmYWMwODc4YzliMTc5OWExZWM4ZDQ4YThhNTMzOWU4NjRhMzMyYzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkYjk2ZTdkM2JlYTM3ZThlMDU0YmM3NDVmNjk0MjA1ZGI5OGYzNGNiMzRmOGI2YzBhZTBiMGFiZDRiMTdiY2UifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L6284-L6293",
+          "version": "repo-lines-v1:sha256:606d984b2f3b6df373230d8d6295b10099ce4055a00400705c0580fdc6309985:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3ZDcwMTBmMDg2YjgwNWI2N2RiZGIxZWIyOGVkMjAwODAxMDYxMjUxMTVlN2E4Mjc0NzlmMzZiNjczNTM4ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1N2M4ZjBjZWQ5MjNkMDQyYzNiMDQxMmNlMmU4ODE2YmZmN2VhNDQyOWFmNGNjYzczNjQ5NmM4NjAyN2Y1NWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzNDg1NGFiNWQ2NDkwNjM1MDhmMjQyNWVmY2FhNmU2NTMzMDZlMzg1YzNlNGZjMTZhNzE1YzM0NjA3ODU0YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY4ODA1YWFjMmMxNjhhZGMxNWM3YjQ5ZGY5NzY2YmZiODk5MjU2NjM4OWU3MDYyODMzZDM2ZGQ3ZjFhMDRiNDAifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d6ee79341a1d5da4a6503de6f019213ce3e4740e2cbca94f0bf0ae698c454040",
+  "claims": [
+    {
+      "id": "claim_0aaa073435e84dcb84ccf0fb5ad88a56",
+      "statement": "Each model role (embed, generate, rerank) resolves by config value first, then the QMD_EMBED_MODEL / QMD_GENERATE_MODEL / QMD_RERANK_MODEL environment variable, then a built-in HuggingFace default URI.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L282-L285",
+          "version": "repo-lines-v1:sha256:dd6e97ad2913fd2dea25eff770c8a75d9997d83991ba7be5ad7310f461c8053e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDg3MzU5MjE3NWI5MmM0ZTU3OGQyMTliOWQxNGIyNTQ1MGQ3YjIxNWFlMGIxOWYzYTljMDU2MDZjYmRiM2EyYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBmNjU4YTc1MTk0NDk0NDA1ODcxOGQ1NjI0ODA0OTJlOTc3MmZjODU5Njg0MTM0ODNiOTU3OWViZjBjNmFkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODdhNWY5OGNhZDA2NThhNGFiOWM1MjBiYWI3NDNiMDllZjU4NGM1ZWVhMTNmMzliMDIwYmMyOGZmOGNkYWY2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGM1YzE2MWJmZGUyNWY5NmVmOGYxOGY5NGQxNjc2NTY1N2ZjOTk2MmYxYzc3MjA2N2M2NmYxM2Q5N2NiYmI0YiJ9"
+        },
+        {
+          "resource": "repo://src/llm.ts#L303-L321",
+          "version": "repo-lines-v1:sha256:2fed4a01213a78712be4b5c6c24bc11201cdc2acce69ca842df24ad4833076f3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmZmMwYmM5NTgzNjY4MDI2NTU4ODU5MDU2MTZhZmU4ODFlMWQ1N2YyY2EyZjA4ZDJiZjAxYTg5YTk3NjJjNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjMTdlNGJhOWE1MmQ3ZjBkOWYwMzIwMzkyNWY5MGUxYzFlM2Q3MWRlYTMxNjA1OTI5MTBlNWMxYmY5NjdmMTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyMjIzYjJjYjRmNTQwZmMxY2Q5MDUxOTgyZjUxNzk3ZWU3Y2MxNmVlNDNmNDhkZDllMDc1OGMwMzFlZTcwOWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe52dfba85534d32ac25bd68bbdc6f9c",
+      "statement": "The LlamaCpp constructor resolves its model names through the same resolveEmbedModel, resolveGenerateModel and resolveRerankModel functions used by status and helper code, so runtime and displayed model names agree.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L867-L880",
+          "version": "repo-lines-v1:sha256:2d2fb39dcdc163fc09cd1823cdb86db12cf62985f1e349aae8247a525913f563:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5ZmNjMDBjMDFhMDhkODkxYTc1YmQxNDNlMmRjNzAyY2RhZjdlN2RiNjNiYjY1ZmQ0MGVlMmQ5NzZlOGI4OTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5ZDJmYTAxOTA2NjhlYWFmNTgyYTNlNmI1MzY5OWU3ZDAyM2NkNjU4YTJjYWYzZTM1MWVkNDFjOGQzMjhmYWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkNGZiMzUxYmU0MmFhMjc5NjA3ZTAxYTAzZTg3MzFjNjU2OTQyYjg2YzMwNzcyNjgxMzRiYzViYmNmNzgyOTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlYTcyOTIwOGFiOWZiODVhMDBkODYzZjViM2ZiNjI3ODVhZjAzM2NmMDZlODZhNGNmZWI4M2NhMTJhMGFmZjcifQ"
+        },
+        {
+          "resource": "repo://test/llm.test.ts#L246-L305",
+          "version": "repo-lines-v1:sha256:fef3a91e7e1c4c49a68d2aa663ad211f94ec3c0e358dc24ddf8acc09b6ddc242:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0ZjFlYjQzMDAxZDM1ZDFmZTQ5MjQ1ZGY0Mzk4MDI5MDMzNzc5YzAwMzBhNmJkNzFmNzUxNWY2NmU2YzE3NzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2ZGFjN2I5YTIwM2U3NTY3ZmJhZTM5ZTI2OWI2NmEzMTk1OTFlMWU0YWE0ZmQxYjIzNWQ4NGVkYjE4OWE0YjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI3NzlkMTE4ZDZlM2NiZjQ1MDUzOTc0OGRlZTdhNDMwN2FjYmU2NDQ2Y2JhMjk3ZjI3NjBmYTVkMGJiYTFiYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlNjAyNGMwNDdlMGRiYTAwZDQzZGUyZDA0MmJhNmNlOTE1NTM5ZDBlZDU0YmFiMjVmZTkzMTgyNjc0ODlkYzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_120c6fd309ca44b38ca99f1967f38caa",
+      "statement": "The CLI persists resolved model values into the YAML models block when they differ from stored config, and runtime ignores custom project-local model URIs unless the local config is fully trusted, falling back to resolveModels defaults otherwise.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L171-L195",
+          "version": "repo-lines-v1:sha256:47e5de599e8651f725d8de22008db74a7948db2243995a33383e7442fbee645d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5YmFmZjFjNzVlNjA3OTk3ZWFkNGI5Yzk5ODBhZjE4MzQ2MmJmOWE0MTZlMzEzN2E5ZjgxMmE3ZDA4ZDkwMzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2MzU0MmY2NGQxNTc4ZWFjNTNhZDI1NjY5MmQ3YzM5MjcwNDBhYzc3ZTA4M2FmMzY5OTY3NWU5MTNjNTVkOWUifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L2344-L2360",
+          "version": "repo-lines-v1:sha256:87384b5d38b3db29623fd39e94906888bb1a93a92b0ea04bf7580ee7efd599c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1YjQ5MWQ0ZjlkN2NlZDk2ZWZlYWNjNWMxZTVmYmVkMGI5OWFhZmRhNzg4ZWNiMjg4ODZhYmFjMzExYjQ3ODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzZjY3MTdkYmZkZjVlZDk2ZDI2NWY2MGJmOWY0ZjFmYTE3OWEyYzEzN2MxZGM5MjVjY2RhYTc3YzQ3YTgzZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxMTBjYTEyMTViMzA4ZWIwNTBkZTVlYzBhNTA0ZDE2N2FkNDUxZDAxMmJkZjA5MjhjNzE2MzdkMDdlYTc5MWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhZGNlNjUyMjJkZWRkZjc5MDg2OWM2MDk3Y2NkMmQwZTI2YzE0YTNhMmZjZDFiMGU5ODIwZTA1NWFmYTFlYzYifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L2383-L2392",
+          "version": "repo-lines-v1:sha256:cbd219dca6f3380f2e1108b19135c5b3713cd0ec11529eba1922c79f43d6ddeb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjODgyZWQwOWU5NmRkODk3ZDJhMmM0Nzk3Y2QyZjc3M2ZhZTY4MjRlYWU5OTA0YWY2NWY1YzAzNDI2YjQ4MjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyMTE5MTU5MzcwODc2NzRlMTNjZWU4ZmU0NDI0MTRiOGI4YmEyY2M5ZjY1M2U4ODQyMGU3ZmVkZWU4NDIyMTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwNjIxMDk4ZTE1ZjRkMDk2YzY4OGY0NGU3OWY4NDA0NTY1MGYzYmE2NzlmZTI0MmY2OTQ4YWFmZDBmNjJlNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkOWM1N2U5OTk1NGFlYzcyM2ExNWY3ZmQ1ZjhlMTkyNzc2Yzk2NGM5NGRkNDNiZjdlN2I1NTU1OTJlYWQ0YTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d3b752f678e542b29def0fa887dc2d4b",
+      "statement": "The SDK createStore constructs its LlamaCpp with a 5-minute inactivity timeout and disposeModelsOnInactivity set to true, so idle SDK stores free both contexts and models.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L476-L484",
+          "version": "repo-lines-v1:sha256:60f0a0df6ff51c1cfad31328499ca5eccad8f9803eda58def00a3b8076ca8d39:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDU0OGExMmY0M2I0MWUyNzZhOGQxNDg5ZmQxM2QwYTBhMDI3NzZkMWNkYjEwN2ZkMmZjNzM4YTRmNzkxZjJlYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjA0NzhjY2IxNmNjNjc3YmY1NmRlODZhMGUwYmUyYjAwMTE2Yzc0ZTgxZGYwMzgzYTA3ODY3YTRiOWJiMWFkMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTM5NmM1MzZjZjhmYWI1MTBhM2E3NWY3MjMzNDA0Y2ZlNzdkNmM1N2U1MGYyYTY2YWFkNWQyYzBjOGIyNjI5YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzBiMmVjZjk5MGM3N2MwZDhlNGJkZjgyN2M0MWNjZWY5ZDQ2ZGYxOThlMjQ0YjgzZDU0NmJlYTgzODg0MTc0MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f6d3f64cff54cd4839afcb450c7e3e0",
+      "statement": "LlamaCpp loads the native runtime and each model lazily on first use, guarding concurrent loads with promises so that a single Llama runtime and a single model instance per role are created.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L1138-L1170",
+          "version": "repo-lines-v1:sha256:45bc67e4346e083afa6a6dd495675a0803c8daad043ecb5043456130e8007aac:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxNmEyNzgwYTcyOTU1MDdkOTRlYmE4NTRhYzIxNGUwZjVhNTdmMDhhNDc5NzhlOTA4NjkwOTA2YmMyNWVlZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2YjYwOTU4ODNlZDllNmE1NzMyZTM0NTZiODg2YzExZjRjMWM2NTdkZWIyODc4OGMzNTI3NTU2Y2M0MWM2MTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhMDk2M2Y1NDYzMmQ2M2EwMzE2ZThkZGE5YTU3MWRjYmVmMDlhY2UzNDE3MmVjNGI1MDYwOGY1M2FmMWM3NTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0ZmVkNDc2M2NmNWQ1OGI2MmRhZjRjOTlmNmU2ZmVkZTgzODlhNGI3ZDUxODBmOTNhZjJjN2IxMmRmNWI3OGMifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L1302-L1340",
+          "version": "repo-lines-v1:sha256:39e4c939fa7d0a7e81037c1ab9538df40f885a7a8351ac227b9578d52292419b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc1ZTI1N2NkZWZiOGM1YzA3NGE4MTcyMjI3ZTVmYzc2YzMyODhmMjdmMWIyYmVhN2MxNjY2YWQ5ZGM2MjZhNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2MzUyNTU5YmUzOGVjNjA0MmEyY2I5MjAwYmE0YjZjMDc4MTkyOTQyMjA3Njg1Zjg4NzVjYjY3OGNjODBhNGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkzYmJkNWJlYmJjMWUwZWYzMDhkMzhhZWE3M2YxMTUyNTlkMWZjMDhjOWY3MGEzNTA4MWFhYjdkNWRkZTM0NDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmNzg1MTIwMTRmOWZlMGViMjAyNDBhOTM0MWNjMzM3ODM1YWU3MjQ5ZWM3NjgyYjUzY2I3ZDViODM2ZjE3ZTAifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L999-L1012",
+          "version": "repo-lines-v1:sha256:58cb5c4403577f31b316013452b8b37bb8e7361411085239ab9d32f04610d5d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmYzBlNDUxYTk2OTk5NjdkMWQwMjlmNmM4NDllYmE1YWQ1NTA4ZjJlNmFjZmMwNjhjZDhkN2QxMTBkMjc3MDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4ZWFiNTQwY2UwMmExYjU4NGQxYTUyYzU1YzQ4NzQ0N2U1MzhlODMzNTI0ZDY0NDQyYjhjYmUwNDVkZDZkYTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE2ZGRjYmQwYWQyNTI2YmQ5YWU1ZTE0NDNiOGNhOTUxODdlOGQ4MTk5Njk0YmE3YWI3MWE2YjJmYzM2MDViY2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_05f0c5dc0ea44133ae40d70a6e03359f",
+      "statement": "Idle unloading is driven by an unref'd inactivity timer that reschedules while canUnloadLLM reports active sessions or in-flight operations; when it fires, unloadIdleResources disposes embedding and rerank contexts and disposes models only when disposeModelsOnInactivity is enabled, always keeping the Llama runtime.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L2160-L2165",
+          "version": "repo-lines-v1:sha256:45519ad4f71ebc18865574e57ec895b5b613b3052c318e80b007e444b3efe8c2:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWY3MTY2M2Q5MjM3OGE1NmNiMjRmZjdhOTYxYTAwMDUyOGFhNGY3M2IyZGM5ZTkyNWUwY2ZkMmE0YTdhYTJjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjZkYWM3YjlhMjAzZTc1NjdmYmFlMzllMjY5YjY2YTMxOTU5MWUxZTRhYTRmZDFiMjM1ZDg0ZWRiMTg5YTRiNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTgwOGMyOGQ2ZDYyMzMxZjU1YjJiNzgwNzk5OTk0NzU5NGE5MGQ3MjMzMzkwYmUzMTg1ODRkOWM0MzZhM2JkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjJlOGI4NmNkNDFmYTEyY2QzNjVlMjllNTk4OTZjOWExODI1OTMyMWY1MzEwYjkwZTQ5NjE1M2IyNDVjNGJiMyJ9"
+        },
+        {
+          "resource": "repo://src/llm.ts#L900-L928",
+          "version": "repo-lines-v1:sha256:f46b41af82e52ed04bd864ae38e2b1a971d41682b7d74eddb010f174a27d54b6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0M2Y5NWQ2Y2I3NGQ3Y2I5NTVjMzczZWMxMWZjMTA0NWE0YWQyNjdmYTAwYmIwNDU3MzM5OWY1MmM5ZGMyMmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllNmZiOGY1ZThhZTI5OWZkMDVmODY4ZWQ4M2E2MjkwM2JhNDFkZDIzMWEwODgzY2UwNmU4OGQyYmRlNzllY2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlZWRkYzY5OGU2M2U1OTAwYzVlYmQ2NmZkNTY3MzkyMjljYzgzN2I4ZDk4OTdkZDA4OTRhOTJmODM0MTg4YTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxMWIzYmYzNGIxZjk1ODRiMDczYmRiNTE0M2YwNjg5ZDkxZGJhYmE5NDU2NDM0NzVhOGI4OWYxMGExMTA0NDcifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L940-L978",
+          "version": "repo-lines-v1:sha256:97bf7cf29c86c86b08b045cfd2f4eb335fbacf7db3d151f1bb3bbdca0b95c44b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkY2RkZmRhNDZmYTE1N2ZiY2ZmZTliMTY4MjVhMTBiNWQyZWM4N2EwN2I5NjdjMWQ0OTE1YzM1MDZlODRmNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlNDY1MmJiMjE1ZTI5NWVkY2RkYzQ2NTk2NjE1Y2UzNjU4OWY4NjlmMzEyNWEyMzliMzE0NzNkYTc5MWEzZjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhZjc0NzhmZjY1NmU2NTdmZjE1YTUxMzE4OTNiYWJlNDIyYjZiYTRlZmNlMTBlZTAxNDNlMzhmMzY2ZTQwOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4ODMwNzdlYmMwY2RhYWU0ODUwZDE0OTA1MWU2ZmQzYTEzM2EzMTMyZWEyMmMyM2IwMzA2YWE4NDg5NWRmZTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e8b192e17124b74adb83e999405ad7d",
+      "statement": "The LlamaCpp class default inactivity timeout is 5 minutes, while the JSDoc on LlamaCppConfig incorrectly says 2 minutes.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L640-L650",
+          "version": "repo-lines-v1:sha256:6c69ddf6da435d4d3b2c80d99037a0a25cad5902477acb3a9fa963e74a8b0d9c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MmZmMDFmZTM5YmE1YzZkMDg2MGNhODE2Y2Q0MGNlZTRjMmMzYzVlMjc3OTlmYmFlYTRhOGIwNmExOWQxODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhNTBlMGNiY2YyZjliZTQyZjgzODA3ZWUxYzc3ZGQ1ZWQ5NWI0MjUzZTdiNGZlNjE3YTZiOWFhMmFhZTAwMjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3MmE1N2Y2Mzk2ZTVkZTRiMWY0ZWZmMmNhNTZmYTZiNWRlOTVkNGIwZWFlMTNlNTBkOWM0NDE5YWUyYmZmYmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI2NDU5NTk3NTIyZGM4MWJlOWQ3ZGE3OWVhMzE1ZjBkYmQxZDEwZWYzOWI3YjM2ZjUzZjU3ZTliZmEwNzFjYjIifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L659-L659",
+          "version": "repo-lines-v1:sha256:c57afb5a29536e4132529b952a38b7d742445d8e3ae47f38332dcbc3fe184107:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzU3YWZiNWEyOTUzNmU0MTMyNTI5Yjk1MmEzOGI3ZDc0MjQ0NWQ4ZTNhZTQ3ZjM4MzMyZGNiYzNmZTE4NDEwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzU3YWZiNWEyOTUzNmU0MTMyNTI5Yjk1MmEzOGI3ZDc0MjQ0NWQ4ZTNhZTQ3ZjM4MzMyZGNiYzNmZTE4NDEwNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzJkZTJiMjg3ODkyYTNmOWU2Y2ExMGY0ZTc2MTE4MzFhNTY0Y2VmYjBhODRlYTU2ZmE3MmI3NzIwYWFiODBjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTExNDIwYjI0ZTlhYjg4M2QzMjU3YTdlNzVhN2I2ZDIwMjRhN2VhOTYyYWY4YTg4MTU2MDVjMjJjNzljODliMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba8944e12e594257aef78828c0097517",
+      "statement": "Session leases are managed by LLMSessionManager, which reports canUnload only when no sessions and no operations are active; LLMSession enforces a default 10-minute maxDuration and throws SessionReleasedError for operations on released or aborted sessions.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L1925-L1960",
+          "version": "repo-lines-v1:sha256:0eb6727945a5e262fcaa41c72ee155abe338966aa346147538df534b5cb2cd50:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3Njg4NGNjM2U5ZDIyMzBiNjAxMmM4ZjZjZTgwNTRjMTFhZDYxMDEwOTg2Nzc3MWI5MGMzYzVjMDgwM2I2NDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiYTgwOTg4Mzc5Zjk2NDBlMzYwYWEyZmMxMjg1ZjQ2MjAzYTExMzcyNjg0M2JhMDNiNWNkN2U3YTJhZDcxZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhZGI5M2I0YzY0ZmM2MjE1MzhhMjY5ZmYxYmE4ZTg2ODg3OTRkMWVmMGVhY2Y3YjE1NTljNzUxOGFjZTY0ZTMifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L1985-L2060",
+          "version": "repo-lines-v1:sha256:5c6222c21f6aec9f292bc089c84cc3edd91742b22c6059af1f78fee37c5ae5ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1ZWIwZTlhOGI4ODhmZjhhMzg4YzJhNWRkYjA2N2FiNWQ1N2NkMmE5N2ZiNWQ2Y2RkNjIwZDRiOWMyMGU4YmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxY2VmMWFmODY4NzEyMTcyYWMxZmE4YmE0OTFlYmUyOGNkYzEzOWRhMmUwOWM1MjhhZmYxYTBkMzExYTQ1OTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkM2RmOGU0MTg0MDg3Nzk4ZjZiZWRiNTExMTQxODlkYWUwMWMyYTBiZWQ4NDY1N2RlYzUxNjY2ZTI2OWM3MTcifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L2123-L2160",
+          "version": "repo-lines-v1:sha256:9d03b11d8a93791cd4c5a6142c9e7d096cbfbc4fc4f196502f7dda6bee10a32a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4YmYyN2FjZWU1MjdkNzk4YTIxMjUwZWRkYTNmYjMzNDhmM2Y3Yzc3NjZiNTA4NjljYzdkZjFkZDE0ZmJkYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNzE2NjNkOTIzNzhhNTZjYjI0ZmY3YTk2MWEwMDA1MjhhYTRmNzNiMmRjOWU5MjVlMGNmZDJhNGE3YWEyYzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2MDQ2NzIwYjVmNzkyODE5OGQzZjQwNGNjZDllZWViYzExNzQ4MzRmYzY0NTIxMTI0ZjlkNGY2Zjg5OWQzNzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliNzc0NzI2ODE3ZmVlYmZjYWQyOTUxOTI1OGIwOGVmZDQ0ODBjM2U2OWE0ODhjMWNkNjVhOThiNjUwZjdlN2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0792ea560ece48f4854ea3c4480da09d",
+      "statement": "canUnloadLLM consults only the default singleton's session manager, so sessions opened with withLLMSessionForLlm on a non-default LlamaCpp instance do not prevent that instance's idle unload.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L2141-L2160",
+          "version": "repo-lines-v1:sha256:d3b0dcb7273e6e5e9bf7eaed1052b29ab6ce4f1e32315d3237feb81fbfc98bf2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0NDliMTkyYWJiNzkwMTQ2NzRjNDQzY2JmZjZhZGEyODI5ZGIwNTNiYjcwYzEwYTk4ZjUwZTU1NjY4ZjM0ZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNzE2NjNkOTIzNzhhNTZjYjI0ZmY3YTk2MWEwMDA1MjhhYTRmNzNiMmRjOWU5MjVlMGNmZDJhNGE3YWEyYzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI5ZTI1NDdlODdiMDNjNmU0ZWI0NjFhYjBhMzg0YTQ4NGQwYjM0YTMzMDE1ZmZmOWZjNzBkZDM0YTY3MjQyY2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliNzc0NzI2ODE3ZmVlYmZjYWQyOTUxOTI1OGIwOGVmZDQ0ODBjM2U2OWE0ODhjMWNkNjVhOThiNjUwZjdlN2MifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L2160-L2165",
+          "version": "repo-lines-v1:sha256:45519ad4f71ebc18865574e57ec895b5b613b3052c318e80b007e444b3efe8c2:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWY3MTY2M2Q5MjM3OGE1NmNiMjRmZjdhOTYxYTAwMDUyOGFhNGY3M2IyZGM5ZTkyNWUwY2ZkMmE0YTdhYTJjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjZkYWM3YjlhMjAzZTc1NjdmYmFlMzllMjY5YjY2YTMxOTU5MWUxZTRhYTRmZDFiMjM1ZDg0ZWRiMTg5YTRiNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTgwOGMyOGQ2ZDYyMzMxZjU1YjJiNzgwNzk5OTk0NzU5NGE5MGQ3MjMzMzkwYmUzMTg1ODRkOWM0MzZhM2JkMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjJlOGI4NmNkNDFmYTEyY2QzNjVlMjllNTk4OTZjOWExODI1OTMyMWY1MzEwYjkwZTQ5NjE1M2IyNDVjNGJiMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6b0ddd9f8aba4135aebb22a062a3457b",
+      "statement": "resolveLlamaGpuMode gives QMD_FORCE_CPU precedence over QMD_LLAMA_GPU: any value other than the disabling words forces CPU; otherwise blank means auto, disabling words mean CPU, metal/vulkan/cuda pass through, and invalid values warn and fall back to auto. The CLI --no-gpu flag sets QMD_FORCE_CPU=1.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L3397-L3399",
+          "version": "repo-lines-v1:sha256:b1fb4d971bebebe95b1ed76437f3a5a70563deeb2b1722801dcaa5d55cb045c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODA0NDM3ZjQ5NDQ0MWNiOGZhNGY0Nzk5YTVhZDg2MGFjMWM4MjBmN2M2ZWFiOTBlMzMwMDFmMDYxNTIzMWQzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTVkMDMxYjUyYmY3YmExZjZlMzNjNjE1MjY4ZTliZDUzZTQ5ZWYzNDdmYTk4NTFmMTgyY2JlYzUxZGRiMjE4MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTJmM2FiNjNhMWM5N2ZjOTE3MmZiMmYwOWJiYjlhNDU2NDIzNDM2NmU2MDJjNzhhNzBjY2I1Njk0OWRiYWFlNCJ9"
+        },
+        {
+          "resource": "repo://src/llm.ts#L754-L770",
+          "version": "repo-lines-v1:sha256:e693f32750969e162232f46e5fa580038db7c8d1a8a78eabe4e53bef2d0d655f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwNzZkYzJmYzJjN2IwMWIxOTNkOGY1Y2IxMjNjOGNjZjAxMDVhOGZkZGUzNjliYTI2NWIzYjNhODNlMTRmOWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2MGI2NTY1M2IwMjg3MDViMTFmYjA4NGRhNDM3OTFhNDQ1ZDUwMzE3ZmE0YmVkNTRmOWIzODY3MTAwMmRhZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwNmMzNDgxZWI0NDcyNTA1MzE4OGU0MzE5MmQ1MTk1ZmYwYzQ2YWFkNzk4MTMxYzY5ZWM3MGExMDA5YTI5NjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b5c3b50dbf08426da80e4edaf54ea6e8",
+      "statement": "loadLlamaRuntime handles GPU modes by trying CPU-only prebuilt bindings in forced-CPU mode and disabling offload via gpuLayers 0, probing other valid GPU backends in auto mode when detection picks CPU, caching GPU init failures for the process lifetime, and building from source only when the llama directory is writable.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L1014-L1108",
+          "version": "repo-lines-v1:sha256:15a2e9df8f30c30bb11dd6fb8b1ee27bfaba38428c92e6c1316ef8bef6224d78:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhZDM3MzljNjJkYmZiYWM4OTMyOGIwZGJjYWU0NTFhZDlhYzY0MDUyZThkMTBkYTgzMjkzM2JiNzE1NTc0YTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3YTFmNTM3OTU3MjRjYTZiMTMzNjhhMzBmNmYyNTE5OTgzNjQ2YjQ2NmEyMDgzZDlhMzRmNjk5MWM0ZTFlZTUifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L1110-L1124",
+          "version": "repo-lines-v1:sha256:e2668cb25296d3ba6d63d741d986113b3562172f80168bd1b43493c3c8c2d47c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwZDgyMzkwZjQ2YzYxZjM4NTZhMTlmZWZlNTljYmIxODVjODk4OTk3NmJjMTcwN2I2NDBlMjYwMWRhMzhhM2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjNmJmOGUzMjY3ZmQzYzcyNTdlMGU5ZmM1OGNhZTI3ZWU2MmNkZTI1NjE0NGNkZGU4Yjg1OWRhYmNkMTQ1MzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4ZGMyNjdiZTQ0ZDRlODliNTRkYWI3ZWE0NGYxZGNhNDNlYmRhNmVlN2E4NDJiMDY4MzA5NzY2YjQ2ZWY2NzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxYzg0YzI4Zjk3ZTg2ODcwNGI5ZmJkYTM2OGM1NTI5NDZhODJhZDZmMWM5MWE2MzM5YzJkZWYxNDc3NTc2ZGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d6d4998a223e4e639bcec4a152a946cf",
+      "statement": "QMD_EMBED_PARALLELISM must be a positive integer; invalid values warn and are ignored, valid values are capped at 8, and on Windows with CUDA the default parallelism is 1 unless overridden.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L671-L697",
+          "version": "repo-lines-v1:sha256:c39a08320043057fc2499c73a625059e642f2e2c4d83fbf7f2c9698acc2471a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyNzJkOWUxNjUzYjc0ZGFmYjkwZWE4ZGY0NDk0NzY4NjFjZGU0YWU2OTU1YTNlNDQ0Nzg1MWMzYjc0ZWQ5Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4YWI4Njc3MzFlMDZlZTFkM2U4NmI1MjQ2NzMxNjA3NTEzNDZkYTIyYjdlMTI4NzkzNzBmZjhmNTY3NTQ5NTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5MDhkOWY4YTQ3NGVmNjY0Y2VmZjZmYTdiYjAzMWY2OGUzMGM2OTcyYWM5MTBiMDlkYmI0YWYwMDNmNmZjNjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fbb684bd3c994a589d275a164e42b78c",
+      "statement": "The embedding context pool is sized from free VRAM (25 percent of free memory after a 1000 MB reserve, capped at 8) on GPU and from CPU cores (at most 4) on CPU, with per-context cost estimated from the GGUF file size.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L1173-L1196",
+          "version": "repo-lines-v1:sha256:cf95acdf7a6d73fb84f6f7ef8950b2251f5ffa4bf9770158af6ee983799018dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExYjA5YWMxMTgwYzMzOGFhYzk2NzUzNGY1MTA3ZTdmYWRmMjRhNWFiMjY1ZWM5NTlmMmM2MThlY2E3N2M2NDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkNjllYTRlN2E3ZjNlYTM3MjNiOGM0ODg2ZmI1ZDY5MjMwYzQyYTNmODc3YWQxY2NjNTI2YjZmNzA2MTc1NWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlZTgxZTBlNjRhMjMzZGUwNTJkOGExZjVmZjY5MzM3ZWY3MTU5ZTVjZDI0ZmYxMDQ2NjZkNzhjOWUxYmRhNTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0YjJjOTY0MTEyYzk1OWExNzk1NmJhNjMxYTFlNTdmNjNlZWQ5MmVhOTY3YWE2ZmYzNDI1ZDEzZWRkMTk1N2IifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L1211-L1262",
+          "version": "repo-lines-v1:sha256:6245ffd5e17f1dfc7a70c5754a97fc46b6a64d7df4c89d8937e701b25fb1bd31:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjBjYjY3MWUzYTZiMzVhNGEzNzI1NDdlZDcxODE2Njc4MjI4YzhlZGZiNWE2YzJkMzhkZDlmZDQ5NmNiN2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlNjAxODNhMGU2MjZjNDk3MzU4NDc3NWI2OTk0N2M1MjdlNWVkNmE1ZDA5YzdlMGM5MzdhNjMxYWM5YjllZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyZTA4MTY1YTZlNzEzMzVmNDljNjJjZWI2NDAzNDQ3NzMxNjJkMWRiNDlhNTVmNDU5NmIzODY0M2EzMDA4ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1MjNiMTNkYzczMGMzZmQwMDQ0MzdiODUzODMyMWY5MmQ4ZDIyYmNlMmIxOTIzZWU0ZjVkOWE5NTgyM2JmMDEifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L714-L752",
+          "version": "repo-lines-v1:sha256:c2d3fd53ad64365a346c27a378d942bfc2b0cfbe5e5df2e0111888bf300199c5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyZTZiNWFhZTdhNWNjZmM2ZWQyMTY4N2U3Mjc1ZjI2ZTE1ZDIwZjhlNmE0NDk0NThiZTFhYTBjYTJjNjEzOGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhOWY2M2U0ZGMzZTVmMTk4ZTRkNjBkNmZlMWIwMzVjMGZiZTRkZWFkODgxZjVlYjAwYzE2ZjFkYjY2ZDY5OWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjMWFhMzMxMmJhMGVlZGY0NmNkMGI3MDUxYTg0NGE2NjE4NjhiMjkwMDIzNzk0MTQ1ZDgwNDM0ZDliMmJiNTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_48c06d3bd166452b970510fba1a46b74",
+      "statement": "The EmbeddingGemma-style prompt formats are query 'task: search result | query: {query}' and document 'title: {title} | text: {content}', with title defaulting to none when absent.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L112-L119",
+          "version": "repo-lines-v1:sha256:77ceaecc79d950ccc2b1ae151952733478af700e1e9541f903dafb7af988427f:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDc4MGRhZWJjNTc5ZjllZGFjMTEyMmIwNmRhNzVkNTY1ZDUyNjFiYzAyNmMyYTU4OTNjN2E1YmUyZTAyMzRkNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGYxYTc2MWU5YTU2ZDMwZTc4NDc2NzgwOWFlZjNmNDBkY2IxOGMxZWEwZjAxMGJhOTBlOTM3ZDE5YzZmZDk5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGM4MmNmNjFkZTM4Mjc3MGEyZjMwMWUxZTg1Y2JkMjkwNjlhNDgzNzM1MzU0ODdlNmE3ZWU3NWJmY2U3ZGI0MyJ9"
+        },
+        {
+          "resource": "repo://src/llm.ts#L99-L106",
+          "version": "repo-lines-v1:sha256:b64b02880fbc308d63c4bd0f1cc10fe6f4e2cc464583f018bba580330de28d03:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTc3NDc5NmMxOWMyMmM1ZDI3NDUxOGUzYTIwYTQ3MjQxNzNkYWY3YjVjMWNkMDk3YThjODMwMTY4MGE5YjhmZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzk1OGI2N2QxNTNmODdjMzNlMmZmNTQ5NTQ5ZmNiNjA0YTM3MmIzMDgxODVmOGI5YWY2MTdiNGVlZjcxNWZiYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDgzYmU4NzIyMWM3ODNhZmFhYzdkYWEwYjU1YTU5NTU2YzlkNDYzNzNlOTZkZGMyYWQ5ZjRhYWIyZTU0MDEyZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8d11924b9a9944fcb7d2b07246cc99fb",
+      "statement": "When the embedding model URI contains both qwen and embed (isQwen3EmbeddingModel), queries use an 'Instruct: Retrieve relevant documents for the given query' plus 'Query: {query}' format and documents are sent as raw text, with the title prepended on its own line only when present.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L90-L92",
+          "version": "repo-lines-v1:sha256:10c3719553fe286e658b2046284b8056223d4c94ee4dfcfe7e5028249baf3912:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDMxZDM3MWI2ZDMwOWYyZGNiNzAyNWNjYWY3MWU3ZTMxNzZiNjNlY2Q4MTRkOWZkZGFjZjZmNDAyMjYyMWE2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDhkNjYxNzYyNTI1Nzg1NzZhM2M5OWM1ODQ1MDUyOGNjNzZkNDgyMmIyOTU4NDBkZjM4MzgxZDBkYWUwODRhNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTgxMzFlZTQ5ZmJjZTM2MzhhNjYzOTgzNDk1MDcyY2Y3Yzc2ZDY4ZDRjMGRiZDg5NDhiYzYwNjk0NjlmYmI0NCJ9"
+        },
+        {
+          "resource": "repo://src/llm.ts#L99-L119",
+          "version": "repo-lines-v1:sha256:c68e7b11cb01db2c4e2c8ca6229c9228e950cc48f09372244c2004414051d479:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3NzQ3OTZjMTljMjJjNWQyNzQ1MThlM2EyMGE0NzI0MTczZGFmN2I1YzFjZDA5N2E4YzgzMDE2ODBhOWI4ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NThiNjdkMTUzZjg3YzMzZTJmZjU0OTU0OWZjYjYwNGEzNzJiMzA4MTg1ZjhiOWFmNjE3YjRlZWY3MTVmYmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjODJjZjYxZGUzODI3NzBhMmYzMDFlMWU4NWNiZDI5MDY5YTQ4MzczNTM1NDg3ZTZhN2VlNzViZmNlN2RiNDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a0292f59b1174152aa26aa198cddcda6",
+      "statement": "The embedding fingerprint hashes the model URI, the formatted probe query and document, and chunk size settings into a six-character value, so it changes when the model or prompt format changes.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L175-L184",
+          "version": "repo-lines-v1:sha256:b6ffcb6930dba5805d4528114ff97d88fecb8b2f03be489db98c6f459d6d0610:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmYjY2MzRmMTQ3N2EyNGEyYmMzNWQ1Nzk0N2E0OGY3OTA0NTk0YWM4OTQyZmU5ZTdkNzNlMzJhMjJiNDkzN2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViMmFkODJhM2I1ZDdlZWFjZjQwOWM2MzZkMTkyNWRiMDhlYTVhNmU2NGY3MjZmZjIyYWY4MDY4NjZkYzY2YjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4YmY5NTY0YTMzN2NjYTMxNjkwMThmODY5MjRlOGZkMGE5MDM1ZGZkZGVmOTQwNzZhNjkzYjRjOWQ3OWMxNTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa68b87fab334677a5006b0613b5d1ca",
+      "statement": "Query expansion uses a grammar restricting output to lex, vec or hyde lines, and falls back to the original query (lex and vec, or hyde plus lex plus vec when no usable lines result) on failure or empty output; the expansion prompt consumes only the query text.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L1630-L1730",
+          "version": "repo-lines-v1:sha256:b3c90132abe11d5f609d78e080e00929e6fcb19e25575085923a83e61f9004eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI4ZWNjMjg1NjA0NzMyMjdiNDJkNjQ4YjdlNmZjZmIwMTU0OWZjYzU5ZTUwOTM5MTA1OTllMjExNTQyZTNkOWUwIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIxMmI1MmI4YjU3OTY1NDI4OGQzOGU5MGVkODIxMGRiMzNjMWQxMzFhZTM5YjI2OTM4YmQ3Njk4ZDYxZDJiMzgwIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5ZjQzZWViY2U4MDk4MTA1YmM5ODk1NjExZDcxNjFkYWY4NTc2MzVkNzFlYWNiODM0YWZlYTkzODJkMTBhYzA0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJiZmMyOWM0NTc1NGVmNWZiNmNiYWY5YmY1ZjVkZmI5YmEwODQ2OGIwZTQ3OGQ0MDc3OTgwODMzNTQ5NTJkYzI0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a6beee9544c4457857919bf18cabf70",
+      "statement": "Reranking returns neutral 0.5 scores with model 'fallback' when no rerank context can be created, and otherwise truncates documents to a 4096-token context budget minus template overhead, deduplicates identical texts, and splits work across up to four rerank contexts.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L1350-L1392",
+          "version": "repo-lines-v1:sha256:f8e1e2a8a28784facbcdaf8e3887cb213106ee1c5c45f404c0103f6f83419241:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkODIyNWIyZTlmMWNjMTYzZjc1ODYwNzRmYTIyOWFkZjMzMDk2YTA2NGJiNmRjMjJlZWFiNWNjNzQ3ZDQ1MzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5ZDllZTU4NmQ3OTgxMTQ0NzFhOGM1OTg1NzhkZjhiN2E1MmM0NzJmMmEyMDMxYTkwMTNhMTU4MzFiNjBiYjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzZGE0MzkyODg3ZTBhMDQ1N2IzNDg3MTQyMjFlNGExN2Q0NzI1NzQzMWUwNmFkNzRlMWE1ZjNmNWZlZTIzMWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBjOTA3ZDA1MjhmNDc5ZGViMDk4ZWRmYWVmOGY5ZGEwNGM3MDQ0ZjE0YTMwNzZiM2ViYWIzOGZhMGUzNjJhZmUifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L1733-L1836",
+          "version": "repo-lines-v1:sha256:3130d672462f0c291df53d42b72f9cdf93a823aaecd284ef6f2445ce62b33a23:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxYzRhN2FlNDA0MmZiYzg4OTgyNzMyNGEwMTRiZGVjMzE0NmQzN2JiMmUyMjIxNWRjNjcwNTBiOTkxM2VkMDFlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI1NjhjMjNmZDkzNjM3NWUxYzliYWU5NWYzYWQ1ODU5MzUwOTliZjcyZGRhZjA3MTNiNDM1M2I4MDE3ODdlYTA4IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJmNTVmOWM1OTM4MTU0YjBhMzY5YzZjMjcyYjk0YTM1ZGI3ODBjYTBmNDY3NjQ0NWVjZjkyNTdmNzU2MTM0MDczIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI5ZGNiMWYyZDRhMDY3Y2E0ODY5ZmFhOTkwZGI0M2RlNzFmNTMzY2E2MmM2ZGNiMzcyYTAxNTQwYjUyNTc2N2NjIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_cc9e0bd467de469e91e669e55f2592fa",
+      "statement": "Shutdown disposes embedding contexts, rerank contexts, then models and the Llama runtime in that order, with each disposal bounded by a 1-second timeout that logs a warning and continues.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L1864-L1925",
+          "version": "repo-lines-v1:sha256:abdc9ba952e9d6a76c4864999e734cdfaa3ae63a618146a23d8d13203a29e4a5:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1Y2M2NzU0NDQ4MTg3YjEyNGVkZmM5MjI0NWFjODMyNjEwMjI0ZTYwMWUwMDg2YmUwZTJjZTQyNWUxODY4N2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3Njg4NGNjM2U5ZDIyMzBiNjAxMmM4ZjZjZTgwNTRjMTFhZDYxMDEwOTg2Nzc3MWI5MGMzYzVjMDgwM2I2NDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlZWVmZGQ1MTEzZDk5MDU2ZjFlMTlkZTFiN2Q1YmVkZTZlMGEzMDFmOWU4ZjdiZTRlYWQzZjhmOGRhODY2YzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljNWY2OWUyNTgyOThkNjk4ZGQ5OWRkNTJiNmU2MDU0NTk3ZTEyY2QxNzRlNGE3M2JiYTU0ZTU1OGY1NjU5ZjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_41d5e0ad2fbd46579e45dcbd85f3c617",
+      "statement": "On macOS, bin/qmd sets GGML_METAL_NO_RESIDENCY=1 before the native binding loads unless QMD_METAL_KEEP_RESIDENCY is 1, and isDarwinMetalMitigationActive reports the mitigation state for diagnostics.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L30-L52",
+          "version": "repo-lines-v1:sha256:41a43c656aa6e6a796f86632da4fe60dffc302b9617ec3748ad4bc719aac90e3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5ZWFiNjEzODk0NDEzMTgzZjdiOTZkZDIzM2EwMTE0NDc2N2U3NWRmNjgwMDdmZDkyOTM2OTRjMjI5NmQ2MDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwZWE1Y2ZiOTc5MzcwMmI2ZjdkMDE5YzY3NDY4NGRiNGVhOTg3MWY3NTA3ZmI4ZjU5ZDlhMzA4Zjc4NWI1NzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhYTAxM2VjNzNmNmQxOTY4OTcxN2Y4MmFkMzhhODFkMWNiNDZlOGJhYjVhOGFiMDE3NjVmZGU4YmM0NjQwODgifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4403-L4418",
+          "version": "repo-lines-v1:sha256:7a2c824b08df592629fb14faf470dec943e427315ab6940bfd58b0e0ee8d175b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxZWFkNDkwMmM1YzdkYTVhNDljNWU2Y2I0ODFjZmRmMDM2MWY4OWFkOWYyMThiNThjZWI2Y2JjNzYzNTUwMzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmNzliMTFhYjgzZDE2ZWYyOGFhZGQzMDUzMTQwNWI0MWVkYjk1MmE4N2FkM2E0ZjZjM2E3Y2MxN2U4NzU0MjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1MWZjNTA4M2Y0MmIzYTNhMzU1OWJiZmM5ZDUwYmI3ZGNlYjllODRiNDZjM2JmY2IzOWJkZGQ5YzA2ZmU5NzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2NzhjZGFlYWNjYjZiZDZmNjRiNjBiYWNkM2E1NDMyZmEyNDgwYzg1OTVhNmU0MTEzN2NjZWU0YTFlODZlYzIifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L2202-L2206",
+          "version": "repo-lines-v1:sha256:300c3148786240e75f6dbc1bbd36093285e440b156b7a00e948b5b7c97f7a2a3:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjU5NWQxZjhhNjg4OTZhNTY1ZDQ3OTU4MTJlMTNjYzI2NDVkZWI1YzZkYjNlZGJjNzMwNGNmZTZkMDRiNDZkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjIxMDQ1MWZmMDhmYzQ0MDM5ODI1MWMyOGViMDYwN2VkNGI0YjY2N2QwZGI3NGVlNzgyYmUyMTc2MjhmZjI3YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmQ3NzRhNDUxZjdiNTc3OWNhYTc2MjAyNTk1ZGIwOWU0YjVkYTc0Yzg1NTk3MWE5NjRlZjgxYzU5NDVlMzZiNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_002f07d7fcab49668e37e2233de5fc05",
+      "statement": "When CI is set, expandQuery, generate, rerank and embedBatch throw immediately, while embed does not check the CI flag.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L1502-L1506",
+          "version": "repo-lines-v1:sha256:484ee3d3cbca963f03dae1da567de7c8e78642bf68e070eb74de3125f27ca61a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjBhZGY5OTlkNWUxYTY1YzZlM2Y0MDk2NTc0Njk4Y2U4NmEzN2I3MzQzZDUwNjllZjE5NzlmNmIwNmQ3ZGFiYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2NmYTkwYWY2MTc0NjBlYjgxMDNiZmI2YjdhNmFkNzFhNGQ4NTU5NTk1NjZlZjE2ZmQ1MzNlYTZjYjZkY2RjOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTk5ZGFhMzJiZGQ5MjAwOWMxMGYyMTczZWMzMmVjOTA2YWQ4YTJkMDVlMTA5NTc3OTRjNWJmOGRkMzhlMTY1ZiJ9"
+        },
+        {
+          "resource": "repo://src/llm.ts#L1569-L1571",
+          "version": "repo-lines-v1:sha256:e0c088853209b75f4c36dfd7e0f224120c1f75e77a56fd44e3f086a7edc0f26a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2I2MGJhYjIxNGZkNzEwMTdmOGU2YzJkYmY2MjQ0YzFhZDU1NTA1ZDhiYjdmZTcwOGJhY2U1NGJjODljMDY5YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQ1Y2U1ODNiYTRkMDJhMmVmOTVkYzc1NDNiYjc5ZmMwMDJiMTVjZTk1NWJhNzcwNTdlNjI3YmY4YzAwNTk1MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTdkODYzMmU1NGU5Mjk4YWJiOTU4NzI3ZTJkNTE0MDhhYmFmMTM2NjAzNTM3OTEwMTQwYWJmNjViMzBhYjYxMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmI3OGM2NzhhMTM0ZTUyY2ZhMzJkYTQzMzE5YWY4ZjBlYzE0NmFiNjliZTM3ZDhhNDc1ZjVkNmU1YmQ2ZTA2MCJ9"
+        },
+        {
+          "resource": "repo://src/llm.ts#L1630-L1634",
+          "version": "repo-lines-v1:sha256:8e66d57c50d534d9337e516a01c64a948fcf4a0ef142de1da26250009f15e6fd:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGVjYzI4NTYwNDczMjI3YjQyZDY0OGI3ZTZmY2ZiMDE1NDlmY2M1OWU1MDkzOTEwNTk5ZTIxMTU0MmUzZDllMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWY0M2VlYmNlODA5ODEwNWJjOTg5NTYxMWQ3MTYxZGFmODU3NjM1ZDcxZWFjYjgzNGFmZWE5MzgyZDEwYWMwNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiZmQ4YTk4MjliYjljODhlYTZjMGEyZDYwOTQyMTdmYmJmMTMwOTQ3MjlhYTlhYzQzNmIwN2ExYjlmOGI3ZSJ9"
+        },
+        {
+          "resource": "repo://src/llm.ts#L1733-L1740",
+          "version": "repo-lines-v1:sha256:665ad7bda3e1dd2c00c2ad85145acdfadd5c998e112940b13e4205c22de19dd3:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWM0YTdhZTQwNDJmYmM4ODk4MjczMjRhMDE0YmRlYzMxNDZkMzdiYjJlMjIyMTVkYzY3MDUwYjk5MTNlZDAxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmUxYTE1Yjg3OWVmNTgzMGI3NGExOGE1YTY3MTA2ODY3MzcwYTYyMjRmNjMxMGRmNTMwNGZlNTI5NWIwZTc3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjU1ZjljNTkzODE1NGIwYTM2OWM2YzI3MmI5NGEzNWRiNzgwY2EwZjQ2NzY0NDVlY2Y5MjU3Zjc1NjEzNDA3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjY2NmVjZDBiMGE5YTNlMGUxNTAxNDY3MDE5N2FhNGZmOWM0MzUzOTk2ZDhlZWYxYTc3ODViNGFiMjdmYTZmNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a1fac05bab80475cb30ea55efbb29109",
+      "statement": "Downloaded GGUF files are validated by header inspection: HTML pages and wrong-magic files are deleted with a re-download hint, while unreadable files are left in place with an error.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L393-L470",
+          "version": "repo-lines-v1:sha256:f5c4e5e11421e4e0ba2d301faf34a03a9fc00d323ba32a42f9bffe319a55cdb2:eyJzZWxlY3RlZExpbmVDb3VudCI6NzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwM2RiNjkxNDY2YjkwZGM3YzI0NGQ3ZTYxNjM2NDM2ZTYzNTBlNmJiNDViMjYzOGM5OTE0OTdjZjljNzRhNzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5ZWFjYWZiYmRkY2ZiNTg2NDAxMTliZjNiOTg0ZGM5MWZiM2ExMzlhMzJlNGU3MmIxNTJjZjYwMzAwNmY0OTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwZGIwZjRmOTkxNmMyMjQzZTQ4Yjg0MDhhYWY2MGEzYmEzMzZkMGViZGI5MDBiM2U5MWEyOGY4Njg1ZGJlNTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwYTA4ZDcxZjZhNDgyNTYyYWRiNzNjNTc1YzE3N2ZiZmM1NDBkZWM0MjM4OWJmZDM1MzJkZWJiMjM1NzcwMTUifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L470-L530",
+          "version": "repo-lines-v1:sha256:0920a25b1b5f1a53bb07bdf1e60b6d3a4f2eff6fe245b36ee28c6ab77e6a3dc4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5ZWFjYWZiYmRkY2ZiNTg2NDAxMTliZjNiOTg0ZGM5MWZiM2ExMzlhMzJlNGU3MmIxNTJjZjYwMzAwNmY0OTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1MDAxYjIxYmY5YTYxMWRlYjFkYzc3NTdmYzY0MWVlYmIyMjYxZjNmOTdmZjNhODJiOWNhNzEwOGVlNWE1MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxY2U5NTMyNGY2NjA1Mjc4OTFhMmMwZjY1ODc1ZDZiMTk5MmZmZmY3YzMzNWMzYmFmZjhhNzVhYWQ0NTA3MzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_35c0833e804d492885c63fea0b3d3c42",
+      "statement": "Default model URIs are a Qwen3-Reranker-0.6B rerank model and a query-expansion generation model fine-tuned from Qwen3-1.7B, documented for scoring context in finetune/SCORING.md without describing its weights.",
+      "evidence": [
+        {
+          "resource": "repo://finetune/README.md#L1-L30",
+          "version": "repo-lines-v1:sha256:70da435b87897b32d93adfb03c3bc386c1b1b9d061c9c051b9151bcc720b17dd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MmQ3MTExMDNkNTBhNDM3ODMwYzZmYmNkMDRmYjRiYWI0OWEwZjgyZjZkMjZkMWM3OTFjNmU4NDg4ZGQwOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1YTZmZGUzNmExZDgyNzJkYzU4YzUzMTcyNjU2MmVkMzZkNDU2YzU0NmRkZTM2MzgzY2YyYjQ0MDNiZmJhNDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBhZGY2NDY4YWYwZmJlY2I3Nzc3ODc5NGY0MWFhNmY5ZmRiZjY2NzMxNWVjMTk2MDY5ZDJiYmY1YjI2YmVkOTUifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L282-L285",
+          "version": "repo-lines-v1:sha256:dd6e97ad2913fd2dea25eff770c8a75d9997d83991ba7be5ad7310f461c8053e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDg3MzU5MjE3NWI5MmM0ZTU3OGQyMTliOWQxNGIyNTQ1MGQ3YjIxNWFlMGIxOWYzYTljMDU2MDZjYmRiM2EyYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBmNjU4YTc1MTk0NDk0NDA1ODcxOGQ1NjI0ODA0OTJlOTc3MmZjODU5Njg0MTM0ODNiOTU3OWViZjBjNmFkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODdhNWY5OGNhZDA2NThhNGFiOWM1MjBiYWI3NDNiMDllZjU4NGM1ZWVhMTNmMzliMDIwYmMyOGZmOGNkYWY2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGM1YzE2MWJmZGUyNWY5NmVmOGYxOGY5NGQxNjc2NTY1N2ZjOTk2MmYxYzc3MjA2N2M2NmYxM2Q5N2NiYmI0YiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

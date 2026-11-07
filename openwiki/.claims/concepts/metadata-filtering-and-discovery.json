@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c92a8edb26c0896d3e50ae57d27a564a70143988533da9daf98c7cfe251d253f",
+  "claims": [
+    {
+      "id": "claim_04d5095aec0e4113b8dc4c4daf167f18",
+      "statement": "The filter is one recursive operator-discriminated grammar, MetadataPredicate<Condition>, instantiated for documents (MetadataFilter, fields are metadata keys) and for metadata entries (MetadataMatch, fields are key or value); parseMetadataFilter and parseMetadataMatch share one walker and differ only by record type.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-filter.ts",
+          "version": "repo-file-v1:sha256:8e34a7016f81643af69aff8366ef778b84d3746a014f5c628694b0e00f532e95"
+        }
+      ]
+    },
+    {
+      "id": "claim_591c82600f1f43bab294081070906ef8",
+      "statement": "The accepted operator set is and, or, not, eq, ne, gt, gte, lt, lte, in, nin, all, contains, prefix, suffix, type, and exists; caseInsensitive is an optional flag rather than an operator, accepted only on string or string-array operands and rejected on exists and type.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-filter.ts",
+          "version": "repo-file-v1:sha256:8e34a7016f81643af69aff8366ef778b84d3746a014f5c628694b0e00f532e95"
+        }
+      ]
+    },
+    {
+      "id": "claim_ebea500963764ac5b178e1a40b849f65",
+      "statement": "parseMetadataFilter rejects unknown operators, unknown properties, missing required properties, and operator-incompatible values by throwing MetadataFilterError carrying the JSON path of the failing node.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-filter.ts",
+          "version": "repo-file-v1:sha256:8e34a7016f81643af69aff8366ef778b84d3746a014f5c628694b0e00f532e95"
+        }
+      ]
+    },
+    {
+      "id": "claim_46dbd2150d2b487c9bf48a55e9514301",
+      "statement": "METADATA_FILTER_LIMITS bounds untrusted filters at nesting depth 16, 256 nodes, 32 group operands, 64 membership values, a 128-byte field key limit, and a 1024-character string limit; exceeding a limit throws MetadataFilterError.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-filter.ts",
+          "version": "repo-file-v1:sha256:8e34a7016f81643af69aff8366ef778b84d3746a014f5c628694b0e00f532e95"
+        }
+      ]
+    },
+    {
+      "id": "claim_f5aff378540d44ca99d56c7ff161880d",
+      "statement": "Entry matches accept only field key or value, and reject exists and all because they have no meaning for a single metadata entry; a number or boolean operand against the key field matches nothing.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-filter.ts",
+          "version": "repo-file-v1:sha256:8e34a7016f81643af69aff8366ef778b84d3746a014f5c628694b0e00f532e95"
+        }
+      ]
+    },
+    {
+      "id": "claim_4a8e2f03ba734d9cada3e8ef517fff4a",
+      "statement": "Comparison, membership, and text conditions only compare against values of the operand's own type: a mismatch never matches, ordered operators reject boolean operands, and membership arrays must be non-empty, homogeneous, and are de-duplicated preserving order.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-filter.ts",
+          "version": "repo-file-v1:sha256:8e34a7016f81643af69aff8366ef778b84d3746a014f5c628694b0e00f532e95"
+        },
+        {
+          "resource": "repo://src/metadata.ts",
+          "version": "repo-file-v1:sha256:8f61a38da71339d17022ccc5c563406e1bda126ec118834cc90512250ab0d443"
+        }
+      ]
+    },
+    {
+      "id": "claim_0aa6143b68c048b5a45f1de2db1d1d5a",
+      "statement": "Array-valued metadata is treated as a set: a condition matches when any element satisfies it, all requires every listed value, and ne and nin require at least one same-type value under the key with no same-type value equal to the operand.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-filter.ts",
+          "version": "repo-file-v1:sha256:8e34a7016f81643af69aff8366ef778b84d3746a014f5c628694b0e00f532e95"
+        },
+        {
+          "resource": "repo://test/metadata-filter.test.ts",
+          "version": "repo-file-v1:sha256:ceaa1a9a1fb9dcc276bca19393ae7cf7840e132644d951d2c9ccda7ad7c8507f"
+        }
+      ]
+    },
+    {
+      "id": "claim_bad10ff8419a4210ad6ddc2249c49f21",
+      "statement": "caseInsensitive folds ASCII letters only, on both the column and the operand, matching SQLite lower(); non-ASCII letters remain exact.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-filter.ts",
+          "version": "repo-file-v1:sha256:8e34a7016f81643af69aff8366ef778b84d3746a014f5c628694b0e00f532e95"
+        },
+        {
+          "resource": "repo://test/metadata-filter.test.ts",
+          "version": "repo-file-v1:sha256:ceaa1a9a1fb9dcc276bca19393ae7cf7840e132644d951d2c9ccda7ad7c8507f"
+        }
+      ]
+    },
+    {
+      "id": "claim_02639fe1dcec4c10a21b4cdc89e6e389",
+      "statement": "Filters compile to parameterized SQL in which every user key and value is a bound parameter; keys and values are never interpolated into SQL text.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-filter.ts",
+          "version": "repo-file-v1:sha256:8e34a7016f81643af69aff8366ef778b84d3746a014f5c628694b0e00f532e95"
+        },
+        {
+          "resource": "repo://test/metadata-filter.test.ts",
+          "version": "repo-file-v1:sha256:ceaa1a9a1fb9dcc276bca19393ae7cf7840e132644d951d2c9ccda7ad7c8507f"
+        }
+      ]
+    },
+    {
+      "id": "claim_0583c95d5567477d824d9d781a50304e",
+      "statement": "The SQL compiler has two scopes: candidates compiles each condition to a correlated EXISTS probing a document's own rows, while corpus compiles each condition to an uncorrelated IN subquery evaluated once per statement, which discovery uses when counting documents.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-filter.ts",
+          "version": "repo-file-v1:sha256:8e34a7016f81643af69aff8366ef778b84d3746a014f5c628694b0e00f532e95"
+        },
+        {
+          "resource": "repo://src/metadata-store.ts",
+          "version": "repo-file-v1:sha256:8e0253d0dcc83f293fff510f44c517b09af0cbf915a61189fd1fbd29bec57ccb"
+        }
+      ]
+    },
+    {
+      "id": "claim_7aa1cd04ee514f2aa2c4764d60999ebf",
+      "statement": "Metadata is extracted only from the qmd.metadata mapping of a leading YAML frontmatter block in .md, .markdown, or .mdx files; extraction never throws, and files without frontmatter or the namespace yield empty metadata with no error.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata.ts",
+          "version": "repo-file-v1:sha256:8f61a38da71339d17022ccc5c563406e1bda126ec118834cc90512250ab0d443"
+        }
+      ]
+    },
+    {
+      "id": "claim_eeb294d9c75c40d2b5fea6fce0735a6a",
+      "statement": "Metadata extraction is all-or-nothing per document: invalid keys or values fail the whole document, which stores empty metadata with a bounded extraction error while the document still indexes normally.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-store.ts",
+          "version": "repo-file-v1:sha256:8e0253d0dcc83f293fff510f44c517b09af0cbf915a61189fd1fbd29bec57ccb"
+        },
+        {
+          "resource": "repo://src/metadata.ts",
+          "version": "repo-file-v1:sha256:8f61a38da71339d17022ccc5c563406e1bda126ec118834cc90512250ab0d443"
+        }
+      ]
+    },
+    {
+      "id": "claim_fb290a03c87d4c2798fe4b74273e314c",
+      "statement": "Normalization rejects null values, empty arrays, nested arrays, mixed-type arrays, non-finite numbers, and control characters in keys, and enforces limits of 64 KiB frontmatter, 64 keys, 128-byte keys, 1024-character strings, 128-element arrays, and 100 YAML aliases.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata.ts",
+          "version": "repo-file-v1:sha256:8f61a38da71339d17022ccc5c563406e1bda126ec118834cc90512250ab0d443"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e808386bef445539df23c192602f775",
+      "statement": "Metadata is persisted in document_metadata keyed by document_id, recording extraction version, extraction error, and extraction time, plus document_metadata_values with one typed row per scalar keyed by document, key, and ordinal, with CHECK constraints enforcing exactly one typed column and partial indexes per value type.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-store.ts",
+          "version": "repo-file-v1:sha256:8e0253d0dcc83f293fff510f44c517b09af0cbf915a61189fd1fbd29bec57ccb"
+        }
+      ]
+    },
+    {
+      "id": "claim_5652c1cfddd444b08c6c7918f07734a1",
+      "statement": "replaceDocumentMetadata rewrites a document's metadata rows in one transaction, so a failed extraction clears stale metadata; a document is re-extracted through the full sync path whenever its file changes, and a METADATA_EXTRACTION_VERSION bump makes existing rows stale so qmd update re-extracts them.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-store.ts",
+          "version": "repo-file-v1:sha256:8e0253d0dcc83f293fff510f44c517b09af0cbf915a61189fd1fbd29bec57ccb"
+        },
+        {
+          "resource": "repo://src/metadata.ts",
+          "version": "repo-file-v1:sha256:8f61a38da71339d17022ccc5c563406e1bda126ec118834cc90512250ab0d443"
+        },
+        {
+          "resource": "repo://src/store.ts",
+          "version": "repo-file-v1:sha256:8260c1b639b874dc3aba247e862c954e76d31c7f0363f8b84f285e40ec14cf41"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a724a757c724e12bd4e3129cb0ad632",
+      "statement": "Only active documents with a current-version extraction and no extraction error are eligible for filtered search and metadata discovery; documents outside that state are counted as pending by countDocumentsPendingMetadata and excluded from filter results.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-store.ts",
+          "version": "repo-file-v1:sha256:8e0253d0dcc83f293fff510f44c517b09af0cbf915a61189fd1fbd29bec57ccb"
+        },
+        {
+          "resource": "repo://src/store.ts",
+          "version": "repo-file-v1:sha256:8260c1b639b874dc3aba247e862c954e76d31c7f0363f8b84f285e40ec14cf41"
+        },
+        {
+          "resource": "repo://test/metadata-search.test.ts",
+          "version": "repo-file-v1:sha256:76a6159a951ab86f86522a4b8387ce25fabe407cb5f904039b7b778293377e07"
+        }
+      ]
+    },
+    {
+      "id": "claim_58b56ad562f64783b55dcb96250ae74f",
+      "statement": "The filter is applied inside each retrieval leg before RRF fusion and reranking: the FTS leg adds the compiled filter and the current, error-free extraction gate to its SQL, and the vector leg restricts scans to eligible rows, while metadata is attached to final results only after fusion and reranking.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts",
+          "version": "repo-file-v1:sha256:8260c1b639b874dc3aba247e862c954e76d31c7f0363f8b84f285e40ec14cf41"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a9457b4ba6b44fba9f526c1fc1d4e45",
+      "statement": "A scoped or filtered FTS query materializes its match set with no inner LIMIT so the filter sees every match, while an unscoped query keeps the inner LIMIT for speed.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts",
+          "version": "repo-file-v1:sha256:8260c1b639b874dc3aba247e862c954e76d31c7f0363f8b84f285e40ec14cf41"
+        }
+      ]
+    },
+    {
+      "id": "claim_9c263cb4b41a4e5abb5a04d0e58cd7ba",
+      "statement": "Every returned search result satisfies the filter, which is enforced in both the vector scan and again when vector rows resolve to documents, because a content hash can belong to both matching and non-matching documents.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts",
+          "version": "repo-file-v1:sha256:8260c1b639b874dc3aba247e862c954e76d31c7f0363f8b84f285e40ec14cf41"
+        },
+        {
+          "resource": "repo://test/metadata-search.test.ts",
+          "version": "repo-file-v1:sha256:76a6159a951ab86f86522a4b8387ce25fabe407cb5f904039b7b778293377e07"
+        }
+      ]
+    },
+    {
+      "id": "claim_387f07f272264d7d83756189389f4af8",
+      "statement": "Top-K completeness under highly selective filters is best-effort: the changelog states this, the hybrid pipeline seeds fusion with a top-20 FTS window, and vector candidate counts grow only while fewer than the requested documents resolve, up to the sqlite-vec cap.",
+      "evidence": [
+        {
+          "resource": "repo://CHANGELOG.md",
+          "version": "repo-file-v1:sha256:0fc3eb357ed4b2dc20aec7a8d7224dc0ea1eb54cbe7f29907ea9feda4b632ee2"
+        },
+        {
+          "resource": "repo://src/store.ts",
+          "version": "repo-file-v1:sha256:8260c1b639b874dc3aba247e862c954e76d31c7f0363f8b84f285e40ec14cf41"
+        },
+        {
+          "resource": "repo://test/metadata-search.test.ts",
+          "version": "repo-file-v1:sha256:76a6159a951ab86f86522a4b8387ce25fabe407cb5f904039b7b778293377e07"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc504c090a7c4a188cecff6ee6855b98",
+      "statement": "listMetadata defaults to keyLimit 50, keyOffset 0, valueLimit 10, valueOffset 0, sort count, and minCount 1, and rejects out-of-domain options with MetadataOptionError that names the offending option.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-store.ts",
+          "version": "repo-file-v1:sha256:8e0253d0dcc83f293fff510f44c517b09af0cbf915a61189fd1fbd29bec57ccb"
+        },
+        {
+          "resource": "repo://test/metadata-discovery.test.ts",
+          "version": "repo-file-v1:sha256:af02c0c174ecf04764dfbe550a6820e2afc53812196bdd5f440ca76ccaae9ab8"
+        }
+      ]
+    },
+    {
+      "id": "claim_52f7fe5238284b779b0f88f4f929a22c",
+      "statement": "A filter and a match together are checked against a budget of 30,000 SQL bindings before any statement is prepared, and exceeding it throws MetadataBindingBudgetError, because the match is bound twice.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-store.ts",
+          "version": "repo-file-v1:sha256:8e0253d0dcc83f293fff510f44c517b09af0cbf915a61189fd1fbd29bec57ccb"
+        },
+        {
+          "resource": "repo://test/metadata-discovery.test.ts",
+          "version": "repo-file-v1:sha256:af02c0c174ecf04764dfbe550a6820e2afc53812196bdd5f440ca76ccaae9ab8"
+        }
+      ]
+    },
+    {
+      "id": "claim_04e66ae6de104b60b577d3304b7b2a9d",
+      "statement": "In discovery, filter selects which documents are counted and sets filteredDocuments as the coverage denominator, while match selects which metadata entries are reported; counts are documents rather than values.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-store.ts",
+          "version": "repo-file-v1:sha256:8e0253d0dcc83f293fff510f44c517b09af0cbf915a61189fd1fbd29bec57ccb"
+        },
+        {
+          "resource": "repo://test/metadata-discovery.test.ts",
+          "version": "repo-file-v1:sha256:af02c0c174ecf04764dfbe550a6820e2afc53812196bdd5f440ca76ccaae9ab8"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd6d10f880eb4a398fdb90463f7e40ab",
+      "statement": "The discovery report is read inside one deferred transaction over one snapshot, and keys whose documents hold different types are split into per-type summaries with their own counts and ranges for numbers.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-store.ts",
+          "version": "repo-file-v1:sha256:8e0253d0dcc83f293fff510f44c517b09af0cbf915a61189fd1fbd29bec57ccb"
+        },
+        {
+          "resource": "repo://test/metadata-discovery.test.ts",
+          "version": "repo-file-v1:sha256:af02c0c174ecf04764dfbe550a6820e2afc53812196bdd5f440ca76ccaae9ab8"
+        }
+      ]
+    },
+    {
+      "id": "claim_853d1825615744b9930b31b0d9fd89f5",
+      "statement": "Every value reported by discovery under a given scope is reachable through an eq filter under the same scope.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-store.ts",
+          "version": "repo-file-v1:sha256:8e0253d0dcc83f293fff510f44c517b09af0cbf915a61189fd1fbd29bec57ccb"
+        },
+        {
+          "resource": "repo://test/metadata-discovery.test.ts",
+          "version": "repo-file-v1:sha256:af02c0c174ecf04764dfbe550a6820e2afc53812196bdd5f440ca76ccaae9ab8"
+        }
+      ]
+    },
+    {
+      "id": "claim_535bda18ea294255854afefc3a8621a1",
+      "statement": "The SDK validates every filter and match at its boundary with parseMetadataFilter and parseMetadataMatch before compiling SQL, and re-exports MetadataFilterError, MetadataOptionError, and MetadataBindingBudgetError.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts",
+          "version": "repo-file-v1:sha256:52cb0c901f0a5f6b85ad96d30ba6775fb9c47d5b58959fa565f263736bac05e2"
+        }
+      ]
+    },
+    {
+      "id": "claim_3bc97eba0d624af18d4dc98fba1c2d38",
+      "statement": "The MCP metadata tool's match field is 'key' (the entry's key name) or 'value' (the entry's value), while its filter field names a metadata key of a document; invalid match, filter, or binding-budget errors return an isError tool result.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts",
+          "version": "repo-file-v1:sha256:e8af0586a16b1ecc832d028b6f44bb49759d78f6eb9e1bc97fdf4f2759398504"
+        }
+      ]
+    },
+    {
+      "id": "claim_8de8d7e80d0042e5bb26e7065f4e2560",
+      "statement": "The MCP query tool validates filter with parseMetadataFilter and returns an isError tool result with the validator message when it is invalid.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts",
+          "version": "repo-file-v1:sha256:e8af0586a16b1ecc832d028b6f44bb49759d78f6eb9e1bc97fdf4f2759398504"
+        },
+        {
+          "resource": "repo://test/metadata-surfaces.test.ts",
+          "version": "repo-file-v1:sha256:c1891fc52eef4120e81978239e592fb35e2b925b3c5f356f490f934a1bcfec70"
+        }
+      ]
+    },
+    {
+      "id": "claim_f0fc15e440b8405fad451994e4493caf",
+      "statement": "HTTP POST /query and its alias POST /search return 400 for a non-object filter or an invalid filter AST, with the validator message in the error body.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts",
+          "version": "repo-file-v1:sha256:e8af0586a16b1ecc832d028b6f44bb49759d78f6eb9e1bc97fdf4f2759398504"
+        },
+        {
+          "resource": "repo://test/metadata-surfaces.test.ts",
+          "version": "repo-file-v1:sha256:c1891fc52eef4120e81978239e592fb35e2b925b3c5f356f490f934a1bcfec70"
+        }
+      ]
+    },
+    {
+      "id": "claim_581a45505b134bed90f4dc0cdefb28cc",
+      "statement": "HTTP POST /metadata returns 400 for invalid JSON, a non-object body, a non-object or invalid filter or match, an invalid sort, a non-array collections value, a non-numeric window option, and any MetadataOptionError or MetadataBindingBudgetError from the store.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts",
+          "version": "repo-file-v1:sha256:e8af0586a16b1ecc832d028b6f44bb49759d78f6eb9e1bc97fdf4f2759398504"
+        },
+        {
+          "resource": "repo://test/metadata-surfaces.test.ts",
+          "version": "repo-file-v1:sha256:c1891fc52eef4120e81978239e592fb35e2b925b3c5f356f490f934a1bcfec70"
+        }
+      ]
+    },
+    {
+      "id": "claim_51ea883d417f4ff2890aad9e88d606a9",
+      "statement": "The CLI qmd collection metadata command supports --filter, --match, and window and ordering flags, and rejects -n, --all, and structured output formats because it prints text only, pointing structured callers to the SDK, MCP metadata tool, or POST /metadata.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts",
+          "version": "repo-file-v1:sha256:10f26f0fbc6e0a2895dbdf81f613c6532a3776bf4a20a40dd6a713abd1f9e028"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

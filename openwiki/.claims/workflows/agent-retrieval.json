@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fcc7ef286f638c4addbabbaf6f67f551b066871352908c6367fbaa24cf1ff670",
+  "claims": [
+    {
+      "id": "claim_f280af0f433546cf9b730b163dd9f34c",
+      "statement": "The qmd CLI parses its arguments with node util parseArgs and declares the retrieval flags -n, --min-score, --all, --full, --format, -c/--collection (repeatable), --filter, --from, -l, --max-bytes, --line-numbers, --no-line-numbers, and --full-path.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L3316-L3395",
+          "version": "repo-lines-v1:sha256:3b0bc7850e963b99ff75cd3e969c372d751fd59c3e30e3d6b1365b1a9c3b2843:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlYzcyMzMyNTk5MTlmMjllZDllNTY2NTg5ZDFjOWM0N2I4MDU1YzYwZWFlZWY0MDc1ZjRmMGIwOTUxMTUwZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI3MjE4YzQwZjY3MzlkNmRjYmI5NTJiYmEyNzM2MzhhNGUyNWNiYmE2NjA4YWJhNzBmOWNmODczZGNjZTkwNTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2M2NkZTkyNWU1YmY0NjA5OWZlNzkzY2JmYzg1Y2M0Yzk5NDE2NGYwZDdkNDdlYmVmMjM1MGY4NDkyZmJlYTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c468e4fcba4044bca6f122271a8e61de",
+      "statement": "Output format is chosen by --format with the values cli, json, csv, md, xml, or files; an unknown value prints the valid list and exits 1, and the legacy boolean flags (--csv, --md, --xml, --files, --json) apply only when --format is absent.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L3420-L3438",
+          "version": "repo-lines-v1:sha256:6aed09b6e87808a5aacb57df6dbe55b04f1b10df6687a1fdaaa12f023784b517:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MTJjNzMxZWIwNGRiODNiMTAyODIyODllZmYyMGQ5ZTEzNDY2YjU4N2Y5Y2FlNDBkOTQxOTU5NTg1ZmQ2NTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzZWMyODNkY2U3Y2E2ZjIwNDdmODEwZGZmOWNkMTFkN2FjYTU4ZDE5MGIyZjQzNDllM2YzMzU0NzY5MWE3ZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzMTRhZWIyOWVlYTNmMGJjZjcwMmNmMjU2ZTNmNDQ4MmZlMmFkYjA5NzM1NTNmNDMxN2ZiMGJhNTdkZjg5NGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d0e11eebcf2543fa87c2feacab61a212",
+      "statement": "The default result limit is 5 for the cli and csv/md/xml formats and 20 for files and json; --all raises the limit to 100000 for search, while vsearch and query cap --all at 500.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L3153-L3153",
+          "version": "repo-lines-v1:sha256:9cd857c8750b011d73fd09d0376655112bb7672fd787528621a595877026e2ac:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWNkODU3Yzg3NTBiMDExZDczZmQwOWQwMzc2NjU1MTEyYmI3NjcyZmQ3ODc1Mjg2MjFhNTk1ODc3MDI2ZTJhYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWNkODU3Yzg3NTBiMDExZDczZmQwOWQwMzc2NjU1MTEyYmI3NjcyZmQ3ODc1Mjg2MjFhNTk1ODc3MDI2ZTJhYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWFiM2VjOTVmYjUzYmE3MTEzM2QwYTY4YTRjZWNiNDY0MjNhMDc3MjgxMDM1Njk5ODcwOTgzODYzOWE5ODdjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDE0NDIxZjdlNjA4NGU0ODU3N2U5MzUyMGNjYjQwNmU0NmE4Yjk0M2E4M2QxYjM5MjIwODliYTIwNjFhZDhkNyJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L3441-L3447",
+          "version": "repo-lines-v1:sha256:f85c5c4428a7768a89a76fefc010cd2e79576d94cf083f6478ed93277db6c697:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzJjYTc1YmNiOTNjYjUzYzA3NmJkNzY3NDU3OGJlZDEzYWU4NDBkNjc4NjUxOTk4YjI4OGY0YjZkNjhiMjc0MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjM0ZDNiMTk1ZmM3YWMyN2Q0Y2YyYTlmY2E4MTQ3MzMyY2MxYTJmN2EyMzU1YzljYWY4Mjg1YzdlNTdlZDhmZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMThiYmZiNjIyZmQxOGM1ZjJjZmY3NGNmYWIyZWRkOGQ5ZWExOTgzNjVjYzBkM2UzNmFjYTJkMTU0ZmU2ZTE1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjIwZjRiZGZhMjMxZGQ5MWY5YjI0MjM0ZDlmZTU1ZDFjOTNhMGZhOWJjMTNhYzU4NTcxZjMyZGQxY2JhNTI2ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb76e0d53b8e480b8b0a278bbd968603",
+      "statement": "Search output applies --min-score after retrieval as a score filter followed by the -n limit, and the minimum score defaults to 0 for search and query and to 0.3 for vsearch; when the filter removes all rows the CLI prints the 'No results found above minimum score threshold.' message.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L2677-L2683",
+          "version": "repo-lines-v1:sha256:c9ad0690b6c9923f366982459344f9852125f65d8e6996b686c9d4142db7f10f:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTczZWYwNGU2OGEwNjE4MjAzYzQ5ODE0MDZjMzY2NDg1NWYzNmMwYTJlZTNlY2Q0M2MyM2UwZjU2NWJkNjVjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODc1NzA3MzI4NjQwZmVjZGM4MThjMzlhODEyYTBhMTMwYjkzYTU5NzA4MjAyZTAxMmNhODYzNTA5MTUyMjZlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmVmZDlkMWNkOGZmMzEzNGIzODNjZGMzZGM5ODZhZjdhZmQxZTYwZjAxYjAwM2UxYTBiOTJhY2Q3NGEwNGRkNCJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L3448-L3448",
+          "version": "repo-lines-v1:sha256:84ef1a601d4bc2554918aba5ab3681f719c88f97824b1c6f26b06492e2c61fc0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODRlZjFhNjAxZDRiYzI1NTQ5MThhYmE1YWIzNjgxZjcxOWM4OGY5NzgyNGIxYzZmMjZiMDY0OTJlMmM2MWZjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODRlZjFhNjAxZDRiYzI1NTQ5MThhYmE1YWIzNjgxZjcxOWM4OGY5NzgyNGIxYzZmMjZiMDY0OTJlMmM2MWZjMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTZkODZiODBkNGYwYTEyNWNiYjE2ZjY1NGMzMTFkNTc5NjU5YWMxMzdiN2NlNjQ5NGJkYWVkOTZkNTZlOWE5NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTk4NzkzOTQxNmIxNTE2ZTUxM2I5OTgxZTY1ZTdkMWJlMmVmNTViMzE3Mjg5MjEwNGNmMzg2M2RlMzZlNzVmZiJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L5024-L5027",
+          "version": "repo-lines-v1:sha256:a4739593a9ee78c5b255e83f9680f077633102a2b4f584f4619c84e88b2efa26:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTRiNzY4ZGVjYjE1M2I1NmEyMWUxY2JhZWNjMTBmMGYzZjljNTNmOTg3Y2M2YTI1OTQ4Y2FkMDBkMGFjNzI1MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWI2MmY2MGQ4NTkwYTU3OWNmNDZmOGQ2NzM3OGM0YzU3MmI5NjJjZWNjZGI5MGM3YTVmN2I0MmI5NjA3ODJhNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWRjMzY2Zjc2ODg2N2JhYjliZTI3YTNiZGNhZGNlZjhmOTA2ZWM5NWFjMThmNGRlOTYzNThjMDgxZmU3ZjBiYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjFiZDkyMWI0YTVkNTk3ZmRiMjFhZTkyNWZjMDNhOTk4Njk0OWU2YTdiMWZkYzdiNjVkMWU1ODlmYWRlMmM3YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_aea4e20430094be6a2700d31bcaccd15",
+      "statement": "Without -c, search, vsearch, and query scope to the collections whose includeByDefault is not false, while an explicit -c validates each name against the YAML collection config and restricts the search to the named collections even when those collections are excluded by default.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L2916-L2941",
+          "version": "repo-lines-v1:sha256:9958437a1a768fae47bb40d3f07303b417ab90652bbb790792ae55cd00987cf0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwMzNlZWJmOGY1ZDk2OTYzNWU3YzM0ZDg0YTdiYTIxMzY0M2E5NjFkZWE0ZGU3YjNjZWRiYzA3Zjc1OWRjNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlMWJlZjBkYTYzNmZiOTEyZWQyMjc0YWU2MzAwYmI0YWM2OWJkNDA1MzkzMzZhN2Q0YTI4MTVjMjA2NjEyYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2NmMzYmQ4NjE1M2E4MjZmZjcyZmE1YTlkOGRkYTMwZTFiYWZhNzIzNGIwMzU2Yjc0YTFjODJmNjAxNjFlOGIifQ"
+        },
+        {
+          "resource": "repo://src/collections.ts#L270-L270",
+          "version": "repo-lines-v1:sha256:6f7d649c7bfd534443284184d0ace36c22b1dde157fc5bbbbd2711997c100cf2:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmY3ZDY0OWM3YmZkNTM0NDQzMjg0MTg0ZDBhY2UzNmMyMmIxZGRlMTU3ZmM1YmJiYmQyNzExOTk3YzEwMGNmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmY3ZDY0OWM3YmZkNTM0NDQzMjg0MTg0ZDBhY2UzNmMyMmIxZGRlMTU3ZmM1YmJiYmQyNzExOTk3YzEwMGNmMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2EzOWZlOTIyOTJjNjRiY2VmM2FjOTE5NDQzZTg5N2YzM2RkNmU4OWUxNTA0YzEzYzU2ODA4ZmY4Y2QxZDUyYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc5MjllOTFlMGY5OWMzZTgyNWRlNjliNDM1ZmI2NDg0ZDFiMGExZGYyZjQ2NTYxYWJmMWEyOWYwNDE4OGI4OCJ9"
+        },
+        {
+          "resource": "repo://src/collections.ts#L276-L278",
+          "version": "repo-lines-v1:sha256:57b34d4d03656425d152e9f2fa8bdd537f61a0fa7dc5ee7354330249cd101528:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZjZDc5NTRjMDgyYzNkNWMzNzI0OGY5Y2U1ODU1N2U4OGIzMjI5OWU0N2VlYTgzN2Q5YzVhNWMyNzU3MDc0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTYxNWEwNWY0MmZhZjcwN2U4MzE4NzY2MGRjNWIwNTVmN2VmM2YzZjdlMDMzZGIzMzQ1MzU2MzExNzkxNWE2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzliMzIzOGRjNmQzZTBjMTEzYWMyNmEzYzExYWNmYTFhMGYyYWZhNTAwZDc4Yjk5ZGUxYjJkY2YyYTA3NzBhNSJ9"
+        },
+        {
+          "resource": "repo://src/collections.ts#L33-L33",
+          "version": "repo-lines-v1:sha256:1d64397c197659e7917c52259fe24c794a62c32e79bfc4416776380225914209:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQ2NDM5N2MxOTc2NTllNzkxN2M1MjI1OWZlMjRjNzk0YTYyYzMyZTc5YmZjNDQxNjc3NjM4MDIyNTkxNDIwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQ2NDM5N2MxOTc2NTllNzkxN2M1MjI1OWZlMjRjNzk0YTYyYzMyZTc5YmZjNDQxNjc3NjM4MDIyNTkxNDIwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTYxZDdiNzVjMDUwYmQ3YjkxMDUzOTNkYjI2ZTVmMDhlNDRhZjRiNmY0ZjBhODU3MTliM2FiNzMzN2NjYzhkYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc5MjllOTFlMGY5OWMzZTgyNWRlNjliNDM1ZmI2NDg0ZDFiMGExZGYyZjQ2NTYxYWJmMWEyOWYwNDE4OGI4OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a23bc5c9f3c3485a88eef6000be790ab",
+      "statement": "The collection list marks collections with includeByDefault set to false as [excluded], and the include and exclude subcommands toggle that setting.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1831-L1836",
+          "version": "repo-lines-v1:sha256:f00f91b67b359c699172be188f0c21a4d3c406850f4a3fd0dcf9fb98ee16ef00:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDVlYjYwZWYwNzg3ZGFiMDY3ZTBkYzQ4MGU4ZTkwYzUzYzc2YmNjYjQxZWU1ZmMxOWEyZWY4N2NiNWI0ZGJmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWMzMmYzNWM2NDgxOTU0ZTViZjVmMDVhOGU2NzE2NDI2OGU2ODA5YzdjMzJkODU4OWJlNmZhNTY0ZGE1OGIyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDI5YzBjZGQ4YTRkYjEwYjQ4NDU2OGNmNDhjY2M2ZGY2MWM2ZjcxYWJmZjMwYzQxNGJhN2E1YmQwMDc1YjI1YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODFiYTAyNTQwYzY5MzNmNDc4M2IwY2VjM2FhYWI5M2ViMGNjZWUyNDFjMDUyMDNkNzI5M2U3MzBlNjViNjFjNSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4839-L4858",
+          "version": "repo-lines-v1:sha256:0ef0e7f2ce4cb4f1ec88e0bf41ab97bf942793ae81cad59f60053b41c462f93b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0ZTNkMzBiOTk0NmIyZDI5MzBkYmUxMzNjMjcwMTA1OWIwMjk2Yzg4YThjNjQwNDZjNjQwZTVhNWRhNDE4MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwODk3M2NhN2NkOTY2Zjk0ODI1MzA2OWE5ZTM0Y2VhZGRmYWE1YWZjYjM1Yzg2ZDc1ZDMwNDBhODBiYmMxNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NjgyOGY0NDU3MGQ5NDcyYmRkNWY1MmQ4YTJhOGY5ZjhmMzk2MjkyMTQ4NWMwZDdkOTg5NzVkM2UzMWU4MzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c42a77bffe4247d78b97f4f105ac30ec",
+      "statement": "--filter takes a JSON metadata predicate that is parsed and validated before retrieval (exit 1 on malformed input), and filtered SQL matches only documents whose metadata extraction is current and error-free, so unprocessed documents are excluded and the CLI warns when some are pending.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L3035-L3040",
+          "version": "repo-lines-v1:sha256:53602454af1db24e09f99987aae784cf55bfc1f5e7bd702ffcfb1d974670de7f:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmI5ZTJhZmRmYWI0NzhjYjE3NmM4ZTc4ODkzMmUxYmI4YWRmOTZhOTYzNGU5ZTA1OWZhODY4ZmRkYzJlNGU4ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTVhOTY3YTBiNjk4YjU5ZDE1YTdlMjZmM2FjNWIxMWE1OTM3ZDgyZGNhNmNkYzNmOGM3ZmIzNDkyOTQ1MmYzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTIyMGQ1ZjljOTIzYWU5NTBmM2FhZjYyNzc1YTc4YWFiZGZmMmZhYWQwODM2NGM5Zjk2Yzg2NDhiNDU1YjQwNiJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L3082-L3090",
+          "version": "repo-lines-v1:sha256:bef96fc71efcb6bb13e976a4f35b5e060f55dee315a8cd3bb7319f9677301d15:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2NkY2U0MjQ4NWUzMDIwNTU2ZWUyM2JkNDhiZDQwZDQ0YzU2YWQ4NThjZjQ2YmM1MzJhMGE1M2M5MWZhMmY1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWFhZjU4ZjNmOWM0MWVkODc4NGQ2MTdjOTIwN2EzZjQ2NDgyYmRiMGM1NzExZTc4YTE2MWIxZDRiOWYzMDJlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjU1N2VlNmY5NGNjZGMxZTFlYWY5ZGY5N2I0MDI5MjVmNjdkYjZmZjY1OTFhODU5ZWE3OGJlODQyZmQ0ODBiMSJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L4762-L4766",
+          "version": "repo-lines-v1:sha256:5a59d7027ce062c5a134151241470d9da92240d8d49ab28e2da808b21352d95f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjE0ZDJkNDU5YWVhNjY2OWI3ZDVmNmYyZjM5YmQ4YTg5Mzg4NzE5YzEzYjZlMzMzNGQwZjI4MTdlMmQ1YWZmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGM2YzE3ZWQ4NzdhZDQ5YmI0ZDM4ODhkZGE0OTI4ZDI0MzdhZDExYmMyZWU3MmM5NWRlMGZkMzc5YzAwZGVjMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTE0MjYzMjA1YTBiNmVlNmE2MDk3ZmI1YjBhZTNjMjQwZDcwZTAwYmRmNWQ3NDY0NWVlNTVhZWUxYjliMWRiNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODQxZmU0YjYyNTNmYmMyYTc2NWI4ZDIxYzAxNjZiNzBmZjk1Y2M1ZWY1ZjRlY2NkNTYyMmVlNjBiZjYzYzViZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4563d81324954da88f3e93634bda86a1",
+      "statement": "qmd get resolves its identifier in this order: a trailing :from:count or :from range is stripped first, an input that is a 6-or-more hex docid is looked up by hash prefix, and otherwise the virtual path, a suffix match, and a collection-relative path are tried; explicit --from and -l flags override values parsed from the identifier.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1288-L1310",
+          "version": "repo-lines-v1:sha256:92bf02c7105503e076582e0c11920c3734adb55a663acb136ffdb8976b40e5ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5Yzk3ZTNkNGFkYTBjY2MzZGYyMDM0MjM5NjA4MDliM2ZiNmI3MWM1YzdiNGIyOWRkNTNkYjU3NzA5NTQ3NDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1Zjg5M2QxMDliOTg2MTAwMzQ5ZmE2MTY0ZTViMjg3NmM1MjJlN2EyZmI3MzZjOTE5NDUyMTc2ZWIzNTlkNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1N2E1YmMxYjg2ZWFiMDU3NjUzNzc3NjhjYTQwMDBjYmEyNWYzY2FkYzllMmU2NTVmZDA2OWU1YTgyOTUyMjcifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L4010-L4017",
+          "version": "repo-lines-v1:sha256:d59f2ed920f6d8edd1df0c368643cb3e99744b2ae5207626104c3c67d7b0ef53:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzMxM2U4ZjhjZTI1ZDdiZTg4ZjM2ZWQ2OGQzOGI5M2I0ZjA3M2FiYmZjY2MzZDczMzBhZGE0NmEzOTg2YjMwNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQ3ZGY0MDg1NWJhNTk4NzQwOGZlYjdjY2E2ODJiMDliODY2YjkxZmI3OTExM2MzZTIyMmUxNDE3MzFiOTU3YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmNjZTM5NjIyYzZiOTI0N2UzNjk0OGNhMGQ2OGFlNWY5YjIzMmRjYTE2YTljZjZjMWQ1NzgzNTFlMjU2YmYwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTViYjBhMzQ4YzJkZWQwZGViMzU1ZWFlMzhmNzNmN2Y2MmE3MGVlZjU0ZmFjNjUzMGY1NzFiNWE4NTQxZDIwNSJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L4023-L4035",
+          "version": "repo-lines-v1:sha256:d6c1fff38b19c35c50785d757a76b2d5372e53f4a9513b09e7aac074135d63bb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5MTAxNGRlYjg4ZjY2NzA0NDY2YzJhYzQyMTA1MWNkMWRjN2E1MTQxZjI1Mzk3YTY1Mzg1ZmNlYjIwMDk3NWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyMDEyNGM2NTkzYzUxZDgzOWQxN2Y5NDY0Njc1ZjliZmM4MDA2YTU0OGZkYjQzNDVlNGMyNmFhMmYwM2EzOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg3Njg4YjE3MDg2NDdiN2YxZTczMDM3YTY5NDc2YWEyM2JiNjg2ZDAxYjg4MTZlN2ViYTQ4ZTdiNmZlOGM0MWIifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L5565-L5655",
+          "version": "repo-lines-v1:sha256:ade4482eefb6378a106267bc6fb019a0c755dd0ea62fea6ed0d9afe898297226:eyJzZWxlY3RlZExpbmVDb3VudCI6OTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MjRiM2VhMDA4M2ZkNzM4MmE2MzZiZDRkMjc3OGJkZDQ0Mjk4MjNlYWRiZjJlYzY0OWQ4MGE3YTE0YTdkOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhOWI5ZTMwNzE2NGIzZjk5MWYxYjZlZTA1NGM5ODI2MThjNTRhOWU0YTYzOTkzYjNmZTdlZTk5YmM5OGI4NGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg1YmU1ZWUyMjYwOWVjY2MyMDQwYWM3MmY4OWJmMjM1ODBmNWFhMTZmNzI1ODAxODYzZDdmYjNmODI2OGU4MzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3OTA0OWQ4ZDg2MzA1NGM0MmQ1MjFhMTBmODNhZTZkNmNhZjkyYzViYzExMmFiMzgyM2ZlM2Y0OWUyNDk4YjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_014e26544d2140f5bc79b79280979df2",
+      "statement": "qmd get and qmd multi-get print line numbers by default and disable them only with --no-line-numbers; a missing document makes get print a not-found message with similar paths and exit 1.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1323-L1338",
+          "version": "repo-lines-v1:sha256:de5917f99111256f9ae8a9d0a5fbf71c74ab05bb7828ed6ef4c4e01603c632c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExYWI4NjZhOGIyMGEwYTU3NWVhNDZlZTZlM2E1ODQzY2ZmZjVjZDFiZjI1NDU4NjFhZTNjNjcyNDAyMTA0ZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4ZDdkNzk1OWZjMGM3NDc4MjU3YTQ3YTg0MWYzOTEyNTI3OGY2MGMzMGQyOWJiOWUxNmU5MGZmMDAzMWNlYTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkZjI4MTQzY2I1MjMzMDMzMDA4ZWVjY2ZiMDc3YWY2ZjBhYThlMDg4N2M2YzcyNjkwZDEwOGJmYjNjMzM0MTAifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L3377-L3378",
+          "version": "repo-lines-v1:sha256:7a298c1f21a1d6854e4e9bf255564c9a258028b6550f4c68bbe25a92b5bc4930:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFkZDRhOTQ2NzNmNWFlZDY1MmNiMGI2Yzc5ZDQ5NGJiOGI3NjM2YWE4YjQzODIzYmU3M2QwN2E0OGNlOGMxNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjNjYjUzODIxMDVlOGE2MzBkZjhiMjQ3YmNmNjRhMjU5ZTViNzljNWMzNDRjZmQ4MmE1MTIxODc5ZjgyYzg5YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWYzZjE0NGZhZjYwNTVlNDFhN2M1OWEwYmE2NjRhNzdhZWE1OTk0ZjEyYmRlNTY1ZTFkMTRkOWYyM2EzM2NjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmQxNTRiZTc1MDU3ZGUxOGQ5MzZlYjkwYzI3MjVhNGJhYTVkN2RjNGIwNDk5OTcyYjFhYjViODEzMjAwM2U1NiJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4717-L4742",
+          "version": "repo-lines-v1:sha256:b54ee441b1b567d1b7e038e5e73f27166c037d96bc87e7576624f4d4f01f39d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2ODgzMjhmZjlmNWQ2Y2ZiZTFhOGFmMWJiMGMzYTBjMWY3NTJlMDUyN2IwMDU5OGY1N2JlMWMyOTQzMzRiNzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwYjQyYzA2MThjZGMzMzQyOTk0NzEwYzFlYzNjZDBjMWFlYmVhYjVkOThkZGI4NjE5ZDE3ZWU2MGZmYWRkMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4Y2NiNjc5ZDY4OTcwZjJjODJlY2I4N2Q3NjZlMjYzMzZiMjNjMjFiNzNjNjYyNGVjZDk2MmM4M2VmMTUyYjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cb94e94abc6e41cfb38b063f6075a770",
+      "statement": "multi-get classifies its pattern as a comma-separated list when it contains a comma and no *, ?, or {, as a single docid when the whole pattern is a docid, and otherwise as a glob over virtual paths that exits 1 with 'No files matched pattern' when nothing matches.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1389-L1396",
+          "version": "repo-lines-v1:sha256:3b95ba44413253da03e2744dfbe2f8a49aa6b0b698178faecbc92d8d9cf346d8:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWZkZjU1MzU1MjNlMzc5NDJlOTIzYTdiYzkwYTdkMzYwYzYxODY2NGQ0MmMyZGM0YWI4NzcyODc0OTQyZTBhYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWEwOWZkZmViMzkzZTEwMjc4YzI1MjUxMWIxOTM5ZjZkZjliNjNhOTk5YTAwOTVhMGNiMTRlYTJhYzMzZTkwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzYyNGNjNGNlZjQyOWQ2NzkzODA3ZmQxNjgwODEwZWJiMjQ5YjAzMmQ5OGQ1YmVjNGQ0NWI3MmI5Y2NhNTBkNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzY5OTNmNzBiOTdlMTNiZmNjNWRlYzcyZWU5NTQwZDdjMTFhYTJiMjIwNmIwNDRlNTE2YTMyMTFlM2U4Njc1OCJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L1426-L1433",
+          "version": "repo-lines-v1:sha256:2e37ba3358321f6c1f7cf854ffd5162c12f9c6377b12cfd831ef3f99e32e3a1a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmU1MDNiODEyZTk4NjEwNTc3NjljMzdlMTk1MjgwM2MyNDAzZmQ3MDFlOWQyNjQwMWRhMzVlNWYwOWI5YWFjMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2Q1YzQxODMwYjEzMjBlNDY5MTlkZDc5MDc3Yjg0N2M5MWVlNDY1Mzc1NGEzNjNkY2Q2ZWQxODVkMzYwZTcyYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjQ4OWMwZjg1NzgzNmQzZWE3M2M3NzY3ODBkNzg1MmIwZGZhZDA4MzdhMDkyNzE5YWQ3YjQ5MjA4NWMxODYwZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0f4da18554784dfab349b7e5d96e71eb",
+      "statement": "The multi-get size cap defaults to DEFAULT_MULTI_GET_MAX_BYTES, which is 64 KB (64 * 1024), overridable per call with --max-bytes; a document whose stored body length exceeds the cap is not loaded, and is returned as a skipped entry with a reason suggesting qmd get, which renders as [SKIPPED: ...] in cli format, skipped true with a reason in json, and [SKIPPED] in files format.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1472-L1485",
+          "version": "repo-lines-v1:sha256:33cc29c26c6f09aa463663dabd1c41ef1ae4de1dd618bd287974b66ef050f481:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3OWRlYTY4ZjgwNmYxNjUxMjdhYTM5MTcyZjRlYTYyNjdmZGNmYWVlN2YzZTE5MDdkZWY3MjFmOTRlODM1OGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzYjU0YTRlYmMzMDRhNTM2ZTM5MGZlNDFkMWMxYTliODk5ODVmNzg3YzFhYjI3YTZkOTliMWRlMDQ4OTZlMjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY3MTUyMzBiYjI0NDg3NDM5YTdkMGEwYjU4MmFhYTk4MTNkN2VhOWUzNzM5NjljMzFjMWUyODljOTA0MjE0YWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYyMmFiOTdmNmJjYThhYjFjMzk5NmM1OTAwNzgxNTY4MWFlZmQ0ZDQ3YWZjZWRjYWRkNGJkOWRkOWNkZGQxNzUifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L1618-L1618",
+          "version": "repo-lines-v1:sha256:175c6c9e2e17710247f487f39604f233f7f540a8fb50d4bb92c340148e3dc2ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTc1YzZjOWUyZTE3NzEwMjQ3ZjQ4N2YzOTYwNGYyMzNmN2Y1NDBhOGZiNTBkNGJiOTJjMzQwMTQ4ZTNkYzJjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTc1YzZjOWUyZTE3NzEwMjQ3ZjQ4N2YzOTYwNGYyMzNmN2Y1NDBhOGZiNTBkNGJiOTJjMzQwMTQ4ZTNkYzJjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzlmZDNjYjAzMjI0NTg3YjEyNzMyYTkzYjU5MGI5ZTE0YzZmZjY4MGFhNWMzYzZiYjQ5ODZlZDBkYmZiYTU2MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzUwZDJjNzAwNzI1YzZhY2VmNWFiNWFjOGY3ZjNkNmIzMzBmNWJiMjM1NTkwMWU5NzkxYzNiNzY3YzYxYTc4OSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4737-L4737",
+          "version": "repo-lines-v1:sha256:15c275a0cdb6b32f063dd54cb79574e7be8b2e6fac8e3edfd6a211f626793399:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTVjMjc1YTBjZGI2YjMyZjA2M2RkNTRjYjc5NTc0ZTdiZThiMmU2ZmFjOGUzZWRmZDZhMjExZjYyNjc5MzM5OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTVjMjc1YTBjZGI2YjMyZjA2M2RkNTRjYjc5NTc0ZTdiZThiMmU2ZmFjOGUzZWRmZDZhMjExZjYyNjc5MzM5OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTZkZWU1OTUxYzdiOTQ2NGIwN2E2ZjhiMGYzNTIyMmE0NzE4NzIyNDlhYmU3YzdmN2Q0MGFkZTkyYzNhMDM2ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDllMGRmZGViMDVhM2JiY2MyZWRkNjk0NWNkNjhlZDE0Yzc5ZjFlNDk3NDQ1MjhkZDMyZjU2ZDRlOTE1YTY3YSJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L592-L592",
+          "version": "repo-lines-v1:sha256:91f8f3be905fd576a7a00021412df24555ee7d9056f9b821b6fde5bf815759d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTFmOGYzYmU5MDVmZDU3NmE3YTAwMDIxNDEyZGYyNDU1NWVlN2Q5MDU2ZjliODIxYjZmZGU1YmY4MTU3NTlkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTFmOGYzYmU5MDVmZDU3NmE3YTAwMDIxNDEyZGYyNDU1NWVlN2Q5MDU2ZjliODIxYjZmZGU1YmY4MTU3NTlkNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWZkMDFhNzM3ZThjNjBjZjQ2ZjJmNGUyNjA1ODc1ZjJhMmUzZmIzY2U0ZTVkMTY5NTBmNzI3Y2NkNWVlN2VkYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOThmMDZjNzVlNGE4NTM5ZTg3MmMzOGRmZDlmZjEwMzA3YTExNWFmMmExMjRjYzMwYWNkZmViYzllYWZlYjQwMCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L139-L139",
+          "version": "repo-lines-v1:sha256:124b00cd61771da648443651decc02f6f3eeafb84b8380dd02123389602f53ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTI0YjAwY2Q2MTc3MWRhNjQ4NDQzNjUxZGVjYzAyZjZmM2VlYWZiODRiODM4MGRkMDIxMjMzODk2MDJmNTNhZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTI0YjAwY2Q2MTc3MWRhNjQ4NDQzNjUxZGVjYzAyZjZmM2VlYWZiODRiODM4MGRkMDIxMjMzODk2MDJmNTNhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWY5ZTRiODUxNTJmYzc1OTEyNDFkNjNmODdjNWJjYjRjNzk5MzYwMDA2OTNiYzBlNjRhZTIwOTA3Zjk3YmNmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmM4OWU0M2JhOTYxOTZjOTRlNmNhZTU2NTU2OTYyOGY4MjNkZTk1NGY0ZWMyNWUyNmViYTYwOTQ5YzUyYzRiMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a7adff2f8ea44ef68a9b38dcd3edaf8d",
+      "statement": "In a multi-get comma list an unresolvable entry prints an error to stderr and is skipped while the other entries still print, but a single docid that cannot be resolved exits 1 with 'File not found' and empty stdout.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1398-L1424",
+          "version": "repo-lines-v1:sha256:6e77aa92660d81282ea511d064ccdfd69adec12d3490bbac56749c309c7eb8e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkNTQzNzcyNzIyNGQ2NTU5MzJjYjkxMTMyZWVhZWI2YTlhMzdiYjQ5NGMyYTJkYjFlZDM3Njc0NjBiMDA0NTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1N2RmZjQ4MWVhYTkxMzU1NGJlM2RjZjZiY2ZkMWZiYjYyNzU0ZjEwNWI0MmM2MDUxNzk1Nzg3YjA3ODNmMWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2ZTMwZGUzMDY1ZmJjZjNiMWJjYmZhOGU3YWNmNDE3OWVkMjUxYmYzYjQ0ZDlhMDg4N2IzZjcyYjk0NzRmODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4YjVlZTY5Yjk4NmU0ODlkMzcxYzhlNmE1MGYxYTk5ZjM4NjY4OWYwMGVlYTQ4YzQ5NGUxODViZWNiNTBlNGMifQ"
+        },
+        {
+          "resource": "repo://test/cli.test.ts#L1197-L1202",
+          "version": "repo-lines-v1:sha256:063370c1216f368629bbabf034a39c076bbcd4f409e4e5e8f28627a31f3f5eed:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDYwYmFjNTFmMWE0YTk4MTk2OTRiNWI1ODU2M2M5ZjhmMGUwNDM5MTljN2JjYmEzZDg1MWRiMWYxYTY5ZWY4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWZmYmMxMzQ0ZDdiOGVkY2Q1MDgwOTVlNzNmODY3NjI2ZDJjZWM3MmM3OTdiYWJlYTAyM2NhMjU0YWM2ZDMwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTY4NzE5OGZhN2ZlMWFkNTc1MjY5Yjg5ZWI1MWZmNWQwY2UyYjA0NDhlMWE4ZGZlZmZlODg0ZDFjOWU4YmM4NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_644792614326480685151a006d394b02",
+      "statement": "search with no indexed documents or no configured collections does not fail: the store is created on demand, the FTS query returns no rows, and the command prints 'No results found.' and exits 0.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L2592-L2612",
+          "version": "repo-lines-v1:sha256:c4f952fdf7f8e96ea70f1da13be04c2e9073585df7edeb0269f83ca3d30ef591:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0MzZjYmMwMDUzNjE2MzFlYjc1N2M5MjZkMTk3Yjc1MmQ3MDQ4NDEzM2Q5YjIwYWY0YjRjM2RjZjcwNWU1NDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjMTMyYjdiZWZlMzE2N2I4ZTRkMzM4NWU2NWNiNjJiNWU4NzczODFhNWE5ZjBjNzIyMDBjODJlODczZjE5MWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiZGFiMDM0MDMwYjAyZWMyMDVjODcwOThkMWJjMjhhOWZhNWU1MGI2ZGUzNjFiNjRkMWQyMjM1ZWNmZDVhMGIifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L3116-L3118",
+          "version": "repo-lines-v1:sha256:871f8c81aad485e1dd2c61e25508b071d22395ae14f2fe7f6e719a586ae45b0c:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQ2MGNhOTRmOWQ5YTE4YTU3N2M2NGZkMDI5Y2Y0OTYwODc3NTc3Yzg2NGVlNjUyZWFkNDc0ZTBkMWUzMzI1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWM1ZTNiZmEyM2Q0N2Q4MTE5NWMxMjEwYjJkMWE0MGY0YTIyZTQwNjY1NzlhNzNmZjBjM2YyZmFhNmMyMTFmNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWQ2YjdiOWFlNzI1MzJjY2FiN2U2ZmFjYTU5YmM1YmY3NzQyOGJiNzJkOWRjOGYzNzI4NzU1ZDllYWQ1YTI4YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWYwMGRhMzJmYTBhYjI3MTk2ZmVjNjVkMWI4MjU2NjQ3NGZmNjdhNGNkOGEwYmZlMTI2Y2E2ZTg0N2ZhM2M4YiJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L2615-L2619",
+          "version": "repo-lines-v1:sha256:fdfeb45e5a6db38223cf5370b0901d9ec7439c8e4d8ed3a85abc6b7d2f3bfe01:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjJlMmQ2ZTM3MGMxNjAzN2Q1NWI0ZjViMWI5NjNhODE3YWI5ODk4NjY5MDFjOGRmNjU4Yzc5ZjA0YWU3OWEwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmE2NTRmNDc3Mzc1ZTE5MDZiN2Q0ZmNjNjE3MGI3MjBiNmU3OGVkNmJiNTIwODRlYjhmNWJmNDYxNWQ2ZTk1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWFmY2E0Yjg2MWRmM2YyMTNlMmNhNDBmYjgxZGM5MGE5ODg0M2RiODU2ODk3NGJmMTk4YjcwNzNjMzJlMGFmYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_05b93dde1bd84b9e8e39d6a994c536d3",
+      "statement": "vsearch returns an empty result when the database has no partitioned vector index, because vectorSearchQuery returns an empty array when hasVectorIndex is false, and query does not fail without vectors: hybridQuery seeds candidates from BM25 and only adds vector lists when a vector index exists.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L3166-L3166",
+          "version": "repo-lines-v1:sha256:7d08faab4014aa765817786902d05544ab83e36a91e578b9b088ee2b33e268a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2QwOGZhYWI0MDE0YWE3NjU4MTc3ODY5MDJkMDU1NDRhYjgzZTM2YTkxZTU3OGI5YjA4OGVlMmIzM2UyNjhhMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2QwOGZhYWI0MDE0YWE3NjU4MTc3ODY5MDJkMDU1NDRhYjgzZTM2YTkxZTU3OGI5YjA4OGVlMmIzM2UyNjhhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTViY2NlNDRmMmRkZDRiMmQ5YjNiYjgzNGM0YmFiMmM1ZjAzNjJjNDE1YjZkNzc3ODFjNGEyYThlZDFhNWI2YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmE0MWQ3M2M0NTIyYmVhMzlmZjgxNWUyNGJjZjEzMTE4NTMxZDY3MWViM2NmNTMxMjE4ODVlMTFhMWM0NzI0ZCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6282-L6282",
+          "version": "repo-lines-v1:sha256:b9c48507e016d226d12c0f63c218febbb63fb72cbb366cc507f260300814a324:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjljNDg1MDdlMDE2ZDIyNmQxMmMwZjYzYzIxOGZlYmJiNjNmYjcyY2JiMzY2Y2M1MDdmMjYwMzAwODE0YTMyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjljNDg1MDdlMDE2ZDIyNmQxMmMwZjYzYzIxOGZlYmJiNjNmYjcyY2JiMzY2Y2M1MDdmMjYwMzAwODE0YTMyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjVhOWM0MmRmN2VmOGE4NDVkZDIxMGUzMDc0OTdlNjdmYTgwMWU4OGU0YjM3NjRjZTM0ZjM0NjhlY2UxOGFlMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzJlZWJlMDljNTc5MmViYjQ0ZjZkMGVkYmU4YmVhODk5ZTgwY2Q2MWZkMzIyMzIwMGFhNmZlNjk5YjM2NTY2MSJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6341-L6341",
+          "version": "repo-lines-v1:sha256:28171bfff939101156a3ede71a74b7e2a79c08738f41e7f8d03e2809cb9d6e1a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjgxNzFiZmZmOTM5MTAxMTU2YTNlZGU3MWE3NGI3ZTJhNzljMDg3MzhmNDFlN2Y4ZDAzZTI4MDljYjlkNmUxYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjgxNzFiZmZmOTM5MTAxMTU2YTNlZGU3MWE3NGI3ZTJhNzljMDg3MzhmNDFlN2Y4ZDAzZTI4MDljYjlkNmUxYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTg3MTVhMjJiMmFlZTU4OWYyZTQxMjc0NTViYzUyYTg3MTQ0MjU0NjRiNTQ2OGM5NjljZDYyN2YwNmNhODlhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWJhM2ZlYWNlMmM3MDhmNjg5MTM0YmM0NjgxMjMzNDdlZGMwZjk1NzE1Njk1ZDkyMTlkNzcyZDFjNmNiNzc3MCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6603-L6604",
+          "version": "repo-lines-v1:sha256:58cc53bb6a987b8d6c294eb6925b374b86599b3dccbea7264d99e1e5166fd1b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjljNDg1MDdlMDE2ZDIyNmQxMmMwZjYzYzIxOGZlYmJiNjNmYjcyY2JiMzY2Y2M1MDdmMjYwMzAwODE0YTMyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQ4MzZkNjI1YTI4YWFmMWE3NWE2MWZmZWJjYjBlYzE4N2Q5Nzk0NWEwZDhlOTg0MThjZjQyODNmYjhiYjNhMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDkyZTc5OWM5MzkzYzhiNGY3MjQwYzk5YzNlYWE5OWI2MDkxMDMyY2JkMzA0MGM0MjhiZDA4MzNhYThkMGMyMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzU2OTQxMjc0NjVlNGU4ZTRlYjhlNDJiYjcwNThlZDU1Yjg4OTkyNjMyYWQwYzNkOTRmNjNkY2FjODIxZDA5NCJ9"
+        },
+        {
+          "resource": "repo://src/vec-layout.ts#L84-L87",
+          "version": "repo-lines-v1:sha256:3ffe4493c8dc0adfeeb99c50f2f3a9c60615fd43fed836ee576453e17a2f1e1e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFiNTMwN2Q5ZDQyODQxOWJlYTJmYTlkMTA0MmY0ZjU2MTRlZjM5YTcyMzk4NzY1YmUzZTM1NDAxOThlMjBmNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTU3NzAyODMwOTFlMmQyMmQ1MGRkNmI1YmE1YmNiZjJhZDE5MmU3NWY4ZDE0YmMzNTdiMmI1NGFlM2MwZDNmYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjAyMzZkZWE1OGVhZTE0MjEyODA1NmIyMTAwM2Q3Yzk2YTE3NzFjYjhiMzFmZjI4OTRlMTBhOGExNmI3ZGRkYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6cbfcdda47c048539064a3b1d94107a0",
+      "statement": "When --full-path finds the on-disk file, the identifier becomes the path and the docid is omitted; when the file is missing, the entry keeps its qmd:// path and docid and a warning is emitted, so the document stays addressable.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1532-L1533",
+          "version": "repo-lines-v1:sha256:ba037e806b5648c99217ab0156057660ddba1c5a3e72bc8b9b1013e3b5920d6c:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmI4MzVkMGRlNTczMDkyMTU5ZWI5YTAyOTZjMjg5Mjk4YzAyNzU2N2QwOTg0ZGZkYzdhNDEwZjk5OGExNjIwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGMyNDViNjIwYjE4OWRmMjhjOTI3ZDE1NTE4ODlmNjA4MzUzN2Q1MTBhYzA2MTliYTQzNDdlNjk4ODU3ZjkxZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzJhMTMwMGJjZTU2YmJhYjk1YTUxZmI1OTUyZWY3ODgyNjU2NjJiNTAwY2UxYTdkNDNlNzgzOTM5YmY5NzhiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGEwNDVjODQ3NjI2ZDFhZjk0MmMxNWNjN2NjYTc5ZDc2NWQ1MDk5MDY4NjhmMmUxYmYyMDhkZjM0YWJlMjQ2MiJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L2707-L2719",
+          "version": "repo-lines-v1:sha256:cafec336173f0b4fb7d5d26295d2c59137895dc1f0620120b486c3db63ffcb01:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExMGYyM2QwMjRmMGU2NjU2YTI2YjA0NWU5Y2MyMGE3MDI3Y2FkYjJhZWM5ZDQ4OWQwOTA3ODdlMjUxZmJkODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkwNmQwZjE2ODg3ZTkyMDc5MDk1NjIxNTFjZjEwMjcwY2YzMzViMjc5Y2I2YzlmOWI2Zjk0NGYxMmU3MTQ2MDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzMTIwMjRhZGY1ZDAwOWRlNTJiNzJlYTk2MzljMjNkMzE2Njk5NWE3ZDViMDMzNDMwYzM2NGEyNmNkM2EyZjEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

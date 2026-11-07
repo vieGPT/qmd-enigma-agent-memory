@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b5d92f074e61f4306b4591902eb62cb5e7044ccb9a75222cc570e3097f72043c",
+  "claims": [
+    {
+      "id": "claim_0f896a2c15634c70b68c02946d78aac0",
+      "statement": "The HTTP request handler validates Origin and Host headers before routing any request, including the REST /query and /search endpoints, and rejects a failing request with HTTP 403 and a JSON-RPC error body.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/origin-guard.ts#L135-L167",
+          "version": "repo-lines-v1:sha256:5965132daba7ca24cc1791b63c5e33bf293fef3da3055455384e7f639cacc8a6:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczN2FhOGZhYzM0YmQ5ODllNTc4NzFjNmFlYjgzNGE4Y2I0ZmRjNjFjZjM0ZGQ4MzRhNjJlODhmYTIwZTIxNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3NDFjOThlMWZlMjNmNjE2ZTFkYzU5OGFjNWEyZjc1MzEyN2ExYWU0MTk3ZTI3MWI1YTg4N2NmZjFlNWFjNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L1160-L1184",
+          "version": "repo-lines-v1:sha256:8d5c14e5dae7d237aaf9493248605f7fc1710c81e6864c151573da1c9a7cf070:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlMWEyMGNjYWU5YTc4NDA5Y2ExMjU0ZThjYTliOTQyZjUzYmJhMWFjMDEzOTYwZmJkZGU1YjBmNzMxZjlmYmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxMGYxMzc1NjAzM2Q4OWFmY2IwODM2ZWI1M2M1YTMxOGNmOTQ4MjE3ZDViN2VkMWI3NzI1ZjkzYTkyZDQ4NDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ2ZmY1ZGM1NWFkZWFkMmE0MjZjZWNhN2Q4ZTk0NDhkNjFiZjY0YmUxZTEyNzI3NDZiZmZlZDllMDljNDdhZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlOTc5NjJjZWQ3YjI2MTgwNWM3MmIwN2IzNmE0NzM0ZGIxN2M0NjM1NzRjNGQ3OWUyZThiNWEwM2E0ODY1ZGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ce4c8ef2a1c4223931f9c4f35513baf",
+      "statement": "The origin guard accepts a request with no Origin header, but rejects a present Origin unless its hostname is loopback or it matches the explicit origin allowlist, and it recognises loopback as localhost, *.localhost, ::1, IPv4-mapped loopback, and 127.0.0.0/8 while excluding 0.0.0.0.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/origin-guard.ts#L127-L150",
+          "version": "repo-lines-v1:sha256:19f58b2c9cfe111944ef76e85fb64243a8dbb927cc29b51c65452133f0419432:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4NmY3ZTkxYjlkMGU0MTEzOTkxNzdlZDcyMjgzM2M4ZjZmMDU1MmJhYWM0NGJlMzZiMWJkODI1ZTlmM2UyNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmZjNhODdjNzYyYzhmODQ2ZGJjZjMxYTZkZDg3YzI5MTY3NzQyOWE4ODkzNTM5NDJlZTQ0OTk0ZDYzMGQyMDUifQ"
+        },
+        {
+          "resource": "repo://src/mcp/origin-guard.ts#L21-L35",
+          "version": "repo-lines-v1:sha256:6949a9b311ea1b5b48c71747553ed0d2238301b4a16619334fd297cdcda35565:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViOTljOWVjN2I4ODVlMGFkYjE2MjQwMGQzNzljOWQ4YzhmZTVjMTA5YTY3MmVjZDIzOTg1YzY0MTJiNjg5NDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjMThmYTMxNWUzZjJhMzBlNjcxNDZkYWE3YTNkMGJjZjQ2OWE2YWRkNzk5NDI4MTZlMTRjNjkwNjQ1YTI0MjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmNTZmYzQxNGM0ZDhlMWE0MjBiZTU4YjA1MmZlYTk5YmU4ZjQ5OWNiMDY2NWM3Nzc3MDI4MTc3MTllMGEwMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a991beb0df74beab57320dfd353d5b3",
+      "statement": "Host header enforcement is on for a concrete bind address and off for a wildcard bind unless an explicit host allowlist is supplied; a concrete non-loopback bind address is added to the accepted hosts, and QMD_ALLOWED_ORIGINS=* disables all origin and host checks.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/origin-guard.ts#L153-L164",
+          "version": "repo-lines-v1:sha256:4f250e08c2eca5ee12fd9412e121d5b6b7c902ac166e48615ab9b866ef4410c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5MGM0NGI5ZWVmM2JmMjFkYjEwMjBiODg0Y2EzNzQ0YTQ5NDQ4NmFjZjIzMzczYjA0Njg3YTkzMWRjMTU2NzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1NTdlNDFkM2YwNTk2YmNiMTE1NTA2N2U3NDdmNWNhMDVjODE5MjgwNTgyMWI5MjdlOGYyYmRjY2NjNjc4ZDMifQ"
+        },
+        {
+          "resource": "repo://src/mcp/origin-guard.ts#L82-L123",
+          "version": "repo-lines-v1:sha256:df7206837fda230f71515f31fbeeefb0c8a14614628134f3ce279022a3e1390a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3Zjg5YTU0ZTNkYTY0N2Q0MjljNTNhZDUxOTc5ZDI5MDk4ZjJkYWY5MTBjOTAyNDVlZTE2NzM3Y2YxMGM0NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4NmY3ZTkxYjlkMGU0MTEzOTkxNzdlZDcyMjgzM2M4ZjZmMDU1MmJhYWM0NGJlMzZiMWJkODI1ZTlmM2UyNjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2f7b6f33cc734be1a86fd0992ef3d370",
+      "statement": "Only project-local configs, identified by a parent directory named .qmd, are subject to the trust gate; the global config in the user config directory is never gated.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L1-L15",
+          "version": "repo-lines-v1:sha256:aaffabc300e1331e75651786f9f1ae2172b1687068f1bd10608fa1e50e3546e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczZTY4YzY5NWRkZWMwOTc3MjdmM2FkZWMzYjY5NzI4Y2ZmNWQ3ZWE1NjY5NzZmNjQ4YzQ5NGJhMzQ2MGQ5ZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3Y2QxZTMzOGNkYWY1MzUxZjlmYzQwNzk3MTQ2OWE1YjU0ZWRkZTZkZmM5ZjI5MWY4ZmNhZmU4ZmIwZjI4ZjcifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L77-L85",
+          "version": "repo-lines-v1:sha256:2cfd1d20003f4c7af1c05223626037f9ffa0817dddcde734fcf8bf5446789a51:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjIzY2I0YzEzZDY3NzU5ZDU0Zjc2NzFkNDQwMzQ5NzJkMDkwM2EzOWQwOGFmYWU3M2JiOTgxZWI5YWIwZGNmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWUyYTIzMTQ1YmU1OWVkNzU5ZGYyZmQwOWQyMTYwM2U5M2YxNjI0ZWZkYjc2ZTgxNDk1YmM0YjM0NzQzNjkzNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjI4OGIyZjlkYTc1ZWMzMjdhNzA5OWJjNjJhZTE2M2E1NjI5Yjg5YWU5OWQ2Nzk4MjEzODkwZWQ4MGUyNzAwZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_391e91add1204a2eb0ccf8649fff7bab",
+      "statement": "The gated surface of a project-local config consists of update hooks, collection paths that resolve outside the project, and model URIs that differ from the built-in defaults; in-project paths and default model URIs do not require approval.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L126-L158",
+          "version": "repo-lines-v1:sha256:13a2314e26d808bc4b3e84eca173e7916a16387adee9fbfdd29eb75fd84515dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2M2I5NjAwOGFhOTg4MjY2NWFhMjZjM2M0MTIyMTgxZDEyODkyNTAzODBmNjU3ZTlkZTIyYmE4Yjc4MDA3MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRjMzU1NjdkYjhjMWQzMTY1ZjY3YjZhZGUwOTc4MWVkZjY2ZmVhMWU5ZDZiMmJjMjgxM2Q4ZTdmOGUyMTMwNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0NmU2Njc2Mzg0YTdlZWUxZTMyYzIwYTVjMDMwOTliZjVlZGQ4NDU3ZDNhODBmOTcwMmM5MDBhYjVkNWUzYmUifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L135-L142",
+          "version": "repo-lines-v1:sha256:37eaf378e0bab4b97d2fc621ae7b482e441c388b65cdcf84da7c6bf2b8df9f32:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODRlZGFiNzYwOTA2MmFiZmRhOWQ3YzI5MjUyNDQyNWRiMDM1Y2EyZWEyOTQzOTVlNjc2OWIyN2E4NDFjNzgyYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzNmMWE2ODUxOWMyOTIxYjY4ZjU0MGMzM2UyMmVjMDQ0Nzk5NTcwZDRiZTJhZmZmM2FhMGMwMGVjNWE2MDk3NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGYyMzZlYTg4MjE2OWIxODgxODk3MTA1NTY1YzgyMjZjZmRiN2FjYzZhMDZmMDRjMTk3NmRhODJiZmZjMGVhYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTUzZDA2OTcxNzdkZmI1N2VmNzVhY2MzOGMzYjBkZDM1MmRhZjMxYmI1ZjQ3ODhkYTlhZDIzNGU5MmJlMDZlOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7f4adc0219f4b96a0a5097102ea1513",
+      "statement": "Trust approvals are stored in trusted.json keyed by the resolved config path and hold an order-independent SHA-256 digest of the gated surface, so reordering collections keeps an approval while editing a hook, moving a path outside the project, or changing a custom model URI re-arms the gate.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L168-L208",
+          "version": "repo-lines-v1:sha256:6a3624eb307611e5bfc791d07c07b69d7deebb7bb4e64d294425de5da25064ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTFhM2QyNDQ4NGE4NTMyODJhZmNkNjVmNDRiMmY5OTY5M2RjODVlYjZhZmVmZTE2NjQ2OGZiMWYxYzdjYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4NWQxNzUwNWRjNDMxMGM3ZDc4MDVmMmU2MTg5ZDgzOGE0NTQxNTQ0NzFiYzE3MWUzNTNmOWQ1NWMxYWNmZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2OGRjOWVjYTE0NmRkZTg5NjIxNTljMTlkNzljOThiNTI3OTBmMDg5MDk2MzcyMDJhZGM3MzVlZGU4ZDYzNTAifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L234-L244",
+          "version": "repo-lines-v1:sha256:fc37195423a79c99c1da9c8086501a158a67c0bab24de81accdf9395577380fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1NWY1YzNhZjlkM2ZhZWMzMGM3NTlkNjhjMzU1ZTA1NWU2ZmQ3ZTViYmU2NzI0ZmU4OTAxYTZlYzYxNmY3MTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0MzgxMjE0ZGIyZGNiNDZlMDI0NGY4Y2ZhODFhMzNmNmI4Y2IyZTNhNmUzM2NlYjA5ZmY4NjkxM2MzYmMyMGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkN2ZmY2ZkYWRhNTMwZTQzNzU0YTdlMTY2NDRiMDgxMGRiZTlkNDg4YmE4NTg0YzBkOTc1MDA5NTM2ZDEwNTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5d4f8506aea9484584175a94f48f29ed",
+      "statement": "A corrupt or non-object trusted.json is read as an empty trust store, so it can never grant an approval.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L209-L220",
+          "version": "repo-lines-v1:sha256:b282b21f8409ba4623e29835fd33bb9c9dfa52104c9f403ee953cc428910444c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmNzJjYTRmYzhlNGJlY2YyMjYzNTk4ODNkM2RjOWJjNmI2YmRjNGVmZjY4MWI4MWRjOGFiYzUxODdjYWYzNjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyZWYzNGJmMzc1MTYwOGY5NzdmZjBiNmM3MzFlNmM3YWM5MmE4N2U3Mzk3YWNmMDYwYWZiMmZlN2U5ZTU0ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhZmI0NWVjN2E5MjI0NzM2NWIwOGY1MmQxYjgxOGJmNzU2MzQ0NjQyZTNlMTVkZmM0MTQwNGE2NWU5MzU4MDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_550bbb42abd246d18c31c2cf49e97907",
+      "statement": "The combined local-config gate returns run when there are no gated items, when the opt-in environment variables QMD_TRUST_LOCAL_CONFIG or QMD_TRUST_UPDATE_HOOKS are truthy, when the config is not project-local, or when the digest is already trusted; otherwise it returns prompt on an interactive terminal and skip for non-interactive callers.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L268-L274",
+          "version": "repo-lines-v1:sha256:fa52f1ac44e92fda4f0850320afc69ac6f7c346db4fa1ad4d33d4b9887a68c1b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGE3YjRjOWE2MTliYzBlZDU1MDAwYTI5N2E0MDc4YjZlN2E4NjU1YjU2MzYxMjkwODRjNzJiMjMyNTE1ZDk0ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzI0ZjMyMDE0MTljZDJmMzFmOTk2ODBhMTcxZTA0OWM4ZTZlYmU1NGRjODg0N2M1NzI5NmU0YTFhN2MzYTlkMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmVkYzFmZmFjZDUwM2U1Yzc0OGQ5NDk1YTkyZWQxNDQyMTM5YzdiZDMyMGZiZTcxZTBkZmFjZWM4YTIyMWMyMSJ9"
+        },
+        {
+          "resource": "repo://src/trust.ts#L313-L333",
+          "version": "repo-lines-v1:sha256:80e2ec433eca8ebc2fdd8c94e4af6b9d0b8469af241fc7ea349c1ec768326054:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0YTMxNzE3MjRiNWJmOGQ3MmYzNDFjMTdkZmNkODFlYmNlYzE2NGZlZjlkNzhlYTY4YzM0NzExMzI1NDE1YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlYzE0Y2MyY2VmYTRjZjBkYTllMzFlYzAyOGVlZTJmMjY3NmI3NTFkMWYwZjQzYjc1NmQxOTRmOTYzOWM5NzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8abfe3baacf944e78c2ce053d5bbdd08",
+      "statement": "When the local-config gate returns skip, indexing of the project continues and only the gated items (hooks, outside paths, custom models) are left out, rather than the whole command failing.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L831-L870",
+          "version": "repo-lines-v1:sha256:694b9441595080743a2dc1dfbd35951e92702612c9a0626437d9b7f7b267993f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmNmI1ZTYxZGQzY2RmYTdhYmUzMDhlOGY0OGRiNTI3ZjZkMzBhNjE1OGIzZTM0M2M1NWEyNTAzMjUwZWI5NTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyZTgxMDVlMGI5NTJjMjdiNjEwYzZlNWM1ZWE0OGY2MDRlOGFhMzE2ZjQ3MmI0ZDNiYThkZjlkMzQ5MzI3MmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhZjU0YWMwMWI5YTEzMmJlYWY4MjAxYzRjNzBlODIwMTRkYmFjNjRhYjhkZTRlNDZjZWM5OTkwYTk2OGFhMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjViZDllZmUwNGVmNmRlNDA1N2JiY2NkZDQ5ZmQ1NDgxYjQ2OWU1YTAzMzcxNjNlMDY1ZjhhNWQxODE0NzY1MWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f27bb8cf949f4c97984c1bc1ee763ef7",
+      "statement": "The update command resolves the local-config trust decision before it opens the store, so an approval made in the prompt is visible to the store.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L916-L925",
+          "version": "repo-lines-v1:sha256:07bf9feeae96904e934d1a8ca71835a78c98adee07463c22b1e386f23903294a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNTM3OGJhMjA5MjRhY2Q4NmVlYjFkYzlhOTIyNTA0Zjg0NTZlMWU5ZDEwYTcyYTViYjUyMjg1OWQ2OTJkNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRlMmJiZTZlMmMyOTZlMGRjN2YxZmUzNGY1ZmJlOWZiZTYyYzAwY2E3NjAwYmIyZThlNjQyMmU2ZTMwMDgzMzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1NjhhOTdiOTRjYmE4ZDA0MzgyMTNiZDU1OTJlNDRmNGI3YjQwMjg5Y2I1OGM1YmNlNTE4MjVkNWFmMjBiZTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1YzAwNDE4MzExOGUwM2UyYTU2OTc1ZjE0NzE3YmI3N2RkYjEyN2UyNTBhODUyMDkzYzA1YTgwMWRmMjc5ZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9368d6eb435f43dca7aa147727fab4eb",
+      "statement": "decideHookGate is a standalone hook-only gate that is referenced only by unit tests; the production update path decides hooks through the combined decideLocalConfigGate, so changes to hook gating must be made in the combined gate.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L831-L840",
+          "version": "repo-lines-v1:sha256:865310c460ba588d0248d04429c51bfee2347f5e5299379423c43a196b548f5f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmNmI1ZTYxZGQzY2RmYTdhYmUzMDhlOGY0OGRiNTI3ZjZkMzBhNjE1OGIzZTM0M2M1NWEyNTAzMjUwZWI5NTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwNjBkNzIwNjdlYWVlOTk3NjRkYTMwYThlY2UxNzNjNzMxMDUzYjZkZTgwMDc1Y2EwNmMxN2IzYWQ2ODBkYzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhZjU0YWMwMWI5YTEzMmJlYWY4MjAxYzRjNzBlODIwMTRkYmFjNjRhYjhkZTRlNDZjZWM5OTkwYTk2OGFhMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwMjJiNDJhNDkwMmRiYzg0MjdjMWE5NGJkZGI4ZGJhNDc2MzJmZDFlZDhjZmUyY2JmOTU4ZTFlNjIxYTYzOTUifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L283-L301",
+          "version": "repo-lines-v1:sha256:823a85e6f8ac2f38dca4ede28272e32b33e9667796e59f9cb51efe18e8a2d35f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkNzdmYTg3N2NhNWVkNmFiOTY4NjI3ODE5Y2M3YmJkNTMxNThkMTYxZTAxZWU5MzA4YzEyYTg0NjAxNmViZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1YjdjMTIwZmJjYWNmZDA0ZjI2YjJlNGFhY2JlMDgyNzdiMGZmZjk5ZDFiYTA0MDMzMDVkZjEzMWNkNDFjOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzZmFkN2VmYTU4NmIwMDc2YmRmNGUzNjIyNTI2ODdlNTRhYTc5YWUwZjA0Y2EzOTBkMjUwNGU5OTEzOTY2MDEifQ"
+        },
+        {
+          "resource": "repo://test/update-hook-trust.test.ts#L135-L160",
+          "version": "repo-lines-v1:sha256:e9144876b4b4fed34fca7dd9404308e509530dbb0281f37219a07ff0ead519d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2Y2ZlNjNhMzU3YTFmZTBkMzA1NzJhNjQwMWIxOGRiZjJkMjY3Y2QxYTRkNTNlMjAxNmY2OTBkYmEwZTUxZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI3NzlkMTE4ZDZlM2NiZjQ1MDUzOTc0OGRlZTdhNDMwN2FjYmU2NDQ2Y2JhMjk3ZjI3NjBmYTVkMGJiYTFiYzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmMWIwZjRkNjhiNmQ3NmNjY2JlZmUzMTQzY2FmYzgxZmE3MDhjNGNiZDBjM2JiNDNjM2E0NTc2YjYzZjcwMTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_de9506ac1e194550ac76d0f363553302",
+      "statement": "Scoped keyword search (collection list or metadata filter) materializes the complete FTS5 match set once with MATERIALIZED and applies the scope to every match, while unscoped keyword search keeps an inner ORDER BY bm25 LIMIT so FTS5 stops early.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L4710-L4745",
+          "version": "repo-lines-v1:sha256:9be05d1405c200de411896e2e5192e728c336a7a69847a31ba76e2ccf3efefb9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyNmE3YjJmZmMwZGY3ZTU1Zjk2Nzg3MmM2MDVlNzJlYTI4MWU2Y2NhODcwMGM1MzE3MTdhNzBlMjg3MTFjMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwZGUyODk1NGYzYWU4NTNhMzFiYjVkNWE4YjRkZmY0MDRkYzdmNDY0NzQ5OWMwNDU4NGRmOTg1ZjM2YTFiNTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlOTA5NzFmNmZiMzI3NDA1NjE4NmMyZmFmYWMwODc4YzliMTc5OWExZWM4ZDQ4YThhNTMzOWU4NjRhMzMyYzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxNGNhZWZjZDkxYjIzNjRlNzM3NGUzZGQ3MGQzNDc3M2VjNDUyNzI0ZGJjODgzYWFjOGMyZWJlZDYwOTJjZTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_33023cf586324448a6e1a1e520cefc0e",
+      "statement": "Keyword search ties on BM25 score are broken by filepath, so the order in which collections are named cannot change which equal hit is returned.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L4770-L4773",
+          "version": "repo-lines-v1:sha256:ed698bb0193b56c5e8abaf859a6295af5e40622171c6745734b23a4fec1703e3:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjk1YzFlMzQ3MDQ2OTYwNmYzYTQxMjljMWJjZTFkYWNmOGNhY2JkNmY3ZmRmOGE1ZGM3NGVlMzVmZTJlNTkwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDM2MjMwODNkZmQwMjQ5MWE4MjljMjVmNThkOTY0YWU3NTUwNzhmM2VlMzAxNjAwNDlmODMwZDFkMmY1OTRhYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODQxZmU0YjYyNTNmYmMyYTc2NWI4ZDIxYzAxNjZiNzBmZjk1Y2M1ZWY1ZjRlY2NkNTYyMmVlNjBiZjYzYzViZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWI2NDhlYzYyOWQ3NDg1MTAyNjRjNTZjNmIzNjBmMTAzYmRhNzI2YzJlNTM1MmZjMGE3OWE3NmI3YjIyYWUwOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_29bccb8ea0cc48a48566d82d828b3876",
+      "statement": "The reindex routine checks that the collection root is an existing directory before globbing; an ENOENT or ENOTDIR error returns early with a ROOT_MISSING skip and deactivates no documents, while any other stat error is rethrown with its original cause.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1885-L1902",
+          "version": "repo-lines-v1:sha256:ac0035f225c90d49ec91ec6e7f80996cf33d58e424af97e939b98ca4a80ba7ea:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiMmY3MDU3ZDczOTQyYzM5ZDYxZjZjY2RhNGI3MDNlMTZkZGNkNGM2YzcwOTI4Zjc1ZDA0YjNiNTQ0MTQ2NGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5NGIwZGYxOTAxNTc1M2Q3M2VmZWZiNTQ2NWJlNzFjNWRhMTVhNjk0NDY0MjRkMDhjZDE1NWYxZTlkYWI1MDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzZDZmZWIyYzZmMzYzYzRhMzc5OTQ3M2I0NjU0OWJkYTY2ZmI1MmE0MDcxYTRhYzU3NTdmMjdmMjg3YjExNTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_85a65f4f3b4143cb838e070234e0f6de",
+      "statement": "When the collection root is missing, the CLI reports that the index was left unchanged, so the operator sees that nothing was deleted.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L2288-L2296",
+          "version": "repo-lines-v1:sha256:c3b2bbe8fa9c2cbc4116b870fb49227c9bc80f5ede24dbc2bf7b4c2be663a453:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjNkNjQ1NzNiNTdmOWZiYzNmY2UyMjVkZDIwNTE0YmVjMDhhZTI5YTNlYmJjNjI3NGU0MTllOGI5ZWE3MjBiMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQyODM5YmYyZDdhOWExZjg5ZDBiZDRjOWZmMzk2NDNhNjU0OGEzODAxNDkzMDFkNmY1NDhhYzJmNGFlMTc3NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTdhNjEwZGEzNzE0N2MwZGM2OThmNDNmZWIzNzRiNjlkMmJkMzVjZDFjZDJjNjJiM2Q5MDVkNmFjMTM4NTc0MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTNiZGYyYWNiMjEyYTA3ZTRkZWM3MzM4ZGI1ZGYxOTBiYWQ1YmI3Y2I0MzFlZTU2NDczYzc1NjMyMWUyNjhlNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_543f1e65b878434d9d892ba9eb2118d1",
+      "statement": "Vectors live in one vec0 table partitioned by an integer collection_id, with a vector_rows table mapping each rowid to (hash, seq, collection_id) and a vector_collection_ids table mapping names to ids, so renaming a collection updates one id row and does not rewrite vectors.",
+      "evidence": [
+        {
+          "resource": "repo://src/vec-layout.ts#L1-L16",
+          "version": "repo-lines-v1:sha256:3ce6cede1b727738306c5e3af25cd99b36ac102a416388c109420fae28c964e8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhYzY4YTM3YzQwOTgxZTRkNDVhMjY1NGU2YWRhNjkwZDIyMzBkZTMxZTg3NGFlN2RiZWQ4NzA0ZTA1Y2Q5MzQifQ"
+        },
+        {
+          "resource": "repo://src/vec-layout.ts#L102-L123",
+          "version": "repo-lines-v1:sha256:05a92594a931eada11e2b2b93e2f9ee84ecf3ec82e09c82e3b26d5eaae8f02bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjNTNhYTE1ZThiOTgyOGYxNzJhZDEyNTYwZDM5MjQ0NmQ5OTM4MGUyNGU4ZmMyZDRjYzBhNzY0NGIwN2FkMjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZDUwMjk2OTQxMjUwNmMwMGVmNTFiYTRmNDc0YjIxYTFmMjU5NjRhNjE0NDkyOWMwYWM4ZGUzZDdhMTQxYzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA5NGZjMGMxNzNkMWVjM2ZjNTAxZDdkZmE5Mjg1NTAxYzUyN2NmYjQ3MTI1ODNkYTNjYzM2MTgwNTY2YjRiZTMifQ"
+        },
+        {
+          "resource": "repo://src/vec-layout.ts#L152-L154",
+          "version": "repo-lines-v1:sha256:8ca12fd4bf10df05bd7dd74a86f6bbb7ec1f16a2fa680f453b998833da07533a:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmViZWQ3OWFjMGVkOTliODgzMTNmNmU1MjhiMTk0NzRlZDRjMmM0ZTRiMzJjMTQxOWVjYWNlM2NmYmI5OTE5NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODEzMDI5YzVkYWVhOTFhODQ1MjQ5Mzg0MTk1YjdmNGY3Y2U4MTIxNzg5NTJlMzE3NzIxN2E0ZDI5YmQ4MzI5YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmNlNWM2YTJkMDRkMGUwNGMwZjY0NGNjMDIyNmExOTUxNDNhM2RmNjQ2Yzg4NjZjYzEwMjk5MWUzMmJlZWQ2ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b09d0d75ca49494fa95e2ee65aab2806",
+      "statement": "The live vector layout is decided by the presence of the legacy vectors_vec table: while it exists it takes precedence, and its drop at the end of migration is the flip to the partitioned layout.",
+      "evidence": [
+        {
+          "resource": "repo://src/store-migrations.ts#L187-L198",
+          "version": "repo-lines-v1:sha256:db0b343ceec070621ce71397dea40da15cc445c16ff91f03aa94e2a4da9555be:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwYmI0ZjViMDJhMGIzZWNlMGY1MWVjMGM4NmEzZjExYTI1YzM2ODU3OWRlZjE5YTVlYWJhM2YzMjBkMzZhZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5ZDc3MGIwMDhjNjM1ODY1NDVkZDg3YzI5ZTQwZWQwMDJmYzI0MDZmYWIxZmUyMWM4ODY0YWY0MGJjYzI4ZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzMTUxMGE4MDA4Y2RiODdiMzJiYWQ0YzlhNTE3YWYyNDBkZDRmY2Q2YjFjNzM2NWUwYTIzZmFlNmU5OWUxZDkifQ"
+        },
+        {
+          "resource": "repo://src/vec-layout.ts#L57-L82",
+          "version": "repo-lines-v1:sha256:5f18f70206e982f1a99c07d4f44ec1eaa6920e706ba2892c55cf1b474729a09c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwN2JlMzA2YjdhNjUyNjhlNjc4OWJmNDk2Y2UwYjM1Zjk3Y2FjMjMzZTg4ZjM4NWFiYzJjYzU1YjAwMGU1MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjYTQxMjM1MjA3MTI4YzQ4YTc3OWMxNmU4Y2M3OWZmMjdmOTNiNjhjZjgyMDczZjEzZDVjNzFlYzAzODI5MmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlOTMxNTc3MmQ4OGYyNzU3MzNjZWE4M2M4OWNkOTU2YjQxMDdhYzM0NWY2NjI0MGE5NGNkMGYwOTZjMDM3NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_094f37752ff84e9da7ced15b1ae32b20",
+      "statement": "The legacy-to-partitioned vector migration returns deferred without changes when sqlite-vec is unavailable or the legacy table is unreadable, so the version stays behind and a later open with the extension retries while FTS keeps working.",
+      "evidence": [
+        {
+          "resource": "repo://src/store-migrations.ts#L234-L250",
+          "version": "repo-lines-v1:sha256:d38e6a39b60f2a79a072babb322a0c426547614ec0c67d08a0da58d100d0c805:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5Nzg3ZTk5ZDBmZDE3M2ExNWQ0OGRhNmZjNDg2NDAyZmYyNjY2YjM3OWE3MDQ3MDg2MjIzYzA1MTVkNThlNWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3MDQwMjNmN2IwMTMwZWU5ZGM1MTZlODYwNWM4YWVjYzFhODM2ZGIyN2ZlZjlhMjI3NTJlMTMwNzM5NTM4NmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlYjQ3NjIwN2JlNTFmMWQ1Zjk1NDM0ZGFiN2JjNGQxNzg2MzYyMzA4M2YyYWQ2MzhiN2ZmNGEyYjExNzRhZjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0NDQyNmIwN2Q3YjgyMTk4ZGI1NDczN2ViOThkNzcxZmI0Y2IwOGRmYWVlYzBkMDBmNGFlN2Q3ODMxYjQ4ZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aeba0c42a8bf4175bcfb68390225693f",
+      "statement": "The flip from legacy to partitioned vectors copies stragglers, removes vectorless content_vectors rows, clears the copy cursor, bumps the user version and drops the legacy table in one immediate write transaction, so no row can be stranded in the dropped table.",
+      "evidence": [
+        {
+          "resource": "repo://src/store-migrations.ts#L160-L198",
+          "version": "repo-lines-v1:sha256:6af4049be033c55bcacf3c9abf1719a7def7c0bddd3695b9993ce24bb1b2e6bb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhZWQ0NzRhNmMxZTZlODJlNjlkYzJkNDU1ZTIzNjFiMTlmOTM2MDVmM2RkZjhiMTk5YjYxYTBlNmY4OWIxNjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzNWFmZjkyMjQ0NTc1MWNkNmI4NTA3NDExODYxMGM2NGY4OGU0YzY4Y2VhMjlhN2I2YzY3YjAyYWMzNzBiZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzMTUxMGE4MDA4Y2RiODdiMzJiYWQ0YzlhNTE3YWYyNDBkZDRmY2Q2YjFjNzM2NWUwYTIzZmFlNmU5OWUxZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_123a630fba2d449baaf9d917cb782aec",
+      "statement": "Partition keys and rowids are bound as bigint values for vec0, and large rowid sets are passed as one JSON parameter to avoid SQLite's bound-parameter limit.",
+      "evidence": [
+        {
+          "resource": "repo://src/vec-layout.ts#L158-L176",
+          "version": "repo-lines-v1:sha256:1029c3df0b2ab261b176dbe6e4b8609d5afe0352c8c7b9ccc4c42cb33e948f10:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZjZTVjNmEyZDA0ZDBlMDRjMGY2NDRjYzAyMjZhMTk1MTQzYTNkZjY0NmM4ODY2Y2MxMDI5OTFlMzJiZWVkNmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhODUwZWZiNzBjNzU1NjBlNTdjYTViMDFmZThiMDNjZTE3ODZhMmZkMDRjOWIxZThhZTdlYmMyMzUyMTIyOWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e1caa170c194a3588601725f50a5e6b",
+      "statement": "The metadata filter is one operator-discriminated recursive grammar shared by documents and metadata entries, and parseMetadataFilter and parseMetadataMatch strictly validate untrusted input against depth, node, group, and membership limits before compilation.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-filter.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:6ffcc74762d173b43037615ede7fb8d706d58c56e40343e90159b4746f16c1aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwZDkwOGRhODgxMmUxYjJiZjdhZTFlMDIzYWViYTQzZDgwZmM5MzBmMDQ5ZjM3NzExNGVhMTZmZmVmN2EwNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4NDE3MWIzZjE1ZDRlYmYwMjY2MGNmODBiMzdlNDgyNzU1MDViMWVjMmM5MzlhZmYxNTdhYTliMjdlNDU1NWEifQ"
+        },
+        {
+          "resource": "repo://src/metadata-filter.ts#L122-L131",
+          "version": "repo-lines-v1:sha256:fe57c89559d441a56c2aba08381520c7155e196810488881b259415c62eec119:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3NGVlOGE4ZDFhYTg0NTM5MWJjNjc5ZWI3MGNlN2Y0NmEzY2Q2ZmIyZDE2ZmNjYTY3ZmExNzhmNGY4YzFlMGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVjYzRhNzNkNjk0OWQxODcwYjE2MThhNDMzZDQ4NDI0ZjNlNDBlZTFjOWVhN2MwMTBiZTZjYTQ0ZjczZDE0YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4OTMzZWU2MTljNmZlN2M2OWUyMjdlNTRmNzgzNjNlOTE0NDgxYWNmMmZkMDA2ZDliODMxMGNhOTU1YWE5ODAifQ"
+        },
+        {
+          "resource": "repo://src/metadata-filter.ts#L157-L200",
+          "version": "repo-lines-v1:sha256:b927ffd63e50c7288b95fa1476bc54ad0d0057ae7459450c24a6534ae6c195ab:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMDcyYTIzYzljYzZmYzIzMjIzZjI5NGE0NzBmNTY3MzI0ZjU4MWEyNWEyYmEzN2E5NzM0ZTViYzMyNGQwMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxNzliNjlkZmNhYTNiNGQ4MjM3OWJlZjc3YjM3YTBmMGI4ZjEzNmRhNmIyZjdmNTc1ZGU5YWFlMTlmMDE2NjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkMjQyZDlkZmJiM2E1ZTk2ZTMyNzFiNWJkNzQ4OTBkZmZhMjViMWY0Y2VhMjZhMWE1ZjgyMjUzYmYyYWVhMTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMwN2M4YjU1N2Q1YzQwZjc1MzM1MTlkNWNlMGVhOTZkN2Y4OTI3NGRiMGEyNzAwNmRlYTg5NTg3MTIzNWY5MzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d2d130fe6ce24d798f3a2c573dcef1dd",
+      "statement": "Metadata filter values and keys are compiled into parameterized SQL, never concatenated as text, and a typed operand never matches a value of a different type.",
+      "evidence": [
+        {
+          "resource": "repo://src/metadata-filter.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:6ffcc74762d173b43037615ede7fb8d706d58c56e40343e90159b4746f16c1aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwZDkwOGRhODgxMmUxYjJiZjdhZTFlMDIzYWViYTQzZDgwZmM5MzBmMDQ5ZjM3NzExNGVhMTZmZmVmN2EwNmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI4NDE3MWIzZjE1ZDRlYmYwMjY2MGNmODBiMzdlNDgyNzU1MDViMWVjMmM5MzlhZmYxNTdhYTliMjdlNDU1NWEifQ"
+        },
+        {
+          "resource": "repo://src/metadata-filter.ts#L425-L443",
+          "version": "repo-lines-v1:sha256:b0d0974468018072d998af65721295216471ea4c9932b3e192d0c18dcc3f3887:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZTk1YjNlNmU1MTA4ZDNhOWFkYzg1MTBiYWYxMGFjOWQ3ZjNiMDNiNzZjZDAyOTkxNDU3YTc4NThiM2NkNzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1ODc5MmU0YzVhN2M1OGM3NGI2NjczMTYxMDJiNWViMDNjMWI3ZTAwOTAwOTMxMWJlNGRjNzVhZjYyMDVhN2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0ZjhlMTJmNmNkYjYzNWE2OGRmN2ViNmM2OWFkNjNjOWI5OWFiOTRkZGRiNmZkZDc5MzBkZDg0OTIzYWJjNjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_33dc314343a74a2d9eb16926fe1126be",
+      "statement": "A metadata-filtered vector search restricts the vec0 KNN scan with a rowid IN subquery over eligible rows, so the result is an exact top-k of admitted rows rather than a post-filter of a larger top-k, and the eligibility subquery avoids binding every admitted rowid as a parameter.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L4842-L4890",
+          "version": "repo-lines-v1:sha256:dda174e18fb54e5b4f2e195a1d96a9f999ec168b41f7fd6a3946249e769ee287:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyMDQwZTA5NWE5NGUyYWRhNzRlNDIxZjM3MTg3NTFhOTFhODEwYmZkNjZmNDhmNGU5MzljN2I3NDgwZWI2NzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ed48a3a1c834cc3a872aaec48afb7fb",
+      "statement": "Vector search resolves matches to documents with the filter re-applied on the document join, because a content hash can belong to both matching and non-matching documents, and it doubles the KNN k until enough distinct documents are found or sqlite-vec's cap is reached.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L4919-L4925",
+          "version": "repo-lines-v1:sha256:204ccc371114df3dec4913acdbf2d235c296efc3f4e241557a27f3157a1292df:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGZiZmNmMDBhMzJhNWU4YzNjOTBjOGVlOWIxODg3MWI4NzE0OWFlMjNmZjU1ZmExNTA1NWRjN2IxM2NmYjdkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIzZjBhMWY0ZjdmMWIwZWM2YzEyMjc2ZjYyNjAyMWQxNzg3YTA5YWQxZTIwOTQ5MWM3NGY4ZjVkMjg3ODlkNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDdlMDgyNzUwMTk1MDEwNzNiNzhiODNiY2ZiMzhjYmJlNWQzOWM5NTdhZjVmNWE4MzM1MjY2NzcyODhjYjZkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDBmNDhmN2YyMThjMjA1ODVmMTgyNjE0ZGFiYzE1Mzg5NGMyNzQ2M2JhYmY2M2RkNGRmN2Q4YTkzZjQ4MmM5ZiJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L4957-L4972",
+          "version": "repo-lines-v1:sha256:27082bca3d439cacb8f6b4eb7fbc12b1f91d2504443953e87652972e149638b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2OTJjMmEzZTk4Nzk1ZDJlMjQxMmNjODNhZjJkNzJkN2EwZjBjM2Y2ODQ3ZDllYzBhZTM4MzQyYWIxZGY2ZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1ZjY3Y2U4NDMyZTdiN2MwNzBhN2Y4MTJjMzVjNWIzZDRlMTNlYzZjZDY4MzY4ZWQ1N2IyMjA5NTIzMDg4YjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5YTk1NDcyZTg2ZjAzODkxMTc2MmI3YWY0ZGM0ZjM4ZGNmYTMxOGViOGYwZDg0NDNlYWM2ZDFiZTE0OTA5MTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c1efd044ab84e99a3617fed390726da",
+      "statement": "On darwin the launcher sets GGML_METAL_NO_RESIDENCY=1 before the native binding loads, unless QMD_METAL_KEEP_RESIDENCY is 1 or the variable is already set, to avoid a libggml-metal backtrace printed at process exit.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L33-L52",
+          "version": "repo-lines-v1:sha256:2daba17ee385be6c650878ad7cf6def2bcf6ff7cf971a123d62c6ce5f1a54984:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiZGJmYjg0NmFiZWExMDQ5YjcwNTBjOWY1NjExMTU1YTAwZTM2NGIxZTYyZTQzNDA0NmQwZDk4OWFhNTkxMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxZWZhYjNhYzU1MmZiYjM2ZTlkOTM2NTkzODE3OWI5MWQ3Y2MwOTkyMzAzOGNkOWE0ZmZjMzc4NTFjZjA0ZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhYTAxM2VjNzNmNmQxOTY4OTcxN2Y4MmFkMzhhODFkMWNiNDZlOGJhYjVhOGFiMDE3NjVmZGU4YmM0NjQwODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e49467bc7bf4bd6ac2542ed058681cc",
+      "statement": "isDarwinMetalMitigationActive reports the residency mitigation as active only on darwin when GGML_METAL_NO_RESIDENCY is 1 and QMD_METAL_KEEP_RESIDENCY is not 1, and qmd doctor reports the residency state and warns when residency sets are active on Metal.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L4399-L4418",
+          "version": "repo-lines-v1:sha256:8057d7d2b63479a23c33b0222ab69ba950d75c9bcb9b990a94e5af6b21bbb58c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmN2MyZDQ3YTg3NjMyMjczOTI2MTYyZmY2ZDQ3OWIwMTBhOTc5MDQzZjgzMWY4YTkzNTE5OWQ0NTE1NzMxYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmNzliMTFhYjgzZDE2ZWYyOGFhZGQzMDUzMTQwNWI0MWVkYjk1MmE4N2FkM2E0ZjZjM2E3Y2MxN2U4NzU0MjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0ZDkwNTIwZGM1ZGVjMjNjYWM0MzI3ODM3MGI2Yjk0NzYzNjc0YjA3MThjNWE2YzA1NTk4NTQ1YmY4ODExODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2NzhjZGFlYWNjYjZiZDZmNjRiNjBiYWNkM2E1NDMyZmEyNDgwYzg1OTVhNmU0MTEzN2NjZWU0YTFlODZlYzIifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L2169-L2214",
+          "version": "repo-lines-v1:sha256:22b447b892dc3fa76873640e6d12aff0414d3f97e34bb5213ce3d90219988800:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5MjE1YTFmNjFjMTVjMzY3YWIwNGY4ZGE5MDMwMmVmYWRlMmQyMzhiMWE3ZjQ2NThjZWMyZDQxMjljMTdlMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlOGYxZWI5NzQ1ZDEzOWVhMjA5NzVkNWM5NDJmYWJjMzU4NGJhMTFiODVjNmI2MGM5NDRmNWRhNDgyN2IyMDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYyZThiODZjZDQxZmExMmNkMzY1ZTI5ZTU5ODk2YzlhMTgyNTkzMjFmNTMxMGI5MGU0OTYxNTNiMjQ1YzRiYjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY4MTUxMDIyZGJiYWUyNjk1YWY2YzVjNmIzZTE1NmUwNjNmNjNiM2ZmOGU0ODY0NDhiMmRiY2YzMTRiMWE3NDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ee54d9d70b654105bd9c8f826e317883",
+      "statement": "The Unreleased changelog section records the scoped BM25 fix (#922), the missing-root protection (#990), and the partitioned vector layout (#983) as changes that have not shipped in a tagged release.",
+      "evidence": [
+        {
+          "resource": "repo://CHANGELOG.md#L3-L60",
+          "version": "repo-lines-v1:sha256:1191193d8af266829fa727002d9e6711f070c30e48a73bad5d40045c62a73fd2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBhOGFiYzEyODQzYzQ4NGNmZGRiMzI1NTg2MjVhOGZlNWEyNTc1ODE0NmU3NDljMDFiODFjMTM1MjY0ZjRmNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4ZWFlYWE0ZmQ5MWU5YjRjMTcxMzM5ZDFlMDFjODk5Y2Y3ZGE2MDg0YWYyYjVlZjdkOWUwMTE5NDBhODA5ZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkNjhjNWI4OGFjNDg3MmM2MDNkNjZlNjUxMzcwNzRjZmJmMTg4MjdkZmU3NTYyNTA5NDJmOGEyMTM2OTQwNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmZGIyY2YxMDU3NTQ2NzVjMzc5NTIxMjY2NzY4NGQwNDg5ZDNkMGQ4MzQwY2QxMjUxNzMzZjliZWY5NDg0YTgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

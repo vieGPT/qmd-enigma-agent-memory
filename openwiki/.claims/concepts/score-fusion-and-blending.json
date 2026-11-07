@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ed0aa967ee46710f63378e45acd5b8247b080cd18fa1332c998c06db0ee39fdb",
+  "claims": [
+    {
+      "id": "claim_029f5f20e59743738908a18396e77389",
+      "statement": "reciprocalRankFusion sums weight/(k+rank+1) per file across ranked lists using 0-indexed rank, with default weight 1.0 and default k=60; hybridQuery and structuredSearch call it without passing k, so the search paths always use k=60.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L5371-L5414",
+          "version": "repo-lines-v1:sha256:2204ccbd5ef140e3a601551d89fb1b96a4beca449f5e9c1f04fdadc93420a0a5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwMGVjNWQzMjFlOGZmMmIyYWRkOWExYTU4Y2E5OWQxMjAxOWE2ZGFlNjgzM2NkZjE0MGJmYzcwMmZkOGE2ZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1YzAyMmI0NDQxYTg3NzIyMGUwNjIzNTUzOTUzYjI3YjJmODI3NDBhMWNhZDQxYjIzOTFjOWE1NzRhYjA1ZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjZjIyMWI2MWM3MjVmYjM2ZTI2YjZjNGM3MTkxYTg3MDQzZDliZjFhYTEyNjk4OWRkNWY4ODU3MDc2MjMzNTcifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L6400-L6400",
+          "version": "repo-lines-v1:sha256:61959f5f7be06b5feadeca2cfce177472e1fefb40ce4c01d40c50f71b43c95e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjE5NTlmNWY3YmUwNmI1ZmVhZGVjYTJjZmNlMTc3NDcyZTFmZWZiNDBjZTRjMDFkNDBjNTBmNzFiNDNjOTVlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjE5NTlmNWY3YmUwNmI1ZmVhZGVjYTJjZmNlMTc3NDcyZTFmZWZiNDBjZTRjMDFkNDBjNTBmNzFiNDNjOTVlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTA5N2FjNmIyODgyNmFlMDdlOTc2ZmY5M2M5NzE1OGMxZmRmNGU2MDRmM2E5MzdjYmFmOTNjNDlhNDJlZjA1YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDRiNmUxNmQ0ZDBhYWQ5NDNiODI2NWZmZDEyYjNjYWU3MTBiZGVhM2Q2ODZjYzc0ZGVkNGZlODk5MzlmMjNmOSJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6789-L6790",
+          "version": "repo-lines-v1:sha256:17e5aecb9f1c97bdde51a077f783396a6a4b5b56683735e685505ba70ee994d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGE5OGU1ZDUzYWMzZDdkYjY1Y2IwNTUxNTM4YmUyYWExMWU4NmFhZmM1OTdiNjBkYmRhZWUzMzRmYTY0YWVhOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjE5NTlmNWY3YmUwNmI1ZmVhZGVjYTJjZmNlMTc3NDcyZTFmZWZiNDBjZTRjMDFkNDBjNTBmNzFiNDNjOTVlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjk5NGUxYzE5OTdhMDBjYTlhNjkxNjUzM2EyZmRlZmU4YWEwYTJjN2IxMDU5OGJmZWQ1MDQ3YjlmMWQzZjlmNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDRiNmUxNmQ0ZDBhYWQ5NDNiODI2NWZmZDEyYjNjYWU3MTBiZGVhM2Q2ODZjYzc0ZGVkNGZlODk5MzlmMjNmOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_99e818b4ca164845bb028774e3648a59",
+      "statement": "After RRF summation, reciprocalRankFusion adds an unweighted top-rank bonus once per file: +0.05 if the file's best 0-indexed rank is 0 and +0.02 if it is 1 or 2. The bonus exceeds the base contribution of a rank-1 entry in a list weighted 2.0 (2/61 is about 0.033), so it dominates fused scores for top-ranked documents.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L5371-L5414",
+          "version": "repo-lines-v1:sha256:2204ccbd5ef140e3a601551d89fb1b96a4beca449f5e9c1f04fdadc93420a0a5:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwMGVjNWQzMjFlOGZmMmIyYWRkOWExYTU4Y2E5OWQxMjAxOWE2ZGFlNjgzM2NkZjE0MGJmYzcwMmZkOGE2ZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1YzAyMmI0NDQxYTg3NzIyMGUwNjIzNTUzOTUzYjI3YjJmODI3NDBhMWNhZDQxYjIzOTFjOWE1NzRhYjA1ZjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjZjIyMWI2MWM3MjVmYjM2ZTI2YjZjNGM3MTkxYTg3MDQzZDliZjFhYTEyNjk4OWRkNWY4ODU3MDc2MjMzNTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bada6f04183749c5933959be386e4d11",
+      "statement": "getHybridRrfWeights assigns weight 2.0 to lists whose queryType is original (original-query FTS and original-query vector search) and 1.0 to lex, vec, and hyde lists, independent of list order.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6247-L6249",
+          "version": "repo-lines-v1:sha256:28436511f9121625f4f2d62a55d50e0d7203e9f68c871b3b5d041d66254373b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTlkN2QyOTAyZWE5NmRkZWI2OTY5NjhkZTY3OTllYjJlYzc5MjVkZDFmNGQzNTk0ODM2YWI5ODY3YzUxZWU4NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGExYTdlMmNlNjM0NzExZTI4YzNhYWJlZGMzNWVkZmUzOWEwNzhiOGFhZjMxYjE5NDcxM2U2MGZiMTBiYTdlMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTg4NjliMGM2ZWMyN2NmMDI3NTI1YmJlNDUwNjA5MWMyMjhjN2I5NWI5OWI5YmZhZmIwYjFiZDVjYjBjNGJiYiJ9"
+        },
+        {
+          "resource": "repo://test/store.test.ts",
+          "version": "repo-file-v1:sha256:37127d6bce0fd3d95795fa8affeb7826c9efdb0a1452145ec20d800321d17fb5"
+        }
+      ]
+    },
+    {
+      "id": "claim_d9bda81969b140089cfb019191bf4e1a",
+      "statement": "The default candidate limit is RERANK_CANDIDATE_LIMIT = 40 for hybridQuery and structuredSearch, and the fused list is sliced to candidateLimit before chunk selection and reranking. The README's 'top 30 candidates' is stale; the MCP candidateLimit schema and CLI help also default to 40.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L551-L551",
+          "version": "repo-lines-v1:sha256:d7ecfedfda5785db81618119ae8965ce366ed41f66521f09903a1fb88c5044bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDdlY2ZlZGZkYTU3ODVkYjgxNjE4MTE5YWU4OTY1Y2UzNjZlZDQxZjY2NTIxZjA5OTAzYTFmYjg4YzUwNDRiYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDdlY2ZlZGZkYTU3ODVkYjgxNjE4MTE5YWU4OTY1Y2UzNjZlZDQxZjY2NTIxZjA5OTAzYTFmYjg4YzUwNDRiYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWFmODY3MjA5OTliZjI2YzVjZDUwZGM1NjliYTkzNDA5MzcwNjAyMDc0OGYxZGY1MTQ1NjIwNGI0YzUwNTRlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGE0Y2U1ZDIzMWIwZjJhZWIxODBhM2U1OGJhYzYzNThmMWM4ZWIwZWYwNzcxZjBkYTQ2YjU1YjUzMzc1M2JiMiJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L2547-L2547",
+          "version": "repo-lines-v1:sha256:ac61ff0673edd23c3675f809a66fe53f26ee0e0849dc768ccd0470f14ea46380:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWM2MWZmMDY3M2VkZDIzYzM2NzVmODA5YTY2ZmU1M2YyNmVlMGUwODQ5ZGM3NjhjY2QwNDcwZjE0ZWE0NjM4MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWM2MWZmMDY3M2VkZDIzYzM2NzVmODA5YTY2ZmU1M2YyNmVlMGUwODQ5ZGM3NjhjY2QwNDcwZjE0ZWE0NjM4MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmYwMmFkM2FkYWI0ODZkMDRhNzJkZjljNWJjMTYzNDE0NGNmYWM5NWU2NTA1OWJkZDg3M2EwNzVjMWZkNTY5YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGNiNWJkNjJhNGJmMGNhYmE0NDg5ZmU4YWE3ZWE2NWMwYzMxNzdkY2FhMTdlM2VkN2VhZWE4NTY1NGIxZTU2OCJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L408-L410",
+          "version": "repo-lines-v1:sha256:1806e518035b3b71a77f19aeb9490ba713f666c18f1e5ac3eabd625fdd49a8fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRjZjc2YjY0YjlmOWJiNDgwMjNhNmU4MTY4YmMyMjBjM2FkMjU5YmVhMjZhZjIyZmEzYjUwMDE1ZGE5MDVkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQzM2QwZWE5ZWNmMmYzOWM5YTUwNDA3Mzk1ZWU0MTE3MmZlNjgyYzljODg1YTM1MDhmNzViZGVlMTUxZWZmZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWUxZTJlNDYzNjI1MTNiODU0N2U1NzMyZWQwNDljNGEzZWUxZjU4ODUzMjQzNGNkNjBjNmNlOWYxYTdiNGI5NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjM5MTdhNWE0ZWYzZjUzZTgyYmFhMmUxYjI3NWY2ODcwZjYyMDFlMDU2YjA1NTM2ODZiMWMwZTViZjZmMDA1ZiJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L480-L482",
+          "version": "repo-lines-v1:sha256:80377867b7f2182a8d71f8e75fc782756c9defe353857db3e949421d7e613d29:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2E1MzhjYWM2ZjE5N2I4OTQ4ODBlZWNiNjFhNjJkMzFiZmMyNTBjMzEyZjE5MmJhNWM2ZDA2ZTIzMWQ3OGVlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2ZkODZlMTc5N2JlMjM0ZGExZGExMDNmOTIwMDcyZGIzYTIwMDhmNTg0MGEzZTcxYzBjZjVlOWM4NWNiNWRjNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDZiZjI3MTEwMmE1MDFiOWI0ZGJmNDZmM2MxNTljYWFkOWVhNTVhNmI4ZDcxOGQ0YzY2OTkxNzNkNTg5YjdhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTJiZTQ0MDQxZmJhZDk2NzJkYzM1ZTI4NWM1NmU4N2JkOTZjMWE3ZjcyZDNlM2IxMDVmYWYzMDZlNjllMmIxMCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6271-L6271",
+          "version": "repo-lines-v1:sha256:c3a46dab8631325d8aec6f302a018ab7e2d9631f7f2b9c091b3e60b1e0511e35:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzNhNDZkYWI4NjMxMzI1ZDhhZWM2ZjMwMmEwMThhYjdlMmQ5NjMxZjdmMmI5YzA5MWIzZTYwYjFlMDUxMWUzNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzNhNDZkYWI4NjMxMzI1ZDhhZWM2ZjMwMmEwMThhYjdlMmQ5NjMxZjdmMmI5YzA5MWIzZTYwYjFlMDUxMWUzNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDJkOTBkNmFlMDMzMDU4ZjQ4YjM3YmQ0ZmJkYjgwYjQ2MDJiMjZlYTE0Y2JhNmEyNDgxNmUwMjc4MmUzZWYxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDVjNDcwODUwNmU5ZDQ2MzhhZDZkNjhhZWJkOGY5MDZmOTdlYWMwMjNlZWE5Y2FjYjVmOTE5ODE2NDkyNDExOCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6402-L6402",
+          "version": "repo-lines-v1:sha256:a08307b5adfc40b22dc277916d57d333f0c2797a59d070679055552eab29ef44:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTA4MzA3YjVhZGZjNDBiMjJkYzI3NzkxNmQ1N2QzMzNmMGMyNzk3YTU5ZDA3MDY3OTA1NTU1MmVhYjI5ZWY0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTA4MzA3YjVhZGZjNDBiMjJkYzI3NzkxNmQ1N2QzMzNmMGMyNzk3YTU5ZDA3MDY3OTA1NTU1MmVhYjI5ZWY0NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmYwZDUwYTlkNTlkNGY2YzY0YWE4OGFkMTBjYTEzNDk3MjFkOTNkNjIyZDFiNGIxOGIxNWZlMzJkY2RkMjg2OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWEzNWVhMWI3MDdlYjJmYTkzYzM4OTk3YzFiOTFkM2Y2ZTVmZTNlODIwM2JhOGUwZjA1M2NkYjU5NmVhMzBjZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_79f700579afe43e1998a47a361a9d014",
+      "statement": "Chunk selection for reranking scores each chunk of a candidate by the count of query terms longer than two characters it contains, plus 0.5 per intent term; the first highest-scoring chunk is kept, and candidates producing no chunks are excluded from the rerank set.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6028-L6028",
+          "version": "repo-lines-v1:sha256:700e87c0dac544c88da5320c247ad58a44f8ea352ed4b291d0b5dda0db5e3c3e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAwZTg3YzBkYWM1NDRjODhkYTUzMjBjMjQ3YWQ1OGE0NGY4ZWEzNTJlZDRiMjkxZDBiNWRkYTBkYjVlM2MzZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAwZTg3YzBkYWM1NDRjODhkYTUzMjBjMjQ3YWQ1OGE0NGY4ZWEzNTJlZDRiMjkxZDBiNWRkYTBkYjVlM2MzZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjQ5ZTBiYmI2MTljNWRkNzUwMTA4NGQ1NWEwM2E0ZTVhYzczMDQzYWY0MDFlMTdiZjQyNzI2ODNlNTA1NmUwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzAyNzc5NmZhZjVkNjUzNTkyZjIzYmExODU3OWFhMjAzOTNhMmNkZGJmYjYxM2E1NjBkZTE4MTFjNThiMTFhYyJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6408-L6430",
+          "version": "repo-lines-v1:sha256:a2b7bc8113311d54722c5e27db8ef5d4f3bda230acfa775352fd8384f56cabf7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzMTI1MTAxZjRhYjljMDYyOGExZTA5OTRhYzNjMzljNzU2MjE1NTY2ZDMwMDE0ODU0MTM1MjdkMzBjMWMzMGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmOTZkM2FlYjkwYWYxNzg2ZjAzZmU4NmM0NjI0ZDI5NmM4NjQyNzEyNjg2NWQ1NDI5YTNmNDQ5YmI0ZDE1NGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwZTgzYzgwNWJmYWQ1OWEyOWM1NjEwMzU5ZjQ1NWQwNjM1YWRhYmFjNWJjZTJmNjM1NzU1ZmIxNTM0N2Q2ZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwMjZjMmE1YWJlN2VmNDI2ZmFiOGZjMGI1NzQ1MjhjNDQwYjlmZThiZGY4ZjAwZTMwZTMwODAyMTc4ODg3NmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a07abf2cac4a426ea79d1e8550912923",
+      "statement": "store.rerank prepends the intent to the query when an intent is given, caches reranker scores per chunk text and query, and returns every input document with its score (or 0 when none is available) sorted by score descending.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L5318-L5366",
+          "version": "repo-lines-v1:sha256:5f22af8bf1dd69114c35142c68d2671fc4be14daeddba79e597d04fa128f5694:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcxYTYxZTgwM2UxMjIzMGFkOTJjNmJhMDM3M2RhYTE1N2E3NGZmODQyMDA0NjEzZWY4YjI0MmJhNDBmNTY5ZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1MzA5MjYzNGMxN2MwY2U4NGQwN2I3MWE2NmUwZDQxZmM3NDJiYjFkMTM1MDhkZmIwODlhZWRjODFhZGJkY2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_71ae514fee2d4e2ea10e3f16acc7c35d",
+      "statement": "LlamaCpp.rerank returns each document's score from the rankAll call without dividing it by 10; the README's 'LLM 0-10 rating divided by 10' description is stale. The exact rankAll range comes from node-llama-cpp, which is not installed in this checkout, so the blend treats the value as a 0-1 relevance score.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L541-L541",
+          "version": "repo-lines-v1:sha256:21d64cdd3f490132cbc80546dff63a24984f1237e9a51953c4cfdca0f733bdd3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFkNjRjZGQzZjQ5MDEzMmNiYzgwNTQ2ZGZmNjNhMjQ5ODRmMTIzN2U5YTUxOTUzYzRjZmRjYTBmNzMzYmRkMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjFkNjRjZGQzZjQ5MDEzMmNiYzgwNTQ2ZGZmNjNhMjQ5ODRmMTIzN2U5YTUxOTUzYzRjZmRjYTBmNzMzYmRkMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWNmOTYxNDg5OTVhZTBhYmYzY2YyNmQ4OGQ3YWI3NWYyNmZmNDMyOWUxZjRiMGYxYjY0NThmZWI4MGRmYTc2MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzY0Y2E5NjNkYmU4NjAwMjE2NmU1ZTYwZjdkYjBjM2NkNDEwMzZkYzExMWUwNGJjM2NiMTJiMGMyNjZlYjUyMCJ9"
+        },
+        {
+          "resource": "repo://src/llm.ts#L1806-L1830",
+          "version": "repo-lines-v1:sha256:9cd2373587d45cdaeaa2d7f3f5219a9b3c6ddd67ca884f6884df740ff0a06aff:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1NDU4ZDM1ZmQ1YjRmZGNhOGExZmVkYTE4YzE2OGNjYTMyMGY3YzdiOWEwMTk4NjQ4ZjdlY2RiZmY0NmEyYmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiZWY4YWNhN2ViYjQ3MTE2NDUyNjA5N2QyYWYyNjAxNzI4MzRmY2NhZGE5MThmNjU1OGU3MWFjZmEzMjlkZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4MWExMzJlNjYzM2FlZmYyYmRlNTdiYmFmOGM1NTk2NTM3OWFhY2QzMGI1YTVjOTc3NTA4NjAxOWFkN2EyNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlZWVmZGQ1MTEzZDk5MDU2ZjFlMTlkZTFiN2Q1YmVkZTZlMGEzMDFmOWU4ZjdiZTRlYWQzZjhmOGRhODY2YzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a8ecf7a9e152454d8e1df0e1bda1e835",
+      "statement": "When no rerank contexts are available, LlamaCpp.rerank returns score 0.5 for every document with model 'fallback', so the blend then depends on RRF position alone.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L1743-L1749",
+          "version": "repo-lines-v1:sha256:31cc139d3aa74f4309349522724f184ea0db04ee19453ebab3b58c7ed83daae3:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWRmMDY1NmEzNmYyNzcyY2RiMWRhMDZlZDhiZTU0NjYzOThhMTA2YjM4ZTQzNjMzMGQ5NTBkNDYzZWRhYjU2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjg2N2QzOWVjMjkyOTY1ZTIyOTA3YmU2NGYxNmNhNmNjM2VjNDMxNTIwMDkyMThhZjM1ODhkZDNhMWI5ODcwNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTVlMWI0YWZjNDJiYjEyZDhlOTcwZWU0MGI1NTg0M2Y4ZmE3ZWQ1ZWRiNDJkYWIyZDZhYmZmNDM0MjY0ZDY2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDkzZDg5NTg1YmU2NjM2Yjk3MTk2YjE4ZjYwOTcxZWEwNGNjMjAxZmYyMWE4ZjYyNTlkZTk3M2JiYjk0NDQyOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_268b537947194097ad72fba12e71ab0b",
+      "statement": "The hybridQuery position-aware blend assigns RRF weight 0.75 to 1-indexed RRF ranks 1-3, 0.60 to ranks 4-10, and 0.40 to ranks 11 and beyond. structuredSearch applies the same buckets.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6505-L6512",
+          "version": "repo-lines-v1:sha256:5dc3323f8ed4b42753a5867fc368d71aadad3e373f5fcb656be3da0e42078fc7:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQ0ZmQ4M2E2MjFmMmZlYmY5NmNlNDMwMDdlZTc4NWQ1ZGEyZTkwMTk2MzdjYjhlNzNhZWYzNjBjY2VlMzRjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzMyY2IzNmE2MGE2NzE3NDYxMGU3MmQ5ZWJhNmNjOGQ1MjJiZjVmOTNmMmIxZDI4MGFjYmRmZWNjNWNjNGYyYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTc5ZWU2MjVlMzYxNWM1OGFmM2VlYmJkNTI5NjljZmQ0NTk0MjAyZmUyMjI2ZWI4MGVjNzk2NTQ0ZTgxZTRjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmFlNGI4ZTJjMzhiMTYyMDljNzYwOTUzYzQ3Y2U4ZGRhNTE3MWFmNDZkMDkxMjQwODBjYTE2ODFkMmIwZTc3NiJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6898-L6912",
+          "version": "repo-lines-v1:sha256:fbd50d1c8e9e49528cbd8c3cdc0fd869188e6adbd4e6d1ff3e1744062444ec2a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3ZTMyM2FlZDFjZTRlMjgyNGM0OTZiNTE4OGY2MTc4MzZmYWQ1MzNiOWE1M2UwYmU4MDMzZTAyYTMzYTM0ODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA4YjM2ODg0NjdkNDMzZTFkNzQ3MjQ5YjI0MDNmOTYzYzU4MTA2YWE3M2NjZDFkYjMxOTIwZjM5NjZiMTRkYjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1ZmFhNDYwYzMxYTYxNzg1NDg4YjVjNTUxNDdhNTYxNDY1ZTIwOWViYmJlOTY3OWViYTQxZDc2MDk4M2MwMzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2da17a310cf54a7d9e53baacc93fca95",
+      "statement": "The blended score is rrfWeight * (1/rrfRank) + (1 - rrfWeight) * rerankScore, where 1/rrfRank is positional rather than the RRF sum; results are then sorted by blended score descending, deduplicated by file, filtered by minScore (default 0), and sliced to limit (default 10).",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6505-L6540",
+          "version": "repo-lines-v1:sha256:cb38fcef92ed4dca3a8d90cbdeab647b996903bf426d897561f51fbe3b0fda69:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkNGZkODNhNjIxZjJmZWJmOTZjZTQzMDA3ZWU3ODVkNWRhMmU5MDE5NjM3Y2I4ZTczYWVmMzYwY2NlZTM0YzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4ZjM0NTU1NjFiNTk5MWIyZDRjZTA2ZGYxMjZkM2UyYWE2YTM3Y2I0YjA3OTFjYzdkODIyNzFjYjA2YWQ2ZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3OWVlNjI1ZTM2MTVjNThhZjNlZWJiZDUyOTY5Y2ZkNDU5NDIwMmZlMjIyNmViODBlYzc5NjU0NGU4MWU0YzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxYjE3N2NiNTZkODg1NTVhNWIzOTI5Y2UzZDAzMWFhNmZiZTczZTA4YmJjZDk2MDlmOGE3NjE0YWFjMDhkODYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0dc7619d3a6c44c6b8112506b2529d92",
+      "statement": "In the blend step, a reranked file missing from the candidate rank map falls back to rrfRank = candidateLimit, which places it in the 0.40 bucket with positional score 1/candidateLimit; because reranked files come from the same candidates, this fallback is defensive.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6505-L6512",
+          "version": "repo-lines-v1:sha256:5dc3323f8ed4b42753a5867fc368d71aadad3e373f5fcb656be3da0e42078fc7:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQ0ZmQ4M2E2MjFmMmZlYmY5NmNlNDMwMDdlZTc4NWQ1ZGEyZTkwMTk2MzdjYjhlNzNhZWYzNjBjY2VlMzRjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzMyY2IzNmE2MGE2NzE3NDYxMGU3MmQ5ZWJhNmNjOGQ1MjJiZjVmOTNmMmIxZDI4MGFjYmRmZWNjNWNjNGYyYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTc5ZWU2MjVlMzYxNWM1OGFmM2VlYmJkNTI5NjljZmQ0NTk0MjAyZmUyMjI2ZWI4MGVjNzk2NTQ0ZTgxZTRjOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmFlNGI4ZTJjMzhiMTYyMDljNzYwOTUzYzQ3Y2U4ZGRhNTE3MWFmNDZkMDkxMjQwODBjYTE2ODFkMmIwZTc3NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e91deb3aac2d4e039a4f13883825d0c2",
+      "statement": "With skipRerank set, hybridQuery skips store.rerank and the blend; each candidate's score is 1/(i+1) from its fused position rather than the fused RRF score, the rerank explain field is 0, bestChunk falls back to the full body when no chunks exist, and results are filtered by minScore and sliced to limit.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L498-L514",
+          "version": "repo-lines-v1:sha256:023b3bf8ce0805464985eb52eaba4c49011d442182277b5a82d712a72865ec18:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMwY2UyOWI5NmM0ZWMzMmZjYTk1YTIyOTkyNmY1NGFiMWUzNzQ1MTIxZjZlMjE3ZjcxYTJjOTdlMjlhYWJjNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0ZjliZTJjNzgwOTA3ZGZmYWFjYTZhMTdmMDUyYjgwMTQ1ZjAxYjc0NmI1MzY1YjNkMTkxMjZmMTVkNzUxMGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUyNzI4ZDcxYmE0Y2NlODY3NTM5YjE0YTg2NzJlOWU3MWUyMDFmYTI0M2E5ZjEyZmI2NzdiZmRjMjE1MTM0NDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc4Y2U4NjZmZjZmZDY5NmYzY2Y3NWJhN2FkMDNiOWY5YTYwMTY2ZTJmZjg2YWMwZTM5ZDNjZjM5ZmE4OTIzNGQifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L6433-L6468",
+          "version": "repo-lines-v1:sha256:33cbb6273672cfae0718e65023ea33a7432c5641ad286b5d37c166a412e674b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2NzI3MzZkNjhiMTJhNzQwNDY4NGIzYzY0ZmMyY2MyOWFjZDAxN2EzYjRlMzEyYzQ2MmE2YWRhNDllZDUxZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmZmJmYjU4YzYxYTRkYzY4MTdlMTZlNWM2YWEzZWUwNmE1OWRmMmJiY2JkNDAzODgyNWQ2NDU0MjJkNjc5M2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjliNGM3MWY3NmY0YzQxM2NhM2UzMDU4M2Q5NjM1ODNjMWUwYWQxYThkZjdlZjI4YmYwMmUyYzJkNTllN2JmNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1MDRlMWE3MTYwMjczMzg0NzRmZWI3NGVlNjJmZmQyOWFhNWQ5MmQyNTg2ZTc4NDUyODlmYWRkNmY0ZDVlNDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d2b9d3524946446296593a5ec1244af2",
+      "statement": "searchFTS converts the negative FTS5 bm25 score to |x|/(1+|x|), a monotonic and query-independent value in [0,1). The README's Math.abs description is stale.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L535-L545",
+          "version": "repo-lines-v1:sha256:0bf31374661d6e2c7e73edca67787f877fac70698348d46780a62f0705ee1fb9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyM2YwOGM2MDE5OTUyYmY3YjU0ZmEzNGFjYzZjZjE2OWYyZTQ2YWNhZDU0OTAyYjg5ZjVlNjI3YWQ0OGQ3MTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwZGJhNzRjYTY4ZmQzMDgwODQxMjUyMjE3OWZhYzJjMTk5MjYwMWE0NTc0NjQzZTM0YzQxNzYwMTdiYTY3MzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlM2NlZTA3YzAzMjc3ZDAxNzIxMDEzN2M0MzU4NzI3OThmY2Q5MjcxOGU3MmQyOTk5ZjFmMTFlYTZlMGZiMmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlNTNlMjA0NTliMGZkMzA4YTIwODY0NDM5OGVmZmRkNzI5ZTlkM2E4YTdkN2MxMWIxNzczMzBmODgzNmI2MjcifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L4780-L4784",
+          "version": "repo-lines-v1:sha256:0b863f8683e243d028602a21bec484d0620f3f4b12148efea2c2db54804a0913:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDhlOTFkNGY5MWU1OWNlMjE0MzZlMTcxYWQyMDZiNzNkM2JhY2Y0NmE3ODBiYTBkNmIyYjhhNzA2N2UxYWExZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDIxYTY1OTM0N2I4MzQzNzYzYzM3ZTBmYmYxY2VmY2RjOWRlOTAyNjU1MDdmNTMwZmUxMzIyMDZlMGY2Njc3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDNhMmRjZjhlMTE1NGIwMzcyYjlmOGVmYzAwYTQzZjdhOTEwZWQzZTM5ODlhOGNiYTMwMjA3NzBjYTc4NTI0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWZmOWVmMDc3NjQ5NGUzOGE4ZDM2ZDZjNWUzYjkyZTZhNWU0NWQzMWMzMGM0YjcyYzEzZjVmYjgzYzE5NTFkYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_57b50e1910b04b68b65431fda51f2d56",
+      "statement": "searchVec sets the vector result score to 1 minus the cosine distance, which is cosine similarity; the README's 1/(1+distance) conversion does not match the code.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L4976-L5040",
+          "version": "repo-lines-v1:sha256:7ce4ba3f9056aebb53191490d7f2bccfa67a5c33eccc8c51de7c5e65af1e95b6:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlMGIyZTE0YzRjYmY2NWRhZWY2N2Y0NzhlZTFhNjhjODUwM2RlZDM0OWExZTkxNjJmMzdlZjkyZTRjZmNiZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyZDExY2FmNDNlOTdlZjM2OWU2YmVlZDFhMjY4YmQwNTgzOGYyOWI5ZGQyNTRiZjY5YmE2NDg4NDE0NzIzNGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmMzJjYzFhNDFmODdjYjViZDVjZDliYzc2MWU4NDM0NDAzODk5MGYwZDliNjAyMDVlMzc1OTNjZmJiZDQyYzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9d655ef5416f49e6afd5903d6b2c5ada",
+      "statement": "Strong-signal bypass in hybridQuery fires only when no intent is set and the top normalized FTS score is at least 0.85 with a gap of at least 0.15 over the second result; when it fires, query expansion is skipped while the original FTS probe list remains in fusion.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L478-L479",
+          "version": "repo-lines-v1:sha256:083df254a1f67a8948fe4a01a3dfc81a14ac03237dbbb6db3806a72f4eda7d7b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTZkYzBiZjFlYmFjODJhZjZiMjIwOTg3YWI4NTJkYTk4NTVhYjA2NTdhZDE0MWJkYThjOWEwMWVhMmU0MDY1MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2QyNWM5OTljZGNhZTdiNmQ5YWI4MmJkMGI1NWQ3YzBjM2VhYzQ0NDI4ZGYzZDk1NmFhYzYxYjQ4NWNmOGVkZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzMxZjllNjkxM2M5N2M1OWVhMDFmMjIzNzkxODg1NGRmMjBlMTMwNDU5OGZjNDk3MDI0ZDA1MTZkNDljYTQ4NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODAzNzc4NjdiN2YyMTgyYThkNzFmOGU3NWZjNzgyNzU2YzlkZWZlMzUzODU3ZGIzZTk0OTQyMWQ3ZTYxM2QyOSJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L6287-L6310",
+          "version": "repo-lines-v1:sha256:e473005e73965e788c4f130c58a2a55666b6eb40469db3487d3633ab23c59eff:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjYzY4YzVlODdmZmM4NGQ5Y2U4N2U0MjRiYzFkNzFlNDZmODhhOTMzZDFmZjdjNjU5YTI3ZDFlOTI5ZWE0ZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0ZGEyYjBkOTYxZmYyYjQ4ZDBjYTkwNzJmNTFlMWYwNTAwN2M4NTIwZjc4MWQyNzhmNDc1OGFiZTc2MjAxZTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE3YWE0ODY4MGJlOTk5ZDkzNGFhMmJlNmU5MGViODAzNjZmNWQ0OWMyZmJjZWJmNDAxMDIwZTBlM2NiNDE4MjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkMGNkNTllNDU4MGQxMTNlOTNjZjQzNDBjNWY1NWRjYWExM2I0ZDA2YzEyMGRiMTEyZjI2YTUyNjMxMzc1MTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9aa70e38eeb44b9b8fad70e29573b472",
+      "statement": "structuredSearch does not use getHybridRrfWeights: it weights the first input list 2.0 and every other list 1.0 by position, and selects its keyword chunk-selection query as the first lex search, then the first vec search, then the first search.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6786-L6802",
+          "version": "repo-lines-v1:sha256:7214f79bdba4753584cdd1e690fb89c5537463abdd245ae52c0e79b7764f6b7a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkOWFmZjdiYTQyMDY5YjFhZWI0ZDExMGNhNDExYTJiZWFiOWM5ODZhOGMyYWM4ODc5NGFkYWEyMjg1YTg4ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmNmI4MzYzMDg2MjQ1ODc0NDdhZThhNTdiODIzOTYzZDY3MGE0YTZhZDFkYzg3ZjZiZjU1NzhiNGVjMDhkMzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZDg2MzJlNTRlOTI5OGFiYjk1ODcyN2UyZDUxNDA4YWJhZjEzNjYwMzUzNzkxMDE0MGFiZjY1YjMwYWI2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjZDhkNGI2MDZlNmU3N2Y1MDc1YWExMTUzZmI2YTRkNTRmMTgzNzMzMTBiMmE0MGE3Y2M3ZTBhY2Q5N2FiZDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_692a4907e3bc41daa7edbabf457ff669",
+      "statement": "vectorSearchQuery performs no RRF: it runs searchVec for the original query and each vec or hyde expansion (lex expansions are excluded), keeps the highest score per file, and filters by minScore, which defaults to 0.3.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L6600-L6640",
+          "version": "repo-lines-v1:sha256:7b39beb34e2942f51d3cf2cb702e54fd3e30791557bf961c7640cf142a273a40:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5OTkxMDk3OWYxODI4MWQxZDJiODQ0NTA3ZmQ1MTQwM2JkOWM5ZGJiMWY1ZGVlNWU2NGI4NzljNTYwODU1YTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjOTUxMmZiNDQzODBhNDIyNDg3N2E0ODVjNzUyZjFjMGZkNzQzYjExNjUzMjI4NDQyN2FlNzU1NDQ1MzFjMDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkMDA5YjU4Mjc4OTEwNTI4ZmZiNDVjZWQyZGNiYTNmY2E2Zjc1NWRhYzM4Y2UzN2ZlYmZkM2VmYjQ2ZDAwYjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_36bea4de01814be88dd561657c4f3e32",
+      "statement": "buildRrfTrace recomputes explain-only contributions with 1-indexed ranks (weight/(k+rank)), applies bonuses of 0.05 at rank 1 and 0.02 at ranks 2-3, and reports totals that match reciprocalRankFusion; it does not change ranking.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L5417-L5480",
+          "version": "repo-lines-v1:sha256:d90253c238ce16f207a632dc12c2f366314c0e4a75cf8cd5000b6396b03563f2:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyNjY0OTZhYmVhMTA2NmRjMTE2YTg5OTA2ODBmNDlmMzA4ODI1OTAwNjIyNTZmODc1NmUzZTUwMmEwZjQ0MDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyZGIxNTgzMWI0MDVjZWFhZDZmYTY1MGY2NGNiMmY3NmYwNGRhM2FiNWEyN2Y0NGVhY2U2ZWIyMzFkMTE3NGMifQ"
+        },
+        {
+          "resource": "repo://test/rrf-trace.test.ts",
+          "version": "repo-file-v1:sha256:d36eb1aaad9e5eb73a439c79ac9992b1c357527eae34bf582a37865e7f44797c"
+        }
+      ]
+    },
+    {
+      "id": "claim_84611c0fe8a847e49d1235f81d192dcf",
+      "statement": "The README score interpretation bands (0.8-1.0 highly relevant, 0.5-0.8 moderately, 0.2-0.5 somewhat, 0.0-0.2 low) are a heuristic guideline, not a calibrated scale, because blended scores mix positional terms with reranker values.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L560-L575",
+          "version": "repo-lines-v1:sha256:e1eba448f870d5bf83a417e0e56bff668a415f6b774a282715b4b0f5136ef4eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjMmE1NjQ4NmQ3YzRkZWMwYTE5ZDg1YTg4MjkwOWM0NTc5MDY5OWUwYjMyNWNmYzllMzljMWZkN2EyYzg0MjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4NDk3MTU3M2JjNmQyMmUyYzlmMTk1ODcwNmYxODVlMmZmODU0YTVlOTJiZGM5ZDU1MzE2YzAyZTk4OWY1NDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZhOGQxNjdlMzA4NmFjZjA4NmNhMjU4ZjFhMWQ3YTBmZTJlMDIzMWUwODQxYzU1MmJkNTRjYjg5ODA1NzNhNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAzZDM1MDJhYTNiMjIxZjkzYzVlNjM2ZTliNzhlNzNmM2NjMWEzOWRmNDI3YTVlMjMzZTc0OTZiODg3NTFiYmQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

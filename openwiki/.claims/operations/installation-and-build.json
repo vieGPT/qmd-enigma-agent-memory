@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:023355f23b01ac20483315c3f5e248344525afaf77ff09bd8de0ceb07f81ae21",
+  "claims": [
+    {
+      "id": "claim_16cee0e668304ea199ebf0a871e5c635",
+      "statement": "The package declares engines.node >=22.0.0, a single bin entry qmd pointing at bin/qmd, and a main export at dist/index.js with types at dist/index.d.ts, and is an ES module.",
+      "evidence": [
+        {
+          "resource": "repo://package.json",
+          "version": "repo-file-v1:sha256:79483e296345186c6f9276061a4e26cfebedbf6d3e4a7ae242dd6c823d14be8d"
+        }
+      ]
+    },
+    {
+      "id": "claim_89aea9b2abe04a7e93df017ae22e9da3",
+      "statement": "The README documents the install commands npm install -g @tobilu/qmd and bun install -g @tobilu/qmd for global installs, and npx @tobilu/qmd and bunx @tobilu/qmd for running without installing; the library-only install is npm install @tobilu/qmd.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L222-L230",
+          "version": "repo-lines-v1:sha256:675e3b42c90eff54c75fb28d5e9e767aa85ad1b4f5ab1b364877d9c5063979a0:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmUwNTg0YTIyMjMwNzk4NWExNTVlZGI4YjIzZGIxYjk1ZDVjMGYwNGM1MTFiMmQwMWNjNmM3YTAzYmFmZjhiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGVlMDVlOWQ2NTdjZmM5YWU0NGFkZTc2NTRkNWFkZmFiOGQ1ZGEzNmVjOTUwYzJmZWM1NGQyZmYzNTlhY2Q3ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGMwMjE4YmM5MTQ2MzQ1N2FhMTY3YjZmZGJlNDhiMmM4YTdlZGYwMzU1M2ZkY2Q0YzVkZDBlN2U4MWQzYTBhMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWVkNWIxOTMyMTA3YjRmMWZlZGEzMzllNzQwNTBhNjM0OTA3YjJhYzc3MjNjZmYzODAxMTJjZmIxMzdkMDI0YiJ9"
+        },
+        {
+          "resource": "repo://README.md#L30-L38",
+          "version": "repo-lines-v1:sha256:542ce347a03184956d34ef73b8c13c9988d131109aa0e222403a967b261aaa05:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGM0M2ZiODlkZDcxMzkxNzA2YmI2NTUzMzcxMzlhZTY2YWMxMGZhY2M0MjYyYmNkMjQ4YzIyOWNmMGUyNWQwNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGIwNmU0ZjhhYTg0MTMzZTA4ZGE1OTZiYmYwYzEwMGE3MDZhMDI2ZmYzOWY1ZDg5MjEyZmNlNTdjZTQ5OGQxMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWFiODhkOWY3MDVlNzc2MjVkZjk2OGUwNGM5ODYxNDhlOTM1NWNkNmI4OGMyOTgyOTU3MWE4ZmM3M2VkZjlkZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODRmYmYwMjQ0YWNjYzA0OTgyM2NjYWY5NjZkY2E5Zjc5YTI2N2I3NmI5ZjczYzI5ZDAzYjM1YTYwN2NmNmVlNiJ9"
+        },
+        {
+          "resource": "repo://README.md#L612-L631",
+          "version": "repo-lines-v1:sha256:173954208a603831bd6fd985671561dc5877947f644787f97cede8e8dc356324:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExYjZhZWJkMGIzZWI0NmE3YmQ2YjE5NTZjZjk4Nzc2NDgyNzlkNDU4NGY2MWU1ZDQ3Yzc5OWYwMmMzYWNmNDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMmJmODIwNzg0MzY0NmQ4MDFjZWFhMjI4YmVlNzNiYjdiNmVhYWIyNWFkMzkyMjM3MDI0ZTYzYTIwNmJjYjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5YTViZTAyNmZjMzZjNDM5OWE5MzkxYTViNDE0MzQ0MjZmNjkzZWM2MjFjYWJmZTg0Y2YwMTg0OTM3ZjhiZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM1ODYxOTJmNWE3N2E3YjgyNGMwYWIyNGU4ZTQ3OTJmOGZkMjM5NjRjMmFmYzMyYmZlOTE2MTgwZDNmMWY3OTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c2a6178e27b46a7808eb1699dc4ee67",
+      "statement": "The README lists system requirements as Node.js >= 22, Bun >= 1.0.0, and on macOS Homebrew SQLite (brew install sqlite) for extension support; GGUF models are downloaded on first use and are not part of installation.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L568-L590",
+          "version": "repo-lines-v1:sha256:6ca60554e87b9e6397fec4da8e19752435e3b1ab73fc9e3a208ce6a9ce0b219b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiNTcxNWZjNzVkZTZlYWI4OTJlYzE5OGFkODBlNzAzZDRiMWFkZDU0NzI4NzhjMGQ2Njc5MTkzZWQzMjdhZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlNDE1MDk2ZjM0YzdkNWFlMTcyMTFiZWI4OTg5ZjUzNmExMWNjMmU2NjI1M2IzMWEzMGU3NDE0MTIxOWViODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkNTE5ZTk1N2Y0NTYyNzgyNzM2ZjIzNWFhNTExN2JiNzJhODNiYjU3NjI5NGJiNmI1OWRlYmIzODExZjA4ZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_baefffc8e0c3434eba1dbe3979af7eb7",
+      "statement": "better-sqlite3, sqlite-vec, node-llama-cpp, web-tree-sitter, and the four tree-sitter grammar packages are regular dependencies, while five sqlite-vec platform packages (darwin arm64 and x64, linux arm64 and x64, windows x64) are optionalDependencies.",
+      "evidence": [
+        {
+          "resource": "repo://package.json",
+          "version": "repo-file-v1:sha256:79483e296345186c6f9276061a4e26cfebedbf6d3e4a7ae242dd6c823d14be8d"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e2550be78fd416c8365fd28cfae8f24",
+      "statement": "The tree-sitter grammar packages (typescript, python, go, rust) are required dependencies and must not be optional, as enforced by the package test; the header comment in src/ast.ts claiming they are optionalDependencies is stale.",
+      "evidence": [
+        {
+          "resource": "repo://package.json",
+          "version": "repo-file-v1:sha256:79483e296345186c6f9276061a4e26cfebedbf6d3e4a7ae242dd6c823d14be8d"
+        },
+        {
+          "resource": "repo://src/ast.ts#L10-L20",
+          "version": "repo-lines-v1:sha256:22cc30ee3e1ef197241fcc2585a820fa7dc04480ca8b62e2b30479155b0e23b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1ZjUyMzY4MTM5MTgzYzViYWNjY2NiYjFhNjUwMjM1ZjVhZDRjOTE3MDgyNWFlMzMxNDFhNTg1MGE0ODZiNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc1NjRjMzEwMjJhMGRhZDg4YWQyOTRmNTc2YjZiMjg5NmY4ZWJkZTA4M2EwY2I3NGNhNDcxNzYxMmU3NzNlMTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwZjY2ZmRmNDI2NTEyZDA4ZTJmMDI3ZTM0YjE3YTkyNDY1YTFjODc1OTdiYmRjYzRjMDZjYjJmNDQwMjczZmYifQ"
+        },
+        {
+          "resource": "repo://test/package.test.ts",
+          "version": "repo-file-v1:sha256:cefd5a1d91f472ad1704a7ab31dab0d044cabe6da2fb1cfe1848e936e5d23a40"
+        }
+      ]
+    },
+    {
+      "id": "claim_bafb7184f42a4ece925b4ec0b09957f7",
+      "statement": "QMD loads only the tree-sitter .wasm grammar files: src/ast.ts maps each language to a grammar package and wasm file, resolves the file with createRequire(import.meta.url).require.resolve, and loads it with web-tree-sitter; a grammar load failure is non-fatal and falls back to regex chunking with a one-time warning.",
+      "evidence": [
+        {
+          "resource": "repo://src/ast.ts#L215-L219",
+          "version": "repo-lines-v1:sha256:d3c7777802fdb53f0126cf9cc31fd5825a3b1aa2ea34c07842dc86fd7b0fbeb1:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjUzODNkY2RhNTJjOWQ0ZjZmZWVhZDA4M2ZmODZkMDM0Zjk0MzUzYTcwMjgzMzU3NzY2ZjVlNGQ1MzM2NGYzOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTUwOTg0YTNlMWFiZjg5OWEzZWQ3NTYwNDVhMmUyNmU5ODQ2ODEwNjVjMWY4MGQ0ZWIyN2I5YWFiODQ0YzQ0YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGQyN2EzNDkxNWQzYTNmZjk3ZmY2YTEwZmY5NmY4MzIwNzhhNzY3NWE1NDc3YzkyNTFkZDRjMGYxZjJkMTE4YSJ9"
+        },
+        {
+          "resource": "repo://src/ast.ts#L240-L247",
+          "version": "repo-lines-v1:sha256:28f784a267c20364a6db0e112d702fc0625b58bd8367415715b527ebea9e3ae7:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZiNzU5ZDIyNjJlOTYwYzA0NDE2N2FiOWZjOTJlMGY0YTMxOTNlNDJkZTIyZTU5NGQxOWFjNGFiOTcyYzZjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmQ2MzFiNmM2ZTdkMTM1MTU5MDE4ODRiYzgyMWJkNTc3OTFjMGQ4NGZhNGY0NjJhNjU1OGFmODA1NTJlNGQ2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2E5YWRkNmE3OTM0NDNiMmIxMTgwZmNmZDEwODcwYzdhYWRjNTBkOTc0YWE1YmU3OTM2NDRmMThkY2Q3Nzk4OSJ9"
+        },
+        {
+          "resource": "repo://src/ast.ts#L66-L73",
+          "version": "repo-lines-v1:sha256:342d70e881937f47711491dcdae6dde6e871be75c9d7ee416215de5f61ab8431:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcxYjc1OWQyMWExMGU0NzcxNTdkNWQ5YmUzNTI5NTI3MzY3MTAwOTNiN2RiZWFmZDM5ZmQ1YTVkODlkYWRjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDc5N2IxOWZmODhhNzJkN2M3ZDVmOGY0MDg1YTgyZDZhZDFmZTYyZTc5YTEzZTZmMzg0OGJhODc1ODczNDYwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzIwM2U5NDRmYWY1YjZlMzBlNzAyZTY5OGFiYjI0OTYxOTdmZjRlYjU1NzllOTdmNDJiN2ViYjYyYWI4NzQyZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5e7cb259219844d8903e60cf57be225a",
+      "statement": "The grammar version strings in src/ast.ts GRAMMAR_MAP used in the repair hint differ from package.json pins for some languages (python 0.23.4 in the hint versus 0.25.0 pinned; go 0.23.4 versus 0.25.0), so the package.json pin should be used when repairing a grammar install.",
+      "evidence": [
+        {
+          "resource": "repo://package.json",
+          "version": "repo-file-v1:sha256:79483e296345186c6f9276061a4e26cfebedbf6d3e4a7ae242dd6c823d14be8d"
+        },
+        {
+          "resource": "repo://src/ast.ts#L66-L73",
+          "version": "repo-lines-v1:sha256:342d70e881937f47711491dcdae6dde6e871be75c9d7ee416215de5f61ab8431:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcxYjc1OWQyMWExMGU0NzcxNTdkNWQ5YmUzNTI5NTI3MzY3MTAwOTNiN2RiZWFmZDM5ZmQ1YTVkODlkYWRjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDc5N2IxOWZmODhhNzJkN2M3ZDVmOGY0MDg1YTgyZDZhZDFmZTYyZTc5YTEzZTZmMzg0OGJhODc1ODczNDYwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzIwM2U5NDRmYWY1YjZlMzBlNzAyZTY5OGFiYjI0OTYxOTdmZjRlYjU1NzllOTdmNDJiN2ViYjYyYWI4NzQyZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c48d563ba1784c69927bf881b1c9d0d2",
+      "statement": "src/db.ts exposes a single openDatabase API over better-sqlite3 under Node and bun:sqlite under Bun; under Bun on macOS it swaps in Homebrew SQLite via setCustomSQLite from the Apple Silicon or Intel Homebrew paths and probes sqlite-vec, disabling vector loading if the probe fails.",
+      "evidence": [
+        {
+          "resource": "repo://src/db.ts#L25-L56",
+          "version": "repo-lines-v1:sha256:b2e2e20b2aba98646b498cb400c5238b0b45a26175c8881a982145c9b998b26c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlYzMwMDg1MzRlYzk4ODhmNzZhN2ZhZTFjOTRlNTJkYWFjMzJkYTk3MDYyYjgzODkwMTcwMjVjMjU3ZGU1OGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzMjgxNmI5YzQzYzc3YTIxNTgzYzAzMTU2MTY4NjQzNzQwMWQ2MjFlNmE2MDZkZmIyMjQxNGM0MmNiODcwNDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRjMTk2ZjA4NzQzMTU4MTk2YzkwYTNlMzVlZTY1NWM4OTIxMzhlZWE1ODViNTQ0MzU5NDgwOWRjNGI0MGYxOWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiNGU1Y2Q3NTgwOWQ2NTcyNjc1ODc1MWZkODZmOTY5NzQzY2RkYzI0NTFiZjczYzgxYTkxM2NjNDdhOTc1MzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0362caca20d64ad18f33a39fc2a4e415",
+      "statement": "When sqlite-vec cannot be loaded, loadSqliteVec throws an error; under Bun on macOS the message directs the user to brew install sqlite or to install with npm, while BM25 search remains unaffected.",
+      "evidence": [
+        {
+          "resource": "repo://src/db.ts#L154-L163",
+          "version": "repo-lines-v1:sha256:06853eaa1070b0a60bf93953e11b66c052c342c34373346840180cbd8a5f0997:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNDA1OWVkNjgzNDY2M2VlMjRjZWZkNTM4OTIwZGVjYTc2MGNhNjhiNDU1Yjg5M2MwYmI4OWE2MzE3ZjdmOTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4NGM3OTA1YjFlYmI0ZDMxMmIwZTlhODJkMDkzMTg3MGNlYTk2ODZmMjIzMTgyNWI4YjZkM2U4MWNiMGVmMjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L890-L900",
+          "version": "repo-lines-v1:sha256:b54a4f7b03ec1c23727ac8299f5e1c6da3097f2b7b83c75f74c96fe0028cd86d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2ZGFjN2I5YTIwM2U3NTY3ZmJhZTM5ZTI2OWI2NmEzMTk1OTFlMWU0YWE0ZmQxYjIzNWQ4NGVkYjE4OWE0YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyODE2ZTE0OWQ2MDhiNDBmYWM5NTlhNzI5Yjc4M2EzYzYxZDcyYWEyZmZmMWFiYWZhYTg5NWI5OTQwMDE1NDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkMzk4NTgxYzVmZWY4ZjYxNDE1MzNjMGI0ODg2Y2M1MGRmYTc4YWViZGY4NTkwZTM4NDc1ODRlYmI2YjMwMzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5ec32633147046c18c05a6e0cc0d8184",
+      "statement": "openDatabase sets busy_timeout to 120000 ms by default, overridable by QMD_SQLITE_BUSY_TIMEOUT (0 restores fail-fast), and enables WAL journal mode with a bounded retry on busy errors.",
+      "evidence": [
+        {
+          "resource": "repo://src/db.ts#L116-L130",
+          "version": "repo-lines-v1:sha256:1399cf35ce68177e6281fe09b6680982087280de5d83c0ccf5d0c0bb2d9d74b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzYjU4ODFhYjIyNDljMDkyMjc2Nzk0YzRhN2VjOTM0NmMzZjZkZDQyNDI2NzVhN2YwN2FkNDE5YjE2N2ZiM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwZjZmMzRmZWI4NGNlNmMzYjQwODZlMDI0NzFlMmYxMjIyZWIwM2ZlMjYwODU1ZWMzZmNmOGQ1NDQzMDJjOWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5NmNhOThjNjFiYjJmYzIwNmJmMjQ3NDEzN2VmYTMyM2MxZjE1MTc2NDI0YTNlZDhiNDE2MjQ0YWU0MDE2ODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhZDIyZWE0NjU1ZGJlNWZhMjVmMjQ1ZmIzMjQ4M2ZjOWE3YjkyMjE2MjRkMWEyMGY1MTNkZWUzYTAwODkwZGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d62212aba10b4a4d80e9c0b80c027d28",
+      "statement": "bin/qmd resolves the package directory from the realpath of the launcher and defines jsEntry as dist/cli/qmd.js and tsEntry as src/cli/qmd.ts.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L14-L21",
+          "version": "repo-lines-v1:sha256:a6e3a05c5dbdd91a1897536fb91adc5b27a5a784196a760ea4d35756de473306:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjNlMjNlZTNmMDdmMDQ1MWZlOWE2MWYwMmM0MjcwOGQzNDJkMTdjNDY1YzhhYjE4MjA0NjdkZWMwMTc0N2RmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTMyMWNhMjJmNDZlMDI4MWI4ODg3MzUyZmMyY2IxZmI5OTE1YWNhYzQwMzkxMzAzOWIwZTY5NWFkNjQ3ZDhjZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmJkYzBlYTEwNzllMmE3NzZiMTUzMjI1NDI2YzAyYWViNjFiYWRkZGIxZThlMGE2MmFhMzlkYTU1NzVhZjExZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTE4Y2ZmM2Y2MzdkMjIzYjdkNzU0N2E5ZTJkMTIyODM5ZWU5N2FkM2VkMjNjOWJmYTFlNjFmMWJhY2RhNmJmOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ee3dc76a9094f959ceb84cd142b659b",
+      "statement": "bin/qmd seeds llama and ggml native log environment variables when the first argument is mcp, and sets GGML_METAL_NO_RESIDENCY=1 on Darwin unless QMD_METAL_KEEP_RESIDENCY=1, because these must be set before native bindings load.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L24-L31",
+          "version": "repo-lines-v1:sha256:27a67b8790c995414b4ec5e0a76f77cae087b2bb8b6eb8faa67709d2779187a6:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjg3NDBiNDFmM2Y3MGYwOWNmNjhkOWE3NTNlMGNmNWE0ZDJjNzFkN2NmNjIyYTNkMjQ3OTNhMzBhODgxYTk4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZThlNWYzZjYwNjgzZGRjNDBiMTZjZWE4MzM1NmIwNjM4ODcxNDQ1OTYxNmNhZmJiZGQ3MmY3OWI2ODgzYTc3NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2VmODQ2YTQxMTFkMzllNDQxYTc3MmY4ZTNhMDljZDE1OGU3NzI4ZmIyMTJkZjcyMzFmOTQzNzFhZTIwMDE5NCJ9"
+        },
+        {
+          "resource": "repo://bin/qmd#L40-L52",
+          "version": "repo-lines-v1:sha256:488b0e15fa54ce4fc7f1b9f7f6eb33702c62680a22a401e797d9977f74f71b4d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiMTYxM2NhNzU5MjE4MzRlZmM3MWRlNmY4NzQ4NDVhYzgwZDJkMTNjZDYxYjljNTY3Y2I1NWQzYmIxNDY3MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlkZmMwMzNmZGM1Y2NlZGYzMTY4YWZkN2E2ZWZlNTBkN2U1NGJhMzY4MDk5OTdhN2U5NGUzYmU2NTI5ZjgwMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhYTAxM2VjNzNmNmQxOTY4OTcxN2Y4MmFkMzhhODFkMWNiNDZlOGJhYjVhOGFiMDE3NjVmZGU4YmM0NjQwODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c1160323a87b4731b00cb99d52686771",
+      "statement": "bin/qmd enables source mode only when QMD_SOURCE_MODE=1, or when QMD_SOURCE_MODE is not 0 and the package directory is not inside a node_modules segment; source mode additionally requires a .git directory beside the package and an existing src/cli/qmd.ts.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L78-L84",
+          "version": "repo-lines-v1:sha256:0f186d8f81791c1358e545fe4964b958ee8c2577b7390f1cbe8e6a643b564b59:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzY5NTJhZTJkNTk3NDU0NDdiYWE0ZTY3NjRkY2E2MTMxMmYzM2JjNGQ5NzQwZDIxM2QwNDExNTc4ZTM3MDBmMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA1YTM2MzI4YjM3ZmQ5NjNjZmEzY2Q5YjJkNjJmMzI3NWM1ODllNTI0OTExZDQ0NDEyOTFmM2RlNTg2ODBkZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmFjYzUzZjczN2FhMzc5MTg1ZTY3YmQ2OWJjOTViZjczYzNmNzc0Nzg5Y2E1OTdhMjI4MDYyNzg4ZGFlMjk3OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDExMDZhODk3MjZmN2Q1NWQ3ODAzZGQ5ZTBlOTI2NzcwMDM1MzZhYWJhZjEzMDRiMDdhZjNmZjA1Y2ZjNjY2OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0acc44e8eb8244869534b4ccb9042b75",
+      "statement": "In source mode, bin/qmd picks a runner by lockfile: node with tsx when package-lock.json and node_modules/tsx/dist/cli.mjs exist, otherwise bun when bun.lock or bun.lockb exists and bun is on PATH, otherwise node with tsx if available.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L94-L112",
+          "version": "repo-lines-v1:sha256:7a349fefcbfff63007903fb0ef3def02ec39359ebddaf2dec0930a93427e291f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA1ZTdmZWM4ZDI3ZDQ1ZmNjOGUyZDkzOTVlNzYyZmE0ZGM5ZWUxY2Q1OGY4YWNlY2ZiZmQ2ZmI3NTVlMDE0ZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3OGQ2YjlkM2EyMDgzOTU4NTBkODI4M2NmYmI1MTRhOTdmZmZkNDkyNWEwZjcyZDhkNmEzMTBmMmE5MzJhM2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMxZWVlNjgzMTk4ZTc4YTcyZjRlOTgxOWZmNmFkNjg2ZGY1YzQ2ZjBhNDU0MDMzODQyNDI4YjJlNmM2OWEyMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bdd7ffee3f5d4195a6f49199295cd4ef",
+      "statement": "When source mode is not selected and dist/cli/qmd.js is missing, bin/qmd prints a 'qmd is not built' error with build instructions and exits with status 1.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L116-L121",
+          "version": "repo-lines-v1:sha256:bb9c64672ce0c69642d0cd7e7af924be73bf309ca05be0d60115a15422082c82:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGFiMmUyMDM3OTc4OGI0MDU2MmRhMTNmMzcxY2VkODk4MDYyODlmNGI2MWEwZDA5ZDAyNjM3ZDUwM2M4MDA0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRlYTBmNGY5YTA0MmFmYTRmZjJiOTIwZTNkNjc1NWVlMWZjNGZiMDQ3MDA2ZmY0M2IwZTQ4YmMxMjgwYzc1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI1ODBlOTY0ZjgzYTQ3M2Y0M2Q0NDM4NDYyOTQ5ZDY4YjU2MDBmZGE3ODdmMTYzNzQ1ZDAwZGU4OWNiZjM2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWU2NDQ0ZGVmZWIxNzlkZTljZTI1OGIxYmMzNTY1NGQ0ODIzYzliZDZlZDQxNWRkYWY0OWVmZDRhM2IwZTAxNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d8631d3a59854446a80ed19295a65876",
+      "statement": "In dist mode bin/qmd chooses the runner from lockfiles: package-lock.json in the package directory wins, then bun.lock or bun.lockb, then the same lockfile checks at the install root above node_modules, defaulting to node, so that npm-built native modules are run under Node.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L142-L161",
+          "version": "repo-lines-v1:sha256:ae37eb7569ecd072748f5b185d744f3610cbbf977fba8577c64ff16770fb2024:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1NWZhMDIzZTZiMTNkNDkyMjE5ZGRhNWY2N2E0Mzc2NWE0NjA0YjI3MzhjN2IyNGU2ZTYyYjI1NDI0ZGNhZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiOGU0Mzg1YmZkOTg4ZTQ1Nzc0MmUwNTFhNTJmZWNiYTAxYjQ1YzI3ZTBhMmVhYzIxN2NhNTcwNGJiNWRhNGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhYjg2YWY4YTY4ZDA5MjIwZmMyMzFmZGJlOGVmMWZjNzdhYTFiYTBlZDEwNjlhNTYxNzdkYWNkM2QzY2YwNjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4ec3e24559dc447e8268a7f6b410aadd",
+      "statement": "When the selected runtime matches the one that launched bin/qmd, bin/qmd rewrites argv to the compiled entry and imports dist/cli/qmd.js in-process; otherwise it spawns the runner with inherited stdio, pins a Node runner to process.execPath, forwards signals, and exits 1 on spawn error.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L162-L204",
+          "version": "repo-lines-v1:sha256:99f7ba796f9a2b16fa2d539833da4b0b3aa6c0673150d1b5b308f8f08d4f341e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwOGI3ZWRlZjZiNTJmODVlYjBiMmZiYjI1Nzc2MjIxNTZiYWM3MDUxZDRlMDIwOWQ2NDU2MWI4ZDcyM2Q4OGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmZTAzM2NjZjRkODM0MjJhYmEzYzZmYTJhZWMxYzk3NzJhZDNhMWJhYmNmZDY4YzhkYmUwMzY2MWE0OTE0NzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwZWMzYWEyZWM2YjYzZDBkN2U1ZGY4MzkwZWU1ZTVkMzA4ZjZiM2RhMGJmNDkyN2EyMTdmOTFmZTg5ZDMyMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoyLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwMWJmMmE1NjhkYmY2MmM0ZTQ4MGNiMTliOGZjM2QxNTNjMzIzMmRjYjc1ZWQ1ZDE5MWIwZGMxODE4YzY3MzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7752987147cb4b888f148e7fc3d81e4d",
+      "statement": "The prepare script runs scripts/install-hooks.mjs and then scripts/build.mjs; install-hooks copies scripts/pre-push into .git/hooks when a .git directory exists and otherwise logs a skip and exits 0.",
+      "evidence": [
+        {
+          "resource": "repo://package.json",
+          "version": "repo-file-v1:sha256:79483e296345186c6f9276061a4e26cfebedbf6d3e4a7ae242dd6c823d14be8d"
+        },
+        {
+          "resource": "repo://scripts/install-hooks.mjs",
+          "version": "repo-file-v1:sha256:89ed39cf2886fb3f15dfdbdd3b54b6dfd5262da1a55d70bed116f43fe10a93d1"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec67adc979bc409c82444760167a8462",
+      "statement": "scripts/build.mjs compiles the source with the local TypeScript compiler using tsconfig.build.json (per-file emit to dist, not a bundle), with no esbuild or other bundler invoked by the build script, and exits non-zero when tsc cannot be spawned or fails.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/build.mjs#L1-L30",
+          "version": "repo-lines-v1:sha256:7ce9c0cfd6862b499e1fbbdd54a7b33dc8371b094a220c442d6381f5c242d9f1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OWM0Nzg3MmI3MWYxMjU4OTk0Mjg5MjQ2NGU3NjRjMGRiMzUwYzIwYjcyMjI4NjQ1NjE1Y2MzNmUwYTA3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0Y2RmNGVmOWQ3ZDk5NGZjZmI3Y2QyYWYxNTRhMDJmYjg5NWJkY2ZhMWE0ZTEwMDEzM2RiNzYyMDU3ZDFjNjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiNDg0Y2E4YWNlOWU0NTczNzlmODI3OTlhMjRlODFmNTU5ZjY0NjAzYTA3NDQyNjBlM2I5MWQyMzAxNTA0Y2YifQ"
+        },
+        {
+          "resource": "repo://tsconfig.build.json",
+          "version": "repo-file-v1:sha256:09b23619a55b44926d53d5e32e5812297af53323baae9651e2508911482b58ac"
+        }
+      ]
+    },
+    {
+      "id": "claim_52147d16153f4155a73efa6dbee5fae1",
+      "statement": "tsconfig.build.json emits src to dist with declarations, using the node types only, and excludes test files, src/test-preload.ts, and src/bench-*.ts from the build.",
+      "evidence": [
+        {
+          "resource": "repo://tsconfig.build.json",
+          "version": "repo-file-v1:sha256:09b23619a55b44926d53d5e32e5812297af53323baae9651e2508911482b58ac"
+        }
+      ]
+    },
+    {
+      "id": "claim_48ddc6223d664a5dba9342b2ed2a6f6d",
+      "statement": "After tsc, scripts/build.mjs rewrites dist/cli/qmd.js with a #!/usr/bin/env node shebang, replacing any existing shebang, and sets its mode to 0755 through a temporary file and rename.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/build.mjs#L30-L40",
+          "version": "repo-lines-v1:sha256:3605726c0a4b2680bc0c8d0ce1fbfb4419cf939dc27da25aab57855675df7e2f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0Y2RmNGVmOWQ3ZDk5NGZjZmI3Y2QyYWYxNTRhMDJmYjg5NWJkY2ZhMWE0ZTEwMDEzM2RiNzYyMDU3ZDFjNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmNWMxNzIwMDUwODE5YTFkYjQwMTBhNjk5M2UxNDZlYmFkNmE2NGFlNTRiZjhiNGExNWUwYmNlYjljMzc4ZDYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiNTJjYjYwYjQzMGQ5Yjk1MzhiODUzNTk2N2MyY2Y4MTdjZTQ5ODY5NWVlYzc2ZDBhYjAzNGMxOTAzZmFkMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRkYTRlMDI2YTNkMjU3MjkwODVhMWM1ZDNkMzY0YTEwYTE4YmM3MTc5ZDlhNjZmYzU3Mzg4NmVjMjIzOTdhMmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9c470d6b72fd41a998307f03c7b82a68",
+      "statement": "scripts/build.mjs writes dist/cli/build-info.json with a commit stamp and build time; the commit is recorded only when the enclosing git top level is the package root, with a -dirty suffix for a dirty tree, and a build outside git still succeeds with an empty commit.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/build.mjs#L41-L72",
+          "version": "repo-lines-v1:sha256:a3cc9ffde82e9cf732acb82ca5074086524808537d3250bc9bf7542d0e2f3a09:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0ZTE1YzRkMTRmMzhhODlmZjQ0MjQ2Yzg4ZjJlOTFjMzg5OTk5NTdlMzA3ZTQzMGRhNmI3MGJmNTQ2M2NlZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5OTY3ZWMxZWQzODM2ZjhlYjE3YWZmMTcyYjViZmVmN2RlNjA0ODVhNDM5YzZjYTExYzU5MWUxNzU1NzM5YWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxYmJjZDFlOTFkYzVlNGRmMWNiNjk1NWVjM2FiYmZiMzllODFmNGNiMTA2OThjNDI1NmJjZDE1NGVhNzYxZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/cli/version.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:ba968b59e71328a40bdd14f826228bcbc04a917eb1a48b295b8699819810945b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlMjY4ZDYyMmI1ODI5OThmYzg2Y2M2ZTU1NDY1NzBkMmY1OWJhNmE1OGRiZTUxNmJjMDRmOTI2ZTc4OWRmZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwZDIxZTkwMDBkZjdlYmU4ZTYwMmJiMWRlN2NjNTQ2NTY0ODk3YWIxYmE1N2EzOTBjMDIzZTM3OWMxMTg0NDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b67c78d683f34371b0d3cfd68a4b5838",
+      "statement": "The runtime qmd --version reads the build stamp beside the running script before falling back to a verified checkout HEAD, so a global install under another git repository does not report that repository's commit.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/version.ts#L10-L30",
+          "version": "repo-lines-v1:sha256:fcb9436e0c72664528026a965a3c904902cb366602b8f2f1818092bd8a4d6ce9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyM2NiNGMxM2Q2Nzc1OWQ1NGY3NjcxZDQ0MDM0OTcyZDA5MDNhMzlkMDhhZmFlNzNiYjk4MWViOWFiMGRjZjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyM2NiNGMxM2Q2Nzc1OWQ1NGY3NjcxZDQ0MDM0OTcyZDA5MDNhMzlkMDhhZmFlNzNiYjk4MWViOWFiMGRjZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5NWFlMzI2ZTMwNTU4MzI5MDE0NDNmZGNjYzBmMmZmZTc2NDk0NWE3OTc1N2ExNjgzOWZjN2U0OTVlMzdmNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxN2NlNDM5ODgzYjhjMTVkMTUwMTdjMjM3MTUwYWE1ODc1MmMyYmIxYzM5MjA1MGVlYjgyZjZmYTA3NGRkMGEifQ"
+        },
+        {
+          "resource": "repo://src/cli/version.ts#L60-L89",
+          "version": "repo-lines-v1:sha256:9e07b3b8e6e4825028865687d0851ec13447bd1df85f9c0724ff4c63cc1b100d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3YjE2ZjFhNWEyNDBkOGM3ZjcwM2E4NTA2Yzc1ZWUwNzY5MzU2YzljMzRiNTA4NTZmYjcxMDA2ODIwODBjNTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIxYmU5NWI0YTdmZGVjMGNjNDYwMTdmNjk3YTJkYTdmNzdjOGIyYThkZmVmZWQyYTc0NTRhNDc3ZjM2YjRkZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b07143e6ffc34469910b70df56f94635",
+      "statement": "npm test runs scripts/test-all.mjs, which executes in order the build typecheck, the Vitest suite under Node over test/, the Bun test suite, and the package smoke; lint (oxlint) is a separate script and is not part of npm test.",
+      "evidence": [
+        {
+          "resource": "repo://package.json",
+          "version": "repo-file-v1:sha256:79483e296345186c6f9276061a4e26cfebedbf6d3e4a7ae242dd6c823d14be8d"
+        },
+        {
+          "resource": "repo://scripts/test-all.mjs",
+          "version": "repo-file-v1:sha256:805d0bde92eb555148ebce37ecc1584d01f9ade5c8c6cfd46f64de7303086d57"
+        }
+      ]
+    },
+    {
+      "id": "claim_05432d65dbba4d0086a8d1ba0c74720a",
+      "statement": "The package.json scripts test:node, test:bun, test:unit, test:types, and test:package run Vitest under Node, bun test with the test preload, both runners with CI=true, the tsc build typecheck, and the package smoke respectively.",
+      "evidence": [
+        {
+          "resource": "repo://package.json",
+          "version": "repo-file-v1:sha256:79483e296345186c6f9276061a4e26cfebedbf6d3e4a7ae242dd6c823d14be8d"
+        }
+      ]
+    },
+    {
+      "id": "claim_95fedfec870543a8a9ce3e9248090124",
+      "statement": "scripts/package-smoke.mjs builds the package, checks grammar resolution, verifies every package.json files entry and bin target exists with an executable bit, verifies dist entry points, and runs --help through the compiled CLI and bin/qmd under Node and Bun, with Bun skipped when QMD_SKIP_BUN_SMOKE=1.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/package-smoke.mjs",
+          "version": "repo-file-v1:sha256:404726a91e19d80a1908045578e03d12cd2deea267e4a06bd75e626db23cd74a"
+        }
+      ]
+    },
+    {
+      "id": "claim_5350b05f86cb4e379e51a31f11d228b2",
+      "statement": "scripts/check-package-grammars.mjs resolves five tree-sitter wasm files (TypeScript, TSX, Python, Go, Rust) with require.resolve and exits non-zero with a repair hint if any is missing.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/check-package-grammars.mjs",
+          "version": "repo-file-v1:sha256:dda065f4dc10cb88ae55024f66333128e62babf48f3880d0becb904189857796"
+        }
+      ]
+    },
+    {
+      "id": "claim_f982dbc859ac47fb86426d577e6af31e",
+      "statement": "The published files array includes bin/, dist/, skills/, the build, grammar-check, package-smoke, and test-all scripts, LICENSE, and CHANGELOG.md.",
+      "evidence": [
+        {
+          "resource": "repo://package.json",
+          "version": "repo-file-v1:sha256:79483e296345186c6f9276061a4e26cfebedbf6d3e4a7ae242dd6c823d14be8d"
+        }
+      ]
+    },
+    {
+      "id": "claim_2b4e85eaafa64c24a8b281646dd6b2bb",
+      "statement": "scripts/pre-push validates v* tag pushes by requiring package.json version to match the tag, a matching CHANGELOG.md heading, and CI success for the tagged commit when the gh CLI is available.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/pre-push",
+          "version": "repo-file-v1:sha256:6dd1bb0d47025578ae930f7cb332e9e62676ee96279d500a8dd17fbb56b0404a"
+        }
+      ]
+    },
+    {
+      "id": "claim_05c9dbaec4a946c9b5d155c74ccfbbb0",
+      "statement": "test/smoke-install.sh packs the package, builds a Debian-based container from test/Containerfile, and runs node, npx, and bun install scenarios against the packed tarball, with embed and GPU probes opt-in via --with-embed and --with-gpu.",
+      "evidence": [
+        {
+          "resource": "repo://test/Containerfile",
+          "version": "repo-file-v1:sha256:c466c71761bbabf69d8a3cc4618714b9d509e2c857b0c5806421b7df5fc234d1"
+        },
+        {
+          "resource": "repo://test/smoke-install.sh#L1-L30",
+          "version": "repo-lines-v1:sha256:445cf74b073233891a5e9f9429b1875c5923d60ee97b645734f78e5d386dd01d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkOTVmYzA0YTgwYzk1MmY0OWNlNDE4ODYyN2M1M2IwZmJlOGM0NDA0MWI5NTJkNTkyYWNkMWRlOTk4NjE0NjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzNWRmM2Y3MjlkZmE3ZWVlNmY5MTc2N2QwNDViOTZiNmQzYWEzYzI4M2ExODRjYzM4OWRiYTQ2OTZkZTE0ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4OWQwYmMyZjM2YTI2Nzg0N2NjNWRjMGJjMTNmMmM1MTRlMWU2NTUzNjZjOWE0OTcwZTNiODQzZDYwNzBjZjAifQ"
+        },
+        {
+          "resource": "repo://test/smoke-install.sh#L100-L140",
+          "version": "repo-lines-v1:sha256:33f73b0a2fd3b282ddae29756af1e6ac4f9dbf512aa6ab76f382d052d60925c6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1NzgzZGIyZjcwMTlmM2NmMTM3ZjJmMDQ3YWU3NzY5ZWNmMTA5NjI5MDkxMTdkMWVlYzAzZWUxZDY0MDE5ZDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzZDY5MWIxMzJkNjczZmMwMjk2M2FmMjNlZjY4YTI4NTAzYzkwYThlN2Y2NTkxZDRkNDIxZDEzNDJjMWNmMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3MThmZGMwMGFmZmJhZjNiYzRhZDA1MzcxMmUyYmZjZDc1NGEzYjZjYzE3ODk0YzdiNzg4ZjZjOGU1YWU5YzEifQ"
+        },
+        {
+          "resource": "repo://test/smoke-install.sh#L201-L262",
+          "version": "repo-lines-v1:sha256:af0ab870527601b437634e17cf0fad0930e3a8e76b84df55184a37ad85f74057:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhZDY0ZjgyNjg2MmQ0ZjdhNTU1NmFkYmRlNDg0NGRiMDVhMmRjODEzMTU5ODgzNDhjOGU5N2I5ZjhiNzIzYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjNTkwMTBiZjlkYTI3ODkyZWVlZGFmYmEyOWM3ZTQ2ZWIxMjNmN2FkZDk1YWM2YzgwN2RhNGI3ODc5YWE0YjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4MzVlYjVkMDg5NDU5NDc3ZDkzNDM2NjdmYmVkZThjMjNkODg5NWEyMTkwNDFlMWI0YjMxYmRlOTE3NThhYzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3dcbdbca3a274c188c31459252c5db3d",
+      "statement": "The Nix flake installs a Bun wrapper that runs src/cli/qmd.ts directly and never executes bin/qmd, so it duplicates the launcher's pre-import environment; its node_modules hash is pinned only for x86_64-linux and aarch64-darwin.",
+      "evidence": [
+        {
+          "resource": "repo://flake.nix#L120-L175",
+          "version": "repo-lines-v1:sha256:954e0055759a4fb7fdf7dd940d9b848ab94510f7f2cb7bc8786a875847f3f17a:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiODdmYTk1ZmI0NDMyMzM1MjY5ZmY3YTI3ODQwZTliN2EzOWYyY2E4NzhhZDUzOTc5NjJmMTgwZWIzOTkxMmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxNDk3YjMwZDllNzI2MDgwZWY1MzNiODQ1MThlNWE3MTU1Nzk4MTc3ZGRjY2FiOTNjYzZkYWVkNmM5ZDI5NDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4NTQyZDE3NmNlMTU2ODk3ZmRiMTZhZjAzMjM3ZGZhNGVlZGQyNzVmYjE2YTlhNGU2Yjc1Mzg2NTFlYjE4NTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5NDk1ZGQ2MmY1NDJkYzI3MGRlNGIxOWY2ODgxYTgyNzU0ODk0MGQ2MjFiNzNhYThjOGM2M2YwZTE4Yzc0MWYifQ"
+        },
+        {
+          "resource": "repo://flake.nix#L45-L80",
+          "version": "repo-lines-v1:sha256:4c0ac2733528feb068c6de6dd4346c1356f1b8850b5ae08051989cae09f24279:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkMmMzYWQ2ZTYyYjRhN2IzZDA4Y2VjNzc1MGM2ZTAyMmU5NjQwOWVmMmZhZWMzNDBmODJmNzA4NmUxMzMxNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZjE2MjU0MzA5NjY3NjkwMTUzMjU1M2Y5ODZhZDk0NGRjOGI0MDZjNzBkNzY1NmVhMzlhNDg2ZDI4NzczNzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZjMjVhYjEzNTRhMDc2M2QyYjJiMmRiNThmYTViOTQ1MTUwMGU0ZDVlNzU2ZGUxZTZiY2MzYzk3MjAyZjkxNmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a08bf28a54b4cb7af3f886789f9e245",
+      "statement": "CI runs a Node 22/23 matrix on Ubuntu and macOS that installs SQLite, runs npx oxlint and Vitest, plus a Bun job on Ubuntu and macOS that runs bun install --frozen-lockfile and bun test.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml",
+          "version": "repo-file-v1:sha256:0de772f7ed2b0edcce1213812fddade6576613365393ed0444e954b30ecd3461"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

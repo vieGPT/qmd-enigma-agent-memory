@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:e92fdd709291562870ca6127c3ad3399c9999570b48283c4ba2eff93d2632b85",
+  "claims": [
+    {
+      "id": "claim_2247e6192eb64d42a853bf948064687e",
+      "statement": "The HTTP MCP server binds to options.host, falling back to the QMD_HOST environment variable and then to localhost; the CLI defaults the port to 8181 and passes --host only when given.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L5098-L5104",
+          "version": "repo-lines-v1:sha256:b5d118f8aa300b9e9c94686f58cde3b4f0f7b273283b112d20d12c6a68429594:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTZmMjIxOGZjNDVjMzYyMmQ0Yjg0YzI1MmMzN2MxZDZmN2JhOWZjYWI0ZmExYTc3Y2UwMTU4NmJkODBhYjI4MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmZkNGI1ZmY4ZGMwZjAzMGYyOGVmNzc0ODFkNDgwYzViYjA0NWM5MDMyYTNlMGRiYmNhNTY4Y2YxZTVmYWIyNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTZiNmQzNjdhNDM2YTdhZTUwZDhlMjgyZDZhOGVmZjk1ZmEyMzNkYmI1MzljNmNhNWVjMGI3ZWEyNzlmNWNhNSJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L1148-L1148",
+          "version": "repo-lines-v1:sha256:df266057e86db142fad6509fc46e19ee2ecc840f0ef6e5783a6a08b7ca236adb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGYyNjYwNTdlODZkYjE0MmZhZDY1MDlmYzQ2ZTE5ZWUyZWNjODQwZjBlZjZlNTc4M2E2YTA4YjdjYTIzNmFkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGYyNjYwNTdlODZkYjE0MmZhZDY1MDlmYzQ2ZTE5ZWUyZWNjODQwZjBlZjZlNTc4M2E2YTA4YjdjYTIzNmFkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2ZhOTFmMDFmYzMzYTQzZjc1YzE5NzA2ZDViOWZlMTA1YTc0YmIzYWM0ZmE1ZjBhYjFiZjJlZWNiOTljYjVmOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmY0ODMzZDA2NDhlNjBjNjM1OWEzZWE4MDVlZTdjMjY1NzdiYjU1OGEzMWJkYWMwMGFjN2JmNDNmNGM2NTVhNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1c614e0bcb714345b7bc71cd74d10c69",
+      "statement": "Every HTTP request, including the REST routes /query, /search, and /metadata, is screened by the Origin/Host guard before any routing takes place, so REST endpoints are covered by the same DNS-rebinding defense as /mcp.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L1163-L1183",
+          "version": "repo-lines-v1:sha256:cb1c3b66917ac71370fad67713803c9fab96d95d5d9cf15e8c9dfaa2875fe0d7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmOTQyMGVhZGMzMTlmZTczZTkwYWE5OWUzMWYwZDM2M2MzYzYwMDAxNDI3MWM4YTY2M2UyMmYyMTMyNWMxMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2Nzg4ZTk4ODM4ODU1ZTc5Y2YzODEzOGI5NjU0MTg4YmI1NDVhYjFjY2M4YTQxNzFjZGRkMmZkNDBiZmI0MDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk2N2QwYTZkNmJjNGFkNTQ1ODBjMjkzZTIxZmFmMWI3OWMwZWY0NmEyZjljMTZjOGIyYTRkMjA4MzdiNDc0MmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2NTMxOTlmYWU5ZmUyNjQ3Yzg4YzljMjMwMWRlZTVjNjk2NDVlYTFkZWQ4NzViZDBmMTdmYzg5YmFkMmJiM2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_15712175937a4c24af27ea246d5461ea",
+      "statement": "A rejected request receives HTTP 403 with a JSON-RPC-style body whose error code is -32003 and whose message is 'Forbidden: ' followed by the reason, and the rejection is logged unless quiet.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L1170-L1179",
+          "version": "repo-lines-v1:sha256:69579de1a305b4e95049c92b8e4f78d67b84abb3fe0af4176bccbb30a4c35af9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlZjY5MDA3YTdlNzVjY2RiMmMxOWVmYTlkOTVjNDNiZjc4N2YzM2EyYjljODI2NWM0YTVjZTY0MmZlNmRiZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyYjQwNWJhMWE0ZGQyMmNiZDc3OTBjMDczNzJlNDI3YThhMzk0OTJiZmU3NDIyMGQ4MWFiYTIxOWQ3MTZmNGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYxNmEzZDJmNGM0NGE0MjgzZjM0Y2YyOTg4ZDkxY2E3MzE2M2QyYjc0ZDQyNGUzMWE3NjQ4YzgzNTljMjhiZjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3NjU4MzYxMTcwMGRkOTI0ODNhNGY4NGQxZDQ4MzYyN2ViOTE5YTM3NGNkYTkyNjAxZjYzYWJiOWY2YmQxOGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a3c456462eea49048bb8eae69bdf62aa",
+      "statement": "The Origin check is skipped when the origin allowlist contains '*', which disables all guard checks, and it is also skipped when the request carries no Origin header; non-browser clients that omit Origin are therefore unaffected.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/origin-guard.ts#L101-L102",
+          "version": "repo-lines-v1:sha256:fc6fa37066b65f862201944f0678d987e6a8348e66fafcce53ee91d3d68777c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTdlNDQxN2E5YjA0ZWQyMjNlMWI0ZmZjYmQ5YjlhODc1ZGQ3MWE5YmZhMDVlZWY2NTVjYzVlMmM4MjE4NjlkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmFlZmQyZmM5MWFjOTdjMDEyNzM2NjM0OTVlMTNmMTJlYjUzNzAyMGI2OGFjMTdlNDdmNGEyMDA4ZWY5N2VmZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjMyNTc3ZTg0MDc4YjE2ODEzMjZhNDhlYjNkNTQ1NTMyYmRkMTliNzBhNWRjY2NiNTQzMWYyOThiZGQ0MjExYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTViYTJmZmQyZGY3YTg4NDI5NjM4Njk5Y2NjN2U4NTc5OWY0ZWYxZTkzNTRhYmVhMWNiZThjNDc1NWE0MWFiYyJ9"
+        },
+        {
+          "resource": "repo://src/mcp/origin-guard.ts#L139-L142",
+          "version": "repo-lines-v1:sha256:90d92e01bc872aa1479a4481b26b8713a2057fe0cb2d34e2091507afa4ab8c2b:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDc5ODc3ZTEyY2YzOWVhMGZlN2QxNWUzMjExMDE5ODMwZGVmMmFiZTM5OTRlNzQwMmYwYmJkNDliMjFkMTJjYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjU5NWZjYjk5ZTEyM2E2M2ZjOWQyNTUzOTYzMGMxNDI3NmU4ZDRhYjcxYWIxMDhiYmQ3YTc4ZTlkOWVhNjcwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA1ODcyN2JiMzRkOGNhMTlkNzQ2YWM2Y2MxN2EzNDMwYmMwMWY3OWI2NDNhMmQzYzczYzIwMDJkZGM5ODFlOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTdiYjQ3MjYzMDg5YjQzMTk2MmZiOTdkMjVlZDI4NGYyNWFkMGExZGIyMzIzNTc0MjA4NWVkYzYyY2Q1OGZmNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b7868e56df5e4097be5bfa74597ad538",
+      "statement": "A present Origin is accepted when its hostname is a loopback name (localhost, *.localhost, ::1, 127.0.0.0/8, IPv4-mapped loopback) or when its normalized origin is in the allowlist; otherwise the request is rejected with 'Origin not allowed'.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/origin-guard.ts#L143-L149",
+          "version": "repo-lines-v1:sha256:ee4238fe19d56bd66716a6f3fa699be3552409268103b96428bcad74fc0701be:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODAzZWFkZjFjNGM1NTdlMzRiOWExZjBkZmM2Y2Y2M2VmZWIwMzJlMjZmOTFiYzA1MzljMGZiYTUzZWQ1Y2RiMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDMxZGFjZmFhY2I2YTM4YjhmODQ4NDY3N2E4NDJkNzM2MWYxZjI5Y2NmMWI4NzMxNDAzODk2NTEwNjQ4YjJjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTA4ZTJhOWMyYzAyOWVjMzA3MTE4NDc3YmE4ZjZiNTcyZGE0MTMzN2RmNWFlNTBiZGNlZjNiY2YxNjRlYjRmMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTdkODYzMmU1NGU5Mjk4YWJiOTU4NzI3ZTJkNTE0MDhhYmFmMTM2NjAzNTM3OTEwMTQwYWJmNjViMzBhYjYxMyJ9"
+        },
+        {
+          "resource": "repo://src/mcp/origin-guard.ts#L27-L34",
+          "version": "repo-lines-v1:sha256:3c3e41ac6a041686ab46ce3381a402604a77c8c7a9045254a0604fb58c256d6c:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmM0ODA4MjhiNzM0OTRhMDkwYmEwZDhlMjdiMGUyYWU1MDE2MWQ5OWI5NWZkYmYxYzY0NTM4OGFmYmU2MmE0NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjY3MDRhMGIyZDcwMGVjYmExZjFjYTIyMmQ4ZDBmZjIwMDFlMmFlZWYwNjY1NTJmZGIwNzNjZTJlMzc5ZDgyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNlN2I1MThiMjM2NzNiZTRiMGQ0NzRhZDIzMGJkOTUwZTM0NDgyN2UzMTk2YmVjZDhiZDkyNmQ5Zjg1ZDU3ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c2c9038489034abb9fd90c2738cff116",
+      "statement": "0.0.0.0 is deliberately not treated as a loopback hostname, so an Origin of http://0.0.0.0 is untrusted and wildcard binds never get a loopback exemption for that address.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/origin-guard.ts#L18-L24",
+          "version": "repo-lines-v1:sha256:d7fc5144c1de75d334950ba26a051cae834c5f744027d0bfcabfeda24cd690d7:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzI2ZDEzOTdmZjAyYWI2YjlkYjQ4NDg5OWU5NjJjNDM5MTQ2ZDQ4NDNmZDFlN2Y2NjliMzhmMTE3NmMxZGZjYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2RlODgwYTQ3NmMwMzMzMmE0MTEwMjdlM2NhMzk0ODIxMDA4NjA1ZTM2MmU5Y2RlM2E5OTFlNzc5MWEzYTUzNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmU1OTA4NGRiNjFmZWY0NzA3MWE2OTkzYmViYjViNGJkZTYyZmE0OTc2NGQwNDRjZDM4YTAzMGZlOThlNGVkNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmFlMWY4N2I0N2IxY2MxYzViNmFhNDM2ODgyNmQ1ZjllZDEyZTdiMDA2MDQ1YzdlMTlhMzdiZDQ1ODcxY2Y4YiJ9"
+        },
+        {
+          "resource": "repo://test/mcp-origin-guard.test.ts#L1-L60",
+          "version": "repo-lines-v1:sha256:78208274b39502ae5ffb421ada41e079328837b15be946351025cbcf13ac9840:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyNWU5YjFiZmVjYmYzZmU5MjYxODllZjAzOTQzNmQ4YmMxOTI5YmZkODBiZDJjZDFmYTA5MjJlOWVlMmY4NDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2ODMxMGVjZmI5ZjQzMTYyZjU1MTUxMmUyZjVkMGQzYjcyNWU5MGVkNjQ5OThjZGQwZTdhZWJlODUwNTkwYTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_068b78524feb4ddc920110d556adfc47",
+      "statement": "The Host check is enforced whenever the bind address is a concrete interface: the bind address itself is added to the allowed hosts, and a Host header passes only if it is loopback or appears in the allowed hosts; a wildcard bind (empty, 0.0.0.0, ::, [::], or *) enforces Host only when QMD_ALLOWED_HOSTS supplies an allowlist.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/origin-guard.ts#L111-L122",
+          "version": "repo-lines-v1:sha256:af6938c5383e44894316e9a17080c75e2958be64d33486afe8b8e8220360a719:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyNDVhNTcyZDE1NTM5MDliZDI5YjQzZjI0MTc1MzM1Zjc0Y2E3OWI4ZjUwZjE2YzJiNmFkOWI0Mjg1MTIxYWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxODA1MWE3YjYzYmFhMGZkZDk4YWQwNmMxN2JmNmU0MGQ5YmRkNjY2MTBlNzZhZTMyNTRhNTBlYjgwOTgyMmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg5ZDg5NDg4YTg4ZmY2OTBmYjJmMTcyYjAwMzU4YWYzYTAxMzljZDBmYWFhNDhjYWU2NmE0OWVmMjA5NDE0NGYifQ"
+        },
+        {
+          "resource": "repo://src/mcp/origin-guard.ts#L154-L162",
+          "version": "repo-lines-v1:sha256:b2870a7d1645a2c970f8aff5cdcfda1b5299ee40254e59f40259397094a025ba:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQ2OTE1NzIzZTU4ZWJiYmU3NTcwNjEzOGM1NjMyOTJlZDlmYjcxY2FjZDM1YmMzY2M1MmY4MmRhNGIyNjYxMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE3NWNhZTk2NGU5MzA3NDkwODg1M2EwYWUwZTQ0YTIzNzljODEzYThkZDgwYmVjNTUwOWFlZGI5MDk4NjRlYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmZmM2E4N2M3NjJjOGY4NDZkYmNmMzFhNmRkODdjMjkxNjc3NDI5YTg4OTM1Mzk0MmVlNDQ5OTRkNjMwZDIwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTdkODYzMmU1NGU5Mjk4YWJiOTU4NzI3ZTJkNTE0MDhhYmFmMTM2NjAzNTM3OTEwMTQwYWJmNjViMzBhYjYxMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_33c1a76fff4f4961bab6bf9de9a2e152",
+      "statement": "Guard allowlists come from the QMD_ALLOWED_ORIGINS and QMD_ALLOWED_HOSTS environment variables as comma-separated lists when no explicit options are passed; the CLI does not expose flags for them.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L5098-L5160",
+          "version": "repo-lines-v1:sha256:8230a904e3b519af659f5d23ee3d06906adadc45e9b5e1d915f5607cc6026f94:eyJzZWxlY3RlZExpbmVDb3VudCI6NjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2ZjIyMThmYzQ1YzM2MjJkNGI4NGMyNTJjMzdjMWQ2ZjdiYTlmY2FiNGZhMWE3N2NlMDE1ODZiZDgwYWIyODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4NDFiOGQ5NzUzMDBhOTZhODdkNjVhMDkxYWE5YmM5ODgwZWJjY2I3YTFkNTYwY2MyYjhmNGY0ZjY3YjkwNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmZDRiNWZmOGRjMGYwMzBmMjhlZjc3NDgxZDQ4MGM1YmIwNDVjOTAzMmEzZTBkYmJjYTU2OGNmMWU1ZmFiMjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjMGM0ZWRhNDRhMzc4ZmMxYWRmYjVjYmZmMWE3MmM0MjE2Zjk0MGIwODhmNjVjZGNiMjk3N2NjZmE2Njc2NDkifQ"
+        },
+        {
+          "resource": "repo://src/mcp/origin-guard.ts#L91-L100",
+          "version": "repo-lines-v1:sha256:e32c84958e38d66cf8399c78fbc3b1a977d75cc4d9402961a4f4dcd77fd66051:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIwY2YzMzQzYWNiMzE3M2I2ODJjZmUwMzY3MzA5Yzk5NjVkNTdlMWU3NDBmMTUzODNlZDRjMTYxOTZhMTg1YjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwNmZjZGVjYTNjNWM1MTAyZDBkMDdlMzFiZjk4OTM1NTU0MmIyMmYwYzJjYjI3NjMwMTBhOTM5NGEyYmJiZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzNGViNzdiOWFjMjU1MzA2NDY1MTg5ODNkZDhjYmM5NmNhOTliZDlhMzI2M2ZmNDNkYzgzNGQzYzdkZDE0NzQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_01d18571da6d4662b3aec08c61d516ff",
+      "statement": "At startup the server logs a plain-text warning, with no warning code, when QMD_ALLOWED_ORIGINS is '*' (DNS-rebinding protection is off) and when it binds without QMD_ALLOWED_HOSTS and Host validation is off; the warnings are suppressed in quiet mode.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L1445-L1450",
+          "version": "repo-lines-v1:sha256:fa2edfed5b1c0a95eadec376a691475705650934c23cac694cbf199198b120f0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjQ2MGUyNDVjYTc2N2Y3ZGIyMGFhY2RkZGFmYTNlNWU4MDZiMjJmMGIzZjRmNGJhNDlmNjY4OWFiMzNhZjIzYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDlkMjJjYTEyZWQ4NTJhODZmZWJlZWU2MjcyYzFlNmI0OTAxNjY4NTBhMWQwNDI2ZTVmNTQxM2UwNzE3YWRiMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGUxZWQyYTYxMmMyZTg1NWE0MzdiYTk1MzQyZTQ2NDhiYjc2NmRmOGRjNGMxNWJjOTA4ZmYxODk5MTIxMTAxNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0f4dc262a33a4c2eba3b49803187df9e",
+      "statement": "The README states that the HTTP endpoints are unauthenticated, so the Origin/Host guard and bind address are the only access controls, and it advises placing an authenticating proxy in front of any off-host deployment.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L176-L184",
+          "version": "repo-lines-v1:sha256:2cb40510ae24948c28c0ecb085a4847b3dc310b5b2c891b835122ff03b10a805:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTgyMmI5ZmFlZjRlMjk2ZjQyZmYxYzIzNTgzODcwOGFhYjJiNDdkNTZhYWVlZDFmY2IzMWY2MWJiNThiOTZhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWQzNjU1OTViZGU0YTcxMGNiY2U4YWViYjI3ZGIxOTQwNjUwZjdlMWM5ZTY3NTNkYjQ4YTBlNzIwMTRkOTZjZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmYyYjhjNjQ4NGMzOWM1MzMzMGQ1ODFkOWUyMTU2NjI2MWQzMjczMDQxOGZkOTcwOGJjNmZlMTE5NzRjNTY1YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b4accf585fad42b88280e6730f26c453",
+      "statement": "GET /health returns HTTP 200 with a JSON body containing status 'ok' and uptime in whole seconds; other methods on that path fall through to the 404 handler.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L1182-L1189",
+          "version": "repo-lines-v1:sha256:88767229a425c1e82ef106a43a988e220129e6b489012a3257a46d87b8fae817:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmYwODFmYmZiOWY0YTE0NjVmZjU3YWEwNGE0ODgzZWI5NzFkYmViMGM2NmJiNDQ4MGNkNDAzYzM5ZTVmOGEwMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzQ1YmM1YzE1MmI0ZmU4ZDJhMWE3NDkwYTRiYTVhYmY4ZGIwNGZkMDRkZjhiZTdkNDRlZmU5MTQzMDhkNTMxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzRiNGI4Nzk4YmQ0OTkyMGNiMTYwODRkN2ZlNTliYzg3MGUwZGM1MjZkMmQ4N2NjMWYwZDhlN2ExZTdjNjAyNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bd7304088d564628ae13c0db82cec9fa",
+      "statement": "POST /query and POST /search share one handler that returns 400 with the exact messages 'Invalid JSON body', 'JSON body must be an object', 'Missing required field: searches (array)', and 'Invalid field: filter (must be an object)', and returns the metadata filter parser's message verbatim when the filter is invalid.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L1192-L1241",
+          "version": "repo-lines-v1:sha256:89d4f45081e3e91f9d874775e6b4cd42f513389da12ec0e2f334db11fcdd1a66:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxNTQyODRkM2JiMDNmOGM5ZWI0YzU0OWY3YTIwM2VkMDAwMjg1MDVhYjI1NDY2ZTljZGZhZmExZWVhZTBmYjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzNzgxOTNmNjc0ZmFhYWM4NDExZjExNWU4YWM4MzdlMTBhYTY3MWMyZGUyNTJlNGZjZTgwM2RjYzIzYWJjZjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlYzA3ODIxMjY2MTkwMWVmZjgxMjZlNThiOWFjYTJmOThmNzE2ZmY3YTYwM2FhOGM4OWMzZWUyYmMyNDFiNWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyYWQ4MzcwNjlkMzg4ODFmMWRlMzM5M2NiYjc5MjYxNTUyYmEyYTRiZjdmYmM3NjBlMjc3OTkxOTliZWI5MTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aa87f8a8e1734277a0a8ce111c2e2096",
+      "statement": "The /query and /search handlers default limit to 10, minScore to 0, and collections to the collections pre-fetched at startup; candidateLimit, intent, and rerank are passed only when they have the expected JSON type, and each search's type is cast without value validation.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L1078-L1080",
+          "version": "repo-lines-v1:sha256:5ee17ef109fb54d75e8bd42bbd1abcafdb14a814f8bb150872c5ae82e8cad6ba:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODcyYjM2ZTE2YjdiY2QxYWEzNzNkMzMxZWZmNGUxZjVhMzk1ZmViOGM2NDcwY2MwOWQzMmQxMWQ4NTdkNmNlZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODQ3MWMwNmNhMjAwYzY1ZDI4OTkyZDZkNTYyODVlMGE4OTJiZTk1NzlmMGIyMWQ5MDZkZGYzYzczYWU3YzUxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGEwOTQ5OWNjZjk0YTFiZWFmMDYyMzRhMjk1Mzg4NDNhZDVjZTA3MjRlN2ZmNjNiNTU0NDA4ODcyMGE4NmU1MCJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L1211-L1217",
+          "version": "repo-lines-v1:sha256:f6a7747b356afa6ce47201a214e2b5304dff053ffea38458ede543b1f901372b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmVkNjIxODA3YjEwMzIzOTMwZmQxNDE3YjA3ZDQwMWY3NjAwNWNiMWM3MTM5ZGU3M2I4ODJiOTFmNjEyY2I4ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTA4Y2RjYzI3YmJkYWY4ODJlNmMwOGJmNGI0NzNlOTU5MzhjMWQyNjYxYTdmNWIzNmQ1MDMxOGRiOGFlNWNmMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDNlYzU0ZTk4ZDQ4YjdjZmZmOWI4MzI0NWIzMjlhNWRmZjFmZjFiMzcwNjc1N2NiYjJiNGIzNzZiOGY2Y2U2YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjIwZmU5MjZkNDFhZWUxNDgwZjQ3OTgyYWU3NTIwMWVmYTYzYmE1OTdkM2VmNzhhYjE4YTdhNmEyY2EwMzdjZiJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L1244-L1256",
+          "version": "repo-lines-v1:sha256:05fefe1ec57041d96b2cc4bb67c9284adbbd3bc1bf0d76e0d9a1cfeb6dd2c9c8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhYmY4M2JjYWE4YTc0YWI3ZTdiYWFkZmUxNjYyMGE3NGY1ZmFlZGY5MjZmN2YyYzBkNGU1NjA4ZmQwZTg5ZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwZGJiNTk1ZTcxZTFlYmFjMDNlYzBkYjcxZTQyMzA2NDJiNmRmNDQxODkzMjkyNDMzMTY5MWM4ODRmZTVjOWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFkY2ZiMDA2OWJlMmRlODJhMzA1MzgxMDkwYzNmMWM4MTAyZDI4ODE3N2U0ZmZhZTM2MWQxNWRmOWZhMWNiZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwNWM3NDY2ZjI5OTExZjJlOWMwZGJmYmQ1MzA5ZjliYjdlNzcyMjg2YWVhMWI1ZDQzZDg5YWQzNDM1ZDRkMjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ed7117ea81f2434abe87b3183adbe049",
+      "statement": "POST /metadata treats an empty body as {} and validates match, sort (count or value only), collections (array), and numeric fields with exact 400 messages, mapping metadata option and binding-budget errors from the store to 400 responses.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L1280-L1368",
+          "version": "repo-lines-v1:sha256:6947c1e4bf84224d85880fa469bab4c8365b6d9bbf4a442d93c9bd81a718cf83:eyJzZWxlY3RlZExpbmVDb3VudCI6ODksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmODBlMzI4ZWQ0ZTY4ZTM0MTg2Y2YyMzQ5NjQwYmI5Mjc4YzNkZjEyNjExNDc5ZDM4Y2M3ZDJjM2I4OTNjYzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhY2M0MDlmMDhjZDY3OThmMDBjZDM1NjkyMzQxYWJkZjlhNWFmNjBiMGJmMWVlMjBiYjUzNWMyYTZiYzhiODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEwNGQ0YjE2ZWUyOGE1ZTIzODViZDFjMmM3ZDMyYTIyNDA1MTQ5ZDEwYWQwODM1OGQ4Nzg0ODVjNjczNDI5YjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4e1cd6cca25e47419bc5d0b41a917f53",
+      "statement": "The /mcp path forwards every method to a stateless, JSON-response MCP handler built per request, with no session identifier, and copies the handler's status and headers back; unknown paths return 404 'Not Found' and uncaught handler errors return 500 'Internal Server Error'.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L1376-L1407",
+          "version": "repo-lines-v1:sha256:95500c6ccd98a6d5f5683932d3fc56c3dc91e3a832f91f3d4609c1779f7d19b9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1YmQ4YmZlMGY0OTZlMDc3ZGJiODMxOTcwZjY2NzdjYTEwMzU2OGZkMDM3OWNlYWZkYzE0ZTg2YzBmNzJhMjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0NWJjNWMxNTJiNGZlOGQyYTFhNzQ5MGE0YmE1YWJmOGRiMDRmZDA0ZGY4YmU3ZDQ0ZWZlOTE0MzA4ZDUzMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk3YjFjMWUzNzhmNjEwMjA3ZmE2NTIxYzgxZGMwNmYwYjMzZmMwOTlkNmVkMTk0YmZjM2VkMjFmNGUzNzE5M2IifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L1409-L1415",
+          "version": "repo-lines-v1:sha256:61b760cef0470be8bc632cc3da6223f2cd29819f656aca850d8dcb1a693456ab:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTljZWM5NmQwMjg3NjRlZWZlNjY0NTdjYjU4ZTY0M2IxMGMxZDQ5MzMwZTAwMGNkYzZhMmU2ZTZhYWUzYTNkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzQ1YmM1YzE1MmI0ZmU4ZDJhMWE3NDkwYTRiYTVhYmY4ZGIwNGZkMDRkZjhiZTdkNDRlZmU5MTQzMDhkNTMxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjY4ZTA0MGJiYWFjYzUzMTRhZjA0ZmRhNWZjNzI3NjY0MmYyOGQ1ZjRmYjM0YTI2NjcwNDk3ZTJkZWEwNDU5ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_81b35f10c8e44802b362f44011a8c340",
+      "statement": "The test suite exercises the guard at two layers: predicate unit tests for loopback detection, guard construction, and origin/host decisions, and a live server test asserting 403 for foreign Origin on /query, /search, and /mcp and for a rebound Host, while local clients still receive 200.",
+      "evidence": [
+        {
+          "resource": "repo://test/mcp-origin-guard.test.ts#L1-L298",
+          "version": "repo-lines-v1:sha256:8603152a7de97cbc7afd5d598a334e1e542970cb70fd5cd02d09f415cee8898c:eyJzZWxlY3RlZExpbmVDb3VudCI6Mjk4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmNmY1YjQwYjE1ODQ1N2QxNzg2NGYyMTc5MDc4NmRkNWEyZWNkYjY0YjY2YTY1MWY3ODhkNGUyNWNkMzMwM2QyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

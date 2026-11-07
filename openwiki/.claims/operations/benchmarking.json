@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:cca8fc3d7a151e3d942b165c3932974a5ca44dcbe616b437e4391614fa66a6c2",
+  "claims": [
+    {
+      "id": "claim_18706ce410764d4ebea26a3ad2956939",
+      "statement": "qmd bench is wired from the CLI bench case to runBenchmark in src/bench/bench.ts, which takes a fixture path and options for json, collection, backends, dbPath, configPath, and config.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/bench.ts#L325-L345",
+          "version": "repo-lines-v1:sha256:3eafe815b497013291ef2a37120e8b59990d522eb1b5aeba43e936f39eeeaf5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjN2JhZTNlOTU4NjRjYWRhNmM4ZDc1M2U1ZGZlYjg1OTM3YWY4NTU4OTRlNTQ4MGQ1NjJiMTRhNDgzZmU5YzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwY2M5YTc0MDM5ZmM1NWUxMDM4NzdlN2E2ODk5NzE0ZGRlMmQ5YTQ0MWVkYmVhMjdhNDA5NzgwMzA2YTQ1NjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkOWYzNDJhNTU3ZTU2YTE4NTY3MGI2MjM2YzhkZGI0NzY0MDdlZjdhM2E4ZDc0ODdiNTAwYjBkMmYwOGY5ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyMTZmMzNlMzRiMmM4NWE2MjQ4MDkyMDc1NGI3OWI3OGZkNzQ4MWFlY2UxMjE0NDUxYmEzYmVhYmRiYWJlMjAifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L5044-L5066",
+          "version": "repo-lines-v1:sha256:824cf2a59315b4cf78ea78976e4a5b9c7b6cd0439a197b2794ffbfbbdc23a015:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwMDA4OWJhNThlY2RlZjUwNjVhZTc1MmI3YTBmYTIwN2YzM2YyNDdhZDMzZGJkNWMzYzBlOGRiMDM2MjYyNjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4OTRhNzNkNGJmNjk4NjBkMDVlYzU0MjVlNDU3NmRkYWViOGM5NWQxZGJhZDgzZjBlOWRjZDgwMTY4YzcyNDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiMDQ4NjIxMmIyM2Y1YTM5ZWU5MzhiODk4YWM4YTI2NmE0NDAxYmZiNzcxMTI3MTIxM2U5ZDQzMWRmNzY2M2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_489ec5d26c34403cb0be0b71de5d6cf1",
+      "statement": "A benchmark fixture is a JSON object typed BenchmarkFixture with description, a numeric version, an optional collection, and a queries array; each query has id, query, a type from exact, semantic, topical, cross-domain, or alias, description, expected_files, and expected_in_top_k.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/types.ts#L1-L40",
+          "version": "repo-lines-v1:sha256:f5a9d8693b3753e35c176409e2ff9caef090eca83faa94472a619667689e3e60:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1OWJiOWQyOGRiMzViYTFlM2ViMDAwY2E5NzM4N2EyYjFmNDdiYjA1YjM1NmU4NWZmOGZjZWRiZWNlODg0YTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwZTI5MWExYzUyOTBmMWNmMmY2ZGNlZmJmMWFmZTcwYzA5ZTIwMWMxYWY0MzVjYmQ3MjFjN2VjYTM5YjM3NmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_40afc72c0ed243a5a3c3b082542fffb1",
+      "statement": "The loader only validates that the fixture's queries field is an array and throws 'Invalid fixture: missing queries array' otherwise; other fixture fields are not validated.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/bench.ts#L325-L345",
+          "version": "repo-lines-v1:sha256:3eafe815b497013291ef2a37120e8b59990d522eb1b5aeba43e936f39eeeaf5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjN2JhZTNlOTU4NjRjYWRhNmM4ZDc1M2U1ZGZlYjg1OTM3YWY4NTU4OTRlNTQ4MGQ1NjJiMTRhNDgzZmU5YzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwY2M5YTc0MDM5ZmM1NWUxMDM4NzdlN2E2ODk5NzE0ZGRlMmQ5YTQ0MWVkYmVhMjdhNDA5NzgwMzA2YTQ1NjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRkOWYzNDJhNTU3ZTU2YTE4NTY3MGI2MjM2YzhkZGI0NzY0MDdlZjdhM2E4ZDc0ODdiNTAwYjBkMmYwOGY5ZGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyMTZmMzNlMzRiMmM4NWE2MjQ4MDkyMDc1NGI3OWI3OGZkNzQ4MWFlY2UxMjE0NDUxYmEzYmVhYmRiYWJlMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c973e615f6e46c9a4500753f465f8b8",
+      "statement": "Structured query strings use one-per-line lex:, vec:, hyde:, and a single intent: prefix; multi-line queries require a prefix on every non-empty line, and an intent with no sub-query or a repeated intent is rejected.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/bench.ts#L46-L94",
+          "version": "repo-lines-v1:sha256:0297140e14aa5bde949996195d96fc673e46f4f75bf30674044cf3490f68515d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1Y2FjODdmNTFkNzQwMDRlZTkzNjY4YWU4MTZjMDUwNDJhZjFlZGU0NGIwMTVmYmI4YWEyMDNiMTEzMDk1OTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzMWQzZmIyYWU4M2Y4OTNmMTY2ZDViM2M0ZmE1MTZjNzJjNWJiNmRhNGM2MDc1NDk4YzNiNGUwMmIzMDQ0NzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyOGMxNjMyMTI5NjRkYWExNjAxNDdjYTlmNWZhMTI5NTQxYjExNTlkYjMyYWE1OGFmZjE0NThjZThhNGQ3MGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3b7a3f7a51b445c494d6434a019e11f2",
+      "statement": "The bench harness defines four backends: bm25 calls searchLex, vector calls searchVector, hybrid calls store.search with rerank false, and full calls store.search with rerank true.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/bench.ts#L108-L166",
+          "version": "repo-lines-v1:sha256:7e334a7420b152f6452a07c5963076100a3353950e66cb26eaccb2dfdc7ee65e:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzN2E3ODc2N2M5MDRmMGZmZGJlMTAwZjIyZWNjZWE1MDU2YmM0NTkyY2FkYWE4MDQ3M2IzMDk2MjllMzQ1NjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyNzliNjgwNTIwZWQ1MjZkY2M0YzhhYTM3MzUyNzU5MGUyODE5NWU0MGZiZTYxMDdlMWU1YjQ5NWE0NTc3MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2MTQxMjQ5MTUzOGNiZWJkYWVlNjVmYTgzNDM0ZTdiOTI0ZmY2YjBhNzA5ZGU4NzhhOTg0MjZhYTFjMjhiNTAifQ"
+        },
+        {
+          "resource": "repo://src/index.ts#L491-L545",
+          "version": "repo-lines-v1:sha256:1c10a6721f1d99cd0edd9d41d9e2d490ed5177545fc083b13a2dfe1e954ecb27:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmMDM5MTcwNDZhMWI3NzA1ZmI3ZDlkZDg5NjY3Zjg5OTkxOTQzNGI5MWE0MmRiMTI0YWJjZDY2MWMzOTY1YjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZDliNTc5NjYyOTQzMWI2MjFkZThlY2E5Nzk0YmU0ZjRhZTg4Zjk1ODIyMzhjZmIxZmMxNTk1MGIzMTg5YzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1ZjJmODE2MjdkMDFmOWM1MjI0YjA1ZWM1MjhjNTMwNDg0ODYwOTVkZjM1OWZlNDhhZDhjODM1NDk4MGMxODAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwYmJmMmU0OTM0YWJjZmJiNjZlOTE1NzY2YmZkYTQ2ZjA5YWM1MGJiOWQ2NzgzMWQ1NWVlMmQzMGZhMzhmOGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4970ded6560d46649772342006478605",
+      "statement": "For structured queries, bm25 runs searchLex once per lex line and vector runs searchVector once per vec or hyde line, and the combined file list is deduplicated keeping first occurrences and truncated to the limit.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/bench.ts#L108-L144",
+          "version": "repo-lines-v1:sha256:ba2ff46c711619449910d3761005bbda0e64521827fe0a6682a130c12e5d9d3d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzN2E3ODc2N2M5MDRmMGZmZGJlMTAwZjIyZWNjZWE1MDU2YmM0NTkyY2FkYWE4MDQ3M2IzMDk2MjllMzQ1NjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyNzliNjgwNTIwZWQ1MjZkY2M0YzhhYTM3MzUyNzU5MGUyODE5NWU0MGZiZTYxMDdlMWU1YjQ5NWE0NTc3MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5NDA5ZmUzZDZjNzhiMjY1OTNkY2M1ZTU2NzI3OGEzNjU1NTk0NDNjYTgzYmU4NWQyNjYzNjA0NDJjMWM1NmMifQ"
+        },
+        {
+          "resource": "repo://src/bench/bench.ts#L96-L104",
+          "version": "repo-lines-v1:sha256:e7b3fdbbc8846c8dca47877bab0e55e36bca5fdab518c7e6168183b8988427cd:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODZmY2YxOTM2YTgzODg0MWZhNzYxYzRhMmNjMGE1MDliMmRlYzE2YzA3MTg1YWU5NzkyZTBkMWI2OWQ2NDZkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDNjNGY5ZDQ1MDFiNDgxNTM5NzJiZTJmNTdjNzU5N2UwY2YwMjZjMjUwMTMyODE2MTAxZGU0ZWMxZGIwNjBiYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDI3OWI2ODA1MjBlZDUyNmRjYzRjOGFhMzczNTI3NTkwZTI4MTk1ZTQwZmJlNjEwN2UxZTViNDk1YTQ1NzczNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_25dcff91f6fb4331a894c133a947841e",
+      "statement": "Each backend run uses limit = max(expected_in_top_k, 10).",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/bench.ts#L167-L175",
+          "version": "repo-lines-v1:sha256:b6b4bf34d7cf12175653d856d30c045d0ebcdf8290f0dd6b1990fe798bd50dc4:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZiYmI4MTNmMDE4YzY4Y2Y4OTUwODQwMjU3NWM2NzBkM2I3ZjM3N2YyMDk3OTIwNWRhYTczMGMxMTFiMDZmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMThhOTE3NTk3MmZlMTVlMmE5NjQxYWIxMzFmNTcxZTZjN2NhYmNhMDY4Mzc2MmViYTVmMjM1M2U0ODNjM2Q1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTE4MDViZGNiZWM1NWJjMmJjOGJlN2ZkMDI1NTE0MzhlN2NjZmI2OGVlZTM0NGU2Zjk0MWJjN2M5ZjM1MzJlNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe4d1ce2cb7142db89bbf71e3da4adc1",
+      "statement": "If a backend throws during a query, the harness records a zeroed backend result with all expected files unmatched and still records latency, so a failing backend lowers its averages instead of aborting the run.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/bench.ts#L167-L198",
+          "version": "repo-lines-v1:sha256:ea415f927b1a0e1019d71e5167939341b07a72381101b54335cdd5b6e1d3a943:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YmJiODEzZjAxOGM2OGNmODk1MDg0MDI1NzVjNjcwZDNiN2YzNzdmMjA5NzkyMDVkYWE3MzBjMTExYjA2ZjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkMDQxMDViNGU2NmEyMzA4YzE3ZjYyZmYzNGMxMGU1ZWQ2MmY0ZTRiYWU4NmY0NmI3MmEyMTU0ZTU0NzRlN2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4YTkxNzU5NzJmZTE1ZTJhOTY0MWFiMTMxZjU3MWU2YzdjYWJjYTA2ODM3NjJlYmE1ZjIzNTNlNDgzYzNkNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2OTA2NzY0MDgxMjUzZGRkYTAyMDkzYzVkMTI5MTc1YjFlNzU3YmJlODM1YzEzMTgwYjZlODc4MTdhYTdlZjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2148eadfd19b44f69fbe1472814fd4dc",
+      "statement": "precision_at_k equals hits within the first expected_in_top_k results divided by min(expected_in_top_k, number of expected files), and is 0 when there are no expected files.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/score.ts#L47-L58",
+          "version": "repo-lines-v1:sha256:d5cde1c09139d6d495801490fffc1c78606bb51a59d2c1bfb52ca43d5e9a0276:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyZjBmMTU1NGNlNGRjYzJkMDgzYzgzZDU2NDM4NjdmNzlkZDkxMzZjNjcyNzVmYTYzMjA0YThkODY1Yzc3ZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1ODE0ODc5MTk0MDZhZDJmNjY5Y2JiMTA1NmZhYjlhMDhiNjEzZmUwYjc2NTcxNjQzNjlhMzA3MGEzODIwZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmMzViYTI1MzFjNzZmOTVmNmYzYzk2ZTM5ZTc1Y2Q2NWIyNmMyOTM1M2NiOWY1NzdmNTM3MmU1MTVhOGQ1ZWMifQ"
+        },
+        {
+          "resource": "repo://src/bench/score.ts#L86-L92",
+          "version": "repo-lines-v1:sha256:85ef430d5f27e9b218f327bb46d78bbe350ab0b16029685a6e7d1b78d160d042:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmE3N2ZkMjdmMzZjMmQzNGMyNmExMDgxOTc0YTg2MGEzMmM4OGEwN2M3MzIyYzhiZDU5OWM1OTIyOWEzYjUxMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTc3ZDcwY2E0MjE4NmVjMDVhZTExMDg3ODVlMmEwZTUyMzk0M2Q3NGRiM2NjNzFiMjQ3YTE1ZGE4N2I1NzQ1MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTc2ZmYwYjQ0OWJlZmNhZjNkZDYxNzFhNDlkMDIxNTc0ZTY2OTczMWRiNjgxN2RiOGM4MzVlNmI1MTQzOTU1MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6740e655fa384f7988d094cc6266a01f",
+      "statement": "recall equals the number of expected files matched anywhere in the full result list divided by the number of expected files, and recall_at_1, recall_at_3, and recall_at_5 are the same ratio restricted to the first 1, 3, or 5 results.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/score.ts#L61-L100",
+          "version": "repo-lines-v1:sha256:a3c945c28b68c9adcbdbcb18654db820e42e76900e5fdeb63629b7f6f8e6cdf2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MzU4YTU4NjRkOTQ2ZGUyNmQwMWE4ODE1NzJiNjQyMGZlNWJlMzBjZjM2NDljZGM2Y2ZkNTkyN2U0ZWM4Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwZTc2YzA3NDcwNzc3ODgwZWZkMDUxNDRhNzQ3MTBlMGM1ZmYzNzcwMmNlNzYyNjZlNTAwYWRlNjE0NTg1ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwOWZhNWRkYmFmN2FiYWVlMWNiNjljNTRlNmNlNWMwNWEwODhmN2ViNzQzNDYwZmMwODNlYWVkZjI0Y2VmNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjMGVkOTFmMGE5N2Q0ZDI5NDg0OTMwNjlmODQ4NjY5MmQ5Y2Q1MjNmYWEzNjVhNGEwNWE0MzM2ZjBhMzNiYWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b275191769064ed6b09bdeb3743413cf",
+      "statement": "MRR is 1 divided by the 1-based rank of the first result matching any expected file, and 0 when no result matches.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/score.ts#L76-L86",
+          "version": "repo-lines-v1:sha256:b429ea2052963b9aa647fec49460c10b99e5c0de5544c6e6f15ef8241a0894be:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjM2IyNTUyOGEyYWYwNjYzZDU1YWM4YzljYmI1ZjEyODExZWFlZTBmYzcwZTJhODhhMGE0ZmM2YWY3N2Y5NTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU0YzA1NjhlMjk5YzBhNjcxZGJmOWExMDkwY2RmM2NmMzA3MzcyNjRmYTBhODNiZTBkM2ZjYTgwYzA0NWFiNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4YTFjMzk1MmMzMTFmZDE3MGIyMTJiNjUxODIzMWQ2NjE4NTJkNGNlYTliY2RiMWVkMjE3NjUzYzgxYmY4ZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7847d43a0e044e187e5e28fbe4d2fa3",
+      "statement": "F1 is the harmonic mean 2PR/(P+R) of precision_at_k and recall, and is 0 when both are zero; it does not use the recall_at_k values.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/score.ts#L94-L97",
+          "version": "repo-lines-v1:sha256:be430955465dc8ba8005f144c92e03144dec4d49a34789fa796539fc0972078e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzUwMzkwNzFhZTZjMzY1ZTcwYzc4OWExYTk4ZTUzZmYxZTUyOTc3ZmU0MDIxYjIzNzVjMTRmODA4N2VmOTY2MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWExZjhmZjg5MmJhYWZmNDBkNTZkNzBmZTc4Yzc5ZGUxMmI2YmNlYWZmNmNjZTFhOTk0MGIxY2Q4MDdiODY4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjAxZmFlNTMxNTQzOTc1Yjg3MWEzODBmNGRmNjMwODg4YmFmMjUyOGMwNjYxZjlkNTIyOGFiNWNhMmIwZDE5NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzljMDA2MzgwYmQ0YzY0OGMyN2YyMGM2ODQyYWQ5OTk1MjZkMmMwMTZmZjNiNmNhYWRhNWMxZmRkYmM2NGY0YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ad1f53048f0141228cc93812e3701d7e",
+      "statement": "Path matching normalizes both paths by stripping the qmd:// scheme and collection segment, lowercasing, and trimming slashes, then treats two paths as matching when they are equal or one ends with the other.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/score.ts#L12-L37",
+          "version": "repo-lines-v1:sha256:fe898f462469976efe30dbf505b176fac1f058586a26ca0daab3dbb7ffbfdd97:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmYWJlMGEyMWZjMmZlMDRkZTc2ZjkwMzNlMzc3ZGIwZDY5Y2Y4YWQ0MTk5NmQ3MTc4ZTVlMGMzNzcyMTRhMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyZjczYzVkOWEyODk0N2NiZGI0M2U4NjQwNjhiMGZlYzg4NDhkZGE1ZjcxMzExNTMwOWJlYWRkMWI2OThhZTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiYjNmYTg2YTg2ZDgxNmEyODEyYTdmMDIzMzAzZmYyODYyN2RjNmY3NzljZWI2ODlhMmI5MTVkOThjNWE5OTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwZGUxYmQ3MDFkYmVlZDgzYjRhNmU3MTM0NDYxNWM0M2RkZTU0ZDM5MmI2NzFmNmVjNjRhZWVmYmI0YTQwZGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cd1bd9ebfb744559bffd86a8acb20fa0",
+      "statement": "Before running any query, runBenchmark calls assertBenchCollectionReady, which fails if the named collection is missing, has no active documents, or if no collection is named and the index has no documents.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/bench.ts#L283-L310",
+          "version": "repo-lines-v1:sha256:89b326542d21d350f46aae27b5c6625515bed1e253deb06f17b9046fb324b7f0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyOWI3ODRiYzlkM2ViYTc3ZTNlNDBjN2YyN2U5YzQ4NDQxOTRkNTY5ODBlYzE3YTM5N2VjNGIxYTAzZDdiMDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmZjQ0YjRhOWE4MjQ2ZDYzNTFjMjZhMThkZDc3OTc0N2RlZTI2ODhkNjc0NzVjNDhmZTk3ZDlkOTI1N2I2MzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2YzQ3MWVmOWNhZTQwYmNjMTMzM2QxOTljMGY5Yzg4OWU5M2I0ZmNjOGI0MDY5MTU3NTczZjI5MjE0MjI2MzUifQ"
+        },
+        {
+          "resource": "repo://src/bench/bench.ts#L345-L375",
+          "version": "repo-lines-v1:sha256:8b5139abe793a4ac4842cbffeeae9a5074567ef536c89dfff59ae0e8c6fd7462:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwY2M5YTc0MDM5ZmM1NWUxMDM4NzdlN2E2ODk5NzE0ZGRlMmQ5YTQ0MWVkYmVhMjdhNDA5NzgwMzA2YTQ1NjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViN2VkNTNhNzJjOWYwZWNiYTI3NjZhNDYyYjI3YzM0OTYxZTFjYzZlZDIzOGZmN2YyNjI3MmQ2ZGYyN2VmMDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwYjRjNzMxNzMzNGFmNjQ0YTgwMWRkOWZhZTQwM2RlNTg0OWY5MmI1MmRmNGE3NjZhNTMzZDgzZDNmMmU2Y2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cebd5a99eade4d7ab07500f40f9efa20",
+      "statement": "After a run, if every backend summary has zero avg_precision, avg_recall, and avg_mrr, runBenchmark writes an all-zero warning to stderr; the run still completes and returns results.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/bench.ts#L312-L330",
+          "version": "repo-lines-v1:sha256:61e174b21bc2c26b910dc252d34f8e86320b5bbd44470003e1fc5ef2100803e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZiZjQ3MWI2MDhhODE4OGRiZGRiOTRkMDZkYWU0MzQxNmYzMGY2ZWM3NWFmNjU3YzBhNjM3MTRhNzQzNTA5OGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxYWM4ZjkyNjZmNmJhNzljZjI3ZjkwZmI4NzY2Y2NhMzFhZmRkMTFmZTAzNzM0NWRmNDViNjVmY2FhOGE2ZWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1MGJmNTFlNzdkZTAwMzE2MjBmMDFkODIzOGU3M2RmNDdjNmY2ZTU2NTJjNmZhMTAwZWE5ZGIyZGRkNTY2ZTIifQ"
+        },
+        {
+          "resource": "repo://src/bench/bench.ts#L395-L402",
+          "version": "repo-lines-v1:sha256:f14dcbf49b4c8116eead67bb22de813257fb61cfeb89ae58155451a589135493:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmVjYTc0Y2FlNTU3NWJiMWJhNjU3YzBlNWEzN2NlNWQxNDI1YTYxMWI5ZWNlOTc1N2NhZGM3NzNmOGQxZDhiOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzgwNjMwYjYwMmY2Yzg1ZjEzZjNkOTI1MzZjMjkyNzkwMmQzYTIwNDFiM2U5Y2RjNDlkNzdhMTMyYzVhZDBiZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDY1OWEzOTRjNzM0Y2Q0OTgyNjM5NmMzMjBjMzNjMGI4OTFmYjNlN2Y1YTJjMTQwYmFlMDViYzEyOTE0ODI3YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_08423c5fadf049b6af1461b95bb98a4d",
+      "statement": "Summary metrics are unweighted per-backend averages over queries, computed by computeSummary.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench/bench.ts#L231-L270",
+          "version": "repo-lines-v1:sha256:dcd0c1b2113bbf3af3a15add3090abb589ae2431cdfe0d206c88a49d3000c531:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0Yzg4ZjhlNTU4M2VmZDVmZGIyZmI5Yzg2MGI1ZTgwNzQyYzJlZTI5MTY4ODczOTFkMGE5NzZlZDcxMDZiMjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiYjQ4NDJkMmUyYWVkY2Q4NzE4MGVkNTliOGU3YTU1MzAyNjkwMjBhMDFmOTM3ZmZhZjI0YTk0NjI0YmUxN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1NTRjMzU4MTYwYTFlNzY0ZjM3OTkyMzYyYzk3NTcxM2Y2ZmUxNWQ4OTcyNzYxZjBlNDdkYmE2MzYyMjAzMTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6bf1f4ec610845cba7a369071599e782",
+      "statement": "The reranker script src/bench-rerank.ts is a standalone node-llama-cpp benchmark of the Qwen3 reranker model that measures throughput across ranking-context parallelism levels on synthetic documents; it is not invoked by the qmd bench command.",
+      "evidence": [
+        {
+          "resource": "repo://src/bench-rerank.ts#L1-L60",
+          "version": "repo-lines-v1:sha256:cf50e0a5ed700bce8066c96f30556227082e38ce4c54ea85b1ce9c246c5fd589:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhZjlmNzI0ZDg2YTYyNjhhYTcyYzhhMTg3MjQ4YzFkMDY5Mzc1MDE3ODRkYTQwMGI1YTMxOTkyNzBiYzNjNDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiZTE0NmZkYzUyNmE5ZTMwYzBhYTNlNGNjNjRlYzcwMTI4YWYzZWFkNTBmN2IwZDExZWU1ZTk0NzlmMWQzMjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyMGVlNGRiYTdmYzE4MDk4YTc4NjQ1N2ZhNDAxYTUxMGZhMWUzNjBmOTlhYzkxZWM4MWQzYWZmMmQyMGY0NTgifQ"
+        },
+        {
+          "resource": "repo://src/bench-rerank.ts#L240-L290",
+          "version": "repo-lines-v1:sha256:85d427fde8ad2529980c2e4772ab83a76c8a174a3b75195927879603c847db72:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkYWM2NmU1YWI0MGVhNzNmZmY5YzlhY2IyZWQwNmM0MjEwZDA0ZTQ0ODEwNWIyOTA5NWRmODU3OTQ0ZDM4ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0ZGE5NDI2YWVhM2RmOTc4MzA0M2I5NTJlMThlOWI3NGE1NDIzM2FkMzJmZjI1NWU0OTFlNmNlYjNmZjUwMjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmZjk2ZTA2MjkyYmIxZGFkNWU0YjBiZmQyNjQyMWY0MjA5NDE3NGU3YTU3YWYzNWY0ZDM0ZTdhM2EzNjA3ZTUifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L5044-L5066",
+          "version": "repo-lines-v1:sha256:824cf2a59315b4cf78ea78976e4a5b9c7b6cd0439a197b2794ffbfbbdc23a015:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwMDA4OWJhNThlY2RlZjUwNjVhZTc1MmI3YTBmYTIwN2YzM2YyNDdhZDMzZGJkNWMzYzBlOGRiMDM2MjYyNjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4OTRhNzNkNGJmNjk4NjBkMDVlYzU0MjVlNDU3NmRkYWViOGM5NWQxZGJhZDgzZjBlOWRjZDgwMTY4YzcyNDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiMDQ4NjIxMmIyM2Y1YTM5ZWU5MzhiODk4YWM4YTI2NmE0NDAxYmZiNzcxMTI3MTIxM2U5ZDQzMWRmNzY2M2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b7e5b161cdd34d40b7fd8997fb5ddb64",
+      "statement": "The bench-guard tests cover the collection guard, the all-zero warning, and that runBenchmark fails before searching for missing or empty collections, while bm25 over an indexed collection yields non-zero recall without the warning.",
+      "evidence": [
+        {
+          "resource": "repo://test/bench-guard.test.ts#L1-L209",
+          "version": "repo-lines-v1:sha256:0672ae66e5332c795dfef559d12c0b29dcc03b7c6167c1dcb4f2187e84ab346e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjA5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmNmY1YjQwYjE1ODQ1N2QxNzg2NGYyMTc5MDc4NmRkNWEyZWNkYjY0YjY2YTY1MWY3ODhkNGUyNWNkMzMwM2QyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_81e02f2c75144636a01e7bd11829243f",
+      "statement": "The bench-score tests pin normalizePath, pathsMatch, and scoreResults behavior, including MRR, recall at 1/3/5, matched and unmatched lists, and empty-input cases.",
+      "evidence": [
+        {
+          "resource": "repo://test/bench-score.test.ts#L1-L128",
+          "version": "repo-lines-v1:sha256:e84e8a8f761cf42d67fedfca0a098d01b09bd238ab43459dffa53c5484da67a6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI4LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmNmY1YjQwYjE1ODQ1N2QxNzg2NGYyMTc5MDc4NmRkNWEyZWNkYjY0YjY2YTY1MWY3ODhkNGUyNWNkMzMwM2QyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

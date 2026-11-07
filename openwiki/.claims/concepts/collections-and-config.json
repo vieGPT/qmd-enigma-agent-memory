@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:63d7c2834081d80720c47cc3ee1384a77b596919d36342d48ea66476c4dc85a7",
+  "claims": [
+    {
+      "id": "claim_7dfbcc0a42f14352a4174b0530fb4969",
+      "statement": "The global config directory is resolved in order: QMD_CONFIG_DIR if set, then XDG_CONFIG_HOME/qmd if set, then qmdHomedir()/.config/qmd; the file read is <dir>/<indexName>.yml with default index name 'index'.",
+      "evidence": [
+        {
+          "resource": "repo://src/collections.ts",
+          "version": "repo-file-v1:sha256:d77698845a7185b804df5d5d12ba3cb9f2e8731b9a43b1a55416c651d3850245"
+        },
+        {
+          "resource": "repo://src/paths.ts",
+          "version": "repo-file-v1:sha256:41dc742d94891a377d1235dd3a9a33a59934f8cea11ab4f7ad76c1b9f781e3a5"
+        },
+        {
+          "resource": "repo://test/collections-config.test.ts",
+          "version": "repo-file-v1:sha256:942a6eadcdb9d398496291454951fd102feadaa1d457a02a6aa13c1c132bdd0d"
+        }
+      ]
+    },
+    {
+      "id": "claim_baaeabf4fdf64ba1b9d6e64401ff5b94",
+      "statement": "An explicit configPath takes precedence over every directory-based lookup: loadConfig, saveConfig and getConfigPath use configSource.path before falling back to the computed config file path.",
+      "evidence": [
+        {
+          "resource": "repo://src/collections.ts",
+          "version": "repo-file-v1:sha256:d77698845a7185b804df5d5d12ba3cb9f2e8731b9a43b1a55416c651d3850245"
+        }
+      ]
+    },
+    {
+      "id": "claim_3fd08e00395842f5ba0da320614da88f",
+      "statement": "findLocalConfigPath walks upward from the start directory, checking .qmd/index.yaml before .qmd/index.yml at each level, and returns undefined at the filesystem root.",
+      "evidence": [
+        {
+          "resource": "repo://src/collections.ts#L141-L160",
+          "version": "repo-lines-v1:sha256:a9f13820f4b1b459827826fd923cb9b81288121000ac1fad570764c4249de03c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjMjc1MjBkZDI3Yzg3N2VhM2E2OTM1ODNmM2ZiMWZiNGNkNmM1M2Q3OWI3ZmQzMDg3YjdiZDk4MzM5YzNhNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3ZjcxNDVlYTg4MjdlYTgyOTc4NTNkMGE5MjIzZTUwYTFkZjBjZWZlYzljNmUyOTIzMDQ1ODkzZTY5YWQ0MGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhODY0MDZhYmRkOGIxYjk0NmZjNDU0MjI1MDYwZDg0ZDg2MjY1ODBiNTdiMTdkZWNlNDYxZGM5OTgzOTNkMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        },
+        {
+          "resource": "repo://test/local-config.test.ts",
+          "version": "repo-file-v1:sha256:a57d023544f8b3589c5ec6daafa01390a716f6a9a992695e307d531d239b80c8"
+        }
+      ]
+    },
+    {
+      "id": "claim_a02320ec09c34f159a73a2e66625be64",
+      "statement": "The CLI consults the local .qmd config only when no --index flag is given; when found it becomes the explicit config source and the database is redirected to the sibling .qmd/index.sqlite.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts",
+          "version": "repo-file-v1:sha256:10f26f0fbc6e0a2895dbdf81f613c6532a3776bf4a20a40dd6a713abd1f9e028"
+        },
+        {
+          "resource": "repo://src/collections.ts",
+          "version": "repo-file-v1:sha256:d77698845a7185b804df5d5d12ba3cb9f2e8731b9a43b1a55416c651d3850245"
+        }
+      ]
+    },
+    {
+      "id": "claim_48039f4587064a72b578059d865359a4",
+      "statement": "createStore syncs collections into SQLite in every mode it supports: with configPath it loads the YAML file and syncs it, with an inline config it syncs that object, and with neither it reuses existing store_collections rows; supplying both throws an error.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts",
+          "version": "repo-file-v1:sha256:52cb0c901f0a5f6b85ad96d30ba6775fb9c47d5b58959fa565f263736bac05e2"
+        }
+      ]
+    },
+    {
+      "id": "claim_e6e9df061ef54742918221345e33b4ea",
+      "statement": "syncConfigToDb computes a SHA-256 digest of the config JSON and skips the sync when store_config.config_hash already matches; otherwise it upserts all configured collections, deletes store_collections rows absent from the config, writes or clears global_context, and stores the new hash.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1503-L1537",
+          "version": "repo-lines-v1:sha256:9dc61208b85e08e542e71b5d0c5b9b3989d906a2fc67fa43882e2e0d521da52f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkNjIyYzYzNWMyYTY4ZTBlYzM0MDVkMWEzMzk4NWEwZDM1NGJiMDBlODU1OWZjOTMyNTdlODM0MzYyMmE4NzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyMmMzNmQ2MTgwZDA4NTZlYjkyZDMyYWEwMzE2MTEwZTBlNTYxYWM5NTEwOGI4ZDEzNTFlZmUyNjEzZTk0MTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlMDE1Zjk2Mzk2ZjE2ODM1YTI1MDEwNzE5NWI2ZjlmMDAzOGE0NWFkYTIwMjlhNzQ5MmY5ODNiMDA0NGIzNzIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c534ae81ff94e539219bbf16a5868a8",
+      "statement": "The CLI syncs YAML into SQLite on first store access, and resyncConfig deletes config_hash before syncing so CLI mutations always force a full re-sync.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts",
+          "version": "repo-file-v1:sha256:10f26f0fbc6e0a2895dbdf81f613c6532a3776bf4a20a40dd6a713abd1f9e028"
+        }
+      ]
+    },
+    {
+      "id": "claim_1ea99a849acf47f2a87b6377a156d39b",
+      "statement": "SDK collection and context mutations write to SQLite and, when a configPath or inline config was supplied, write through to the YAML file or the in-memory config object; without either option they write only to SQLite.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts",
+          "version": "repo-file-v1:sha256:52cb0c901f0a5f6b85ad96d30ba6775fb9c47d5b58959fa565f263736bac05e2"
+        }
+      ]
+    },
+    {
+      "id": "claim_75a63f08b81a44e5acb544efb3b48aa5",
+      "statement": "The SDK addCollection write-through to YAML saves only path, pattern and existing context, so an ignore list passed to addCollection is stored in SQLite but dropped from the YAML entry, and a later sync from that file clears it in SQLite.",
+      "evidence": [
+        {
+          "resource": "repo://src/collections.ts",
+          "version": "repo-file-v1:sha256:d77698845a7185b804df5d5d12ba3cb9f2e8731b9a43b1a55416c651d3850245"
+        },
+        {
+          "resource": "repo://src/index.ts",
+          "version": "repo-file-v1:sha256:52cb0c901f0a5f6b85ad96d30ba6775fb9c47d5b58959fa565f263736bac05e2"
+        }
+      ]
+    },
+    {
+      "id": "claim_6d43b4b6a18f4c9db2a481e689fc9c7d",
+      "statement": "Editing index.yml does not re-index on its own; after changing path, pattern or ignore the user must run qmd update, and after changing models.embed must run qmd embed.",
+      "evidence": [
+        {
+          "resource": "repo://README.md",
+          "version": "repo-file-v1:sha256:af5f41ebeea04e0928fccd38ba5f47d90749b8f0417b84a99f89a677fefae76a"
+        },
+        {
+          "resource": "repo://example-index.yml",
+          "version": "repo-file-v1:sha256:e35dd003037d121205130263b9a73118a488dcab7dcee1907823d3b12e756481"
+        }
+      ]
+    },
+    {
+      "id": "claim_d00c45a829154080a2ba257acf39812a",
+      "statement": "The built-in exclusions node_modules, .git, .cache, vendor, dist and build are prepended as **/<dir>/** patterns to every collection's ignore list at index time, and the collection's own ignore patterns are appended, so user ignore patterns cannot remove them.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L2099-L2114",
+          "version": "repo-lines-v1:sha256:f948b1233511126a5944bf0e551490acf0f46fa8986a3823a502a5070b7d0be5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1YmY2NTNkMTc0YzJmNDA5ZjRiMzgxYjAxYzZjMmM5N2ZjZjBhY2RkOGFmMjZhN2U1ZWFmMGMzMTVjNGRiNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhZjM0Zjk0NTU3ZmU4OWY5MjhmOGEzMmRjMTY5ODQwZTU2N2Y3YTAyZmNhMWI3ZmQ3NjU2ZjZhMzY3NTQwZjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0YmU1MDUwMTNkMzE2YjQxNjRhODU0YjdlN2VlN2RlZWE5Y2EwNTU1NTk4NTFmNzlhZTQ0OGRmOTVlZGU1ZDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2ZTJjNWI1M2ZkYWVkM2JkODczMjJhM2RmNDdlNWRjMmY5YzNlYjBkMTkzNDFlYTE5OWZjYzc1MWIxY2Y3Y2QifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L1878-L1883",
+          "version": "repo-lines-v1:sha256:ff7ae95daa94167a23d2199aa7db96f9ff5913f1b8236afda70e107195dadceb:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTViZjY1M2QxNzRjMmY0MDlmNGIzODFiMDFjNmMyYzk3ZmNmMGFjZGQ4YWYyNmE3ZTVlYWYwYzMxNWM0ZGI2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQwMTkwYTMwNThkOWIxZTc2YjNjNTUzN2U3MjdiNWJjMzZkYjA1NTRiODcxZTUwZGJiOGRjOTViODY5ODI2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTRjMGJmYzE2NzYyMmVmZjA5MDU0ZDA3ZTY2OTIwMzllMzkzNGQyZmI4ZjFhN2ZjYzlmMzEzYmY2MTViOWJlMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2NmOWRlZjE3MGI3MmRhM2YwZGY4NDUxM2I5NmFhMWJhOTM5MzA3MjFlNTEwYWEzMjczNmVhN2U3YmI2ZGQ4MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e53c718b3ea2471cb919b591f328645e",
+      "statement": "Dotfiles and paths with any dot-prefixed segment are removed from indexing results after globbing, and a collection whose root is not a directory is skipped with ROOT_MISSING instead of deactivating its documents.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts",
+          "version": "repo-file-v1:sha256:8260c1b639b874dc3aba247e862c954e76d31c7f0363f8b84f285e40ec14cf41"
+        }
+      ]
+    },
+    {
+      "id": "claim_e5a2d1adf59d459bbfdac2b8c6b36251",
+      "statement": "Collection defaults: pattern defaults to **/*.md when absent, includeByDefault is true unless explicitly false (stored as 0), and update and ignore are absent when not configured.",
+      "evidence": [
+        {
+          "resource": "repo://src/collections.ts",
+          "version": "repo-file-v1:sha256:d77698845a7185b804df5d5d12ba3cb9f2e8731b9a43b1a55416c651d3850245"
+        },
+        {
+          "resource": "repo://src/store.ts#L1429-L1450",
+          "version": "repo-lines-v1:sha256:b9914e71b82c9920560ede36aefb637d26f8324085de6adb1c717031761ec568:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzMDViNDNjOTI1ODNhNTZjNzZiMjlhZWE1ODVlNTc0OTllYjdkYTJiZTc5OWJiNzRhZTlkMjMwMWEwY2FiYzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwZThlNDA0NWM0ZTc5ZjQyMjdlYjY1NGE4MzY3ZTAwNDViYTJkMDUwYjdkZjQwNWM0ODQwMWMzMmVkMTNjYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4N2IxZjI4ZGE5NTE1NjM1NGNhZGQ1Mzg2YThkNTI1MjQ1YTU5ZjQ2MmI0MmZmZDk2MGE3YzE0MzVmZDJjNmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c732b9d6ac32498e81bd532a833102c9",
+      "statement": "Context lookup selects the longest matching path prefix within the collection and falls back to global_context when no prefix matches or the collection has no context map.",
+      "evidence": [
+        {
+          "resource": "repo://src/collections.ts",
+          "version": "repo-file-v1:sha256:d77698845a7185b804df5d5d12ba3cb9f2e8731b9a43b1a55416c651d3850245"
+        }
+      ]
+    },
+    {
+      "id": "claim_48d13806bfdb43c4bcdc5466b0857a5c",
+      "statement": "The editor URI template is resolved from the QMD_EDITOR_URI environment variable first, then editor_uri, editor_uri_template, editorUri and editor-uri in the config, and otherwise falls back to vscode://file/{path}:{line}:{col}.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L2631-L2650",
+          "version": "repo-lines-v1:sha256:7fbc2f76fa973523d84ebde4e5835d88e83c62236ca640ee91463a30847eb3c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNmU3ZmNhMzczODNiYTAxZjU0ZGE5NzcxZGM0ZGY2ZTQ3YTE4ZDFjMzI1Njk0NjQzMzU4MWMxNDU5ZGFhZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlZTExNTFhZjdlMTFhYjI1NzAzN2U5M2M2ZGJiMWI5YWYzMGY4ODIyMTVlZTg1YjE0ODA1YjU4MGZhZTNjOGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwYzZkOGQxMGIxNTY2MDk5NjI2MjgyY2Y4ZWFiMzgxNTcwZWU4YTIwZjQ4ZDdiYjU1ODgzNTM3ZDIzNWVkMWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzNDRiYmE5NGI4MmM4MjhmNzYxOWZkNDg4OTNjYzUwZTlkYzkxNzgzNzYwNDU0MGUwOWY5ZjNjMTRiOTVjMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_097a5f267f4344ff9c86d2b7fa6a8192",
+      "statement": "Each model role resolves from the config models block, then the QMD_EMBED_MODEL, QMD_RERANK_MODEL or QMD_GENERATE_MODEL environment variable, then a built-in hf: GGUF default; the SDK LlamaCpp instance uses config.models for the same resolution.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts",
+          "version": "repo-file-v1:sha256:52cb0c901f0a5f6b85ad96d30ba6775fb9c47d5b58959fa565f263736bac05e2"
+        },
+        {
+          "resource": "repo://src/llm.ts#L282-L318",
+          "version": "repo-lines-v1:sha256:b7a2a0faf396732b8cf34327adea1de38b833a97e3a20b4da241a44daf9b7067:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4NzM1OTIxNzViOTJjNGU1NzhkMjE5YjlkMTRiMjU0NTBkN2IyMTVhZTBiMTlmM2E5YzA1NjA2Y2JkYjNhMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3NmQ5ZmU5NmU4OWQ2ZDAzZDQ3ZTY3OTk1MWEzNWZjYzZkYmQ3YmE0NDcwMzhmODM5OTEzM2FhMjViNzZmNjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3YTVmOThjYWQwNjU4YTRhYjljNTIwYmFiNzQzYjA5ZWY1ODRjNWVlYTEzZjM5YjAyMGJjMjhmZjhjZGFmNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2NjMyMTE0NGI0MmQ0NTkzNjk4NjRkMzVhZWY1YWZmOGQ0M2NhMDA1MGYwY2NhMmZlMzA3YWZkZDcyYmNkZTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a1031bd148545788cd7faeb40b33af4",
+      "statement": "The CLI persists resolved model URIs into the YAML models block: ensureModelsConfiguredForCli saves embed, generate and rerank whenever the stored values differ from the resolved ones, so environment-derived and default values are written into index.yml.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L2344-L2362",
+          "version": "repo-lines-v1:sha256:e3bb35ee895bbb2f264983a46c8be0229b6efbfa1794e379ed8e9c782eddf422:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1YjQ5MWQ0ZjlkN2NlZDk2ZWZlYWNjNWMxZTVmYmVkMGI5OWFhZmRhNzg4ZWNiMjg4ODZhYmFjMzExYjQ3ODciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4Zjk2YTg5MTk3OTEzNTM3NWIzMjE0OTljZjcxMjNkMGViYTkxNThjMjllNWIwNmE5ODNjM2MwMTk0ZjkzNDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUxMTBjYTEyMTViMzA4ZWIwNTBkZTVlYzBhNTA0ZDE2N2FkNDUxZDAxMmJkZjA5MjhjNzE2MzdkMDdlYTc5MWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_080b5ed0f779400fb22c8355eee39ada",
+      "statement": "Project-local .qmd config fields that can reach outside the project (update hooks, collection paths outside the project, and non-default model URIs) are gated by trust.ts, while the global config directory is never gated.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:9203d840b7e9141663402c69bc236169dfb03a4863055fd31d9f6737512c7766:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3N2ZkOTEzZDM4ZDY0NTc2MmI5YjgxYzU0MzhhZDQxZGE5YmVlOTNkMWY1ODFiYTU3ODI3MDdjYmY2NGY3MGYifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L70-L90",
+          "version": "repo-lines-v1:sha256:1528ce111722bdecfdadd9210f18771c0b7bdc1ecca3ae5737f3b898fe413d91:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmNmRlMjJlMzJmNzRhYjY3ZTY2Mjc1MWVlNGI2ZTA2MTVmMTYyNzBlYWNhNTEyMTUyMTNmMzEwNzIxY2MzZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEyMWM2NmFhMmUzOGE1NDA3MzM3NjY0MTgzMTE4NDlhYTc0NjRlMjk5MjliYTI0MTNiODEyMzkzYmNlZDg4Y2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1ZWVhNjQ5N2EyOWZlNDVlZDRlOTMzOWE5ODUzNzg4Y2JhZGI2N2U5NGUzNjg2MTNlNTg3ZGJjYzkxNTVjYzgifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

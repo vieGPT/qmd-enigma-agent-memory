@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8c15dca796a8dee4ac52690ddeb60a75c8acc6f3ce9d0bedc377acd0af9f0db1",
+  "claims": [
+    {
+      "id": "claim_bebb995d989c484497208e0e0b2b99f4",
+      "statement": "qmd update resolves the local config trust decision once before opening the store; when the decision is skip, hooksAllowed is false and in-project indexing continues.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L831-L861",
+          "version": "repo-lines-v1:sha256:7cda957a0574f7b267ea9a27295b870842efd2c9ae0d8271302fc97b775338a3:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmNmI1ZTYxZGQzY2RmYTdhYmUzMDhlOGY0OGRiNTI3ZjZkMzBhNjE1OGIzZTM0M2M1NWEyNTAzMjUwZWI5NTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1YmUwNWQ5NDcyZWE4Zjg0ODA4MzI2Nzc2YWMxZmM5NGEyMmIzNGMyOGYzMjY4OTcwZDRjNTZlYmE5MTIzODkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhZjU0YWMwMWI5YTEzMmJlYWY4MjAxYzRjNzBlODIwMTRkYmFjNjRhYjhkZTRlNDZjZWM5OTkwYTk2OGFhMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmMGQxMzk5Mjg4YmY2ODVhZTgzOWJkNzhmYjhhNGMyYWVmZWRiM2U5MmVjMjRkNDQ1MjE3MGUyODFjODg1OWUifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L921-L943",
+          "version": "repo-lines-v1:sha256:fc47bad0a47d7abe1399157993c78f6226923b14658c6b02a27e9f56ff7e922a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4OTBhMGU1YzcxZmQ5OWMyYjFjYjJkOWE0ODhkMzY1MjYyN2Q1MGM5YzhmNmZkZWMyODUxNDdhMWRhNmUzMjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiNTI3Y2EwZDQ0YzU1ZDYwZmE0ZjcxOTA1ZjQ4NmIxNzY2ODZiYWNkZmM3ODc3MmU4ZDc4YWFkMzE3M2ZiNTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxMzhmNzY3NWI3OTRkMjJlMzY4YWEzMDZmMjM1NjFlMmE5ODA0NmE1ZGFhODJiZGQyMmJiNDU3Y2E4ODNhNzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiN2YxYjIzZDZkNDJmZmRmYzU2MWMzNTA3NjU3ZTRiYTZhMjA2MDE2NzFiOTNkYjgyYTI0NWQ3ODE4YjBhODYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd1dfa2425cc44ea9f14b5621a96ce0f",
+      "statement": "decideLocalConfigGate returns run when there are no gated items, when a trust opt-in environment variable is set, when the config is not project-local, or when the config digest is already trusted; otherwise it prompts on a terminal or skips when non-interactive.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L313-L333",
+          "version": "repo-lines-v1:sha256:80e2ec433eca8ebc2fdd8c94e4af6b9d0b8469af241fc7ea349c1ec768326054:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0YTMxNzE3MjRiNWJmOGQ3MmYzNDFjMTdkZmNkODFlYmNlYzE2NGZlZjlkNzhlYTY4YzM0NzExMzI1NDE1YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlYzE0Y2MyY2VmYTRjZjBkYTllMzFlYzAyOGVlZTJmMjY3NmI3NTFkMWYwZjQzYjc1NmQxOTRmOTYzOWM5NzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7c53f267fa4b4748817d4b8811173db3",
+      "statement": "For an untrusted project-local config, a collection whose path resolves outside the project is skipped with a message in qmd update, while other collections continue to be indexed.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L956-L960",
+          "version": "repo-lines-v1:sha256:da769c3f5272d944a949fbc350375b2e351ad59f4dca60d6077a69ab3c441a3b:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDgyN2IzMzhjMzM0OTk0MWQ1Yjc4MWFkM2Q1NzQ5ZTZjZGM1MzMyYjE2ZDVkMjYyZmRhOWY3M2RhOTlhZDE4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGU2MzFjOWI1YzU3NmM0MjAzZTU4ZDhmNWUxZTk2ZjcyM2Y4YzkyNDJkODBlN2JkZTJkMWRiZGM3OTBlNDc0NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWVhYzBhZTc2ZDY2MDRiMjliMGU0OGExNDBmOWRhOGY2YmY1N2ZhZmViNzhhOWQ1NDg0NDA5NDdmMjM1MTExNyJ9"
+        },
+        {
+          "resource": "repo://src/trust.ts#L126-L132",
+          "version": "repo-lines-v1:sha256:b342827f7582ba431dd21bfec475cab36dea1350b728eb21516ace2414cff653:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYzYjk2MDA4YWE5ODgyNjY1YWEyNmMzYzQxMjIxODFkMTI4OTI1MDM4MGY2NTdlOWRlMjJiYThiNzgwMDcxZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjg4YWIxYjk3MmEwNDA5ZDg2MWE2OTQ2OTliYWRkYmM1MTA1MWJjN2RmYjFiYzA2NmUwZGUxOGIwYjhjZDE2NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGMzNTU2N2RiOGMxZDMxNjVmNjdiNmFkZTA5NzgxZWRmNjZmZWExZTlkNmIyYmMyODEzZDhlN2Y4ZTIxMzA1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDEzZmQ5NDcwNjNkYjEzMDBmZDc4MWQwMDMxMTA3ZDFlNGE1ZDc1ZGU0NTM2YmVlMjcxOWZlODRlOWIxZTdjNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3fe68c3dfe864d56b38d2cf86b548b97",
+      "statement": "Collection update hooks run via bash -c in the collection directory only when the collection defines an update command and hooks are allowed; a non-zero exit code calls process.exit with that code, aborting the whole qmd update run and skipping vector copy and cleanup.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L961-L993",
+          "version": "repo-lines-v1:sha256:8d507cf804c144774c6061e6d39134f283a8d256f5e74f7595b63e43b928d502:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiMzZlY2M3NTk3MDZjZGM3N2ZkNjkxZTJiNjlmNjY0YzU1NTY3ZjMwOGNiOGVkZjMxMTQ0Mzk4N2IwY2QyOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmZTg0OTNhODhlM2I5ZDIyMjVjZTdiZjgzZTdlOTg1NWUwYTljZGE2NGE3ZjZkNmI1ZTdmMjkwNzNlYjg1M2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjODIzOGZmM2NkMDI2OTRhNmI3NDk0MGM5MTIxOWU4MTU1MGI5M2QzYjllOWYyNDU4NTkxZDc4MmZiY2EyNGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0703098c912d40659ac7478b5162c3ca",
+      "statement": "The SDK update method in src/index.ts runs reindexCollection for each stored collection without executing update hooks or consulting the trust gate.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L606-L650",
+          "version": "repo-lines-v1:sha256:fb7288c6ac556d362575ca4b2471f2d711a75a6516c44032fcf2c0cf60cb1a28:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzZjc3NzQ4MzhiYzg3NjZmMWI0YzM0OGIyMWMwMDA1NmNjOWIyOGRkZmNhN2FiMjc2OTQ2ZjA5MGYyMzYxMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5OTljODVmOGRlZGM2M2FmZTY3MzQzZGIzZjAxYWVlZTIwYmU3MjMwODViNzc1YjAzMjI3YTdlYjIxYzhlZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4ZGZmMGNjNzJhMDIyODVjYWRkZDJlYjI2NTBlODQ5N2Y4MTdkNDI4MjhhNTY2NWY1NzA5N2NkN2IxNjkyMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c6dfe4656db148408f18dfad5e8fccd2",
+      "statement": "reindexCollectionIn returns skipped with the ROOT_MISSING code and zero counts, before any scan or deactivation, when the collection root is missing or not a directory, leaving the index unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1888-L1902",
+          "version": "repo-lines-v1:sha256:ee4b9c9c2e88d9f9e136a96198e8b61205262e047bb5fe202a95d96c2184f5c2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1YWI5ZDZkZDkzN2M4NzA1YzFmZTRkNDM0OGVlYWE4MWY0NjQ1M2M2MzdlMTFlOWEwYzE1MTMwNWIzYWZiODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQwNTIzYWIyYjA5OWU0OWRiNTlmZGRjYmE3YTJhMTJkYTQzNmJjODZmOTg3Yzk3OTQ1ZTdhMmNkMTU1ZDVjYzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzZDZmZWIyYzZmMzYzYzRhMzc5OTQ3M2I0NjU0OWJkYTY2ZmI1MmE0MDcxYTRhYzU3NTdmMjdmMjg3YjExNTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8c2bbce53eb24ce1b70a1f486ce76954",
+      "statement": "The scan excludes node_modules, .git, .cache, vendor, dist, and build at any depth, and appends the collection's configured ignore patterns to that exclusion list.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L999-L1001",
+          "version": "repo-lines-v1:sha256:ee8d1f997a1701f362ff525958114f5c6eef0d52de2fc1cd41c8967db14c19d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODYxMTRhZGMyN2JkNzIyODk0ZTdjMTUwMTA3YTY0M2Y0MjUxOGEzMWU1NzI3ZjlhNjUxMTliZDlhNzIyYWRjNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTdkZTVjMTZjZTUxZWYxYmE5MDgwNDA0OTc5ZjA1NDJkNDFiNDI2YzgxM2QyYmQ5YzlkOGZlZGFkNjliZGFlMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDJmN2QzMDBkNGJiZGY1ZGU4MDEwZDY4YWI2MGU1MTJjMzE0NmRhNjI1YzcwZmE5NmVkMzMwMzNlNjQ4OTE1ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWJkNmE2YjEwYjFjOTY0YTExNmExMzc5ODcyNGI0Y2JkYjk0NjRlZjBmOWFhM2MxMzZhYzllMDhlZGQzYTFhMSJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L1877-L1882",
+          "version": "repo-lines-v1:sha256:e8f99742177d9e3099d184054cb8cc628ea2541a514e639330d1b52aef95489a:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGVjZmYyY2Y1ZjFiMTE1MDU3YjJkODc1ODE4OWVlNzE5YWQyYTZkYTcxNTRmZjIxOTQ2YTFiODQ1ZGUyZTgxMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzM2MTFhOWJmYTQ1YzM1OGIxMTljOTdhZjkxOWU5NDk3ZDE4YTBmOTM1OGIyYWE3OWMwZDY3YmZkOTU3OWFmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjAwOGIxMmIxODFhYjkyMzU1MjNlNTVmNGNhZjkzMGM1ZmUxNGMyOTBmZDc2NmQ0MDBkZTUwZDhmZmY0NDYzMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjFhY2UzNTZkZjcyMzVlMTBmZTRjNTdlODcyMjdkNmFkZWFiNzY4NWVlYjYwNTUxMWZjNDc1NTdmNThmYWRhZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_797c9ab34af343f98c6f9bc30971d424",
+      "statement": "Hidden files and directories are excluded: the glob runs with dot disabled and any relative path with a segment starting with a dot is filtered out.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1904-L1915",
+          "version": "repo-lines-v1:sha256:600688afd19c6b0cf2241c38db152718d8d98cf0ab7179fc85c86e8c39d9af07:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAzOGYxODhkY2Y0NDMxZDZiMGVlZmZmNzhlZGM1YmQ5Njc3OWYxODNkNDE3Mzg0NjAzZmVmODViZmJiZDljMDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJlZWVmZGQ1MTEzZDk5MDU2ZjFlMTlkZTFiN2Q1YmVkZTZlMGEzMDFmOWU4ZjdiZTRlYWQzZjhmOGRhODY2YzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4YzNiOGE5MDU1MGUyODk0NmU5MWZkMjY1MzAyYWE1Mzc4NjI2MjUwZjJlZTFhNTE3ZmVhODExMzJhZTM2MmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0e633737cdf841aa8e9ce73e490355b8",
+      "statement": "A scanned file is treated as seen before stat or read, so files that fail to stat or read are reported as skipped but their existing documents are not deactivated; files outside the collection root after realpath resolution are reported as OUTSIDE_COLLECTION and not marked seen.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1926-L1947",
+          "version": "repo-lines-v1:sha256:13a1f211d1fda41bafcb19858a79e27e8d7be29e33880a5276b3228472f8faf3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2MzY3OTc4MDE0OTNiYjI4ODY0ZjRlYzIzMDkxYWQzNWM2NWE5NjNmOTk4YTM3MmUyMDI3NWU4ZWY5ODE0OGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzYjU0YTRlYmMzMDRhNTM2ZTM5MGZlNDFkMWMxYTliODk5ODVmNzg3YzFhYjI3YTZkOTliMWRlMDQ4OTZlMjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyZTViOTYxNWQwZmMxNzdiY2EwMjE3ZTMyOWViMzg5MjQ1MjEwODMzM2FjYjIxNTc2MjhhNjE4ZDg3MTk2YmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlNjYwMDhmMzg4NWRhNmRlM2FiNzA5ZjI1ODNjMTM0ZDY1ZDRhZmY0ZWQ0ODYyYmQyNDEzNDgzNTRjYmVmZjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f69476b5fb2c4a1183afbe2907d6245c",
+      "statement": "Files larger than 10 MB or empty after trimming are not indexed; any previously active document for that path is deactivated and its sync row removed.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1778-L1779",
+          "version": "repo-lines-v1:sha256:d82acd0ac20648df80bfd873dd9badf6294153f8bf43e9c0d24135091f019074:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2NmODE4MDkyNjIwZGJlZjAyODU3ZjI2YTIxM2ViMTdkMDhlNzg4NjVmYzMxNmRlYmU0YzI3YWI1MGI0YzhmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDI3MzhlYTBiMTRhMDIyMDY1YjYwMjllYzE2OTc2NGFkMjdmZGM5NGZhMTUxZWZiNDVjODNjMWZmMWJhNjlmYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzViNjZmOWU1NDM1ODA2ZDBlOGY5MmU4ZTNlM2QyNDMwZmFiYmQ1YzhlNDBhNjJmMGQxNWYzMzZjZjA3MmVjOCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L1961-L1967",
+          "version": "repo-lines-v1:sha256:be854a898b6b7c6b5f181fda7d1333ed750582b59d808e394ba9635debea94c4:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWIzMDZjNGQzYmM2MTlkYWRkMDFjZGZkODg5NzgzOGJlYzZhM2IwYzk1MWUzODc1YTBiZDBlZjk4OTlhOTU1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2Y1YmM4NzQwMTgxNGMzMmJmYzY4YzY1MTVlMWQ0MjgzNjI0ZGNhNTEwZjBhMDM4MDMwZTI5ZWI4NWZmOWIzMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjYyYzYwZjZjZGE3OGVhNDgyZmRjZGFjYWQ2Mjc5YTIxYTU5NjUzNTUyNTIwMWQ5OTMzMjNmYzdjNGQ4M2M5YyJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L1995-L2001",
+          "version": "repo-lines-v1:sha256:26e3fe9608f5ba4a98ddfa3d61d751330f71af54ad9da8be206429bef0d40cb6:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDM1MzY3NDhkOTdkMjljODZmNjMxMWRkMmRiZjVmNDQ3ODMxZWEwM2JiNjdhMmMzMTgzYjJhMmJlNjlkYTk1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzdmN2M2ZjFhMWMwY2M5ZTJmYjQ4NjNiY2EwMTJlMzBmZjI2MzA5Zjk1NmEzZDVjMjAzMTEwOWM5YjE0MmRlMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzQ2ZjU0OTE0ZWUzYmE5ODRjYTAwNmI1MzA0NGViMGUzNmZjZjIxNTAzODI0ZWIzYTZmNjVmOTQ4Y2UzNGVjNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5a553c7a47a143d5b5f939f31023a10b",
+      "statement": "Change detection uses a stat fast path keyed on mtime, size, and current metadata version against file_sync_state rows that are trusted only while their document is active with the same hash; files modified within 2 seconds of the read get an untrusted sync mtime so they are re-read next time.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1711-L1735",
+          "version": "repo-lines-v1:sha256:7bb748904f499d256fdccb2d3a289259b283c87d2a6d13c5716e41f956500c80:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdkYjAxMTNkZTZiMjAwNDhlN2U0OTQ5M2FiMmQ5ZDhjYTQ5NjZhYzJmNDRkOTZhZThiMjZlZTE5YjMwMTBiZWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzODIxZDRhM2Q0ODc0YzE1MTY3MzI4MTlhNjJhMjk4YjRjOTU1N2JiNjQzNTQxYjQxNzNjODUxNTVkZWY5YmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5OWQ5NGJkOGU3ZGFkMDA2OWM3YTVhNThjM2EzMDk1YzFiYjAwZDBkNzM3MzY5MTVmOTFjZjJlMDkxYWFlYjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjN2EwMGRjNTkwYTcxZDkwYjI3ZTQxOWUwYTdkNjkyYWFkYmYyODFkZTE2NjVlYWI1MjZjMDk5ZTZiMjhiY2YifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L1769-L1773",
+          "version": "repo-lines-v1:sha256:d6b3ec23fee4c1152f2fa2489f66f052cec2c076baab994ee219255affd4ddaf:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWVkYWQxY2VlOGFhODFmMmY1NmZhNzVhYmZmZjRmNzM1MzhiZTUzYjhhMmM4OTJkMTAwYzFiMmU5MzExZGU3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGI0Nzg1OTBjNTViODgyMTFmN2M0ODkzNjU0M2UzMjRiNWExN2YzYWYyMjdhOTU3ZWQ0MjM1MWY0NmIyYzQ0MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTdjMjI5NDBhOWIyMTQ1OTM4OTZlNWI2MzI3YmQxYjM5ZThlOGM4ZWJjMWVmNDczZTU4OTBkZTgyZGZkNGIwNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmFiMjYzOWY4ZjE1ZTk1MDFmODlkZDJkZWQ5ZjI4ODJlMmY2ZTBlZjJkMWRlNjgwN2M2MjJjZjlmNTgyNWJjNSJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L1969-L1982",
+          "version": "repo-lines-v1:sha256:284e318fae0b7cbf098487b7b4cf8f7d0b896885cccb16fbf13a1edd95f08fe6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjNzJjZDljMjg2N2ZmODIzZTkzMTE5YWYyYjUyYjRlNzg0MjFhMDNlY2E3MzZlMjVkNGQ4YTFiODFhNDNlNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3ZjdjNmYxYTFjMGNjOWUyZmI0ODYzYmNhMDEyZTMwZmYyNjMwOWY5NTZhM2Q1YzIwMzExMDljOWIxNDJkZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiNWVkYjY5ZDZjMzkyZTNlOGJiMmMzMTI4MWI1N2EyZGVkNzJjZmVkMjNiYWU3MmEyNTQyNGFlNzliMjM1YjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f4dc01894ce44e1aa2000ed66e50c08",
+      "statement": "Document upsert inserts or updates content by SHA-256 hash in a content-addressable table, and an existing active document with the same collection and path is updated in place; insertDocument upserts on (collection, path) and reactivates tombstoned rows.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1277-L1277",
+          "version": "repo-lines-v1:sha256:5b38137ab155d03661955cbb0625748a5b537ddee3c78bc2a913c52125773dc0:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWIzODEzN2FiMTU1ZDAzNjYxOTU1Y2JiMDYyNTc0OGE1YjUzN2RkZWUzYzc4YmMyYTkxM2M1MjEyNTc3M2RjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWIzODEzN2FiMTU1ZDAzNjYxOTU1Y2JiMDYyNTc0OGE1YjUzN2RkZWUzYzc4YmMyYTkxM2M1MjEyNTc3M2RjMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzYxMDUzYmRkNDBiY2IyOWQxMWU0MDdjOGVmNDAxMDc0OTJiZTRkZTRlNTFiYjQ0ZTYxYzg1Nzg3YjQ3MjRkMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmJhYjEwNWQ2MzRlMTIzMjI0NGM4NjlkNTEwZDVhZWIyMjc3ZDdjYTFhNjkwN2E1ZWUzMzg2YTQyMmEyMWIxZCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L2003-L2060",
+          "version": "repo-lines-v1:sha256:56e8cdceadcd6f3bd14b79800279bb07ce85fd572de3b1f050b2fbc2dac60416:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwMDVlNjdmY2VmNDMzNDljM2ExNWNhZjM5MmE5MjUzODUyODlhNDllZDA0ZGI3ODljZmZjYmM1NzVjYzIxZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwOGNhYjFlYTFiNGM3NWEwNzExM2Q0YWQ1NjAxMTBkN2M3MzJlMDU1ZTMzNGVhZWNkZmI5NjNhYWQ0Y2VkZTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM3ZjdjNmYxYTFjMGNjOWUyZmI0ODYzYmNhMDEyZTMwZmYyNjMwOWY5NTZhM2Q1YzIwMzExMDljOWIxNDJkZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlOTcxNjdjN2Q3ZDBkZmQwOTk4NDhkYTliYWU0ODVjOTNiMDNlMWE2YjI1OTBkOWFlMmJmMTE5ZmFlOWIyMGMifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L3561-L3580",
+          "version": "repo-lines-v1:sha256:a2038f52ce57eed73dc278d9ce4d134a551d0ad453c6fc41d0346d95443f15aa:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlM2I1MTA1NzQ0MmUxYTQ0YTI2OTQwOTQ3NDVhOTkyMmM4M2ViYjE5Zjc0NjdjZTc4ODQwYzZmNTcwY2Q5MzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwYjU2M2MzMjU5MTg0ZjkzZThiY2JiYzlkZTVhZmE2NzQzYzJlYmQ0ZjZiZjc3MzA4MGE1ZDJmMjgzMzc2OGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1YTc0NDhlYTQxZTUyNzZmMGI0MDM1NGI1Yzc2YWE5YmFlNDA4MjkwNzA2ZGYxZjBlODEyOTlmNWJjNjAxNmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhiNDg2MWIyOGEwZTUyY2FlZTgzOTg3MzQxZTk3ODliYTFiNGU0YmNkMjFiZTU4N2RiZWMyYzNhZjUyN2FkOTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b63b7e728e054fe0bc6992ba70148bdb",
+      "statement": "A legacy slugged path row is adopted for a literal path only when no live file in the current scan owns that literal path, preventing one file from evicting another from the index.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L3600-L3660",
+          "version": "repo-lines-v1:sha256:6b675e189d6807abbc457439708f451794ac0f50375e0f8f9e8352db4c5e37a6:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjNDU3NDdlMTg2MTRlZWUzMTkxYTFlNDk2ZTNmYzE0OTI5YzUxZGViMGVlYjE0YTY2NDJlMmQ3Yzc3MDg1NGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNhOTdkYTE0N2ZlMzJkYTA4NGJjOGQ1Zjg2ZThmMzM2ODRjMmM2NzRmOGVjM2EwZDU4YWIxN2UyM2I1ZjhmZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhYTlkZjg4NzFmOGQ1MTJhYzBhOGIwNzQ4YTU5YTE4YWUxNjNhODQ2ZGQ1MTFhZGYyMWMwMmJiZDkyMzZjYjIifQ"
+        },
+        {
+          "resource": "repo://test/path-fidelity.test.ts#L382-L400",
+          "version": "repo-lines-v1:sha256:ec31f98ba3b76da03a62e0768af2292bb6cf0039756d0acd65d1ae89611cdd77:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwYWU3OThiMTdkZWVlOWJjYmM4ZTFiZjIwYTQ1OGQ1ZjJlYzM4MTlmNzI5ODhmOWVjNTU2OTJkYTRkNjcxZDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjNDg2NDczN2YyNjA4MDBlZmJmNzIwNDdhOTAzYTU3OTgzZjI2MDU5MzZhNjkyMTYyZDVmNTJjMTA4NjVhMTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5MzBkNjk1ZWM1NmQzYWY0NzI2ZWQyMjEwYmZhYzZhOGUzZmEyZmJmMGNmNGU4ODk0YzY4NjE2NzRlYjMxNjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1fdb49b58fa04006bbde2f68eb68ec62",
+      "statement": "Documents not seen during a collection scan are deactivated (active set to 0, sync row removed), while content rows are retained until deleteInactiveDocuments and cleanupOrphanedContent run in qmd cleanup, because cleanupOrphanedContent treats inactive documents as references.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L2064-L2078",
+          "version": "repo-lines-v1:sha256:d39296b61eaa74d99c38b2d8d0c082c9af770c866b34a944fd13aa232519a881:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4NDYxZWE5MDVhMmM0ZGM5YzU1ZTEwZTE3MGM3OWY3MDM0ZmZlNTk5ZDZhMzU0M2NjOWM1ZGEwOWU2NzUxM2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4YjVkNjM5YWQ0YzIzZGI2MzlhZWU5MTc5MDRjZjlmZDg5ZTc5MGE2MWM5MDc3N2ZlMzNjZTFmYTRjYzQ0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlOTcxNjdjN2Q3ZDBkZmQwOTk4NDhkYTliYWU0ODVjOTNiMDNlMWE2YjI1OTBkOWFlMmJmMTE5ZmFlOWIyMGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyZjE1ODFmODBmOTBiYzJjMDFmODJkMDM4MWQxNDE5OGNjZjQ5MTk2NzMzYjE4MzYwMWQ1OTM2ZjVmM2Y2ZmUifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L3156-L3174",
+          "version": "repo-lines-v1:sha256:af504b7f778b42b07c9123450a928b477dd557035865918932b7e751879f206a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1Y2UzYzgwNzkxZjE5ZWViZjhkMDc1YzgxYjVkOWRiN2VlYTI0NDVjZmRjNjI3MWE0ZjEzOWRlZDEyMGFlMjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1ZTg1NTJiZDMxYWVmOTQ0Nzk0MGUzZmJkOWEyMjdhYzQ3ZGZjMWNhYTcyMTQ5YWRlZDMzMWU4ZTM1ZDhlMDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2YzQwNmJmZjkxNDJkZmYxNzgxMzU4Mzk4ODA0MmY1OTU5OWNlNGYwMmRiOGMwZDNkNmMzZjgyNmY0MjM3MWMifQ"
+        },
+        {
+          "resource": "repo://test/cleanup.test.ts#L58-L78",
+          "version": "repo-lines-v1:sha256:e0796153506483123845bfe7073e080bd143e9da1433fb9d6569e1a18c518b96:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjNzdhMzUwZTIxOTVkYzRhODg2MDRmZTc2OThkOTFiNzg2NGE4ZTgzZjQxNWRkOTQwOWNiOGU1YTdmMzRmODYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzMjViODVjZDQzYTZhMjhjMWI1M2EzMWI2OGMxOGNkMjE3ZTA0Y2ZkZWRhMjc0N2JkZjdhMmFhNTNmMTBkMTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1Zjc4NzFjNGQ4YTJiNzA5ZDJkY2FkOWNmNzNiZTdkOTM5MDM0NzU1MDY4M2MwOTM0NDEzOGY3ZWU0MTQ5MmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_956ffc401130476eb6230f1b12823562",
+      "statement": "qmd update runs copyVectorsToNewCollections before cleanupOrphanedVectors, so partition rows copied into newly joined collections are not deleted before they are copied.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1024-L1031",
+          "version": "repo-lines-v1:sha256:dc3df60f3607e7e06b533205a4ed415d40c0009e368c717089a48cb00d41eb27:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmU1NDZkMTI0NTY2MjlmZjRhYzM0OWI5YjYzNDAzZTk3ZTc1OTQzMzI3NjU5OThlNDE3NzVlYmM3NzRmMDcxMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjMzNjcxOGE0YTk0ZjE0NTk2YjAwYWQ4MTVhYTIyZTdkNjk0NzdmYWQ3YjNlMWMwYjQyNTkyMWZjYTUzMDZkZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGI5NjNjZTlhYjNmMzFhYzk2NjMzYzdkMzQyY2E3NDgwMzUwMjdiYmI2OTgyZGNlYWM0ZDk4MTUzZjJkZjQyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTU1YTExMDVlNzAwZmFlMWM3MGI3ZTUwMDg2OGI2NjFlMjdlZDlmNWNkNGRiOGExOTY4YjkzZjRlMGVhMDE1ZSJ9"
+        },
+        {
+          "resource": "repo://src/index.ts#L630-L637",
+          "version": "repo-lines-v1:sha256:b2954ee326dde0de8dc14e16907b45bb86f6fd3139fbb14585a16ec733d4b6d1:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmQxMWE4NTJmODQ0ZmU2OGU3NjM0YTA4YzRjNjU2ZWE2YzY1MzBhMzY5MzUwZTk1NmM2OWU5YjVkNjg4NjdmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmRhM2U2ZTgxYTI2ZjYwOWE1MWIxYzIzOTYwZTRhNTk0MTkxMmViNWIzODA3OTcyM2I4NDI1NjY5ZGM4NDVlYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA3OTFkN2Y5OGNiOTljODM3MDMxMTJmY2YwNjg1NjlmZDFlNjIyZDE4MzRhMzM3OGUwM2Y4NmJiOGI3ZTFkZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDMzNjRiYmQwY2RlMWZkYzNmNDg3MDZiNzZlYTFlNTVjMmEyNjhmNmE0ZmYwNTQ5NGYxYmI1YjY1M2VhNDExNSJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L5160-L5190",
+          "version": "repo-lines-v1:sha256:68d711364d1de3817ede2f43f06575abbcdadb3f897738e6445e541253834646:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyYmExNzhiZDY1NGZjOWU0NWMzMmRjZDM0YjY3NTQ4OTI3OGFkODRjMmI0ZmViYjRiY2RkZDcyYjAwZGNmYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhOWY2NzkzNmY3OTFjYzA4NDQ0NDEwMjgyYWM3OThiNWVlZjczMmE0OTI3MTY5MWU4ZjBkNDZlMzNiMTYxMzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1MjA2ZThmYTI3NDQ4ZjVkYzkwYzRkYjA3ZDI4NzQwYzIwZTU3YWQwMGQ0MTcyYWQyOTQ5MDAxODJjZGEyMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkZGY4NzJhYTFkMDBjZWFhYTJiMjgwNTYyMGM2YjFkMDYyZGZkN2IzNWNiYmE3NjAwODI2MDU0MjVhMmE4ZTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a172cef74dc8497ebeb63a50e12041bb",
+      "statement": "qmd update does not generate embeddings; it reports the number of unique hashes still needing vectors and tells the user to run qmd embed.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1033-L1050",
+          "version": "repo-lines-v1:sha256:cea53cd46b1762ffbf275dfbff6f2f49bc339956698cb40e1e44e1f84302422b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzOTQ2YjQ5Mzk5YTViN2NhNWNkN2M4NDVjYzkxNWVhYzAxOWQwOTgzNDJmMmYwZTBlMmNjZTk2M2Y3YjYwZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlZjUyNDEwMDQ1NTFjOTg3NTAyOWI3MGZiMjY5MDEwODllZTgwNzAyYzI1MGE2MmY4YWE3MDMxZDczMWUwYjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkMzFhM2YzY2FjMjZhYWI2Yjc4MjY0NjQ3NjJkZWJmNGU0MzBmNjI3ZmJkYzMzMzE1NDU1OTc5ZmVhMWZkYTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmYTYxMDA0NzdmNjRmYzE3NTNlNDBkMTdjN2UwMDcyZGZiOTYwM2NmYmE2OTE1N2VkYzhmM2ZjYzg0ZDA4YjQifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L2956-L2978",
+          "version": "repo-lines-v1:sha256:d201f8d1e252304233e5bcfafbbc22e36dabc643c13f419a1a1478bc662b9130:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTI1YTk1MTZjNjliNWI4YjRlNmRmYTJjZmZlNjA4MGJhYjAyNjgwNDkwZDU4YzQ0M2NlNmVhYjgwNmYyNTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3YjE3MjAyYTAzNDc2MDRhZDgwYWNjZmQyYTRiOTdhNzIxZDlkODI5MDNhYzJlYzk1YWMxZjJjYWVkODk1NWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2MGNmN2VlZWE3YjJiNDAyOWQ0ZWMxMGIzMDk4NWFjZjc4ODlmYTcyYmNkOTYzZTg3NmYyYzZlMjBlZTNlNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyNTgzYjViNDliN2JhMzQ0NGMzYTdmYWJhYmFhNDc3YmU2Njk2ZmZmMDY2NDdjMWI0YWQ1NGI5ODc3NGRkNzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_425e9ed58f12439abf63ff672e82f2d2",
+      "statement": "The embed lock file .qmd-embed.lock is placed in the same directory as the index database, and only qmd embed (vectorIndex) acquires it, not qmd update.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/embed-lock.ts#L19-L23",
+          "version": "repo-lines-v1:sha256:2b280f0dbe5c2e6619a466dd88dce3707a7974ec0c48297e08f442253dd9510b:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWQ1N2E1MjM0Yjg3OWFmZDE3OTBhZmY5OTc2NjVlNTU4MTMwZmM4MzIzY2M2YzEzNjNjZTIwNDM5NTM1ZjhiOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWVmNjMxNzAxYjBmNmE1ZDY4OTFkZGE1YTY0YjljYjhmNjlkNTJhMDQyZjIzYzYyMDZlMjAzZGQyZjM3ZjNiMyJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L2396-L2402",
+          "version": "repo-lines-v1:sha256:6738b558b7fd90d5433ae37a55899a9eef824f1d1b320cbd19f8c79ee47c0f1b:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWRmYjk2YWI3ZDI5OWZlMDI0NTYyMDYyOTk1YTI3NDRlODc5ZjUyMjBmMjZkMDQ1ZGQ0N2EwZDEwZDQ4NTQwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWY4Mzk3MWM1MTdkNzBhYjNlYWUwNjNmMzNlNDg1M2E2YjliMjZkMTMyNzc0NTgxMDc3MWI1ZjlkZjE3ZjJlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGQ5YzU3ZTk5OTU0YWVjNzIzYTE1ZjdmZDVmOGUxOTI3NzZjOTY0Yzk0ZGQ0M2JmN2U3YjU1NTU5MmVhZDRhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzZlNTFlMGQwMDhmMTZjN2EyYjcwMDJlOGJjNDY1NDg3YWUyZjVhMzNiMDhmNzNmNTM1ZDAwYmYyOGI4N2ZlMiJ9"
+        },
+        {
+          "resource": "repo://test/embed-lock.test.ts#L24-L27",
+          "version": "repo-lines-v1:sha256:5b44e2a00203ac71c26cb835479379d5a4a139382f3036a98cc9eb50ed0efbc0:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjI0MDU1ZTQ1NGJkOGIxZWQ5NzQxNWUyNjdkYzZkNTBhNTY1NTA4NmY2YmQ1ZDQ3MzFjMzBkNTQ1MmI3OGM1MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTVjZmRlZTIyZDY5ZDljMTM5OWIxZDNhZjIyZTE5Yjk5NmJhZTZiNzFmMGIxOGE5N2M5NGZiY2Y3MmM4MGI2ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWJhYTY3YTFlNzA3NWM5YWQ2MDNkZWZmM2IwZjQ4NDBjMzBjMzgyMjc2OGJjZDhmYmExZmEwZjllYmI3NmVjOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_40aeb3bdedb44588863a4c53d5bee3bb",
+      "statement": "Lock acquisition creates the lock file exclusively with the current PID; on EEXIST it removes and retries only when the recorded PID is missing, unparsable, or not a live qmd process, and otherwise reports the lock as held.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/embed-lock.ts#L36-L42",
+          "version": "repo-lines-v1:sha256:a990a3620c7c1a1db3b7c318bc004cce7212ea5075a7d326ebc2989338aa9006:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2QyMmIyYTYwN2QyOTc3YzdkMTlmYTJjODg4ZjI3ZjRkMTU3MjQ0ZjAwYWFmOWQ2MTI2M2E4NDkyMTcyZTM3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI1ODBlOTY0ZjgzYTQ3M2Y0M2Q0NDM4NDYyOTQ5ZDY4YjU2MDBmZGE3ODdmMTYzNzQ1ZDAwZGU4OWNiZjM2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGVlMzM5ODVjZTdmNWEwOTJiYjEzMjdmYmI0ZDQ2YjA3NWIyYmE4MTMzZjQxMDFlNzI3NDFiMTM1N2E2MWYyNSJ9"
+        },
+        {
+          "resource": "repo://src/cli/embed-lock.ts#L44-L59",
+          "version": "repo-lines-v1:sha256:66a78ef857b05f14a698f49f63fe2fa82ed6ab44c8620b6c3e6a8725b6a59729:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNDZhOWU4YTRlZGE2Mjg3ZTIyY2ZmMzUyMTY0NzE4ZGZlNDMxMzJjYWZiZDJmNTIxYzIyNmNmNTVjZWMzYmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiYjNkYWUxMjFkYmMxZTNkMTdkNmI0MDM3MWEwM2MyMjg0MDI1MmQzMGY5YmEwNWEwOWJkZmQ5NDVmNzY4MjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1YWQ3OGU3N2FhOTMxZDZkODVlYTVjMGY1ZTE2NTY1ODBkMDgzMDAwZDk0M2Q2YWJiZTA2NThjMWI5NGExMTEifQ"
+        },
+        {
+          "resource": "repo://src/cli/embed-lock.ts#L66-L96",
+          "version": "repo-lines-v1:sha256:2cdc03311a6633f650fbeac5a9003bbb85fe290c107c969d8fda45598d19d904:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ3YWIxMmMyMDJiZjllZmI0MTdiNDdkMmU1MWYxODNmYzc3OGFjMWMwZDVlODY2OGQ3MzA2ZjBjM2QwMWQ1ZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzZDg4NjljYmEyMjJlMDAwM2IwZjI1YmExODMxM2I1Nzc3YTU1MDkxZDdmZjE4NjA5OTZkODg3NzY1OTI0ODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY4OGFkYzAwZDg0YzBkZjk2NTQxMjIzYTJmNGRmZmEyZWIxZDk4NGRhOTMzNDM1NWI0ZDAxNjA2N2UyZGM4ZDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEzZTJkYzg2ODBkYTZiZWM3MmViMTliZjNmYWNhMWNmMjYxOGI3ZTQ4N2YyNmQ2YWM5ODJiYjNiOWRmN2NjMWYifQ"
+        },
+        {
+          "resource": "repo://src/cli/mcp-pid.ts#L74-L86",
+          "version": "repo-lines-v1:sha256:ffad7fdfa503117a80ad2d417b183cc28e3748da56227d293d6ac41fcaf71b74:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViYTlkNGZkOTFkOWVmNzIzMDliNGRjYmIzMDczZjExYzZhZjNmNjljOWJiMTA0OGFlNDM3MGUxODdmZmNjMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2YzdhOGRmNGI0Nzg3MDc3ZDNlYjBlNjg4MjNiNzFhODA1MTc3NWM3NzgzMjRjNjdlZjNmMmEwMWY5NGU1ZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_442afd24e34c4911a49e9698efc22c65",
+      "statement": "Lock release deletes the lock file only if it still contains the releasing process PID and is idempotent; a busy lock prints the embed-busy message and returns without embedding, and the lock is released in a finally block.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/embed-lock.ts#L46-L57",
+          "version": "repo-lines-v1:sha256:4d93f29864095d0c4ad251e83020d896a7c13f8d772dc71e378cc31382580b46:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0NjFlZDQxZWQzMzNjY2JkMDM0ZWI3NzY1NjRlNWU4OWI4YTI4ODVmNmVjMjgxNDAxNjMxMjFlMWQ0YmI1ZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyYTJjYjI1YTEyMmI0NDIyMWE2MjM0ZWM2NjBhN2I1ZmI3ZjliZGU3YjNiOWUyYjNjNTU5YTBkOTZmYWM3MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlZTMzOTg1Y2U3ZjVhMDkyYmIxMzI3ZmJiNGQ0NmIwNzViMmJhODEzM2Y0MTAxZTcyNzQxYjEzNTdhNjFmMjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIyY2Q4ODY5ZTg4MmQ0ZDk3OTBlNDQ3YzAxZTdkOTRiYjYyMTBkNmVhMTU2ZTQ3ZDIyNWZiMmNhZTA5ZDc3MzgifQ"
+        },
+        {
+          "resource": "repo://src/cli/embed-lock.ts#L99-L101",
+          "version": "repo-lines-v1:sha256:573d5aa7bff7cbb4d92ae995a5817a3b09f01efae47584d8a8b26d64109d7e52:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjM2Mzc4M2VlOTA1MThkNmQzOWExZGE1NWI3MDMxMmYwMGQ4ZTNmZjkwODIxYzJiNzk1ZGUzNjg2MGNlYWVmZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTc3MzAwMGEyNGUxNDY5MWI0ZTZjYmE2NmQwZDcxMThlZTE5ZDRlNzM2MjQ4NTA2MzdkZjU5MGY5ZGE0YzUzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTlmMWJmY2JkZTIzN2ExMjE0MTIwNTI0NGE5Y2E0MDMzYjg4ZWRjMDA1OWY2ZDVjMDMzZTQxNzEyZGFhMTIxYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L2489-L2492",
+          "version": "repo-lines-v1:sha256:65f2a61ef7cc3a1a211a7ca98cc410f7e466610f2854ff975f7a75eb2c954cf0:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWY4Mzk3MWM1MTdkNzBhYjNlYWUwNjNmMzNlNDg1M2E2YjliMjZkMTMyNzc0NTgxMDc3MWI1ZjlkZjE3ZjJlNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDRiOWEwYjE2Yjk5MTBiYWE1ZDBhNGRjYWZmOGE2MGM0Mjk2MzNiZjJhZTNjYmFjYzgyMDI5MDc1ODBkMTBjYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTBjNjVjYmIxYmU1MGUwNGExZDk3NWM1OWI5YjMyNWM2ZTNjOWU0YjhlNzliMWE5MTFkODljZDFkOTk5YmRlNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b7e07383831342f5aab553a118432dbf",
+      "statement": "Update batches per-file writes in short transactions that commit after 500 files or 250 ms, so rollback on error only discards the open batch and an interrupted collection scan is not atomic.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1805-L1833",
+          "version": "repo-lines-v1:sha256:62c653d14c9e09bf8357992fbb795c87e6644ab3408b38c2782b4f8ed2746920:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY3YmQ4ODg5MzI5N2U3MGQyNmM5NDdkYjdjNWU3ZWZjYjI4ZDBiMzkzYmRlZjFhYjZhMjJiNGIyMTE1MzI5NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlYzgwMmI1MTBiNTYyZjRlZjUzMjE2NzM1MzhmOThmMzgxZmY5NjY0OTUyYjVlODgxZjk3OGE3MGM1N2M0YmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY1MGU2N2JhZWYyZTg1NmRhNTA4MTgzZGY5ZTY2NWQ5NzYzMTIwZDJiMmQyOWI0YjdjYTBhZDA2YmI4Yzc5NTYifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L1844-L1863",
+          "version": "repo-lines-v1:sha256:e5023c3ac863eaecf3650e47e6426d4b225d12e7793f04e8a543855f60503965:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3NGVmODdiNjdmMTE3OGZhNGVjODNkZTE2NDhmOTcyYTkzYzk5ZGViMjZlZGEyYjEyYTM4N2YwZmUzOWU5MTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhjZWIxOGIxMGUwZTk2YTc0YjFjZmQ3ZTM4NmUwN2EyZjRmNmZlMDdiMThiNjRjMmRmYjRiYzk2N2VhZmVmMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2ZTI2NjUxMzcwOGQ1ZDNmM2NkOGFlMmY2NTBiOThhM2FmZDE5YmE3MjIwMTE5N2U3NDY4YTRiZDExOTM2ZTIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

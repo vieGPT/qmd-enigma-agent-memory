@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:a36ace96ebccc7b8ea4c00ddc49e94cc2a864ded5dee42e3c62cc5220e71175d",
+  "claims": [
+    {
+      "id": "claim_452b6df7c2c64592bbbbc6adb4b6aefe",
+      "statement": "The CI Node job runs a matrix of Node versions 22 and 23 on ubuntu-latest and macos-latest, with fail-fast disabled.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L10-L17",
+          "version": "repo-lines-v1:sha256:306df5270064333a16362ba2565ec0b78d1c8fccb7f870ee99c5366f1c12a95d:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmFhNzEwNmFkNzA1NGFjZTA2ZmZkZjQ1NTVhNzJmNzE1MGZlZjIxZTQyNThiYzRlYzhjNDlhZjRjN2FiZWRkOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDgwYWY4NDlkYzdmMDZmNzZkYmFhZjFkNjNlZGI1NTU3NTEzMjJlZGY1N2ViZmNlNmNjMDVlNzA3ZjUyYTM2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODYxNGU0OTU5ZTgyNGJhMjMxYTAwYzAxNjc5MzU2M2U1MjZjNDI4NzExMzQ0Y2ZlOTFmZjllMTczZGFkZjg0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzMzMmMyZGVjNzEyNGM2MGUyMDllNjUyMTAyNTk0MWVkNmFiZGUyM2FlMDM3OTk0OTQ1NjgwOTQ4Y2I5OGVlMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce6e1e9498644bcbb793c769ea600130",
+      "statement": "The CI Bun job runs Bun latest on ubuntu-latest and macos-latest, and first verifies the lockfile with bun install --frozen-lockfile.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L44-L68",
+          "version": "repo-lines-v1:sha256:a5c95ac76dc5dfa6428cb17f574163636923aa22d860c63f03b8b9dede19d576:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1MzcwMzM2OTQwY2U0MWJmNDgzN2ZhMmRhNzEzNDdhZjE2OTY1ZjU0M2ZiNDcxMTcxNzdjYjM4MzJjOTQ4YWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJlMjFjNzBkMzFiZTA4NzNjN2QxZTZmOWYyM2MzNTg2YzQ3NjM1MDI5Mzg4NTczYTQ4Y2JiMDk5YmQ2ODk5YjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlMWZlMTliZDhlMjgxZTNlY2U0M2Q4MzJlNDhhYmIwZTE4YjlhODdiMmU1NmVhZTJmMGYwM2JlYTZjYzY3MjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlZGU4Yjg5NzVmNTE5M2RmMmNhMWFiZTExMDBiNTA5Y2M2MDczNTg2MDBhN2NiNDAyNmZkZmJhZDdhMmE1NzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4540516f4ef44c01b2f33364c03b6d27",
+      "statement": "The CI Node job runs npx oxlint and then npx vitest run --reporter=verbose --testTimeout 60000 over test/ with CI set to true; it does not run the tsc build typecheck or the package smoke check.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L36-L42",
+          "version": "repo-lines-v1:sha256:a33c77a0f881a3dec9a43e4ccd178fd1c47ae3f76d05793f825774b3c2500de8:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTdkNTk1MTZkMTM0MWIxNDY0YWNiMmMyOWI1OGMxYWQ5ZjM2ZDVhYjlmMjc2ZmM5MzQ3NWQ5ZDQ3YzRhNzRlNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGRjYzlmYjlhMTMyZGJjOTUxNGE5MDYyYTVlOGJlMGVmNjdhOWE3ZWZlMzk5ODUxZDUzOWRkOTdiNjgwOWQwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmE1OGEyZTQwYWVlN2MxMzBiNGVkMmVhY2FjODU1ZDhmYmM1NDQ3YmI5ZjYxMmNjMjI5M2UzODI2Nzc3MWY5YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODMyNzJlMDY3YTMxMTAzOGFhYWUzN2ZkMWQwZDg0OThkZTFjNTY0MjJjZmRlNjBjMWQ3Y2U0MzZlZmY1NTVkNiJ9"
+        },
+        {
+          "resource": "repo://scripts/test-all.mjs#L35-L38",
+          "version": "repo-lines-v1:sha256:ca93b3a605c444b004e108d518045e38b3f667aa43ea1180a6255df235e42f50:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDNjNTkxODA1ZjI0OWRhNDM1MWJiZDA4MTcxNDg2Y2MzMmY3YTQ4NTI0ZTM5OGZlNWRlOGY3NTkyYTc1MGYwYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODcwZDdiZjI0NDc5ZGQ1MjA0MzZmOGQxN2QyMTE0YjZkMDY2ODJjYjk4ZGQ2NGNiY2NkMDI4MjlmOWJjOTExOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI1ODBlOTY0ZjgzYTQ3M2Y0M2Q0NDM4NDYyOTQ5ZDY4YjU2MDBmZGE3ODdmMTYzNzQ1ZDAwZGU4OWNiZjM2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b1e3ecf953414e6c8fb01a19d49a6e30",
+      "statement": "The CI Bun job runs bun test with --timeout 60000 and --preload ./src/test-preload.ts over test/ with CI set to true, and its workflow env sets SQLite library paths but not GGML_METAL_NO_RESIDENCY.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml#L70-L75",
+          "version": "repo-lines-v1:sha256:69c98f61ac24858dfe779378eb63fdad128488b575a30dbe311a6ccf0911a39f:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODNmMjUyZDlmODkyMWQ3OWNjN2UyMWYyMTYyMTY4MDBmMTg2NzIxZTEwMTNhOWFlOGQxNGE4MzQ2YTU4ZTJkMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjliNzZjZmU3M2Y1MjA2MzYxMmQ3MzEzMjhiMWZjNGMyMWJlOTJkNTE4MTcyYzFlNmFhYWNhODA5OTYyYTA0MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2YyNjc5ZWJkOGRlNDk5MjE4ODIzYTRjODhkN2NhZDcyNWRhMzU1ZTc1Yzg1MGNjNGZiNzk1ODI5M2EzMmY3NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fcbed1227e7640418c6b10851ffe9462",
+      "statement": "The Nix workflow builds the flake with nix build on ubuntu-latest and macos-latest, with flakes enabled.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/nix.yml",
+          "version": "repo-file-v1:sha256:47bb11de64e8e3d41dd1500e9319ad99ea30c75f474b533abd0889d27fbf7303"
+        }
+      ]
+    },
+    {
+      "id": "claim_2d7b2c57b8fa40bf9a49612ea0ed2533",
+      "statement": "npm test runs scripts/test-all.mjs, which executes four steps in order (TypeScript build typecheck, Vitest under Node, Bun test with preload, package smoke) and stops at the first failing step.",
+      "evidence": [
+        {
+          "resource": "repo://package.json",
+          "version": "repo-file-v1:sha256:79483e296345186c6f9276061a4e26cfebedbf6d3e4a7ae242dd6c823d14be8d"
+        },
+        {
+          "resource": "repo://scripts/test-all.mjs#L19-L38",
+          "version": "repo-lines-v1:sha256:4429342a0a76920ad9ad865c18249dd7b9e4ff44ed0b35e1002e14b498a40d2f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyMTZjYjIyMWRjYzc1YjdmZmZmY2FmNjAyMzY4ZmE3ZmYxYjU3ZTYyYjlkYTJlYjQ2NDQyZTE2NDU5YzkxZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MGQ3YmYyNDQ3OWRkNTIwNDM2ZjhkMTdkMjExNGI2ZDA2NjgyY2I5OGRkNjRjYmNjZDAyODI5ZjliYzkxMTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwNzczNzQxYTE5OTZhMWNiZGIxOTA0YjdlM2QxYWFhYzljMGUwYzE0NTIxYmMyNzI3MTViNTFiYjRjYzg5YjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8922817872c0441db31652637c488274",
+      "statement": "On darwin, scripts/test-all.mjs injects GGML_METAL_NO_RESIDENCY=1 into every test subprocess unless QMD_METAL_KEEP_RESIDENCY=1 is set, because the llama.cpp Metal residency destructor asserts at process exit.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/test-all.mjs#L8-L17",
+          "version": "repo-lines-v1:sha256:3c95d2d82a2bb8ef6fae5189c89256f7c6bb3e7737414bf1e2be23f1af87f425:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzNTM3MTEzNzEzNWFmZTFhMTExYWI5ZTAyOWQ0YjBjMjhjOGU4ZGRkNDI3YjllNGNhN2VjZjM5ZTc4NWM0OTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdhNzcyNjEyOTNiOTAxNDQ1ZGYzMTliNTJmNTU1ZDZiZTYxZTA2NWYyMDIwNjJmYjE5Y2UwMDEzYWI5NGFjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzMzg3YWJmZmJiY2QyMTU0ZDVhODQ2ZWMwOTQwMTU5YzgzMzI2ZWEwZGRkZmJjNzRjYTBkN2FlMTI4MDg5YmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0NDc2NThiNTMxZmE5YjVlM2RkNmM1NzM2ZTFkNzU3MWU4MmNkMTkxMTJmMjgwZDcwZjAxZWEzNDAzMDliNDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e73d4acb6ca4a5cbe95cf8b967da7ea",
+      "statement": "The Bun preload src/test-preload.ts registers an afterAll hook that calls disposeDefaultLlamaCpp() after all test files finish, and cannot itself set GGML_METAL_NO_RESIDENCY because Bun does not propagate process.env writes to the libc environment; the runner must inject it.",
+      "evidence": [
+        {
+          "resource": "repo://src/test-preload.ts#L1-L24",
+          "version": "repo-lines-v1:sha256:1d2124adec1e1c57d90318c8cc023cc65d0155dc62eb1447243f25b340033802:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7d780f58b1504e86b43c5a9321e8ae8c",
+      "statement": "getDefaultDbPath returns the INDEX_PATH environment value when set; otherwise, outside production mode, it throws an error telling tests to set INDEX_PATH or use createStore() with an explicit path, so tests cannot write to the global index by accident.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L697-L716",
+          "version": "repo-lines-v1:sha256:8b14d6381f05d198d512a6b1ff616131c3500c2d8c5b3b22de270510cb355b15:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMjE5MDdhMmQ0NGZkYzc3MjJjMTgyMDA5OWY1MmE2ZWE0ZWJjYmZjMGZhODNkNTVkMmNkMTFiYWIyNzY2ZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0NjY2MzA3Y2RjMGQxMjk1ZGJlNzQwMjhkN2I1OTcyMmNmZDZiODYwMTYxMjY2YWIwOWJlYmFmNDlhMzhhNWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlM2RlZTkxNDIxN2EyZjBhOWYzYmIzYjgyYTFmYWNlN2E1NjFiOGZhYTBkM2I1OTA1MmMyZTYzOGFkMmU5NmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3a7648e92f9d412ca460b71c7e336f94",
+      "statement": "A unit test asserts both branches of the getDefaultDbPath guard: it throws in test mode without INDEX_PATH and returns the INDEX_PATH value when set.",
+      "evidence": [
+        {
+          "resource": "repo://test/store.helpers.unit.test.ts#L56-L78",
+          "version": "repo-lines-v1:sha256:1fc7d9cd831a58defffb9bf94b7fd0d4f30423e679d9da78605ee40da6c0ed72:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3MjQzNTU1MDVhZjUyYTBmOTA3NmJlNDcwOTU2YjQ1ODAxMWY1M2RkYjAyY2M5ZDc3YmI0NWUyMzM4YjZiZjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5ZDA0NjRiYjYzNDA2Yzk3ZDM2Mjg4MDNkMTlmY2Q1ZjBlNDIwYmQ1NWFmYzBkNDk0NWMxNDQ1NTBiNmI5MzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4MDlhYzBhZmQ2NDgxZmM5YTk1MTI1Y2EyNWQyNDdkMThjMGUzZWQ3MjhiMjAwNjdlYzExYTI3ZTA5YjI1MDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NWJjZGY5YTMwYzM3ODA5ZTI0MDcxY2JlMDIxNDUzYjg0MTZhZTM5NjVhMmU0OWM2OTZmMjcwMDhkODE4NzYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f2377a15fd04fa188a5425e0e0f8be6",
+      "statement": "Test files that touch the store set INDEX_PATH to a temporary location before use; eval.test.ts sets it before importing the store and cli.test.ts passes INDEX_PATH into each spawned CLI subprocess.",
+      "evidence": [
+        {
+          "resource": "repo://test/cli.test.ts#L55-L58",
+          "version": "repo-lines-v1:sha256:e95d78f54054f17ac248b4a5e2e7c630a8a7a51d00dc48af15dbae66430d3c8d:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2ZkZmYyMDk5ZGQxNjg5MmFkNzYxODhmY2RhMGRmMWQzNTU4N2FmYTdkNzc2MTVkNWE0MzczZWM2YmY3YTA5ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk3MzAxNzA1NWYyN2NlNTU0NTk2ZjIxZTZkMWFlN2NhYmI5YmY5ODYyNGZhNzlmY2VkOTM5N2NkYjU4YTBmYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWQwMTY4NjIxMjNlNTIwNWM5OGIzOTBmMWZhZmZiM2YwZmNiOTBkYmM0NzcwY2E5OTg3MmVlMDVkMGZjMDBkYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTdmY2QyNjMxNzUyZjE5NWNiYjAwMGY3YjlkZjgzM2UzY2NkZmYwNDEyY2E4MDdhYzdlOWYxM2RiNDY3MjVmNyJ9"
+        },
+        {
+          "resource": "repo://test/eval.test.ts",
+          "version": "repo-file-v1:sha256:67a214ef3a67debd735ab3237b3f0288ee3e053b825be128a1ea1edcaac95761"
+        }
+      ]
+    },
+    {
+      "id": "claim_e9fcc22b1b54400e9f5e148535df4cd2",
+      "statement": "The Vitest configuration collects only test/**/*.test.ts files, disables file parallelism, sets a default test timeout of 30000 ms, and enables typechecking of test/**/*.test-d.ts files with source errors ignored.",
+      "evidence": [
+        {
+          "resource": "repo://vitest.config.ts#L1-L15",
+          "version": "repo-lines-v1:sha256:e4821ac375046a2a5dd0a061a0518d4009152c5b1ec3ed5c6dd30cb272a68f6d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxNzRlOWU5MDAzOGViM2EwZGQzNGQzMTMzZjg4OGZhMmVlNTEzZDIyN2NmOTkzZTM2ZTNjNTc1ZDVlOThkYzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5066a4c876c24441a743d9a2756f8b74",
+      "statement": "metadata-filter.test-d.ts asserts at compile time that MetadataFilter and MetadataMatch share one predicate grammar, and uses @ts-expect-error to forbid metadata keys as match fields and set-level operators such as exists and all in a single-entry match.",
+      "evidence": [
+        {
+          "resource": "repo://test/metadata-filter.test-d.ts#L1-L60",
+          "version": "repo-lines-v1:sha256:a7779289f14277a711f8f109b77cc7dc0998416805bdae4ca36056c9da9b0019:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5Mzk0ZWUzM2ZjNzM4YTI3OGEwNDVlMWQ1YzViMWI1YTkwNzAwMGVlOWE4ZTAxMzJjNjNjYTM1ZWJlYjBiYjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlYWE1ZDlhYzM3ZTY2ZjcwZjJiMTZlMzNhMjU5NzVmYzExY2JkZWI0NTYyZGJlNWQyZWZkZGUwNWI0NGNmYjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_75bdd3fa308d4498a94b16cef6110ad7",
+      "statement": "The build typecheck config tsconfig.build.json includes only src/**/*.ts and excludes *.test.ts, src/test-preload.ts, and src/bench-*.ts, checking the published build against Node types only.",
+      "evidence": [
+        {
+          "resource": "repo://tsconfig.build.json",
+          "version": "repo-file-v1:sha256:09b23619a55b44926d53d5e32e5812297af53323baae9651e2508911482b58ac"
+        }
+      ]
+    },
+    {
+      "id": "claim_b9c09fc3bdf84f1ba25de8a9bb21cf49",
+      "statement": "Linting uses oxlint with all built-in rule categories disabled and a local anti-slop plugin enabled, including error-level rules such as no-module-mocking, no-chained-type-assertions, and no-object-parameters.",
+      "evidence": [
+        {
+          "resource": "repo://oxlint.config.ts#L1-L57",
+          "version": "repo-lines-v1:sha256:28da3d21102682288a4dc17c390d29635f9222b7757166acf439a9263b8c38aa:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5ZGE0YWY0MDc3MjI2Y2RhNmE0YjE1M2VlNTc4YjEyYmE1YzNkOWZhZWQyZTMyNGQ0MWNlY2U2MTcxODcwZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7359298e436d48e1911a5ce4e262a872",
+      "statement": "package.test.ts asserts the wiring of the test scripts and that the tree-sitter grammar packages are required (non-optional) dependencies, and checks that the Nix installPhase copies skills/ next to src/.",
+      "evidence": [
+        {
+          "resource": "repo://test/package.test.ts#L1-L80",
+          "version": "repo-lines-v1:sha256:9df0d47566568554e3c4125c497343aba6df8cadc3f523dc8883eb557b956d06:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzYWE1NjY3MWY4Y2M0NDIzZThmN2U0NDJiMDk2YmVlNmQwOThlYjc5YTdhOWI1OTAwMmM5M2JlMWQ2ODA0NGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI1ZjNiMjFlYzM5YTU2MmVjMzVmMzdjMGM4ODc0YTQ5ZTA1YzhmYWY3NDY3NDIyMWI3YWQ3NjNiMDdiNzljMzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5M2Y1MjMwMWJiMzdiZWY2MzM4OGFmM2U2YWYzY2NjYmJkMDYwNzYzY2IzYjNhNDY2ZWM0ZTAyYmNiZDU0NjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9e95809d12144b2ca1e82d0faf76050e",
+      "statement": "scripts/package-smoke.mjs builds the package, checks grammar packages, verifies every package.json files entry and bin entry exists (bins executable), and runs --help through the compiled CLI and bin wrapper under Node and, unless QMD_SKIP_BUN_SMOKE=1, under Bun.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/package-smoke.mjs#L1-L73",
+          "version": "repo-lines-v1:sha256:404726a91e19d80a1908045578e03d12cd2deea267e4a06bd75e626db23cd74a:eyJzZWxlY3RlZExpbmVDb3VudCI6NzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OWM0Nzg3MmI3MWYxMjU4OTk0Mjg5MjQ2NGU3NjRjMGRiMzUwYzIwYjcyMjI4NjQ1NjE1Y2MzNmUwYTA3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0cfb243899464322b236c3e4eefc68eb",
+      "statement": "test/launcher-detection.test.sh tests a bash copy of the runtime-detection logic (detect_runtime) across lockfile combinations rather than invoking bin/qmd, and is run only when invoked directly, not by CI or test-all.mjs.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/ci.yml",
+          "version": "repo-file-v1:sha256:0de772f7ed2b0edcce1213812fddade6576613365393ed0444e954b30ecd3461"
+        },
+        {
+          "resource": "repo://scripts/test-all.mjs#L35-L38",
+          "version": "repo-lines-v1:sha256:ca93b3a605c444b004e108d518045e38b3f667aa43ea1180a6255df235e42f50:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDNjNTkxODA1ZjI0OWRhNDM1MWJiZDA4MTcxNDg2Y2MzMmY3YTQ4NTI0ZTM5OGZlNWRlOGY3NTkyYTc1MGYwYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODcwZDdiZjI0NDc5ZGQ1MjA0MzZmOGQxN2QyMTE0YjZkMDY2ODJjYjk4ZGQ2NGNiY2NkMDI4MjlmOWJjOTExOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI1ODBlOTY0ZjgzYTQ3M2Y0M2Q0NDM4NDYyOTQ5ZDY4YjU2MDBmZGE3ODdmMTYzNzQ1ZDAwZGU4OWNiZjM2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://test/launcher-detection.test.sh#L1-L120",
+          "version": "repo-lines-v1:sha256:069936a497bc93c09792d1939bfcb956d6abfae5ce287e32cda768facd356f31:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxZDk1ZmMwNGE4MGM5NTJmNDljZTQxODg2MjdjNTNiMGZiZThjNDQwNDFiOTUyZDU5MmFjZDFkZTk5ODYxNDY2IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJhN2Q0YzZlNzA3OWNiZjVlODY4NDA2ZmY3NGIzNzA4MTAyOGZkZDY1YTI3OWIzYjY2MDNlYzkyZWQ4NTkyYzU3IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MSwiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxMjNhZGU4NzRhMzdkMjBmZDg1NTlkYjY5YjM5YTZkYTJkNTY2MGIwNTcxNzE0Mzc3MmNiNDcyZjM4MjZlZDI0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_7ae241d9a8d1481380a22df38df01332",
+      "statement": "test/smoke-install.sh builds a container image from test/Containerfile (debian bookworm-slim with mise, Node and Bun) that installs the packed tarball globally with npm and bun, and runs npm, npx, and bun scenarios; it is a manual script not referenced by any workflow.",
+      "evidence": [
+        {
+          "resource": "repo://test/Containerfile",
+          "version": "repo-file-v1:sha256:c466c71761bbabf69d8a3cc4618714b9d509e2c857b0c5806421b7df5fc234d1"
+        },
+        {
+          "resource": "repo://test/smoke-install.sh#L1-L60",
+          "version": "repo-lines-v1:sha256:3f154529fd5cd6cbcf868ed4ed23276194255e5f6efcd5f89e0aa8b4697c0ed5:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkOTVmYzA0YTgwYzk1MmY0OWNlNDE4ODYyN2M1M2IwZmJlOGM0NDA0MWI5NTJkNTkyYWNkMWRlOTk4NjE0NjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjMWFjOTc3OTU4NDNjMjBkZjdjZTQzOTQ0OGNhOTY0Y2JhY2NkZmEwYWE2ODNlZDljZGI5NGM5ZTkyNDk4Y2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_56798c0e45d04daea4f15534d07d86d0",
+      "statement": "test/eval-harness.ts is a standalone bun script with labelled search queries that is excluded from Vitest collection, while test/eval.test.ts is a Vitest suite checking known-answer BM25, vector, and hybrid RRF results.",
+      "evidence": [
+        {
+          "resource": "repo://test/eval-harness.ts#L1-L60",
+          "version": "repo-lines-v1:sha256:613def762e07e76882f9370ab5800df680f07d8a681e4313c4580e074673010d:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIxNGY2YmU0NWQwN2I1Yzc4NTg5YzdlZTg2YmNkNDljZjUyMjZkMDcyODA0ZDNhYzIzNDgzZDA5ODg2OWNhMGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcxNDc2YzBmODQ2YjM2OGY0MjQ2MjU3NzI0MTk2NjRiZjgxZTFkOTY5YjYzZWQ0YTgwOWIyNDRiMDk4MWJmMTkifQ"
+        },
+        {
+          "resource": "repo://test/eval.test.ts#L1-L50",
+          "version": "repo-lines-v1:sha256:11e7c928c4e4e9618fb0d86660ef6426f83b271ae0521944985187352c06762c:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxMzRlZjM5MmI1MWQyZjViZGJmM2M1OGMyNzdhNTVkNWNmMjg2NTJkMWZkNjFhZGYyMmM5OWRkNWE3YmY1OTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkMzZhYWE3ZmUzOTk2MTgxMDBhM2QyMWJkZmE0MDI0NGUyMWNkNzJiNGQ1YWI2M2UwZTY5OWYxMzI3NzY0NDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3da43f6c54d947cea9910ead6ca6d804",
+      "statement": "The bench guard tests require assertBenchCollectionReady to throw for a missing collection, a collection with no indexed documents, and an empty index with no collection name.",
+      "evidence": [
+        {
+          "resource": "repo://test/bench-guard.test.ts#L1-L40",
+          "version": "repo-lines-v1:sha256:d7765195469f38967e8f1de1b4502ef89839f53b38e533b0d72ee0439cf57f45:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiYThiYjIyYmY4NjIyZGZlOWQ4MjMwZDlmNjc5MzkyZDI0MzQ1MTAyNjMzOWJjYzgzM2JkYzU0MDNhZTQ0ZGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQyZmJjZTQ5YzM3MzI4MDE2MDBjYjliNWM5OWI1NWMxNWJiZmZjZTU2NTYwM2JiMzY3YWQ0ZTg0M2VjOWZkZjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d4bc8e2889134d0aa7558ba963780e59",
+      "statement": "The trust test suite guards project-local update hooks so that shell commands declared in a cloned .qmd/index.yml do not run unattended when a user runs qmd update.",
+      "evidence": [
+        {
+          "resource": "repo://test/update-hook-trust.test.ts#L1-L30",
+          "version": "repo-lines-v1:sha256:e77603b8d8be8ef83bf02f1a16bb2322de70f820fcdc56d6fb9d48198f3c2dd5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU2MTkyODQxOTBhMTA5OThjZGI1Nzg0ZDQ0NTMyMDdhZWIzOTJlMGM4ZTJjMjhjMmE3YzJiMGNjNTkwNmQyZjYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_df1aabd602284ea1bd19b46a264be5db",
+      "statement": "The MCP origin-guard tests cover DNS-rebinding protection for the HTTP MCP transport, with predicate tests and live-server tests that send spoofed headers to startMcpHttpServer.",
+      "evidence": [
+        {
+          "resource": "repo://test/mcp-origin-guard.test.ts#L1-L25",
+          "version": "repo-lines-v1:sha256:7d6571e7570c2b6fe4f7cb5e827f81f8775ef61e33f5fa2701f35968d6216cdc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxOGVlYTE4MDFkYzJmZWE0MGQ2NjI3MzUyNTgwODM2NGQxMWEyNWRiMzJjZTBiZDA5ZDExN2NkZTVjNDBhMDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiYWQzZjA5OGQ5NGJlMGI1ZjUxMzllNjE3MmU1M2E5NzUzOGY3NWJjOGU4ZDk0N2NiZmQ4MTI0M2U3YjkwMjUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b24a37655f680f3dace45702916aaf3d654ad58fded1f20eb94f13709c1d4528",
+  "claims": [
+    {
+      "id": "claim_83b333702a1548d7913d6dc0a2c99a19",
+      "statement": "The qmd mcp command uses the stdio transport by default (startMcpServer); with --http it starts the Streamable HTTP server (startMcpHttpServer), and with --http --daemon it re-spawns that HTTP server as a detached child and records its PID in a pidfile that qmd mcp stop signals after an identity check.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/mcp-pid.ts#L74-L86",
+          "version": "repo-lines-v1:sha256:ffad7fdfa503117a80ad2d417b183cc28e3748da56227d293d6ac41fcaf71b74:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViYTlkNGZkOTFkOWVmNzIzMDliNGRjYmIzMDczZjExYzZhZjNmNjljOWJiMTA0OGFlNDM3MGUxODdmZmNjMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2YzdhOGRmNGI0Nzg3MDc3ZDNlYjBlNjg4MjNiNzFhODA1MTc3NWM3NzgzMjRjNjdlZjNmMmEwMWY5NGU1ZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L5068-L5172",
+          "version": "repo-lines-v1:sha256:8adf8caa4c07cc0c43201d5a43978adfc9ef5dccd5047df6069fb0075104b762:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3NjgwNWMwZjdkZjI5YWNhNjNlNGEyMTYwNDBkMGY0MzRlNTc5MmMyZjA5ZTYxNWE4NWQyYzVkMDA5NWZkYzY1IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI5YjYyZjYwZDg1OTBhNTc5Y2Y0NmY4ZDY3Mzc4YzRjNTcyYjk2MmNlY2NkYjkwYzdhNWY3YjQyYjk2MDc4MmE0IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjMGI0MmMwNjE4Y2RjMzM0Mjk5NDcxMGMxZWMzY2QwYzFhZWJlYWI1ZDk4ZGRiODYxOWQxN2VlNjBmZmFkZDMxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjMGI0MmMwNjE4Y2RjMzM0Mjk5NDcxMGMxZWMzY2QwYzFhZWJlYWI1ZDk4ZGRiODYxOWQxN2VlNjBmZmFkZDMxIn0"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L1009-L1041",
+          "version": "repo-lines-v1:sha256:ca530d13e0bd92235d2b4d2818191dce2608e326f88bdbae9ccbf32c151cee9f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjY2I5ZmVjYjhkYzFiYzQ2ZTRmZWQ3Y2RkYzBhZWNlNDUzMDQ5NWIzYzMyMDJiY2YyNmQwMGQ4MGEzZGM2NTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2ZGFjN2I5YTIwM2U3NTY3ZmJhZTM5ZTI2OWI2NmEzMTk1OTFlMWU0YWE0ZmQxYjIzNWQ4NGVkYjE4OWE0YjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY4M2JjOTI4Mjk3ZDY0YTI0YzMzZDFjMWFiZGU2YzFjNTBmNzk4ZTg1MDRmYmY5MmQxNzg0YTM5Mzg1YmI0MGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3OGZlMDY0YTdiYzIyMzY4ZGQ0YmIzMzE5ZDBmZDY1ZDU2ZGMyMGQxMWU3M2ZlNWViMDU5Mjg2M2VhMjBhMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2ab61d3c17414cd785362eaf57818b5e",
+      "statement": "The bin/qmd launcher seeds native llama.cpp and ggml log-level variables to error when the first argument is mcp, because MCP stdio reserves stdout for JSON-RPC frames.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L27-L31",
+          "version": "repo-lines-v1:sha256:b608ef8393ee91d7333d8a20698fd47dc2787ad9bc19c437082a4e40c00ff36c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGVhNGU2MzA5MjYxOThkM2FiNmQxZGU4MjU3OWQ3MzMwY2M3ZDU1YmIzMTYzYTQ1M2EyMGQ1ODVkMDIxZWY4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmVjMjdmNjIwYWZjOWZhNzRmOWNjYWZkMDBiMzNjMDMwYmE5MzJhMWNkM2U5NmE0ZjBhNjZmMjI2ZjhhZDA1ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2VmODQ2YTQxMTFkMzllNDQxYTc3MmY4ZTNhMDljZDE1OGU3NzI4ZmIyMTJkZjcyMzFmOTQzNzFhZTIwMDE5NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d89d00ecd5e3403faa4538646ef1c359",
+      "statement": "The MCP server registers one read-only document resource template qmd://{+path} with no listing, and five tools named query, get, multi_get, status, and metadata; documents are discovered only through search.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L277-L300",
+          "version": "repo-lines-v1:sha256:358181ba0e7a851e62809274beb4899a39a992910dc1611c6e911dfd63801b97:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2ZWNlOTQyNDQwNDQ4MjcyMTA1M2ZlNjA4NDBmODM0ZWQ0MzVmYzk3MzdiZTYzN2QwYjBlMGJhM2ZlMDM4NWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyZGI3YTUwNDI3NzRhOWRlODZmZmFmMDQzYjUwZjMxMzI1ZWJjN2E1MzYyY2U5NDYxNDM4ODcxNWY0ZWY4MDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIyMjM4NTFlZGFhMmM1N2FmM2ViMjgzNmVlMTM3YzI2YjFiMTM1NjI5YzllZTg0ZTk2ODYwMDY5ODNlZWZiYTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0MTNhNTQ4ODFiNGI0YTkwMmI5OGZhMjU5OTU1NDExN2MyZWNlMWZlZTg2YjY0OTUyZGZkZDkwM2VlOTc0MjEifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L332-L332",
+          "version": "repo-lines-v1:sha256:0894f92211233e2118d98bf2ce1abcb3125bd51003e38b124c8d6a71d6beb537:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg5NGY5MjIxMTIzM2UyMTE4ZDk4YmYyY2UxYWJjYjMxMjViZDUxMDAzZTM4YjEyNGM4ZDZhNzFkNmJlYjUzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg5NGY5MjIxMTIzM2UyMTE4ZDk4YmYyY2UxYWJjYjMxMjViZDUxMDAzZTM4YjEyNGM4ZDZhNzFkNmJlYjUzNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjZiZDhmYzMxNWFhZjYwZGU4ODNiZjkxNjU5MWI5MTg2NTlkMzM2MDJmMjQ0Nzk1OTcxZjE4Y2VmMTQwNWExNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjE0MWIzMzZmNzBkZGU3ZTJlYTUwMGQwMDhiOTJkZDNmNjViY2E2YThiZWFiMjAwZTQ0MzY1MGJhMjdlZGZmYSJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L506-L506",
+          "version": "repo-lines-v1:sha256:0894f92211233e2118d98bf2ce1abcb3125bd51003e38b124c8d6a71d6beb537:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg5NGY5MjIxMTIzM2UyMTE4ZDk4YmYyY2UxYWJjYjMxMjViZDUxMDAzZTM4YjEyNGM4ZDZhNzFkNmJlYjUzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg5NGY5MjIxMTIzM2UyMTE4ZDk4YmYyY2UxYWJjYjMxMjViZDUxMDAzZTM4YjEyNGM4ZDZhNzFkNmJlYjUzNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTM1MDhhNTc3MzJmODI3YTRmMmIwMjU1YjQ0MjEyOWRiOGQ4ZTdmMmM0MTQ3YTVmYmJlY2M0NmNlYWNhYzc5NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2JjMDk3OGFkNWIyZDQ4YWRiZTA4ZTllOGIzYjA2NTExODBmNzZjNTk4MDk4OWY1YmZjMDdkY2EzOWVhZGFmNCJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L583-L583",
+          "version": "repo-lines-v1:sha256:0894f92211233e2118d98bf2ce1abcb3125bd51003e38b124c8d6a71d6beb537:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg5NGY5MjIxMTIzM2UyMTE4ZDk4YmYyY2UxYWJjYjMxMjViZDUxMDAzZTM4YjEyNGM4ZDZhNzFkNmJlYjUzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg5NGY5MjIxMTIzM2UyMTE4ZDk4YmYyY2UxYWJjYjMxMjViZDUxMDAzZTM4YjEyNGM4ZDZhNzFkNmJlYjUzNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTY1NTMzNWUyYWQ2NmE4MGM4YjQxOWU3ZTU1YjJjMzY3OGE4OTk4ODUzZTZmMmVlZTAxODgzYjY5ZTliZDcyNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDNiMTUzMzdlNTgyNDJkMzQwYmY5NzExNGM1MDdjMzI0ODAzYWUyNjAzNjFlODVhNWFlOTc3Mjg1NzEyZjRhNiJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L656-L656",
+          "version": "repo-lines-v1:sha256:0894f92211233e2118d98bf2ce1abcb3125bd51003e38b124c8d6a71d6beb537:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg5NGY5MjIxMTIzM2UyMTE4ZDk4YmYyY2UxYWJjYjMxMjViZDUxMDAzZTM4YjEyNGM4ZDZhNzFkNmJlYjUzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg5NGY5MjIxMTIzM2UyMTE4ZDk4YmYyY2UxYWJjYjMxMjViZDUxMDAzZTM4YjEyNGM4ZDZhNzFkNmJlYjUzNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWQ5NTFjMzczODU0ZTE2OGQzZGE0YjJjNjg5NmQ5MjJiZTFmOWMwYzFlZjg4YjI1ZGFiYTk3MTZhOTM2M2NkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmYyMWExYzg2NGE3ZDQyZTY1NDNiYjc4NWExYzNlMzA3OGM1YmVlOTA3ZjY3ZjZhODA4MjllYTE3N2U2NTE1ZiJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L699-L699",
+          "version": "repo-lines-v1:sha256:0894f92211233e2118d98bf2ce1abcb3125bd51003e38b124c8d6a71d6beb537:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg5NGY5MjIxMTIzM2UyMTE4ZDk4YmYyY2UxYWJjYjMxMjViZDUxMDAzZTM4YjEyNGM4ZDZhNzFkNmJlYjUzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDg5NGY5MjIxMTIzM2UyMTE4ZDk4YmYyY2UxYWJjYjMxMjViZDUxMDAzZTM4YjEyNGM4ZDZhNzFkNmJlYjUzNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2ZiOTRlZjkwMTNkNGJmNzA1MTJkMmM0YTU4NWY1ZDYzNDVlODQ4NTc2ODc0ZDU3OGFkNGJmODU3N2U0M2RhMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDE5ZDRjNDc5ZWUwYmE3NGU5MzQyMWE4NDlmNzhmMWFmNDc2ZWNiZmUxNTZlYjQ1YzlkNGEyMGNjODBjMmQwNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_22c4c010e1ef47cc8461617da659dcb7",
+      "statement": "The query tool requires exactly one of query (plain text, auto-expanded) or searches (typed lex, vec, or hyde sub-queries, at most 10); providing neither or both returns an error result with isError set instead of running a search.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L397-L430",
+          "version": "repo-lines-v1:sha256:c66136b2d6b9171ea5d1bb3ef7372db01d74335a5832857a4fa5e62ab5c21217:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4ZGMxY2I5YTBkZDEzMjRjNDgwNDY1ZjY3YjM0ZTE0MzdiMTBjZDkzNzMwNTY4ZjM2ZGYwODNkZDE1MGY2ZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3MTVmNjI3MjVjODQzYWIzZWExNGVhNjY1MTMzNzMwYThhYmVkMjY0NDE5MDkxZmZkMzQ3NTAwYjFkMmVkNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwMWZlYzhiYjhmNzI1YmZlMmNmMTRjZWZmMWUxZjcyYTYwYzc3NThjMGYzMWFlZWVhMmRiZjM0ZDYxMjkxZTcifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L431-L450",
+          "version": "repo-lines-v1:sha256:7f702bb2d3397d1b463830331e1ab0c9615d037880af8b3acab1efd884c4b689:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3NjViY2U1ZjBjZGI5MWZhMzhkNDkwMTBhZjlhZjVkZjNkMWY3YTc1NDk2MjE3ZWU1NWI3ZDEzZDdiMzNiYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzOTIyNGFlMTRmNmMwNDU1MjYyNDNmZjAyZTU5N2I3NTc3MmU5ODkyYzgzMmMwN2M4OTZmM2Y4MTE1NjU4OWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmOWYyNzY0YTdkZTA5YzNjNTdhZTg5NjZkNjU4NjMxMzM3M2Y2ODI1YmM3OWFkMWU3YzhhMWVhZjZkYzJhNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRkOWM1MTIyYTgxZmU2ZTE5M2VlNTAzODUzMmU0OTliMmVkZDgxMmIxYTEzZDE1MDM1ZTA1YzJiMTE5ZTBhMmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae863b22b4bf43379b64fca1ca2cc327",
+      "statement": "The query tool's zod defaults are limit 10, minScore 0, and rerank true; candidateLimit has no zod default and its description says 40, and collections and filter are optional with no default.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L406-L408",
+          "version": "repo-lines-v1:sha256:03874ed0275d0bbcc076bbc21682192136a6e4df1ed7ea171f6738464c6fb933:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWE0OTgxN2VkMTk4N2MwMTZlODQ0NjY2NWI5YTAzMzI4ODQxNGIwZjE2ZDllZTVlOTUxZTQ2MmM1Nzg0ZGVjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTRjZjc2YjY0YjlmOWJiNDgwMjNhNmU4MTY4YmMyMjBjM2FkMjU5YmVhMjZhZjIyZmEzYjUwMDE1ZGE5MDVkZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGQ4MWQ1YWIwZTBiMmU5NjFiMTZmYjE1OGI3NzQ3MDRkOGQ5Njk3Y2E5ZGY2YzZlY2E1ZTJhYjZlZmZkY2JmYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTY2Y2MxNzZmNTI5OWM5YWU1MjdmYTE5ODJmZDk1NjIyZmNlMzM3MDUwZTI0ZTQ1NzhiZGI1M2VkZWM3YTk0YSJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L426-L428",
+          "version": "repo-lines-v1:sha256:d475298ae4e1b132c0db38348bd7be739c604faf8c4549fb4e3532e085249363:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYThjZTQ4OTAyZjk5OTQ5ODZkMWI0M2NkOGRjNWY2ZmRiNmMyNDcyNmY1NWQ4MzZhMmE0N2EzZjI1ZGI3NGE0NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQzM2QwZWE5ZWNmMmYzOWM5YTUwNDA3Mzk1ZWU0MTE3MmZlNjgyYzljODg1YTM1MDhmNzViZGVlMTUxZWZmZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTRiMDkxNmU4NWFkN2Q3MTcxZjFlMGZhZmU2NzBmZTg3YjJiNWEzY2M3NGM0ODgzNzBkZGE3MjAxMzRhMGI3OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDk1NTVjOWYyZTU4MjE2YTJhZTM5MmMzOTI1ZThkNWViM2RiMmMxM2E3ZjI4ZDUxYmZlMmZjY2IxNGU0OTg3NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_95f7b47621c742fe9b7b6c3497596808",
+      "statement": "A plain query string is sent to store.search as query and runs the hybrid expand, fuse, and rerank pipeline, while searches is mapped to queries and runs the caller's typed sub-queries directly; both calls pass limit, minScore, candidateLimit, rerank, and intent.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L489-L535",
+          "version": "repo-lines-v1:sha256:53638c086acc5c4ff86416819d856af2dc7b35884568a78b97542de896e30b89:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUzMmVhMzFjNGJmZmVlZDg2ZTFlODNjZTRiZTVjMTAzOTc0MWEyNzkzZWU3MzQzMjQ3NDY5MDJmZmRlOTA4MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2MzM5ODY4M2VmYWUxMDYwOGRmY2I0MjkzMGI1YWY4MzA5ZTlkZmZhNTQ0OWE2NDM1ZGFlNDEwMTU5ZDM1YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3M2JiMzM3YTUwNzQ0NWMxMGY3ZmViOTQxNTMxMmJkMGNhOGVjZWQ1ODgyZDVmYTVhZTU3NjUxOGNiZjEzZjgifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L455-L475",
+          "version": "repo-lines-v1:sha256:86a96c9acc3fc307faf84c31a24741b778c090fdddec468798b50e96ace80c54:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkZDM5MGE1Y2U5YTI1MjYzZDQyMWVjMmY3MTA1NmEwNjk2MDhjZmQ2Mjk1NjMzMjJhMTFlMjE5MTdmMDNlMDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzMDUyMTkzMmY3Mjg4MzEzNTlmYTM0YTI2OTk0MmEyMDQ4NTQ4YmIxYzM2ZWFjNzBlZGMzNWExYjYzMjAyMDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiYTBhYjY2NDMwNmU5ZWJjZjllM2Y5MjBmZWUzNTc5NmIwMDdjZjg5MGVmZjc4ZmVlNzRmNWYxMjUxMzU4MWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkYTMyNWNhNWQwM2RkM2JkNmY2ODhmZGFkYzg3YWE3YjdlOWJkODhlMmQxMGJhNzc2ZjFiZWNjYjM5ZmU0ODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4284febc38924152b8692c436fdec56e",
+      "statement": "When the query tool's collections parameter is omitted it defaults to the store's default-included collection names, and an empty effective list is passed to the store as undefined; collections is an array of strings only.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L576-L579",
+          "version": "repo-lines-v1:sha256:a30021631081a82c89a2f8d76a3ccdd7179c1cfdc48f384a24221a49308f5980:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjYwYjdiODRiNGU5ZDI1ZDJlODQ1ZDc3NDBiNTk1MTI4MmJhODA2MTI5MzdlZGIzZjhmYWFkZGE3MjcyNDIxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWYwY2RiOTcyYTdiZmI3ZWQyNDZmOWZmNjcyMzg1ZTU1ZjQ5NjhmYzExMDQzZGM1YjY4NGQ1MWRmYTMxZGJjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzlhYmUxMWYyZTM4OTA3ODdhYTQyMjBmMmNkMmFlYTE4MWY2MDhjNDBmNDE5NjJmZTQ3NjMwYTE0ODJlNGIxOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTkzNzFhMGY3MzY2OGQ2YjY4MTY1ZWI2MDY2ZmU5ODRmNmRhNGE0MGExMjEyMjBhZGM3MWJiNjFhMzVhYWY0YyJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L270-L270",
+          "version": "repo-lines-v1:sha256:b2dae97b8a9b8846870f9c62e88f5c992dbcbc4eb41084cbb39ef1adf02c3e85:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJkYWU5N2I4YTliODg0Njg3MGY5YzYyZTg4ZjVjOTkyZGJjYmM0ZWI0MTA4NGNiYjM5ZWYxYWRmMDJjM2U4NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjJkYWU5N2I4YTliODg0Njg3MGY5YzYyZTg4ZjVjOTkyZGJjYmM0ZWI0MTA4NGNiYjM5ZWYxYWRmMDJjM2U4NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTQ5YThiMWYzZTc4NGFhNzZhZGQwYTdiMTJiM2Y1Y2MyNTRhNDg3MWQ0M2VkMzFhNmY0ZWM1OTFjZGY0NTVmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODY1ZTg0NDI3NzhlN2RmNzY1NWU2Y2JkNDE3ZDg5NjU4MDc2M2U2OTg4NzY4ZjAzMTYyMWUwMGQ2ZjA5OWM0MiJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L411-L411",
+          "version": "repo-lines-v1:sha256:b9c205023169e4d82c624c893c94bf4dd3052d991af7e90bb99f0a8f5ada296e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjljMjA1MDIzMTY5ZTRkODJjNjI0Yzg5M2M5NGJmNGRkMzA1MmQ5OTFhZjdlOTBiYjk5ZjBhOGY1YWRhMjk2ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjljMjA1MDIzMTY5ZTRkODJjNjI0Yzg5M2M5NGJmNGRkMzA1MmQ5OTFhZjdlOTBiYjk5ZjBhOGY1YWRhMjk2ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTgwNmU1MTgwMzViM2I3MWE3N2YxOWFlYjk0OTBiYTcxM2Y2NjZjMThmMWU1YWMzZWFiZDYyNWZkZDQ5YThmYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjhmYmRlZTI4NjVhZmM0MjZhYzE4Y2FjZGIwNjZlNjgzYzdjMDFkYmMyNjJhMDFiYzUzMzE3NTkxMzdlYTkyMSJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L455-L462",
+          "version": "repo-lines-v1:sha256:800f95dd231158327fe351379b10e32ab5fa8a4eadd856630b0e7e1588e4bfc3:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWRkMzkwYTVjZTlhMjUyNjNkNDIxZWMyZjcxMDU2YTA2OTYwOGNmZDYyOTU2MzMyMmExMWUyMTkxN2YwM2UwMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGJhMGFiNjY0MzA2ZTllYmNmOWUzZjkyMGZlZTM1Nzk2YjAwN2NmODkwZWZmNzhmZWU3NGY1ZjEyNTEzNTgxZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjUyYzFhZTBkNDEzZDkwZWM4MzQyZGNhZjIxOTJlMGU5ODc2ODNkYWFmOTE0NWY1YWVkNmViMmJmYTFkNjc1ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_dcf8b1b97ae04f4ca049eeed4155d48d",
+      "statement": "The query tool validates filter with parseMetadataFilter before calling the store and returns an error result with the parser message when the AST is invalid.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L412-L424",
+          "version": "repo-lines-v1:sha256:4e817a9019c8a1de0a06e5fce28ced1a033fc3a0e021ef21b417eaca00fd0abf:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmMjlmYWY2YjA0ZDYzZDhkMTBjZGEzYWQzNGMzNWUzMDI3ODk0ODE5MDY5N2E3ZjUwNGJhZGQyMjZkZWY2NDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZkMGY5MzQwOTFmM2E2NjUwYTY0Njg1MmIzMzI1ZmUyNjFkMTYxMzRiNGYxZDI2M2Y1ZTI4MzM0YjRkNTNjNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2NmNjMTc2ZjUyOTljOWFlNTI3ZmExOTgyZmQ5NTYyMmZjZTMzNzA1MGUyNGU0NTc4YmRiNTNlZGVjN2E5NGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNiODM0YWRhZTNjODQ4NTg0M2ZiMGZiOWVmZDBmNDI0N2NjM2JkNWZkOGMzNGE5N2Y5MjkwNmIyYzcxOTQ5OGMifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L431-L455",
+          "version": "repo-lines-v1:sha256:bd4c7e057b00f4284e9bf6d63c4c4b22c50c2a78170561640c422a38c2d40f35:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3NjViY2U1ZjBjZGI5MWZhMzhkNDkwMTBhZjlhZjVkZjNkMWY3YTc1NDk2MjE3ZWU1NWI3ZDEzZDdiMzNiYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkZDM5MGE1Y2U5YTI1MjYzZDQyMWVjMmY3MTA1NmEwNjk2MDhjZmQ2Mjk1NjMzMjJhMTFlMjE5MTdmMDNlMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmOWYyNzY0YTdkZTA5YzNjNTdhZTg5NjZkNjU4NjMxMzM3M2Y2ODI1YmM3OWFkMWU3YzhhMWVhZjZkYzJhNTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1MTZiZDU3Y2ZkOWNkOWMxNWQwYmI1ZWNmOGMwNDNlYmU0ZGQxNGY4OGM0ODZkNGViOGQ1OTg5NDBjOTM2MTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_efebfba6c6a244a1952f78fa7cc0dd39",
+      "statement": "Tool input schemas are plain z.object declarations without strict mode, so unknown parameter names are dropped rather than rejected; the README documents that a misspelled key such as singular collection silently leaves a query unscoped.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L216-L216",
+          "version": "repo-lines-v1:sha256:3f87cdac616f606c2e0b47f9f4c0a9624810e265d60e943f21eed01571722bad:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Y4N2NkYWM2MTZmNjA2YzJlMGI0N2Y5ZjRjMGE5NjI0ODEwZTI2NWQ2MGU5NDNmMjFlZWQwMTU3MTcyMmJhZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Y4N2NkYWM2MTZmNjA2YzJlMGI0N2Y5ZjRjMGE5NjI0ODEwZTI2NWQ2MGU5NDNmMjFlZWQwMTU3MTcyMmJhZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGUwZWM5MjIyZWQ3OTM0M2EwNjc0NTdiZWNkNGE4YjUwZWI1ZGViNDUzNzE5OTUwZTVmMDE3MDhkNmI0ZGE0MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWU1ZDMzNjI3MzEyYjc1MTU0MzZiNDljOGM3ZjBmYWFjYTFmODY4NjZkYWZmZjBlYjQxYzdmMmU1ODJiYzk0YSJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L397-L430",
+          "version": "repo-lines-v1:sha256:c66136b2d6b9171ea5d1bb3ef7372db01d74335a5832857a4fa5e62ab5c21217:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4ZGMxY2I5YTBkZDEzMjRjNDgwNDY1ZjY3YjM0ZTE0MzdiMTBjZDkzNzMwNTY4ZjM2ZGYwODNkZDE1MGY2ZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmMGNkYjk3MmE3YmZiN2VkMjQ2ZjlmZjY3MjM4NWU1NWY0OTY4ZmMxMTA0M2RjNWI2ODRkNTFkZmEzMWRiY2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3MTVmNjI3MjVjODQzYWIzZWExNGVhNjY1MTMzNzMwYThhYmVkMjY0NDE5MDkxZmZkMzQ3NTAwYjFkMmVkNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwMWZlYzhiYjhmNzI1YmZlMmNmMTRjZWZmMWUxZjcyYTYwYzc3NThjMGYzMWFlZWVhMmRiZjM0ZDYxMjkxZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_32df233c60a54d0290638de88f3c9c51",
+      "statement": "Each query result is reported with docid as #id, file as the display path, score rounded to two decimals, the absolute 1-indexed line of the best match, a 300-character line-numbered snippet centered on the primary query, and metadata only when non-empty; the response carries both a text summary and structuredContent results.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L464-L490",
+          "version": "repo-lines-v1:sha256:63c92c43260a4e457d712c716f88c153395ca0daf931c7a0292057fb0834173f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwZWM0YmY2YjNjZWEyNzZmNTlhZTg4YTM1NzlhZGRmNDE1MmUzOGUyNDcyZWViZjY5ZTcwOGY0YWUwNzQzNWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0NWI4NmJlYzJhY2EwZGIyMjcwY2VjOWUzOWVkMGMyYTA4NDZiMmZkZDVkMWU2ZGY5MjFiMzgyYmEyMGJhMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4ZDYyOTZkYjk4OTI4MTY5MTY2OWM1MzkzZGVjN2IwODAwNjA5M2Q2YmEyMTg5YTFkOGY5YjJmZjY3NTEwZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJhNDE1MWJhOTFiZjhmODllOGQ2ZGUwMjAwNGYzMTQ5ZjcwMjA1YWYyYTk4MDU5MDJlMTM4MGI0NTc0ZTVhNGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d13db9f2677f4d6bac6eeecc28d1c0e7",
+      "statement": "The get tool accepts a file that may end in :N or :N:M, where N is the start line and M the line count; explicit fromLine and maxLines take precedence over the suffix values, and fromLine is clamped to at least 1.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L506-L517",
+          "version": "repo-lines-v1:sha256:3ee33772e9545fd093c15913dbb6db5f7a51e3896a98b6d7a6d40e4edc079930:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4OTRmOTIyMTEyMzNlMjExOGQ5OGJmMmNlMWFiY2IzMTI1YmQ1MTAwM2UzOGIxMjRjOGQ2YTcxZDZiZWI1MzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2NzdkMmYwMzFlOThiNWU5MTFjNWFkNGZiOWIyMTg2YTkzMjUyMmU4ZjQ2ZWU0MGJhYmZhZTNkYTAwZmMxMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzNTA4YTU3NzMyZjgyN2E0ZjJiMDI1NWI0NDIxMjlkYjhkOGU3ZjJjNDE0N2E1ZmJiZWNjNDZjZWFjYWM3OTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU5ZTE1MjE2ZTlhOTFhNjY0ZTRhOGYwM2I0OTc4NzUzZTA4NGEzNDIyOGI4ZGRkYTdiYmYwMjY1ZjA0MDU2ZDIifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L519-L545",
+          "version": "repo-lines-v1:sha256:f3ea656b54c0af7bab8f083086016aef89d6270402a937214682b343203d5973:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxZDY0Y2ZmYjM0NTY2MDYzZDU4YjllYjljYmNlNGQ0NGQ3NDRjMzM1M2EzN2Y5MTdmMjE5NTlmZjRmNTQyODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwN2UwMzE2YWIwN2IyNDUzMTlmODQyZDNmMWJjNTI5YTg1YWNhNzE1MDMzZjk3MzExNzExM2ZkYThhNzgyM2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk4ZjA2Yzc1ZTRhODUzOWU4NzJjMzhkZmQ5ZmYxMDMwN2ExMTVhZjJhMTI0Y2MzMGFjZGZlYmM5ZWFmZWI0MDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzM2Q1MjMxMzY0OTllM2VjNDlhMGNmNjRhZDJkYWQzM2UxYmNlMTZkOTRmYmE5ZTM0ZmM1ZDQwMWRjNjY5NDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9a166de212a34f348c2e9bf09b135512",
+      "statement": "The get tool returns an error result for a missing or ignored file, adding a Did you mean list when the store reports similar files, and on success returns a resource content item with a qmd:// URI and line numbers enabled by default.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L512-L517",
+          "version": "repo-lines-v1:sha256:5991e9552ce07826b9350c0e58512bc1004c3e9bac47b1ecd90c58d5605a9507:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOThkYzFjYjlhMGRkMTMyNGM0ODA0NjVmNjdiMzRlMTQzN2IxMGNkOTM3MzA1NjhmMzZkZjA4M2RkMTUwZjZkMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTY3N2QyZjAzMWU5OGI1ZTkxMWM1YWQ0ZmI5YjIxODZhOTMyNTIyZThmNDZlZTQwYmFiZmFlM2RhMDBmYzEyMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTRlMWM1YzE4ZjFjOWM1MDhiMjYwNWIyZGFkY2JlNjQwNTJlMDcxOTA3MmJjMzkyMmEzMWU5YWUwYTI2ZTI4NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTllMTUyMTZlOWE5MWE2NjRlNGE4ZjAzYjQ5Nzg3NTNlMDg0YTM0MjI4YjhkZGRhN2JiZjAyNjVmMDQwNTZkMiJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L546-L580",
+          "version": "repo-lines-v1:sha256:bd7aefade90253d91255ff99b862cd185c4c934eeef0e04939eb01b5fb6b7a5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRkNjE4YTIzZDJjYWE5ODVjOWRkZTZiN2Y1MzM0N2JlYmJjYzgzMWQzMmU5OWMwMGM1MDY5OTg2ODdkMzVlMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwZWZhNDZhNjhhMDE2Yzc0MDQ3NjA2NWRiZWQ1OTdlMjMwNTE2YzA4NmEyZjFlNmMzOWYzZGRhNTFkZmQwMWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4YTFhMzc3ZTFiM2I1N2MwNmQ5MzA2N2UzOGQwMzk1ZDU4NzYxMDhiZjQ3NjhiYzljYjc4ZjdhY2JiZWI5YjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3OTMzYjZkNDFhNzEzM2Y1M2Q0OTE2MTRkNDIxMjMzNzYzNzBjOWU5NjM3MTY0YTA4YTExZmZkYjMxZWQwMmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e63f8ffc1e634e3b9682e3da0207fe60",
+      "statement": "The multi_get tool takes a pattern, optional maxLines and maxBytes, and lineNumbers defaulting to true; maxBytes defaults to DEFAULT_MULTI_GET_MAX_BYTES, which the store defines as 64 KB, and files over that size are reported as skipped with a hint to use get.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L583-L596",
+          "version": "repo-lines-v1:sha256:5109e056a24cd84bf7109a195b901d2e8c972da5494cc7fb9d3645c8ab882e07:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4OTRmOTIyMTEyMzNlMjExOGQ5OGJmMmNlMWFiY2IzMTI1YmQ1MTAwM2UzOGIxMjRjOGQ2YTcxZDZiZWI1MzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhY2YxYmYyYjMxNDEzYzI1NWZjZDgxMmVmNWQyNmYwNWZlMDZjYjY1OTMzZjJiMzg4NmI1N2IyM2ZkYWZiOTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU2NTUzMzVlMmFkNjZhODBjOGI0MTllN2U1NWIyYzM2NzhhODk5ODg1M2U2ZjJlZWUwMTg4M2I2OWU5YmQ3MjUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhZTRjYTg4ODk3MDM2ZTI3N2JmYzUxNWM0MTJlYjM4ZDA1NWRkNDE3NjhiNWIyYzMwMjg4YTA3ZTE4MzhhMmUifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L598-L625",
+          "version": "repo-lines-v1:sha256:e5117cff9bbb09f427cea92454c1a602a84dfd63f0b637d9d8ebd2aa899eeb3b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhYjQwYzc5NTM3ZTU0NTQ1NTU3NzI1NzQ5OWM0Y2U2MWMyNTk2MDY0NzM0NGQwMWRjNjRmMDY2YjZkN2E0OGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjMWIwODJmNDliODNjZmE2ZWYyYTlkNzk1YmM0MTMzOTBjZmQ5N2Y2ZWFlZWY2YTRhYWNjMGI5NWI2NmMyZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkMDViM2E1MTI0YzBkMGYxMTc1YjEyZWFjZGY0ZmUzNjUzZGYyYjI2NmNiMjIwMWU0OTc3NmEzMjI1YTk4OTkifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L139-L139",
+          "version": "repo-lines-v1:sha256:124b00cd61771da648443651decc02f6f3eeafb84b8380dd02123389602f53ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTI0YjAwY2Q2MTc3MWRhNjQ4NDQzNjUxZGVjYzAyZjZmM2VlYWZiODRiODM4MGRkMDIxMjMzODk2MDJmNTNhZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTI0YjAwY2Q2MTc3MWRhNjQ4NDQzNjUxZGVjYzAyZjZmM2VlYWZiODRiODM4MGRkMDIxMjMzODk2MDJmNTNhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWY5ZTRiODUxNTJmYzc1OTEyNDFkNjNmODdjNWJjYjRjNzk5MzYwMDA2OTNiYzBlNjRhZTIwOTA3Zjk3YmNmMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmM4OWU0M2JhOTYxOTZjOTRlNmNhZTU2NTU2OTYyOGY4MjNkZTk1NGY0ZWMyNWUyNmViYTYwOTQ5YzUyYzRiMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d926b5f8b3e74bb8a1b0bf776eb61cd7",
+      "statement": "The multi_get tool returns an error result reading No files matched pattern when the glob, docid, or list matched nothing and produced no errors, and marks truncated files with a truncation footer when maxLines applies.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L598-L640",
+          "version": "repo-lines-v1:sha256:2b7326a7724d44e9c17272d52b851bb00a1775ba7382f6f07560a9ae2ed05983:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5NjNhZmEzOTk0YWE2MjEwM2M2NGJkNDU4YTg2OWUwYzg4OWZmZTMyNzRhMjk4MmI5MGZmNTFkYTc5ZjMxMzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjMWIwODJmNDliODNjZmE2ZWYyYTlkNzk1YmM0MTMzOTBjZmQ5N2Y2ZWFlZWY2YTRhYWNjMGI5NWI2NmMyZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0MmQyOGEzNGQ4MzQ2MGU3ZDhjM2JhNDMwNjZiNTE3ZGM0MDU4N2Y4ZTI4ZmY0N2FmNTQ0NTBkMGEwMGEwZWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ebcc7e79ec4a4f0c88856ec90e8f3db4",
+      "statement": "The status tool takes no input and returns a text summary of total documents, embedding backlog, vector-index presence, and per-collection counts and metadata keys, plus the full StatusResult as structuredContent; it points callers to the metadata tool when any collection has metadata keys.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L656-L694",
+          "version": "repo-lines-v1:sha256:3df032bf6d9a06adf83202a21ced52f450690abae7c08057829f4fc55b555842:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4OTRmOTIyMTEyMzNlMjExOGQ5OGJmMmNlMWFiY2IzMTI1YmQ1MTAwM2UzOGIxMjRjOGQ2YTcxZDZiZWI1MzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkOTUxYzM3Mzg1NGUxNjhkM2RhNGIyYzY4OTZkOTIyYmUxZjljMGMxZWY4OGIyNWRhYmE5NzE2YTkzNjNjZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3YmE3ZmNmZThhOGQ4ZTUwNzk1MmY5ZWRlMTJmZTkxMGZiYTk3MWEzMDRjY2YyYjM1ZDhmOWEzNDBhZDhmMWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cdb3c306e4eb4a01b8fa5736ffaaebcb",
+      "statement": "The metadata tool defaults keyLimit to 50, keyOffset to 0, valueLimit to 10, valueOffset to 0, sort to count, and minCount to 1, and validates match and filter before calling listMetadata; a MetadataBindingBudgetError becomes an error result while other errors are rethrown.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L725-L742",
+          "version": "repo-lines-v1:sha256:06f4c603301927a220d63cf8208ad40f9bf0fd20a60e4f1fc8431eb8f5c2f125:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4ZGMxY2I5YTBkZDEzMjRjNDgwNDY1ZjY3YjM0ZTE0MzdiMTBjZDkzNzMwNTY4ZjM2ZGYwODNkZDE1MGY2ZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2NzdkMmYwMzFlOThiNWU5MTFjNWFkNGZiOWIyMTg2YTkzMjUyMmU4ZjQ2ZWU0MGJhYmZhZTNkYTAwZmMxMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBiOWI1MzAxZjY4YmRiNWQ0NTM2ZmQ2OTYzYWE3N2E4OWFlODZhZWEzODJmM2Q3N2RhZWIzNWI4Nzg0OTNmMzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1YzhkNDE2NTAzMGMzZDRkYjBjYzJiNTlhZTc5NDQwYzNjMTgyNGRlZjkxZDY2Yzk2MTQwNWI4YTY3YjEzZWYifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L744-L790",
+          "version": "repo-lines-v1:sha256:c164a60df8dbcec43208f3f6c1a66a453e73a51778f5ef6a1f9659b6168db137:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2NTUyYTcyNjIzNjdlNDQ3NDE2MWM2NzFhNzg2MTZkZjI5MjAzMWM0MzdmYjk5ODBhMDg3NzIyMDQxMTdlNDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NzVlOTRhOTA0YWM0OWIzMTU0ZDQ2NzJhNjZlODYyOWI4NmRhYzc0ZTNlMjkzN2JlNjkyN2FlM2RhMTFjNTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZkMGU1ZWViNDU2YzY4ZjgzMGQyMWZiNmYxM2UyZjZjZDkwMWRhN2YzMmRkOTBlMTcxNTY1ZDBjY2YxYjAwMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4NWNhYjEwMzk1OWU5YWI2MzE5MDkxMjNjYzcxZDBlMzY0NmNlNWI2ODU2NWM4YzcxYWZjMmI2NWJiN2I0ZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c35f409670c74c9a802f3207519ca141",
+      "statement": "The MCP instructions string is built per store by buildInstructions from index facts (document count, global context, collection names only, embedding status, search examples, and retrieval tips) and deliberately excludes metadata key rankings to avoid a scan on every initialize.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L155-L222",
+          "version": "repo-lines-v1:sha256:7c56d330a0ca7bd54e1342085674875696e128138d08bcedf6f65e839f619eef:eyJzZWxlY3RlZExpbmVDb3VudCI6NjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2MTYyODRhNjA1ZDQwMTExYWRhYjA3ODAxYTg4NjRlZGM2MTM1NjM4MTExMDFlZDdlNzg0OTk5YWU2MDAyNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxMzUzNTRjZTcwZWM0Nzg1NTFiZjI4ZDdkZWU0YzQxOWFmOTkwMzhmNjIzMjMxYjJjYzdmY2IwYWM0MGMzYzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczYTVhMjYxMjhjMTYxYzY0ZjBiMjdkZWU2ZmJhNTM4NjY2OTZhMDRhN2E1ZjFlYmE4NWYzMjE3YTE3MjhmN2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIxYTZmNDliNTllNzE0NjgzMTk3ZjUyMTI3ZTRhY2YyZDNmM2NhODYxNGVjN2U0MTQ2NDVmZGViYjA3MGY3ZWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5439b46410514c848588b88fe0e659f9",
+      "statement": "Built MCP instructions are cached in a WeakMap keyed by store for less than 60,000 ms; concurrent callers share the in-flight promise, a negative age (clock stepped back) forces a rebuild, and a failed build is removed from the cache so the next initialize retries.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L224-L246",
+          "version": "repo-lines-v1:sha256:cd3c4d03c0efcc11610c390bdfc09e514d7041ca47a757a2a6660a1fdf2ad73f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmMjg3NmI4NTEyMjc4ZjY2NWUwMmU3N2QyZjg1YzRmNmQyZTZhZDE3M2UxMzY5YmRhZjU3NzE4ODZmMTIzZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0Zjg5NDkyYTQ2OTMzYTA5YzA3YTE1N2I1NDBjMDJmZDFkNzdjNTQ5Zjc3MTMwMDk4YzY0ZDMyMGEzODBjMGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYxZmY4ZGZhMTc2NDcyNTkyODQzOWFjMDYxM2Q0Y2I5OGYyYjMwOWViY2E4MmU3YWU5OGY1M2Q2MjM1OTY1ZWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d32065c0b46647a6bfdec137ead48173",
+      "statement": "The changelog records that the MCP server caches instructions per store for up to 60 seconds instead of rebuilding them on every HTTP request, shares concurrent builds, and does not cache failed builds.",
+      "evidence": [
+        {
+          "resource": "repo://CHANGELOG.md#L55-L58",
+          "version": "repo-lines-v1:sha256:4b65ec30b1d42ab75a86650366baf941067edafd4ca5f0351b22ce54e5d91a4c:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmQ1MGI0YzI1YjU4YjEwY2ZhZGQ1ODBlNzllODljMjhhNjRhNWY3MWFjYmVmNGIyN2E5ZTc0YjNjNzM0NWMyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDYxY2NlMmI4NWJlMjIwNWJhOWUwYzk2ZTQ0NjY0MzBkMzcwMTEwMzY1YzE4NGRkZDc3N2RhNzcwZTRhNTdiOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWNkZDUxMmQ4MTc2NjJhYjBjMjhmMzdlY2VjZDExMGViNGI5MTFiMzViYzc0YTVjNDAyNTUyYWZkOWQ1MjY5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTI5YTJhY2ZiY2NmMTkwYzI0M2Q3YWRhMDRjYTJmNTU2ODNkYjE5OWM0YjhlMTFhY2QwYjI2ZTRkNjVkOWY1OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_51f3451289364391be7abafd8f7b5d63",
+      "statement": "The server declares cache hints of 60 seconds privately for tools/list and server/discover and zero for resources/read, since the index can change under clients.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L258-L266",
+          "version": "repo-lines-v1:sha256:b953a1defb2dac534c84f44949d8faaa0997468a65fb59b984fef098eba5d3aa:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTZkNTA0OTQ5NDBiMzkxOTIwN2M4NjkyNWM2N2ZkNmI2NTNhZWFlZGQ5OWE4ZTE2NDc3YzE5ZjRlZGM5MzkzMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWYwY2RiOTcyYTdiZmI3ZWQyNDZmOWZmNjcyMzg1ZTU1ZjQ5NjhmYzExMDQzZGM1YjY4NGQ1MWRmYTMxZGJjYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTcxN2M2NGEzYjQzNDk3ZGEyMTQwZDJhNTNmYTI2OWM3M2E1OTJkNWViMTM4MjliMDc4NDViYzYxZGU0ZjIxMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTQ5YThiMWYzZTc4NGFhNzZhZGQwYTdiMTJiM2Y1Y2MyNTRhNDg3MWQ0M2VkMzFhNmY0ZWM1OTFjZGY0NTVmZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ac200af34e724d17a8f600b6e60f9334",
+      "statement": "Stdio shutdown on stdin end or close runs once, in this order: close the MCP server and transport, wait up to 5000 ms for in-flight handlers, skip the LLM disposal step, then close the store; it sets process.exitCode rather than calling process.exit.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L1032-L1038",
+          "version": "repo-lines-v1:sha256:86f79ac8648f3d6027a92408a8b1e8a44d99730ca32d61717ed54e13730f6bc9:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDg4NTA5OGRlYjA4NWM1NjQwYjRiMWQ2MTA2NWY2ZDczYzM1YThkNmEwYzg4N2ViYmZiZTA1MzFlYzlkNzhhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTY2MzIwNzg0NWNhMjE2ZmU4ZWE3ODVkOGUzYTFkYTA5MTNkMTMyNDQ1MDIzNGE0NmE4ZWJmOTU0NjE5NzI3YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzU2M2RhNDdkODUxYmQyNTQ0ZTM2NDU5ODgxMzhhYjJmMDYyODZhOWZhOTU5ZTk0NzFhZTdjZmY1ZDgzZmU1ZCJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L924-L1000",
+          "version": "repo-lines-v1:sha256:9eae296eb9936a8c5da706abeff09d516d7fcd504b0ce050238368341545cbbd:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjODg4YTU5M2JhZTkxZjUzMjk2ODdlOWVlN2U5NmZkMTUwNDNmM2JkMWMwNGJkNjZiN2M0ZmRkNThjYzY2YzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2ZTU0YTE2NTU0NmNmMmRhMjM0Y2RiYzIxYjg5NzExMzNkYzQwZGNlYjEyNDBmZjljNzk1MDIxN2RmNjQ1ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMjUyMDNhZWViMTZiODAwOTE2MGVmNGI2ZGE4MzM3ZDdmYWU4MmM4ZTliMmI2YzdiYjg5ZWYzNGZmYmIyNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1N2YyYzkxYzk3MmFjYzQyZGU3NzhhNDZmOTMyN2JjYzA3NzEyMGYzNDFhYzRjNDZkNzUxZmVmNzNkNzc1NWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a3e8921610f040049b533127004f7489",
+      "statement": "Stdio shutdown failures are logged to stderr and do not stop the remaining steps; a failing step sets exit code 1, while an earlier nonzero exit code is preserved.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L924-L1000",
+          "version": "repo-lines-v1:sha256:9eae296eb9936a8c5da706abeff09d516d7fcd504b0ce050238368341545cbbd:eyJzZWxlY3RlZExpbmVDb3VudCI6NzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjODg4YTU5M2JhZTkxZjUzMjk2ODdlOWVlN2U5NmZkMTUwNDNmM2JkMWMwNGJkNjZiN2M0ZmRkNThjYzY2YzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2ZTU0YTE2NTU0NmNmMmRhMjM0Y2RiYzIxYjg5NzExMzNkYzQwZGNlYjEyNDBmZjljNzk1MDIxN2RmNjQ1ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMjUyMDNhZWViMTZiODAwOTE2MGVmNGI2ZGE4MzM3ZDdmYWU4MmM4ZTliMmI2YzdiYjg5ZWYzNGZmYmIyNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1N2YyYzkxYzk3MmFjYzQyZGU3NzhhNDZmOTMyN2JjYzA3NzEyMGYzNDFhYzRjNDZkNzUxZmVmNzNkNzc1NWMifQ"
+        },
+        {
+          "resource": "repo://test/mcp-stdio-lifecycle.test.ts#L105-L131",
+          "version": "repo-lines-v1:sha256:e6d229b6835e0b983c1ce605b8e7feb8c5880f7fe9f0e9c7e88e121feffb2d10:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJkN2U5ZWQ0NGNmMTY2OTI3ZWIzMDg1ZWYxN2I4YjcxNWFjM2ViZDM2NGE4Mjg4MmU2MDMxNGQ5OTZmY2YxYzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmMGFhMTY0ZWI0NzgwNmRhYzExOGFiNzk1NGM5MWQ3YjNiODZhMDc2YmI3M2YwNTI4NmYyN2JkNDkyZGJkMmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiYzY0Y2MyYzFjM2M1MDIzOGZmOTIxYTJlYzMwMGEzNzA4MjBhMTJkNmZhNTZlNTIxMWVhNzI4MTE0NDgzMzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f76baa7c38994240a2e81e3f2d43bbed",
+      "statement": "The HTTP transport is stateless and builds a fresh McpServer for each request through createMcpHandler with JSON responses; its stop function closes the MCP handler, then the HTTP server, then the store, and SIGTERM or SIGINT run stop before exiting with code 0.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L1062-L1100",
+          "version": "repo-lines-v1:sha256:7f7b55571ddbff9a6e9ba6065e4508e4baee0a2feb4a0f9b6088c5752c1b1357:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhMGI4OWM2OTJlZmFmM2NiMjQzYWU2OWQ5OWIzYjQyYmQ5Y2M1MjNjZjIxMDMzNzk1NmRhY2I0ODAwZmQ5NzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkOWUxMjU0NjQyNTU3NmQzZGVhZThjOWI5ZGJmMTI4ZDVkNmRkYWY1ZDdmZTg1NzkzNDkyN2RlZmZhM2I5ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjZmEzODMyZmQwZjAwNTQ4MzM3YmY0YTY1MjNjOTU4YTllMmIzM2UzZTg1NTc1ZmQ3NTI3ZjM2YmFlZmZhMDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwNTZkNGQ4YzU5NWI3ODUwYTdjZmE2YzU1ZmZlYTE2ZjUwODVlMjZmOTkyNThiNDk1M2Y5ZjZjNTQzY2RmOWMifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L1426-L1440",
+          "version": "repo-lines-v1:sha256:de989c70306ed721492c7b8ad9e06031f073246d57ed96f62fff09a600bdef03:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0NWFlZGE3Y2U0ZWRhMjJiMGE1MDk1YjNlNzNkZWUzYjczZmMxMGFjZWZiYzMxYWQwMGM1Y2U1N2M5OWZiYjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmODU0NzY4MGVhNDEzYjZlZGIyM2NmYTYzNTE3NWYxZDE3ODE2M2E5ZDI2MGVjODE3NTFlOWMwNmNhMmFhN2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjMDkzOGZlYjllZjAxOTJhYmQ4NmJjZGY5N2RhMGExNGI4YjJkYjhjZmVmMjZkYjUzNmI0ZGI2M2QxY2NmYjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwYWQ3MmE2ZjE2ZDFjNGJiMzEzMDViZDNlNGRhNjk1MzNiNWFjOTNmZTViMjA1YWE1OGM4MGYxYmE2MmZlZGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ee2bc03883464e43a49cbc0058f2fb53",
+      "statement": "store.close disposes the store's LLM instance before closing the SQLite connection and resets the config source; it is called only at process shutdown, not after each tool call.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L669-L676",
+          "version": "repo-lines-v1:sha256:fbe472ec855b2f49c44ac0d2cbad3d0bdbfd47795d1fd436c5b2a2485f8e4e32:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQ4OTQwMTczMjc3ZmZmMDU1YmJlN2IxZjM2MzE0MmRiZGJlNDc0YjEwYjEwM2YzZDhkNjcxNGNmM2MzNDA4NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJhMmNiMjVhMTIyYjQ0MjIxYTYyMzRlYzY2MGE3YjVmYjdmOWJkZTdiM2I5ZTJiM2M1NTlhMGQ5NmZhYzczOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjNiOGJlODI2NjgwMWFkOGZhNGZkOTc3NjliNjMwZTg3ZGY2MWE1YmM3MzgxMjA3ZjQ3NWQwNGE4OWMyYjk0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODFmMzljNjYwYzAyNzY3NmUyOTY2NGUyZTkzMmFjMjdlZTIwYmNjNWI0MmNlOGJhODIyNDI4MDRkNDg0MWZiZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a71188e0cd5742c9a7b055481a56bd08",
+      "statement": "The README tool table says query requires searches and that multi_get maxBytes defaults to 10240, both of which disagree with the implemented schema (query accepts query or searches, and maxBytes defaults to 64 KB).",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L170-L216",
+          "version": "repo-lines-v1:sha256:2caaf051054f506d7016c77cfbaa3314ddca6539bb8b928ee27641d4dc2de10c:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlYWQ0YWRkZGY3MWY1ZDE1OTBjYzhjZjFkYjY2NjIxNjY3MDFlNDQ0OTVkMjM5MDhkMjFkNjZhYTUxMGY1YTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmODdjZGFjNjE2ZjYwNmMyZTBiNDdmOWY0YzBhOTYyNDgxMGUyNjVkNjBlOTQzZjIxZWVkMDE1NzE3MjJiYWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjMDgxOTMzMTBiZjEyMGEyMDczNzMxYzUxMjcxYWJhMGFhOWEwNTFkMGRkMzU0YTllYjAzNGViOTczZDcxMTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlNWQzMzYyNzMxMmI3NTE1NDM2YjQ5YzhjN2YwZmFhY2ExZjg2ODY2ZGFmZmYwZWI0MWM3ZjJlNTgyYmM5NGEifQ"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L402-L403",
+          "version": "repo-lines-v1:sha256:9e5dd065d7788a64b590c0bb9ffd9fef519f4065486b36b6d7ed2df1db03dd2e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTJmNzExYThlNTRlMmEyYWRmOTFlMjE1NWE2YzFiM2Q3MWZhMTA3OGJjNDg1M2Q1ZTcyMjcwZDZlOGYyODkwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjcwMDY0ZjU2MzFmZGE1YTk2ZDQ4MTcyZGRiZGQ5NWY2YTc0NGYwODk4YTg5NTk0NWFiZWIxNWJkMTc0MGI4ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGVjNjQ4ZjFjMGU4MDgzMjM3OGI5NDJlMDlkNTIyNDVkYTBlMGE2ODZmYjFkNWYyZmRkYTU5YWE3M2FjM2M5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDcyYzA1YjAxMGQxMWJhNmI1MGRiM2NhMmFkYzRlOTE5MWUwYjNhMzQ1NTJhYjdlZDc0NDMxNjc0YjY5ZDJmNiJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L592-L592",
+          "version": "repo-lines-v1:sha256:91f8f3be905fd576a7a00021412df24555ee7d9056f9b821b6fde5bf815759d4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTFmOGYzYmU5MDVmZDU3NmE3YTAwMDIxNDEyZGYyNDU1NWVlN2Q5MDU2ZjliODIxYjZmZGU1YmY4MTU3NTlkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTFmOGYzYmU5MDVmZDU3NmE3YTAwMDIxNDEyZGYyNDU1NWVlN2Q5MDU2ZjliODIxYjZmZGU1YmY4MTU3NTlkNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWZkMDFhNzM3ZThjNjBjZjQ2ZjJmNGUyNjA1ODc1ZjJhMmUzZmIzY2U0ZTVkMTY5NTBmNzI3Y2NkNWVlN2VkYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOThmMDZjNzVlNGE4NTM5ZTg3MmMzOGRmZDlmZjEwMzA3YTExNWFmMmExMjRjYzMwYWNkZmViYzllYWZlYjQwMCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

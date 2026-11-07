@@ -1,0 +1,440 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:68420550059bc0b4e54c33d885ab6d1ab8d7ef099865ac51e0909675cd5a0f1b",
+  "claims": [
+    {
+      "id": "claim_c16bbf370f16494889d137c598c3dee7",
+      "statement": "The published qmd binary is bin/qmd, a Node launcher that runs dist/cli/qmd.js when present and otherwise src/cli/qmd.ts; for the mcp command it pre-seeds quiet llama/ggml logging variables so native output cannot corrupt MCP stdio.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L1-L40",
+          "version": "repo-lines-v1:sha256:a24629b7a340c82c97f8f32cdc4bd5203a4564977769c71540aa3b594f991407:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OWM0Nzg3MmI3MWYxMjU4OTk0Mjg5MjQ2NGU3NjRjMGRiMzUwYzIwYjcyMjI4NjQ1NjE1Y2MzNmUwYTA3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiMTYxM2NhNzU5MjE4MzRlZmM3MWRlNmY4NzQ4NDVhYzgwZDJkMTNjZDYxYjljNTY3Y2I1NWQzYmIxNDY3MTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0Y2Y0NzExY2Q3ZmY4MDhmZmNmZDAyZDgzYjA0ZWZjN2MzNzhkYWIyMzA0ZDRmMWI0MWU5YTA2MzY2MmZjMmMifQ"
+        },
+        {
+          "resource": "repo://package.json#L14-L16",
+          "version": "repo-lines-v1:sha256:8f8f94bd34b51edc88c84b882b2c74ba53913e739acd64d3982264ba8fcbef00:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZjMTQ3NTdiOGUxZTlkNmE3ZGVlOTkwMmU5MDQwN2FkOGNmNjczYjNlOGQ3NjNlMjc5NTBkMTlkMDY3OGQ2OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTdhMzliMTVhMDc2OGFkYTg4MGNkMjgyYTJiMzk5MTQ5ZjkyMTgzM2IxMjQyYmY5NTUwYzgyMjhmZDQ2YTMxZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzM5MWNhYzQ2MDVkNDIzOTE5OWVkYTU5NDRmY2JmOGU0NDZmOTYwZTg4NDNjNzVhMWQwNTZjMzM1NWQ5ZDFmOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_23ca6f5c5db74ee7a332bed09c0845aa",
+      "statement": "The CLI body runs only when qmd.ts is the process entrypoint; enableProductionMode() is called inside that main-module guard so importing the module for exports does not change database path resolution.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L4598-L4606",
+          "version": "repo-lines-v1:sha256:326ce8c64b8880ffb17cb8e2d6c760abcac4b4a43075c2c6ceacff4a24c33a68:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGVlODM1MWY2YTA3ZGFhYmYyNmFjYWNiYmE4ZGZjMWI4MDAwZTU0YmFmMWFmMjQzYWRiMDUzY2Q2YTU5MmNjMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzBhYmIzZDlmYWRiMzNjYjdkZTE4OTkyOTg0OWRiYzgyYmVmYWY1YWJlODZjNDZjYzRhZjAwMmFiMmM2YTkxMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzNhODFkOGMwNDg1ZjM5MWE0YTllZjZkODI4OTBkYzYyM2I1MzY3OWFiNjRmNjQyYzBiYWZlNmI4MjA3MjEwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWExNDU3ZTg4ZjA0NTdmY2U3NTEyOTc1MjhlYjU5NjgyZTVlNmRiOWJhMGQ5OTJiNzkzODNhNzk2N2NjOWE5NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_52acaa49a8c949a2aca301586da978b4",
+      "statement": "parseCLI uses util.parseArgs in non-strict mode: the first positional is the command, remaining positionals are args, and query is the remaining positionals joined by spaces.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L3317-L3467",
+          "version": "repo-lines-v1:sha256:ee86be2639a44d3730a53d06a7c2d4b17e871095f07e12d94175057035c2fcf1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxNzY4YmZmNGU0MWQ3MGU4NTMxMTgzNDAwMjE0NDZhNzhmNWFlZDRhNzA2YjE0Mzc2OTBkZDY4NDFiMmFmYTcxIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0MTJjYTM0NWNjZjc1YmY5YzA4MDZiY2U2OTViZThkZTgwOGI3OTk4NDI1MWE3YTU0ZDIwMmNmNjEwMWRkNDUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiYzVmMmM1Nzk3NDM3M2U4Njk3M2M0N2ExNGM5ZGRjZDJkNzE1NTE5MDQ4OTA1ZGQ2YzQwNWQ2ODdlY2MzZmE0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJjZWI1ZmYyMjRlZWQ4YTYyZjU1OWRmNmYzMmYwN2E3NGI5N2E1MGRlMTc4MzJlMTk3YmU1MTA4Zjg0NjJhZTNiIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_bef00217378643bdb70d7ff9a4d70dc9",
+      "statement": "Top-level flags short-circuit before command dispatch: --version prints the version and commit and exits 0, --skill shows the skill, skill --help prints usage, and a missing command or --help prints main help (exit 0 with --help, exit 1 without a command).",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L4604-L4637",
+          "version": "repo-lines-v1:sha256:ade9e821e3c2ac2530bce832962c40a504c705ba66ce675b5d7a023dd62afd76:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMDliMTRlZTM2Y2NhMzg2N2JmNmM5NTJkZWMxZmFkYzU3NTdiZGMxZjY1NTFkN2IxYTViYWIxYjgzYjQ0OWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViZWMxNDQ4OTY0NmI2Y2M4NjNiMWUzOGExMDI1YTBhNTk0NjE4MDAyNTZlM2I1OGU5NWFkOWRhMDE4YTAzZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJlNDljYmZiMzk3NTljNzZjMTY0MjBkMjliNWQxYzA2YTllNTEyZmVmZWMxNzE1MjdjOTNmYzA1MDExNmVkMjIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0a642968023249369c3a3d78675baa25",
+      "statement": "Command dispatch is a single switch on cli.command; an unrecognized command prints 'Unknown command', suggests qmd --help, and exits 1. Successful commands other than mcp finish through finishSuccessfulCliCommand.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L4639-L4640",
+          "version": "repo-lines-v1:sha256:b1f631e0dbae64c40ed3b8de7b46d2070167cd6b364fc91ec1367a887083a687:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzYzYjRjOGJlNTUyZjYxZDQ4OWIxODFkMGMzMWUwMDU5YzcwMmI3ZWY2MTZkZGEyMWM0OGRmYjMxMDY1ZDA1NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmJhYjQzNGUyZDY4NTAxMzQxMTQwMTQzNjhkYmZmMjFjYzFlZDViOGI3OTk3MDlkODQ4NzQ4NWEzNGFjMjJjYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2RhODQwYTM1MmEwYmFhZDJkMzlhNDYyOTY5OTQ0NjVjMDM3MGM3MTMwZjBkMWIxOTA4YWFlNzFlZDZlMmY2ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjczODAxZjVmOTdkYjBlZDI1NzkxZDZjYTdhZWEyYTczOTk0MmUxY2FmY2E0ZDRiMTM0MzUzN2I1NmYzN2U2YyJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L5289-L5300",
+          "version": "repo-lines-v1:sha256:65bca8dd68202f5ee41d7353341ebba6ab45133250bb7739021ad6b2cd934821:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxYzI5OGQyNjMyMzU0MzYwMDRkMmJiZjAwZjUyN2YwMzg4MzAxOGJlMGI3Y2I2YWZmMzc0Y2M5ZDU2MzdmYjIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhhNGE2MDI5NWM4OTQxMjczNzRiNTkzNGRiNDRiMmVlYTMzZmI0ODMxY2I1NWM5YTUzYzUzYWQ5ZDFmNDEwMDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlMTJiNjExODk0M2UzMGMwMDY4MzNlNzgxNjMwYTUzYjMyZjQxN2VmNWY5Nzk1YzNmMTJmMzMwODAyNGM1ZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_74aa6330170e448fb6b68728d5dc9144",
+      "statement": "The --no-gpu flag sets QMD_FORCE_CPU=1 during argument parsing, and the model layer and doctor both read QMD_FORCE_CPU to force CPU mode for llama.cpp.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L3397-L3399",
+          "version": "repo-lines-v1:sha256:b1fb4d971bebebe95b1ed76437f3a5a70563deeb2b1722801dcaa5d55cb045c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODA0NDM3ZjQ5NDQ0MWNiOGZhNGY0Nzk5YTVhZDg2MGFjMWM4MjBmN2M2ZWFiOTBlMzMwMDFmMDYxNTIzMWQzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTVkMDMxYjUyYmY3YmExZjZlMzNjNjE1MjY4ZTliZDUzZTQ5ZWYzNDdmYTk4NTFmMTgyY2JlYzUxZGRiMjE4MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTJmM2FiNjNhMWM5N2ZjOTE3MmZiMmYwOWJiYjlhNDU2NDIzNDM2NmU2MDJjNzhhNzBjY2I1Njk0OWRiYWFlNCJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L499-L508",
+          "version": "repo-lines-v1:sha256:4115801506ee94b9bcf95700bf243bb00fb68c76cf716715524beb42aafb7290:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNkNGFmMWNkNmE2ZDU5NTgxMmQ1MGUxYTZhNWExMjIyYTA5ODNhMzc5ZTI5YjEyYzM5NjYyYjM2YTIwNWYyMzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2NjEwNWJhYWJkOTliMTViOWUzYTBlMGUzZTY1NzcyNTJjZTgzNjk2MGFmY2ZkZTNhMWQzNTVlMDcyMzEzZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViN2ZiMDUxMjM4YjEwNWE4NzMxYzc3NmRhMDExMTBhY2FiZjYyYTJkNDU2YmExMzljZTRhZDAwOTRjNDVhNjMifQ"
+        },
+        {
+          "resource": "repo://src/llm.ts#L750-L765",
+          "version": "repo-lines-v1:sha256:20400d85c0a64ed450c6dd499f0821176e3ac7ec502d74351ad4b929e86241cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYzYwODc3ZTU3NDgzNDFmMTEzNWRiY2JmZTI0OWIxZGUyYzE2MTdlNjE1MGI1ZTZmZjFiMGY4NjljMWI0MGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkMTMxNjM2MDE3OWIwNzIwZjMzZWI2YzE0N2NiNWE5NTFiNjRmYzI1OTJkYThhYzMzMTU5YTIxNzY4NTFiZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5YTBiZDJkZTFhMmU2NDNiZWY4YTVlMzJmNmE0MGNlOWY3NzgxMDJlNzE1NzMwZjQzMjU2YTI5MTk3MGQ0ZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a19727724da84b8eb2a04612dd243db1",
+      "statement": "The --index flag selects a named index: the name is normalized so path separators become underscores, the config index name is set, and the database path becomes <XDG_CACHE_HOME or ~/.cache>/qmd/<name>.sqlite. Without --index, a project-local .qmd config overrides the config source and database path.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L241-L258",
+          "version": "repo-lines-v1:sha256:ab03c684bfaa6862d383364b6c5c526288ffe05b0373ed74e0aa22afb1ceb5f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlYzAyZDgwYWZhNzhkZWIzNjA4YTczZjU0YzM2Y2IyZjI2MmIxNDEyYWRkODQ1MWJjZjJhMWY5NzIzZDQ0MzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyMDQwZTA5NWE5NGUyYWRhNzRlNDIxZjM3MTg3NTFhOTFhODEwYmZkNjZmNDhmNGU5MzljN2I3NDgwZWI2NzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMzMDI0OTYwZGFiNzMyNmQ2OWNhYmJkYTQ3NTY4Zjg2MTljYzYyYWEzN2UwNGU3MzgxODBhYzU3ZWYwNmRmMGUifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L3397-L3416",
+          "version": "repo-lines-v1:sha256:1f220949bd49a130193acdf26abd091d662ec436ab5629204e2390a36213d3b1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNDQzN2Y0OTQ0NDFjYjhmYTRmNDc5OWE1YWQ4NjBhYzFjODIwZjdjNmVhYjkwZTMzMDAxZjA2MTUyMzFkMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1ZDAzMWI1MmJmN2JhMWY2ZTMzYzYxNTI2OGU5YmQ1M2U0OWVmMzQ3ZmE5ODUxZjE4MmNiZWM1MWRkYjIxODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzZWMyODNkY2U3Y2E2ZjIwNDdmODEwZGZmOWNkMTFkN2FjYTU4ZDE5MGIyZjQzNDllM2YzMzU0NzY5MWE3ZDIifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L697-L717",
+          "version": "repo-lines-v1:sha256:52e4b1e35b316465d5a42256bc28a0ef8d9af3eabe55cdd4bee891361b0e7789:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMjE5MDdhMmQ0NGZkYzc3MjJjMTgyMDA5OWY1MmE2ZWE0ZWJjYmZjMGZhODNkNTVkMmNkMTFiYWIyNzY2ZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjMTM1NWI0Yjc5NTBhOGY4NzNjZWY4NjY5NjkxMzA3ZmU2MzUxYzc4NzhiNjcwZDRmZWU1YjRjYWZkNDM1ZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0NjY2MzA3Y2RjMGQxMjk1ZGJlNzQwMjhkN2I1OTcyMmNmZDZiODYwMTYxMjY2YWIwOWJlYmFmNDlhMzhhNWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlNjg5Zjg1MjRjMmZmZGZiMjM0MWM0ZTA1ZmQyMzNhNmEwMDI1YzcxNDMzNzRhZmU3MzdlMWMzNGY5NDFiMTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0b19e0cebc6f4216884628ad03a8c1f3",
+      "statement": "INDEX_PATH overrides the entire default database path, and outside production mode getDefaultDbPath throws unless INDEX_PATH or an explicit path is provided, so tests cannot write to the global index.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L697-L712",
+          "version": "repo-lines-v1:sha256:8a83f747de5761d76499e2e9ca2a5da0de2e3dfe895172549c158777cf6e65a6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMjE5MDdhMmQ0NGZkYzc3MjJjMTgyMDA5OWY1MmE2ZWE0ZWJjYmZjMGZhODNkNTVkMmNkMTFiYWIyNzY2ZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyMzFiMjc2MWZkYTk5ZGE5ZmNjODRjYzNjMmIyMTMyYjU2NWY1MzZjZjQxN2RkYmMyNDYyNTAxZWU2NDQxNDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0NjY2MzA3Y2RjMGQxMjk1ZGJlNzQwMjhkN2I1OTcyMmNmZDZiODYwMTYxMjY2YWIwOWJlYmFmNDlhMzhhNWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5ZGI4ZmRjYjVjNDM0ODA4YTQ0NzRhZjA5Yjk2MTI2ZmM4MGI2NmI3ZWIxNTI5MjkyMjNmZGM1OGVjM2UwOWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_90b91b9a54924d40bbd8ade862490644",
+      "statement": "qmd mcp --http --daemon spawns a detached child that receives the resolved database path through INDEX_PATH and the --index argument, and writes a PID file; a second daemon is refused while the recorded PID is a live QMD MCP process.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L5104-L5141",
+          "version": "repo-lines-v1:sha256:e2b29cbe6d3a420b89d65c80178461a8035c5a210340b646135e94ccd22adba1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllNThlZmRjNWIzMWNhNDZjYjA2ZjQ5ODJjMjlkMjZlZDBjNWI1YWQwZjNiYzdmNzdhY2MxNzMwYTkyYjM0ZDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU0NTg3NGUwZTdkZGQzNjM4MjBhNzhjMTI5OGFmMGQyNjNkNjZiN2U4ZjJhMGViNTAzNGRjOTQ0ZWI4ZjE5ZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4YTU1NDdiYjgwYzdmYWY3YTk5Nzk0OGFjYWI4MGQxNzBhZDI4MTdhZjhjZGEyZWYyODhjMzNjNWJmYWE3YWEifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L5106-L5112",
+          "version": "repo-lines-v1:sha256:9c5a10f5fd59adca4a7e7b6da91a3f9d47d5c88d32d44f235109946179f87688:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODZjMjlkMmE3MWJlNzljZTMyYjQ2ZjIzZTc0NTA3OGJkYjhkM2VkNTU5MDBlOTVjNGY2MzkxMDc2YjIwMGFiOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTUyMmM0MmNkMTljNmQwM2Q4MDhjNDUyNzIwNTUyODI1YjdlYTFjNWI0OTFiMjE4NTExY2FjNzQxNWNmOWQ5YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTUwNjg4Y2JjZjEwYTFiYjI5YzZkMWIzMTI4NWJhYWFmMzljMTcxYjY4MTZhMDI5MTU1MGE1NzZhOWU1NWQ5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmY4YTI1ZjhiMTI0NzcwMjQ5ZmJhOWU4MGNmNTJkNTBhYjVjNGUxYTA3MjlkZWVhNmVkMDg2MmJkODg3MTQ4MSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fd00a5d4f5454dd38743e02ae2c80350",
+      "statement": "--chunk-strategy accepts only auto or regex (regex is the default; auto uses AST chunking for code files); any other value throws. The embed command and the parsed options both use it.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L2326-L2333",
+          "version": "repo-lines-v1:sha256:de2ed12141f8d326a513df0c24350a98ea69910562f3c88691ebdc1f5b659d39:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGY3Y2Q2YmExZDhmNDY1MTMxMDZkMWQ2NzZkODMwODk5MzI4NzBmYWViNzE5OTJkODgwODM3Y2NmMWE5Mjg1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmNDgzMjhjN2FmNDk0NjI2OTY5MDQzZjYwYWExNDM1ZGUwMTAzY2I3ZmFiNDhjMTU5M2RlNTMwZWZmYmQ5OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzM4YjI4Mjc2OWYzNzc4MDRhMzk0YzYyZWI4Mzg2ZjM5OThhMjZkYmY2YmE5NzQ4MWNjYTkzNWYwYmU4ODE1YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjcxY2M4MWVhZWJhOGY3NTgwMDRiMzkzOGY5ZjZkZGIzY2I2MmYwNmRhMTExMmI4MmI0N2UzMDk2OTZlYjdjMSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L3386-L3386",
+          "version": "repo-lines-v1:sha256:fe5f7c1679039ceb1c9e6db08fa9026e1a49ebcba6c4d7a52e517b52c767540d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmU1ZjdjMTY3OTAzOWNlYjFjOWU2ZGIwOGZhOTAyNmUxYTQ5ZWJjYmE2YzRkN2E1MmU1MTdiNTJjNzY3NTQwZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmU1ZjdjMTY3OTAzOWNlYjFjOWU2ZGIwOGZhOTAyNmUxYTQ5ZWJjYmE2YzRkN2E1MmU1MTdiNTJjNzY3NTQwZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGQyMmM2MDI1ODQzMjgyZWNiYTM1ZmRhNWQyMWI5OTI4Yjk4YjI4NmM4MGJkYTViNGVhOTVlYTZmNDk4ZmNmYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjYxY2Y1NDFjZGQwZTVkYzA4OWNhYTIxMjMwZDFmZTY0ZTBjNjY5MmE5M2FjZGM1MDQxMzQyMmI5YWFhOTJkNSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4963-L4968",
+          "version": "repo-lines-v1:sha256:c34728dcbd8a192ca0fb48b61e123a593fca043760d6d8e9d6b41fa73c655dde:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDZhOTlmMDEyNzZkYjBlMDYyZGI4ZThmMDJkOWViZDhmNzBmODU3N2Q4ZGQyZDQxZWRmNjg4MWZlNjFlYTUyNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTA0Y2ZkNjkyZjVmZTUxZjdmMGIyODA5YmQ4ZGI5ZjY4Njk3NmRkNTk1M2Q1NDdkZDZkMTM1MjkxZDA5OTkzNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjFjMGNhYzY4Nzg2YzFkZWUyMGJjMDNhMTQ1OGE4NGNiYWI4ZGJmOTMxM2I2YzY2NjZjZTUzZWViY2EzZTE4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDU3ODEyYTNjYzE4YzlhY2RiYjM3NzQzODE1ZTMwMWFjZWQzOTdhMGQ0NmUxYmJmNzhmNjAxNzdjYzViNDJlZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_944fa6d52cd24b548a0b6c782545a5d2",
+      "statement": "--format accepts cli, json, csv, md, xml, or files; an unknown value prints the valid list and exits 1. The legacy boolean aliases --csv, --md, --xml, --files, and --json remain wired as fallbacks.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L3425-L3445",
+          "version": "repo-lines-v1:sha256:c4744fcfd7a702b0fc0d3bddcc3d54442812d586ae70f7e9c7621f52e020262a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNzVkNWYyNGQxYjUxY2NmYWQwMGYxMzQzYTNlYWE5MDk1MzllZWYzMWZlNGU1MDVkYzY2YmU4YjBiMzY0M2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1YzdmYzA4Y2JhYmQ0OTdiZDQxZjMxNWRjNGNkZmUyYjUxMzFiN2UzMDc1MTYwNTU1Mzk3ZTU3NDZkNzUxNzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI3YjgzN2RmNTNjNTEzZjA1ODQwMGNlZDZmZmQ0YTU1MGE2YTViOWQ2MDNiYjgxNDAxOTJkMWM5MzRiMzc0NzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExNDRmZjYzZDY4ZjE5OGYxNGUxYzY0OGViZjVlM2I0YTBkNWViOTczYzllZWEzNWU2OWIwZGMzNWM3ODdmNDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7ca0528906734f209f9ce1843f3dc25f",
+      "statement": "The collection command group dispatches list, add, remove/rm, rename/mv, set-update/update-cmd, include/exclude, show/info, metadata, and help as nested switch cases under the top-level collection case.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L4749-L4760",
+          "version": "repo-lines-v1:sha256:4643dac10f673f6334c6949e8bc91aa0875c37ddc46d2a36882e1851ac851584:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3YzJhYmRmY2E0MThhYTE4NzliN2ZjNjVlNmM3NDY3NmMwNzA5NzUyYzAyN2ExYjFmZTk1YzE1YzI4MzVhYjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiNzExNzlhYTNlZGQ0MTYyNGYwNzRkY2UxMmQxNTVmODNlZTYwOTljODIzNDBkZmM2NWVkMjg2NjFjMTBmNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwYjQyYzA2MThjZGMzMzQyOTk0NzEwYzFlYzNjZDBjMWFlYmVhYjVkOThkZGI4NjE5ZDE3ZWU2MGZmYWRkMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4NjY5ZjEzNjk5ZmUyNDAzZDUyOGMwYjUzOTNiMGFmYmJmMjljZTNiOTMxYzRhZGZjYjY4NGQyN2QzYmM1NzMifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4789-L4811",
+          "version": "repo-lines-v1:sha256:dd0f0f25711f37742add0bc5375137e6b2ab49718669ca92b0f26b0a582f04f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxYmE2NjY3MmVmMTg4NGU0YTFkYTZlNzdhNGUxYjdkNDMxMDUxYTI5ZGIxNDYxNTgzZjc1MjQ1NDgwNmRlNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZDAxNTg1YmJmNTVjMWYzZGQ0MzYzNWZmOTU1NzJiMjllY2M2YjU4NzgyMWI2ZmY3ZjhmZjA2MmZjZTI1MzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwODk3M2NhN2NkOTY2Zjk0ODI1MzA2OWE5ZTM0Y2VhZGRmYWE1YWZjYjM1Yzg2ZDc1ZDMwNDBhODBiYmMxNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVlZTRkYmJmYmQ4MGQ4ZTZjYmRkODJlNjRmNWE0MjQzN2UzYzVmYzhmNDFhMTZkMTJkNTk5NjIxOWM4NDg1YjUifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4839-L4896",
+          "version": "repo-lines-v1:sha256:d1d0d7de02d2505387720d429a99e5c5cf9777edb83fc4e24e547b4bc0e224a5:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0ZTNkMzBiOTk0NmIyZDI5MzBkYmUxMzNjMjcwMTA1OWIwMjk2Yzg4YThjNjQwNDZjNjQwZTVhNWRhNDE4MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxM2JjODJlMzQ3MGI0ZDNiMDQ0M2VlZTc3MzQ1OWMyMjIwOGEyYmZkMjU5NzFmNDhlZjg4NmY3ZmViNWM0NzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwODk3M2NhN2NkOTY2Zjk0ODI1MzA2OWE5ZTM0Y2VhZGRmYWE1YWZjYjM1Yzg2ZDc1ZDMwNDBhODBiYmMxNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjOGIzZDFmMzIxZTU3MDlkMWYwYjRlOGQ0YjgyMGQ2ZDg4MzM0OWQ3YzhmOTM4YzYxMzhkZDVmNjAxNWQzY2MifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_03376a69aed4465eade726306d6875e6",
+      "statement": "collection add resolves '.' to the current directory, rejects non-existent or non-directory paths, derives the name from the basename when --name is absent, refuses duplicate names or an identical path and pattern, records the collection in YAML, marks the config trusted for the typed path, and indexes the files.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1882-L1922",
+          "version": "repo-lines-v1:sha256:66bf62cc68dd1842e34f299e8e4ed6a6d18867ce1b42f8860bce546d820ebdc4:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjMWFlYjZkMzI4ZTNmMmU0NWMzOTAwNGY0ZjUxM2U1NDU5MmJkZjZiOWEyNjBmODBkZTU1OWNkMTg0ZTYyYzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5OTI2ZjFiMWRjYTQ0MjZlMjgyZjFhOWJlOGVkYjc5NThjMGZhZTg5YjU4Mjc0YjUwZGI0MWRjNDFjYmMyMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxNjk2ZGYwZmM4ZmRhNTc5ODNiYjgzZDUxZDc5ZTgyMDY1MzAyZDJlOWMwOTgxOGU0MjMyMWFkMzk3OWZjYTIifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4757-L4788",
+          "version": "repo-lines-v1:sha256:18368a0ddf3519cc29d2ac4ad64ed39f49bfa4579ee756d264ff51f213263921:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4YzA0Nzg1ZjhjNjE3OGFmNGZlYjljYzdkZWZhYWQxMDk2ODFjYmM0ZjY3NTBjYzA0MWY0ZmM0ZjdhY2YzNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwODk3M2NhN2NkOTY2Zjk0ODI1MzA2OWE5ZTM0Y2VhZGRmYWE1YWZjYjM1Yzg2ZDc1ZDMwNDBhODBiYmMxNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkYjI3ZDc3NDNjZjA1NTUzNGUwNzFmNWM4OGM5YWNhYTNhMDI3Yjg2OGUyMjcxZTVkZTBlZGQ0ZDk2YjZjMTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b04054e3ae7341debae7c01c873e3fb6",
+      "statement": "collection update-cmd sets the collection's update hook and immediately re-records the trust digest, so the command the user just typed needs no separate approval; the hook is later run via bash -c in the collection directory during qmd update.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L4811-L4838",
+          "version": "repo-lines-v1:sha256:c1863f72438b773432ca64bca773eb32a14b4c5c117189ea72e1d8fba308aa88:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZDAxNTg1YmJmNTVjMWYzZGQ0MzYzNWZmOTU1NzJiMjllY2M2YjU4NzgyMWI2ZmY3ZjhmZjA2MmZjZTI1MzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwODk3M2NhN2NkOTY2Zjk0ODI1MzA2OWE5ZTM0Y2VhZGRmYWE1YWZjYjM1Yzg2ZDc1ZDMwNDBhODBiYmMxNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZmNDRlOGEwNWRiMmNkYmFlYTAwYzJjY2E5ODdkMzQ3MTYwN2NkZGJhYzZjZGZkY2ZjYjQyMjY1OWU5YWNjZGEifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L957-L1000",
+          "version": "repo-lines-v1:sha256:c7bad6aa81078ba9b1267d62f8a822194fababd7be05b5af843feec04a6ef5bb:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiNmZiNWNkZWJiMDRkMTg3NTJiMzc3MWRiMGNkMmRmMGE1YzE0MDQxMDM1MGY4NGNkMjllNjhmNjRiYTAyMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1MjdiOGIyODFiMzBlODIxODAwMjA2MGU4MjYzMjZiMGUwMGU2ZmUwZTQxZDViNGQzMTlhZWUxYTQzMzUwYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhmOWVlOGE0MjE4YzlmN2IwYTg5ODQ0ZmFkMDNmMWY0M2E3YjE3ZDBmOGU5Yjg3NjBkZmI0Njk0MmNhZGZkODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImEyYzE4ODYzYmEyNDVmMDA3ODIxNDJjMTU5ODgwMjIzZDhhNjE2MmQ1NDYwY2YyMDM1NjAxYmM5YjgyZDM0NjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_59049f0cfcd147968f48a22f00be5cb9",
+      "statement": "collection include and exclude toggle includeByDefault on the collection; getDefaultCollectionNames returns the collections marked included by default, which governs default collection selection.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L4839-L4858",
+          "version": "repo-lines-v1:sha256:0ef0e7f2ce4cb4f1ec88e0bf41ab97bf942793ae81cad59f60053b41c462f93b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0ZTNkMzBiOTk0NmIyZDI5MzBkYmUxMzNjMjcwMTA1OWIwMjk2Yzg4YThjNjQwNDZjNjQwZTVhNWRhNDE4MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwODk3M2NhN2NkOTY2Zjk0ODI1MzA2OWE5ZTM0Y2VhZGRmYWE1YWZjYjM1Yzg2ZDc1ZDMwNDBhODBiYmMxNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NjgyOGY0NDU3MGQ5NDcyYmRkNWY1MmQ4YTJhOGY5ZjhmMzk2MjkyMTQ4NWMwZDdkOTg5NzVkM2UzMWU4MzkifQ"
+        },
+        {
+          "resource": "repo://src/collections.ts#L276-L279",
+          "version": "repo-lines-v1:sha256:0bf281f3c37d752360f208fdcbd37a7f2dba85db8495524f61a6683ff9c9dc08:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWZjZDc5NTRjMDgyYzNkNWMzNzI0OGY5Y2U1ODU1N2U4OGIzMjI5OWU0N2VlYTgzN2Q5YzVhNWMyNzU3MDc0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTYxNWEwNWY0MmZhZjcwN2U4MzE4NzY2MGRjNWIwNTVmN2VmM2YzZjdlMDMzZGIzMzQ1MzU2MzExNzkxNWE2NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWRmNGNiY2E3ZmRlYzgzNGJjZjEwNGY5M2M0NWM4OGFkODg3NTMwMzk3ODkxNWE1MmI1ZmEwMjk0N2I1NjQxYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b516c064e36b42a183396adcc363b13f",
+      "statement": "collection remove deletes the collection's documents from the database and removes its YAML entry; collection rename updates both the database and YAML, and virtual qmd:// paths change with the new name.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1924-L1974",
+          "version": "repo-lines-v1:sha256:5d69dc9157f8a9913fff3cd2d896761b3d183427c98b67224f84f342934e504d:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjM2M5Yzg0NTdkMDM2NzI4NmJiMjM3ZmJkMWUyYzA5NWVmZGRhODgyNmVjNTZlNzA1MjZiMjhiOTI0ZWEwZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjODY3ZTI1ZTMwMzZhZjFkNDZkOGM4NTEyNmU2Yjk2MmFlODkwMTkwMTUzZTA1MmI3ZTk3YzE1NDhlYmMyMGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllMzhiMGRlZjQwYzMzYjM1YWE3OGViNGNkNGE2YjY3YzdlYjkwNTNkZDJhMGYwMzQ1Nzg5ZTM2NjRhMzM3ZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZlZTgwYTBkOGNiZjViNTI4MjhjMTc2NmJmNGJjMzg0Mjg3MzhhOGZjZjViMzhkYjEwN2I0MWExNWVjYWU3YTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a89f838548e64435b3ee808b1b29fbda",
+      "statement": "collection metadata with no names uses the default collections, consistent with unscoped search, and validates named collections, exiting 1 when one is unknown.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L2916-L2935",
+          "version": "repo-lines-v1:sha256:0e1615030a7aa6861377ff0a6681a5349cb86f55cf9fc9e63a2678636e721662:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwMzNlZWJmOGY1ZDk2OTYzNWU3YzM0ZDg0YTdiYTIxMzY0M2E5NjFkZWE0ZGU3YjNjZWRiYzA3Zjc1OWRjNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlMWJlZjBkYTYzNmZiOTEyZWQyMjc0YWU2MzAwYmI0YWM2OWJkNDA1MzkzMzZhN2Q0YTI4MTVjMjA2NjEyYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjYTIzY2M3NThjNGEzN2QyNzk0OWZmMjI4Y2NhZDYwMjA5N2M5YTRjMTdkYjgxZjE1MGIyYWYyNWI4NzU2OTUifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4887-L4895",
+          "version": "repo-lines-v1:sha256:697d2e71cecb168769267e017cb8b50aa63b640e6f88b05cfd2185dff78bf3df:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA1ZmJjNWJmNDNkNTEzOTYzMGQyOTYwMzBkZWFkMTc2YTIwOTA2ZGM0OGY1MjJhYTZlZDk1ZWMxZGI5MmM4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA4OTczY2E3Y2Q5NjZmOTQ4MjUzMDY5YTllMzRjZWFkZGZhYTVhZmNiMzVjODZkNzVkMzA0MGE4MGJiYzE0NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTAyZmMyNDRjNTI4Mjg2MDAyOWUyMWZlNzgzN2FiNjQxMjUzMGJmN2Y2MzIzNTg4ZGU4NjVkMjM3Njk4ZTE4YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_732e1227181b49edb713676313d16a17",
+      "statement": "init refuses to run inside $HOME, creates a project-local .qmd directory with index.yml (or an existing index.yaml), creates index.sqlite, and syncs the config into that database.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L466-L497",
+          "version": "repo-lines-v1:sha256:31991d08188d882a2b58dadb222577d9030b8c42d61f9e867b0baeff9ec8f800:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiOTkwNDBkYTA5ZmY2ZDE2NzA3YzA5ZWRjZjZlMmM1ZDI5NDk3ZDE1ZWVjMTI2NzBkMzY0NGNkNDEzNjE5ZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk2MDk1NzA1NmRmYmY1YWYzZWZlYjdmNGQ2N2JlZGIzNDVjNDQ0OTA3NTlmY2RlMmNiOGNkNjgxMjExMDRkZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f7e7a68e1d54b52bd6dc81ca38b1a49",
+      "statement": "update resolves local-config trust before opening the store, skips collections whose paths lie outside an untrusted project, runs trusted update hooks (a failing hook exits with its code), re-indexes each collection, then copies and cleans vectors and reports pending embeddings.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L921-L925",
+          "version": "repo-lines-v1:sha256:58b182a788690664406a00f37a1c399697014617b4fac9d1472715d14a1864df:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjg5MGEwZTVjNzFmZDk5YzJiMWNiMmQ5YTQ4OGQzNjUyNjI3ZDUwYzljOGY2ZmRlYzI4NTE0N2ExZGE2ZTMyMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGUyYmJlNmUyYzI5NmUwZGM3ZjFmZTM0ZjVmYmU5ZmJlNjJjMDBjYTc2MDBiYjJlOGU2NDIyZTZlMzAwODMzNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODEzOGY3Njc1Yjc5NGQyMmUzNjhhYTMwNmYyMzU2MWUyYTk4MDQ2YTVkYWE4MmJkZDIyYmI0NTdjYTg4M2E3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjVjMDA0MTgzMTE4ZTAzZTJhNTY5NzVmMTQ3MTdiYjc3ZGRiMTI3ZTI1MGE4NTIwOTNjMDVhODAxZGYyNzlmOCJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L950-L1050",
+          "version": "repo-lines-v1:sha256:8933c1e830a14cabdf95bdf80c7cdc8f1b3709b90fc7e4741f1e8bf6878ea700:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJiZDRlYjUwMmIxZGM0ZTVmYzkwNDFkZDFkNmUzODhkOTEzZjg2OTUxZjZkMWJjZmU3MjU2ODdkZmY3MmIyMmFjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0ZWY1MjQxMDA0NTUxYzk4NzUwMjliNzBmYjI2OTAxMDg5ZWU4MDcwMmMyNTBhNjJmOGFhNzAzMWQ3MzFlMGIxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIxYWNiODdmOWI2NjJkYTlkNjdiNTQwZWE5NDk0MWJmMzIzMjliZWU1M2JkYzhlZGYxNzdlYjk0MjJhYjg2YzIwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI0ZmE2MTAwNDc3ZjY0ZmMxNzUzZTQwZDE3YzdlMDA3MmRmYjk2MDNjZmJhNjkxNTdlZGM4ZjNmY2M4NGQwOGI0In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_fea410ab22d54e9faf4bf151c801a485",
+      "statement": "The --pull flag is declared in the parser but no code reads values.pull, and the update case calls updateCollections() without arguments, so the documented qmd update --pull has no effect in this build.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L3369-L3369",
+          "version": "repo-lines-v1:sha256:31d453e4b7ad7f6116e60a08b0502b8187983e6ad83ed41bffe49c71ac08bafa:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzFkNDUzZTRiN2FkN2Y2MTE2ZTYwYTA4YjA1MDJiODE4Nzk4M2U2YWQ4M2VkNDFiZmZlNDljNzFhYzA4YmFmYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzFkNDUzZTRiN2FkN2Y2MTE2ZTYwYTA4YjA1MDJiODE4Nzk4M2U2YWQ4M2VkNDFiZmZlNDljNzFhYzA4YmFmYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWIwYzlkNzc2ZTY5ZGZhYWMwOTkzZDBhNjdiNzA3MjA0OGM4ZmNiMThlMmFlNTIwNTViNjhhNTk5YmQzM2U1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTA5NjQ2ZGQ0ZGYxOGNlZThjNGJiMmY5NjY1MzBmZDVkN2EzZGVhYmQyM2JhODNkYmRjMzkzYzYxZWE0YTg1OSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4953-L4956",
+          "version": "repo-lines-v1:sha256:4621279d6f317c33d615b05bb2a560612f195662bef06d50161adda0c2f98945:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGExY2I1ODAyOTgyN2Y4MmNjZDA0MTdiZDczYmQ5NjBlYmM0N2U0MDg2YzNlNTI3ZTMwNDQ4ZTllMzVhZDM0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGRkNzY3YzQ4YzQyNTFkYWI2ZDI3ZTU5ZjZmMjA5MmUxYzZmMzY1OWQxN2FhNmU5ODFjNjU3MDVhOGFiMmNhMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWRkMWY3ODViNWFjOWIwMzk1Yjg5YmZhZmIzMzFmZDcwMDQwOTJmMDg0MGU4ZGE1OTUwNjQyMWM1YmY2MjY5NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ec38a3ef55f940129d3ee5676f35e2ed",
+      "statement": "Several commands resolve project-local config trust before running: embed, pull, vsearch, query, and update. In a non-interactive run, gated items (update hooks, out-of-project paths, custom models) are skipped while in-project indexing continues; QMD_TRUST_LOCAL_CONFIG or QMD_TRUST_UPDATE_HOOKS opts into unattended trust.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L4963-L4963",
+          "version": "repo-lines-v1:sha256:46a99f01276db0e062db8e8f02d9ebd8f70f8577d8dd2d41edf6881fe61ea525:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDZhOTlmMDEyNzZkYjBlMDYyZGI4ZThmMDJkOWViZDhmNzBmODU3N2Q4ZGQyZDQxZWRmNjg4MWZlNjFlYTUyNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDZhOTlmMDEyNzZkYjBlMDYyZGI4ZThmMDJkOWViZDhmNzBmODU3N2Q4ZGQyZDQxZWRmNjg4MWZlNjFlYTUyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjFjMGNhYzY4Nzg2YzFkZWUyMGJjMDNhMTQ1OGE4NGNiYWI4ZGJmOTMxM2I2YzY2NjZjZTUzZWViY2EzZTE4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjkzMWViZDAxYmM3OGM5NTQwZTUyMGI1ZDEzZjFjNmE2MTE5YjliNGUxYTdlOWZiN2I0ODIzYzRhYjMxNGVhMSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4987-L4987",
+          "version": "repo-lines-v1:sha256:27ee521167d0c7c5cb4effbc080dbf5d92c97cdcb22bb2e3522fe548093ee626:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlZTUyMTE2N2QwYzdjNWNiNGVmZmJjMDgwZGJmNWQ5MmM5N2NkY2IyMmJiMmUzNTIyZmU1NDgwOTNlZTYyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlZTUyMTE2N2QwYzdjNWNiNGVmZmJjMDgwZGJmNWQ5MmM5N2NkY2IyMmJiMmUzNTIyZmU1NDgwOTNlZTYyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMThiNGFhZDBhZDgyZDk5M2UxNGQwODZiNjEzMWMwODI3MWUyYmRiY2NjMWFhMmYxYTEyNzBmNDUwYzNiOGRhYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2YxOGY1OGM4YTEwYjgxYTAzNDNjNGM0ZGYyYmNmMmQzYjdkMWQwOTNiZWY2ZWVlYjgxY2IyOTNlNmZmM2EwOSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L5029-L5029",
+          "version": "repo-lines-v1:sha256:27ee521167d0c7c5cb4effbc080dbf5d92c97cdcb22bb2e3522fe548093ee626:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlZTUyMTE2N2QwYzdjNWNiNGVmZmJjMDgwZGJmNWQ5MmM5N2NkY2IyMmJiMmUzNTIyZmU1NDgwOTNlZTYyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlZTUyMTE2N2QwYzdjNWNiNGVmZmJjMDgwZGJmNWQ5MmM5N2NkY2IyMmJiMmUzNTIyZmU1NDgwOTNlZTYyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzY3OWNmZDJhNmY5Yzg4ZTI1YTZlMzRiMjE0ZmU5NWQ2NGYxMjJiMmQ5NWEwMWVlMjgzNWY4MzI4OWIwYWFjZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTU5MjljNWFjYjIwNzYxYzE3YjQzNDRhYzRmN2JmYWM2NWRlMGNkZTY5MzQ2NTMxNmI4YWFmMzc2YmZlZTFjYSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L5040-L5040",
+          "version": "repo-lines-v1:sha256:27ee521167d0c7c5cb4effbc080dbf5d92c97cdcb22bb2e3522fe548093ee626:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlZTUyMTE2N2QwYzdjNWNiNGVmZmJjMDgwZGJmNWQ5MmM5N2NkY2IyMmJiMmUzNTIyZmU1NDgwOTNlZTYyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlZTUyMTE2N2QwYzdjNWNiNGVmZmJjMDgwZGJmNWQ5MmM5N2NkY2IyMmJiMmUzNTIyZmU1NDgwOTNlZTYyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI0YTYzN2JkODBlZmY5MDhhNWU5ZDIwYTFjNTk4ODlkZGM5NGM0MWQzYTQxZjA1MTdmNGMxN2FjY2Y3OWQzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTg5NGE3M2Q0YmY2OTg2MGQwNWVjNTQyNWU0NTc2ZGRhZWI4Yzk1ZDFkYmFkODNmMGU5ZGNkODAxNjhjNzI0NCJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L831-L866",
+          "version": "repo-lines-v1:sha256:e78c1ce1195e33e36875a0c120fe9ef52f775741c9da7bb7320b2c085f70419c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmNmI1ZTYxZGQzY2RmYTdhYmUzMDhlOGY0OGRiNTI3ZjZkMzBhNjE1OGIzZTM0M2M1NWEyNTAzMjUwZWI5NTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgwNzU4MjJhMjdlZDQwZDY5MzhjNWU4MjY2MDZiZTBhYzY0OWY5N2ZjYTAwMTNiMzI5NjIwY2VmNGI2YTFjZWYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhZjU0YWMwMWI5YTEzMmJlYWY4MjAxYzRjNzBlODIwMTRkYmFjNjRhYjhkZTRlNDZjZWM5OTkwYTk2OGFhMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImExNWJiNjAwMTI4ZjVhNmZhNTU5ZGQxOWEwYTc2M2NiOGVmNzVmNWViYTVhOTJkNjU4ZmM2ZTdkZGFlZTgyZGQifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L271-L300",
+          "version": "repo-lines-v1:sha256:29eafcee7cbd1c8edb2a48b1862959350d9b974bf8776f751d55cb91278c6136:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5ZDBjOTY2ZDA2NWJmN2RhYTM2MWFlMzNlMzUyMTE2NmYyOWQ5NzFlMDc4MWQxMDdmZDU5MWI3MDVlYjc4NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4MDU2MGJmYmRhYjQwMTdjZDE4ODg0ZTBmNWM5NThkYzc2Njc0MjZkYmFhNDg1OTkwMzE3ZWFjYzYwZmZhZmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ2YTMwY2Y1OGZlMmU4MWM2NTBhNTZkN2Y5NjNkODZlMTM5ZmIxNjY1YjcwOThjM2VjMjE2YmEzZmZmMzgxY2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlNjViMWZhOTA3ZTVmNjQwZTRiYmFlMzQ5ZTgyMDg4ZmMzYmIxM2VhN2U5MjUwZjI3NTljYTViZGYzY2Q2ZjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3315e9c2e4a048e4ab00d8bc33b115c1",
+      "statement": "trust with no subcommand records approval for the in-scope project config's gated items; trust list prints trusted configs and trust revoke removes the approval; the user's own config is never gated.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L869-L918",
+          "version": "repo-lines-v1:sha256:915ed65f745d520ea63c4efe19db804acf23fe81c83299c71edace914983c3a4:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiZTJlOTE5MmFkOGIyMDkxNzllZTUwZWYwZTRiNTA2NjdhNmEzZjc3Mzc5M2NhOWU0ZDRjMWNkOTBkMDdkYWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllMzdmMjJkNTFkZjlmNzZmODAwYmE5OTI1YTVmYzk5ZWY2Mzk5N2Q1MDJhOGZjMjIzMTM4ODE5Zjc5MGIwZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlOTZhNmUxMWY3ZGQwMmQwMTUwMGMwYWFhOGYzYzc5OWNhMWViOTk0NThlMDRiZGM0YzY4MWM1MDg2ZjRkMWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhMjM1NDRjYmUxYzFmZWE2NmNkZGVhMjAxNGFmNjhlMTRjMTcwMDM0YTYxM2FiZGJiMGE0ZTY0MmFjMmI5ZTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5bffc90df848456b91e56f73174f7b3a",
+      "statement": "embed validates -c against configured collections, uses only the first collection, validates batch caps as positive integers, and caps the embed session with --timeout in minutes (default 30, 0 disables the cap).",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L2317-L2342",
+          "version": "repo-lines-v1:sha256:a7a21de8b218c156b984ebbf3e3e3afd0295a522ee6a3529d7c22b2572e0f08d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NjBhNjFjNzYzMjBmZjQzZGI1NmU3NmEyMTIxOWI5NzkzMzJhOGRjMWRiODA1NTAyMjE5ZmVlZGFhNDBhN2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhNWEyMWJkM2UwNjU4N2Q5OGE1MWEzZmVjN2U4Yzc2MDlhZjRkYTgzODYzYjEzZDlkOWQ0NzRmNGY3YmMzMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkNWE3OTBiYjg3OTEyYzAxYWJlNDE2MDg2M2JmZGNiMzBjZTgyNjE5Y2IyOGM0NzFkNWRhZWZmNzBkZWUxOTUifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4961-L4985",
+          "version": "repo-lines-v1:sha256:85e587b9f824a199c4033fcbb6388e6df64b2bad67e2f2680c1ef36ea4d901a5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4Yzk0NmM0YzFhZWU4NzNhZjIxMjg1NTE0NzI3ZjQ4ZTBmMWEzYTRmYWUxNzgxNWNiNDQ1NTc2ZDhhMDM2ZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhOTFlMjRlZDkwMmM1MzJlYTlhNTUwNGZmNmRkMzhjOTVlZTk5MzdjMzZiMzlhMjIzZTEzYTY5M2NhNWY1ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3MzNmN2FlODg2Zjc1MTg0NDUzZTY2MmU3NmNhZWI1MDYxYjQ5NjdlYTM0MWEzNzdiMGE5YmY0ZWMzZTFlMDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_acba918f96814f50af05f069ef05b023",
+      "statement": "pull resolves the embed, generate, and rerank models for the runtime and downloads them into DEFAULT_MODEL_CACHE_DIR, with --refresh forcing re-download and --progress showing the download bar.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L4986-L5008",
+          "version": "repo-lines-v1:sha256:f1c539321a2a464f5fcd44d657a0f2b5a76eb4b9851ad6fb781a9edfec87eb32:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxOTQyMTZlZDhhYmQ2ZWIyZWY0ZWU3MmUzZjA1NWIxMTc0MjU2ODZjNzQ5NDM3MDg4YTUyYTIyZjBhMzg0YjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlMmY4ZTRiNjk3YjQ4MGM5MTAwN2JhNjc0Mjg5MDFmMGE2OTUwNGYyNzFkNTZlZTE4YzhlMDlhMDNhNDcwYzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkZmE1MzNkY2IzYjU3ZGY4YTY3Yjg1MDc2MzI2N2ZiMzdiZjdhOGUwYzNhOTFiNTEzNDhmZDg4MTk4ODg5MDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_952c373c3b19437aa13d5cae516fe88f",
+      "statement": "vsearch defaults minScore to 0.3 unless --min-score is given. The code marks vector-search as an undocumented alias of vsearch and deep-search as an undocumented alias of query.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L5018-L5035",
+          "version": "repo-lines-v1:sha256:8edffc179707e98eaedb15c1393418a8dcf8889d3a9c5e2f1b8142671097f269:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFmNjdmYzNlYzhlMzc1NWQ4YWM1ZWEwZTM3MTYxMjljNjk0MzE3ZjgyMmE3NzM4YTc0YjhiMGJkN2U5M2UxZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiNzQ0ZGM5NjdlODNlNjliNmNiMmM4M2M4ODBiNDE2ZjgxMmJhZTFmM2MxOTE1YTdkOGNlNDJiZWRjNjkyNWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlNzFiNjQ5NjdiN2M1MjAxN2MzNjM4NmE3ZGM3YTNiNzFlOThkYTM3MWFlNjc2MWI5NTQ5MjhjNGU3M2RhYzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE0YzU2NWI0MmZkMmU0NjJhNDI2MzNmNTBmMTdmY2I4MzE2MGY4YjJmNzI5NDM5NDY2ZDM2M2MwMTMwYmQ5MmIifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L5033-L5034",
+          "version": "repo-lines-v1:sha256:0ef17ed7cdb68a54f030ad23c5036691e0c030fc1b86750e0e46db908dcaeb90:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmIxODI1YTk3Y2MyNmRhYjQ2MTE5ZjI1N2Y1NjlkZDA4OTU1MzMxZDY1M2UyZWNlNjkxMGMyYTBmMmEwM2FhNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGM5MDhjNmZkYTJhMzJhN2FlOWYwMTQyNmFmYTZkNDE4OGVkMTFhZjZiZjhlOGNkOWUzMjY1OWFlZDJiYTNkOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTU5MjljNWFjYjIwNzYxYzE3YjQzNDRhYzRmN2JmYWM2NWRlMGNkZTY5MzQ2NTMxNmI4YWFmMzc2YmZlZTFjYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGEwN2FlMDYzN2NmYjY2ZjA0NjExMDgxZmMwNzQ5NDBjYTIzMzE3NDhmMDhiM2M5MjI0ZjA4NDI0OGQwZjkxNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8bf0e5de043c40c9ac546ada2673e03a",
+      "statement": "mcp stop reads the PID file for the active index, verifies the PID is still a QMD MCP process before signaling SIGTERM, and cleans up stale PID files; mcp has no working status branch even though a code comment mentions one.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L5068-L5100",
+          "version": "repo-lines-v1:sha256:3c8b00b32653e382b5465395723401f1850a11cac4f87535bbf340b19ee4aedb:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2ODA1YzBmN2RmMjlhY2E2M2U0YTIxNjA0MGQwZjQzNGU1NzkyYzJmMDllNjE1YTg1ZDJjNWQwMDk1ZmRjNjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljNjQzYmFkN2EwOGE4OGYyYjllM2ZlNTkwMzg3MzVjMmExYmI5YmIyMjZhY2E3MzlhMjI3Mzk1OWYxYzJkNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwYjQyYzA2MThjZGMzMzQyOTk0NzEwYzFlYzNjZDBjMWFlYmVhYjVkOThkZGI4NjE5ZDE3ZWU2MGZmYWRkMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0NTg3NGUwZTdkZGQzNjM4MjBhNzhjMTI5OGFmMGQyNjNkNjZiN2U4ZjJhMGViNTAzNGRjOTQ0ZWI4ZjE5ZDAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb709a3fea724fd5a0cf84af319a08ba",
+      "statement": "mcp without stop uses the stdio transport by default, and with --http binds on --port (default 8181) and --host, falling back to QMD_HOST and then localhost; a port conflict exits 1 with a hint to use --port.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L5160-L5166",
+          "version": "repo-lines-v1:sha256:f271f03163cad88d0e66862f9bb519b4e3fefbf191529e312614de06310f8eee:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDg0MWI4ZDk3NTMwMGE5NmE4N2Q2NWEwOTFhYTliYzk4ODBlYmNjYjdhMWQ1NjBjYzJiOGY0ZjRmNjdiOTA0ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODYxZTcwODUxMmNlYjI5YzI4MmE4M2NkNmZmYjY5MDUyY2I5YWYzMGIyZTc4NWQzYTE5NmUzYTFlNjk2YjIzMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDgwMDM4NzgxNDk0MDYyOGUwZTUzYTkwNzUwNjViYTE5ODJhOGJiYTA2NWZmMzYzOTJjYzNiN2Y1NTIyZDdhNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODMyMjUzNDVlYjgwNjUxYzA2OTYxOTMxYjgxZDg1MDU2NmFmYWZjNjIzNDlmM2ZmY2U0MjkyZTk2ZjcwMzg4YiJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L5169-L5172",
+          "version": "repo-lines-v1:sha256:f84ab9ad0b8441b1a29d361a33e0317a423f76102c8429d279ee6b8eead93a49:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzk2MjIyMmY4ODdjZGQ2OWYwNzg5MGZlYmE3ZDExMGMzMjE2ZTYzODQ4MDJkNWFmYTZlODFhZjVmMzkyMzY1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWI2MmY2MGQ4NTkwYTU3OWNmNDZmOGQ2NzM3OGM0YzU3MmI5NjJjZWNjZGI5MGM3YTVmN2I0MmI5NjA3ODJhNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmZmNjBkNWNmMTM0YjUwNjI0MGRkNWVmNjBkODljMDUyYzM4MGY3YjJjMDA4ZTNlZWMxMTk4MTE4NzVmNDYyZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzBiNDJjMDYxOGNkYzMzNDI5OTQ3MTBjMWVjM2NkMGMxYWViZWFiNWQ5OGRkYjg2MTlkMTdlZTYwZmZhZGQzMSJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L1148-L1148",
+          "version": "repo-lines-v1:sha256:df266057e86db142fad6509fc46e19ee2ecc840f0ef6e5783a6a08b7ca236adb:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGYyNjYwNTdlODZkYjE0MmZhZDY1MDlmYzQ2ZTE5ZWUyZWNjODQwZjBlZjZlNTc4M2E2YTA4YjdjYTIzNmFkYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGYyNjYwNTdlODZkYjE0MmZhZDY1MDlmYzQ2ZTE5ZWUyZWNjODQwZjBlZjZlNTc4M2E2YTA4YjdjYTIzNmFkYiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2ZhOTFmMDFmYzMzYTQzZjc1YzE5NzA2ZDViOWZlMTA1YTc0YmIzYWM0ZmE1ZjBhYjFiZjJlZWNiOTljYjVmOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmY0ODMzZDA2NDhlNjBjNjM1OWEzZWE4MDVlZTdjMjY1NzdiYjU1OGEzMWJkYWMwMGFjN2JmNDNmNGM2NTVhNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1aca2a1c0d3849d48480e5a611a89064",
+      "statement": "skills supports list, get (with --full and --all), path, and help; skill supports show, install (--global, --yes for the .claude symlink, -f/--force), and help. The skills command reports errors as JSON when --json is set.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L3700-L3790",
+          "version": "repo-lines-v1:sha256:47493fee4b4158e3edfbd8e3fbe676b2b14bdd234d6ad94bff3bc72d0deb0c9b:eyJzZWxlY3RlZExpbmVDb3VudCI6OTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzNGIyMzcyMjUxNjMwZTdmNWU0NjczNDM5M2FmN2RmM2RiOTUyZTg5ZWFiMmFjZDU3ZjY1NWM5YzhmZWE0NzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2NGU3MjVmMjJiZjZhNTc4NjI1MDBmYjcxMDI4ODc5ZjdkZTY4ODJkNjNhZWMzYjg2YzY5YjU4NjFhYzdjY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1M2U1NmQ1MjQxNmVlMjE0ZmVhZjQxMWVhNDM1N2ZlMzBmNTE2NTY3NzZmMGQ0NWQ0ZTZjYmMwMmYwZmJkMDQifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L5176-L5234",
+          "version": "repo-lines-v1:sha256:bc46f3cc039431625d0c7e9806feda45e74886f4889d78a6d8c0d8afd5cf28a6:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZjEzMTVjMzcxMDFjY2Q5MTE5NjMyZjM1YjU4NzYwNTZkMDBmY2QxNDZiY2I3MjFjMTY4MWVlNjIyZDllMWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwYjQyYzA2MThjZGMzMzQyOTk0NzEwYzFlYzNjZDBjMWFlYmVhYjVkOThkZGI4NjE5ZDE3ZWU2MGZmYWRkMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYwYjg2ZmYzMDA4NjJlMjMyMDJhOTE1ZTU0OTRiNjdkMjc5M2E0NzEyNjUxMTEyODc4ZTYzZmU2MmM3NzVkODAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_36d9bc8bde60491091fd7e8e9fd26455",
+      "statement": "cleanup --dry-run previews cache, orphaned embedding, inactive document, orphaned content, and vector-repack effects; without --dry-run it performs them, then compacts FTS and vacuums the database.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L5235-L5296",
+          "version": "repo-lines-v1:sha256:75e8ed111c09a5d1dcaa2c894920ce752f9b7e1fdab2dfb3e7892fd75824cba5:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmYTEwNjI3MjZiOTViOTc2YmRmZjkyYjRhZjYzMWMwYTA2ZTg3OTNlOTQ3MDVmODYwZDdkZWZlN2Y2YWQ2MWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMwYjQyYzA2MThjZGMzMzQyOTk0NzEwYzFlYzNjZDBjMWFlYmVhYjVkOThkZGI4NjE5ZDE3ZWU2MGZmYWRkMzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5MmQ5YjBkZjZjZmE0MzA5ODExNWIwYzM4ZTEzNTg2NzNkYWZlNmYyOTM4NmFiNGRiZGU2NDc3ZmUwM2RlZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8eccd144e2ab48ef91e8f17cf838cb95",
+      "statement": "successful commands finish by flushing output, disposing native llama handles, and setting process.exitCode=0 rather than calling process.exit, so Node's beforeExit fires and native teardown completes; errors from exitWithError print the message and a doctor hint and exit 1.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L297-L366",
+          "version": "repo-lines-v1:sha256:b65647462ad01267a189fe953ca9d2b9f922467155f09e897570180f7e8e02d3:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyZTVjMjZlZjE3NTIyOGY5MDI5YmRlZDVlYjY3N2JhMzQzNzBiOThkZWY5ZGNkNzY0ZjgwMmRmYTdkZDZiYzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjNWM1Y2ZmODkyYTQ4ZGMzNzU0NzJlNjUzNzFhYWZlOTljZGMzMzk2NWVhOTJjYTU3ODYzNGMzMTQxZjRiMzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmNmE5OTI0ZmZlZDhhNGExNThmYmMwNjJmZjhhNTZhNDgwMDk4NzdhYjgyM2NhNWRjNjQ4MTRjYWRiNDNmMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhMzhlZTljYzczYzlmMWYyYzhmOGM1NmQwMGJkMDBkZTViMDczNjlmMTJlMDgwYWJiZDc5YzhjNDM3NTZjMTUifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4561-L4575",
+          "version": "repo-lines-v1:sha256:7ca70d3f54eb1039e570107009da0ef59081eba642edc8726efb0ed12f65dd7d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjMGM1YjQ5N2I2MGIwNDQxOGY2Mzc2NDJjODcwMTBkZDc5NDBiMzE3ZWEzNzU1YTIyOWM0Y2M0MjUzNmUzOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc1MDE3ZTUzODRlMWQ1MjY2OGE0NDA3ZjQ0YmZiZTJkNTk0Nzc4ZjhlYjc2N2U5OTU0ZGYwODIzZmNhMzZmYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQwODdlZmRhZTNkZTU2ZTg5YjVlZDhhYWZmMmQ4MmE1NTI2Yjc4MWQ4ZjQ4MDlmNzA1MDhjNzY2MGM4ZmEwMzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f364b6c1bf0149b49a3e690132506024",
+      "statement": "The test suite anchors the CLI contract: cli.test.ts covers help, skills, embed batch validation, init, collection add, doctor, search and get; cli-exit-lifecycle.test.ts covers flush-cleanup-exit ordering; cli-lazy-llm-import.test.ts asserts node-llama-cpp is only dynamically imported.",
+      "evidence": [
+        {
+          "resource": "repo://test/cli-exit-lifecycle.test.ts#L40-L60",
+          "version": "repo-lines-v1:sha256:c8a12f7e3ed716555b1f249460efd731f0418c39cf4c22e2b386fe8f24f87f02:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiYjRjNWE1ZWE3MzU5YWEzMWUwNjVhZWU3MDYyYTNkNWE1YzY5MGQ3ZGI5MjBhMzMzNGU3NmIyODZhYTM0ZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1M2NkOTM0NzVkN2YwMTMwYTI0YzRjOTk0Mzg1ODFlNTIxZWE0M2NkYmQwN2Q5NzliMDZlYTdlOGIxNDg4NDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmZTFkNDc4YTUwN2E4ZGI3YzMxZTk3YjY5OTcwZmIxZWE5ODhkYmI0MGRiZTQ4NDVkZmU3NWU1NWNmY2Q1OWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1NWUzMmFhYWJjOTM4Zjc0NGM0OTFhOTg3NDY3ZTMxZjhmOTA5OTc3YTFkMzZiNTg4NjQzOGY5MzU2Mjk5OWMifQ"
+        },
+        {
+          "resource": "repo://test/cli-lazy-llm-import.test.ts#L1-L20",
+          "version": "repo-lines-v1:sha256:93352132c83c18fb85d8e0901c057209a9c75cb6d3833f65a17d1de8a9e2a5db:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgzYWE1NjY3MWY4Y2M0NDIzZThmN2U0NDJiMDk2YmVlNmQwOThlYjc5YTdhOWI1OTAwMmM5M2JlMWQ2ODA0NGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://test/cli.test.ts#L237-L360",
+          "version": "repo-lines-v1:sha256:cf0477dd5499691884a9fa31ad8606e0ade22072a1b11e7b6b5a458162d771d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI0LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI1OWQxNzliZTRlNGE0NjMwNmI4MzdkMGRiYzhlYzUyNmMyM2ZlNTE1OGEwN2JjYWVmOGNiNWQwN2NkM2FhN2ZjIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIyNmZkYjdlZjg5Zjc2NGQ0YTJmNjYxOWJlNjY0MmZlY2ZjMzRjNTFiMzA0OTlkMmQ5MmNmMzE5MTA5OGRhZTRmIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhNzMyODM1N2ZiYTQzZDBjZjI1YTIwYzgwM2IwMDI0YTc1MDc2MGUxMzRiZTlkNTgwZTJmMjQwZmM0NDYwMDI2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI3MWVkZjU4N2UwZTA0NTJlOTU1YzM1ODMyZjQ5YmM0NjY2MTRjNjljODNhNjA4NjJiNzMwNzk1M2MyNGRmOGQ2In0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:53aca34b5598afe3300ba1a58324d1988784b007ad4bf4249c4e1a67b52320b1",
+  "claims": [
+    {
+      "id": "claim_b7a8351c0842406683eb8245910715fc",
+      "statement": "In dist mode the bin/qmd launcher selects its runner from lockfiles rather than PATH: package-lock.json selects node, bun.lock or bun.lockb selects bun, and with no lockfile it defaults to node.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L149-L160",
+          "version": "repo-lines-v1:sha256:a2d98aef18c37aad65532c23eeaa7031693b9cf4f29f322667409640a80a765a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5ZTU1MTllNTEyZTljMTI3ZmM1NTM4ZDdhZmZlNzgxNzIyMzA1OTBmNGRjODhjMTVmNjFhN2U5ZDIyMmRlZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyYTQ5YjA3MDM0NzhhMTRkOGJlMWQ5MmVlZjg2NTg3MGU2MGZlZmFkZDk4MjMzMmM1ODMyYzVjYzEzNDFmYTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiYTIzZjEwMGM5NGE4MjgzYTg0MDc3MmZlMWQwNTM1MDY2MzgzNDYzYzdmY2I1MWY0ZjYyMjg1YTY0YTUxYzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b737195c9bce42dc864b8ec014d98a1b",
+      "statement": "The bin/qmd launcher enters source mode only when the package is not installed under a node_modules segment (unless QMD_SOURCE_MODE overrides) and a .git directory and src/cli/qmd.ts exist; otherwise it runs the compiled dist/cli/qmd.js and exits 1 with a build hint if that file is missing.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L116-L121",
+          "version": "repo-lines-v1:sha256:bb9c64672ce0c69642d0cd7e7af924be73bf309ca05be0d60115a15422082c82:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGFiMmUyMDM3OTc4OGI0MDU2MmRhMTNmMzcxY2VkODk4MDYyODlmNGI2MWEwZDA5ZDAyNjM3ZDUwM2M4MDA0NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRlYTBmNGY5YTA0MmFmYTRmZjJiOTIwZTNkNjc1NWVlMWZjNGZiMDQ3MDA2ZmY0M2IwZTQ4YmMxMjgwYzc1MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI1ODBlOTY0ZjgzYTQ3M2Y0M2Q0NDM4NDYyOTQ5ZDY4YjU2MDBmZGE3ODdmMTYzNzQ1ZDAwZGU4OWNiZjM2YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWU2NDQ0ZGVmZWIxNzlkZTljZTI1OGIxYmMzNTY1NGQ0ODIzYzliZDZlZDQxNWRkYWY0OWVmZDRhM2IwZTAxNiJ9"
+        },
+        {
+          "resource": "repo://bin/qmd#L80-L87",
+          "version": "repo-lines-v1:sha256:f8dc9fdd0f6feca9b119c3654df0cbd3aca70c274276895eb0b477ba335deb12:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWQ0MzU0YWYxYzI0MGQ1OGQxMjlmODBkNzY1ODhkYjViYjYyMjZlOTAwMWNmZTg5NTgwYzcwMjE4ZDUyMjU3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGVhZGQ1MTM3N2VkZTAxY2I1ZGM1M2IwZmQ0MzBmZjYxNzZmOWNhNTNkMGQ3ZDc1MDJjMmRjMDRjZDA3MjQ0OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDEwYjU2OTFiY2Y0N2VhYjRjMzQ3MDg2MjMxYmI3ZmI2YWRlYjIyMmRkOThhODY1Y2JjNWU3MGQ3MGE1N2JiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmQzNDRlZmIyODI2ZTYyNTZlYmI0YWE4ZDlmZDkwMDFhNjExNWJiMzE1YjQyMWNmYjQ2OTAxZDQ5NzdjOTBiNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_16273db2241a40319392d13896f83fe3",
+      "statement": "In source mode the launcher runs src/cli/qmd.ts through tsx under Node when package-lock.json and tsx are present, and through Bun when bun.lock and Bun are present.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L101-L105",
+          "version": "repo-lines-v1:sha256:54388e5e0a958a3f4825828c06b1f860295946992b9fe483f2f8b6de806b0388:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmMyZjQ2ODljZDQzNjhmZWVhYTkyZjAxMzhlNDgwOTI5MDQ1NjU5ZWVjYmVmYWEwYTlkMGQzZjE2ZjA5NTQ4NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODhhZTJkYTIyZjNhZTRlMGViNmQxM2E4ZGIxZjkzYjY2YTYyMzg2NzNmMGU3ZDI2Y2QzY2VkNDQ0M2U1ZjVjZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjMyYThlM2JjNDM5ZDExNzFhYWE4ZjE2NTAzNmU2YTA0ZjkzMTlhZjE2MTk5Mjc0ZDk3ZTNlYWJhOGFhYWEzZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYThiMTY3MWNhMDIzYThmOWEwYzRiNjhmZjNhMTljNjYyMmVjMzkxZTM3Y2Q4NDkwOGUwMDY1MzJiMTBhMzcxYiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2982e01b14c042c2a1f97c0fba9a631a",
+      "statement": "The bin/qmd launcher seeds LLAMA_LOG_LEVEL, GGML_LOG_LEVEL and GGML_BACKEND_SILENT only when the first argument is mcp, preserving explicit user values, so native llama.cpp logs do not corrupt MCP stdout.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L22-L31",
+          "version": "repo-lines-v1:sha256:4ea7c759e4791d73ef260132c7b6368ec34dbc739ec15a6a43535e450af630ab:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5NjcxOTE3MTAyM2FlYTg1Yzk3NTY2M2MxOTZlOTNiYmQ3YTI3OGIwNmI2NmUyZDJkOWMxMjNmODgyNjhlMTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdlZjg0NmE0MTExZDM5ZTQ0MWE3NzJmOGUzYTA5Y2QxNThlNzcyOGZiMjEyZGY3MjMxZjk0MzcxYWUyMDAxOTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f73295d88de24a0a8cef1279476ffc86",
+      "statement": "On darwin the bin/qmd launcher sets GGML_METAL_NO_RESIDENCY=1 before the native binding loads, unless QMD_METAL_KEEP_RESIDENCY=1 is set.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L50-L52",
+          "version": "repo-lines-v1:sha256:3ee5958de4f986cf5850c84b3523e82ace873aa47a9ff70d38f15752b4bebc3e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmEyOGIxZTJlNDAwNmE2YWVmMjVlMTZlOGMwMTcyMTkyNTU2Y2IwYzBiNzVlNzQyNzUzYmQ0MDBiYmZhZWU5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDY0NzE2OGFmZDhhY2MzYTQ5NGRhNzE1MjkyYWI1MmNhNTMxODQ4ZGRmMmU4NGJjZmQ1MTFkZTcwZjAwYjM0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWFhMDEzZWM3M2Y2ZDE5Njg5NzE3ZjgyYWQzOGE4MWQxY2I0NmU4YmFiNWE4YWIwMTc2NWZkZThiYzQ2NDA4OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ea11f9044f1946d9948f40ddefc55331",
+      "statement": "When the launching runtime already matches the selected runtime, bin/qmd rewrites argv to the compiled entry and imports it in-process; otherwise it spawns the selected runner with inherited stdio, pins Node to process.execPath when launched from Node, forwards the child's exit code or signal, and exits 1 with a failed-to-launch message on spawn error.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L164-L205",
+          "version": "repo-lines-v1:sha256:86a7e3a51b875aa754590bf06d709f5475128cda82cd651e1d795c1ee6490f09:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwZWMxYjUyNGU4OTA0NDYxY2YzYjQzNWE2MGM3YWM1Y2E4MWIzYTc4YjUzNjM1MjkxZjUxNDE2OWQzZjI3MTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhM2U0NmY5NDI3NmI2ZjZmNGVkMWYwMmFmNzhiZWY2YTJlZTFjNDM5ZGQ1NTg0Yjk3Mzk0ODMxMzIxNGQyYjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiYTIzZjEwMGM5NGE4MjgzYTg0MDc3MmZlMWQwNTM1MDY2MzgzNDYzYzdmY2I1MWY0ZjYyMjg1YTY0YTUxYzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9d111166e9924361b1f113618c1c192b",
+      "statement": "The bin/qmd launcher's line 2 shell fallback execs node when present and bun otherwise, applying only when the file is run through a POSIX shell.",
+      "evidence": [
+        {
+          "resource": "repo://bin/qmd#L2-L2",
+          "version": "repo-lines-v1:sha256:f80fe24d54fa519b2e4f230f2ff6e03573949e15677934797efd41a1a2a295b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjgwZmUyNGQ1NGZhNTE5YjJlNGYyMzBmMmZmNmUwMzU3Mzk0OWUxNTY3NzkzNDc5N2VmZDQxYTFhMmEyOTViOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjgwZmUyNGQ1NGZhNTE5YjJlNGYyMzBmMmZmNmUwMzU3Mzk0OWUxNTY3NzkzNDc5N2VmZDQxYTFhMmEyOTViOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjEsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTU5YzQ3ODcyYjcxZjEyNTg5OTQyODkyNDY0ZTc2NGMwZGIzNTBjMjBiNzIyMjg2NDU2MTVjYzM2ZTBhMDcyNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWIzYWQ3M2UyZmVmZDZmNDMyMTUyZDQwODhkMTc1MGI1Y2RkZDliODczN2JlYzVlMWFkY2YwNjNmYjE4NTAwYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_398654c575d94430b0ac679d31b384ef",
+      "statement": "The SDK createStore facade rejects a missing dbPath and rejects supplying both configPath and config.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L443-L449",
+          "version": "repo-lines-v1:sha256:05d67e1b00dadb525c16885c96b40f9fb9c1128be7187e35ba8e2538f3ac1f01:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjg5OTM4OWJjNmU2ODNhZGE4NWE3NWZiZTUzNGE0YzJiNWE2MWQwNjBkZTIxZGE2OWE2ODFmOGVkMGQ2NGI3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTE4ZmEzMTY1MzM2YTcxOGEzZDE2YjFhMDdiODMzMzQ5YWUyMzM0NTIwNjhlNDI2ZDhiYTZlY2ZhYTE5OGRiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDAyOTI3Nzg3YzkwMzliNWI0YzQ2ZDJjNjhhMjRjZWQxNDkwMmJiNDkyNTFmNDdlMDVkMTY2YjM3YzhiMDg1ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_33c67d48cf444a1c96fcb57088eb8881",
+      "statement": "The SDK createStore facade has three config modes: a configPath loads and syncs a YAML file, an inline config syncs an in-memory object, and when neither is given the store runs in DB-only mode reading existing store_collections rows.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L460-L471",
+          "version": "repo-lines-v1:sha256:8122c202a5e8cc0feab54f74366a30c793ded6e746aea8f34f5af04e89fb706f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2NDZiM2I1NThjNjY0NmY5NzdjN2UwMzY0MGNhYzRlOGJiOWFlNzJlYmY0YmMxMDgyM2RhOTg3ZTRjZDEzODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2YTgzYmY1MmFlM2YyYmE1YWIwOWMzY2M3MTRmMmRkOWUwYzI0MGQ1YzViMjMyOWExMDI2MjgyYmI0MTM1MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwNWU1ZTg1ODI1OGY3NWFkODJhNjc2MWFiMDMzMzFjNTk2NWE0OTA0ODkxZTdiYzViZWU5OGQ0ODY2MjY5YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1NDI1ZTU3MzM5ZmI4NWVjMmM5YjE5MjQ1ZWE3ZWQzODk4Zjc4MzdiOTNiOWYyNmU4ZmUwYzI1NDRkMmJjOTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_038f56ff45864062ac7849ed733ab9b6",
+      "statement": "Each SDK createStore call creates its own per-store LlamaCpp with a five-minute inactivity timeout and disposeModelsOnInactivity enabled, and attaches it to the internal store.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L473-L482",
+          "version": "repo-lines-v1:sha256:29807a191bf3283b2211820b497109664380bcdf4676d100e1183e2b2f9a61e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5MWE0NmE5NmE4YTA4Njc1Njc2YzNkM2JiNWNiNzE4YTcyMDI1OGU0MTQ4MjdjZTNiMTg4ZjY0ZDUyOWFiNTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmMTBhYWU2YTljNzIxOWJhZDkyZDI2MjI0ODJjYzIzMmQ1MDhjZjk1MGYwNThlY2EwZGFhMDczODVlY2ZjYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwMTg5M2ZkMzU1ZGNjYTUwZTU3NzA3Yzg1NzcxN2VkOTY0ZGQ0MjRiYzcxYTg3MDA0OGVhZDJmZThiYzU3NDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZiYTgzMjEwN2ZmNWRhYzkwNWFhZTQyZDMzYTcyYmI5ZTk5ZjZjMGFjMzI1OThhNjNkNTdhNGVkYTM4YTg5Y2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5de819069ab842c0853467058f23b33f",
+      "statement": "The internal createStore in store.ts defaults to getDefaultDbPath when no path is given, and getDefaultDbPath throws outside production mode unless INDEX_PATH is set, so tests cannot write to the global index.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L2615-L2618",
+          "version": "repo-lines-v1:sha256:1435b1d015630930018c244da2eddf10663c153032aec417d2c0b72e9675e252:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjJlMmQ2ZTM3MGMxNjAzN2Q1NWI0ZjViMWI5NjNhODE3YWI5ODk4NjY5MDFjOGRmNjU4Yzc5ZjA0YWU3OWEwMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGRmZjM1ZTI4M2JmOTNkOTBjNTdkYjc5ZTkxOTQ1Y2NhYTI2Mzc5MDQ4ZjZkMzI5M2E5YTQzNzA1YTg2NTg3ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmE2NTRmNDc3Mzc1ZTE5MDZiN2Q0ZmNjNjE3MGI3MjBiNmU3OGVkNmJiNTIwODRlYjhmNWJmNDYxNWQ2ZTk1OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzg5Y2MyODcxMjJlNTlmNWNjOTBiNjA3N2M3MDNhMDI3NzBlNzE0ZTEyMmNjZDE5YjJmOGE3ZmNlMjQ3MjkxMCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L697-L715",
+          "version": "repo-lines-v1:sha256:ca744df181d9e0f7a86fb3b538aa01ba565adfa1a069ab8c5796290a86a41ce4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmMjE5MDdhMmQ0NGZkYzc3MjJjMTgyMDA5OWY1MmE2ZWE0ZWJjYmZjMGZhODNkNTVkMmNkMTFiYWIyNzY2ZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY0NjY2MzA3Y2RjMGQxMjk1ZGJlNzQwMjhkN2I1OTcyMmNmZDZiODYwMTYxMjY2YWIwOWJlYmFmNDlhMzhhNWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjNDg1N2M0MmMzNTAzMzVmMWU3MzViMjhjN2EzMTYwYWU2ZDU3Y2RhYmYzYTJkZTFlM2Y5ZTE1MzAzYTUzNjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_44cf153fbe8840cdae4fbc597e7eecdf",
+      "statement": "initializeDatabase loads sqlite-vec inside a try block; if loading fails vector search is disabled and a warning is emitted, but FTS keyword search keeps working.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1237-L1247",
+          "version": "repo-lines-v1:sha256:9fd4d706d0f857e8f624c762724ab2d364bf7855ef65d9ed824be9121d3f311c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkNzg5YmM1ZTA2YTIzNTc1YzVkZDU1ZGQyMDBlY2QwYTAxOTgwNTY3OGQ2NDMzZWMzZDU3MjNkMDNmYWE0MDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MTg3MjMzMzA0NTFjYzZjOTc2YTBjMmQyYTBhNzU2YzQ4MjkyM2JmYzgyOWNlOGYxYjU2MGUxZWJkYjVhZjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhOTk1ZWE2NDg4MTdmNjUzMzI2MWZlNzc0ZDUyMmFhMzc3Y2Q5ZDc2MzNmZTcxZjc0OWRiMDZjM2FhMzhmMmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_000cad01af0c4e97b6e0ff3970dc6689",
+      "statement": "Collections are stored in YAML: initializeDatabase drops the legacy collections and path_contexts tables, and store_collections holds a synced copy of the config written by syncConfigToDb.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L1252-L1253",
+          "version": "repo-lines-v1:sha256:125444b0407d57a5b8e8ce365b70421240cdd00f9c1d6f16b36188ee09f478f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2NmZWM2NWJiOTg3Zjk0MzQxN2JkZjM4ZTc1MjRjMjIxNTM3NGVkZjNjZjdmODExNGYxMTRhNTc0NWUwYjI1NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQwMzg2ODFjNWM2NjE1ZTgzNTUxNGU1YjI1ODQ3ZTY3ZWFhZDUwNTY4ZGZjMDc5OGRjN2UwZWNhMmNkNzVlNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGRlNTA0YzVlMjc3OGU0Nzg1MWJhNTljYWM0MjM2YTMxNmFiOTA0OGM0ZGVjOGRmNGM2N2VmZDUwMTM2MTAzNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWNhNmMzNDM4ZjNkODA4MGM0YmU0YmUzM2I0OGZhMjA0ZjNlMGQzZTM1NWI1MWU4YjI2M2NhYmIzNjg0MTcwOCJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L1318-L1318",
+          "version": "repo-lines-v1:sha256:6ea556c9681b76f998c2b7adbe0b51479431ff846789957ec653e721f7bb7421:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmVhNTU2Yzk2ODFiNzZmOTk4YzJiN2FkYmUwYjUxNDc5NDMxZmY4NDY3ODk5NTdlYzY1M2U3MjFmN2JiNzQyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmVhNTU2Yzk2ODFiNzZmOTk4YzJiN2FkYmUwYjUxNDc5NDMxZmY4NDY3ODk5NTdlYzY1M2U3MjFmN2JiNzQyMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2Q2NjgyNDA2MDdiZmFkMGE3NDVhZDNjMzg5YmUyNmJiMmE3Mzc1MTRkZmU4NTE5Yzg3NTIxY2FjYTRhYmYyYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmRjNTQ0ZTQ5ZDM3YTI3NWU4ZThlZjNkOWY2OWM1OTc4YjRhNDcyMWQzYTE2OTM4Y2Y1YjAxOTBhNmMyYjQ1MyJ9"
+        },
+        {
+          "resource": "repo://src/store.ts#L1503-L1503",
+          "version": "repo-lines-v1:sha256:9d622c635c2a68e0ec3405d1a33985a0d354bb00e8559fc93257e8343622a878:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ2MjJjNjM1YzJhNjhlMGVjMzQwNWQxYTMzOTg1YTBkMzU0YmIwMGU4NTU5ZmM5MzI1N2U4MzQzNjIyYTg3OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ2MjJjNjM1YzJhNjhlMGVjMzQwNWQxYTMzOTg1YTBkMzU0YmIwMGU4NTU5ZmM5MzI1N2U4MzQzNjIyYTg3OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzIyYzM2ZDYxODBkMDg1NmViOTJkMzJhYTAzMTYxMTBlMGU1NjFhYzk1MTA4YjhkMTM1MWVmZTI2MTNlOTQxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWJmYTRhNmFlYWRhYTUyYmQwZjFlOWZkZWYwMTlmNjgyZWJiMzM2OTBiZTU1OGI5YjgxNzhiMDExZmUwOWQwZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_100b206fea6243398bfd7a40c640585d",
+      "statement": "The CLI runs its command dispatch only when the file is the main module, enables production mode there, and creates its own lazily cached store by calling the internal store.ts createStore directly rather than the SDK facade.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L169-L174",
+          "version": "repo-lines-v1:sha256:91ccfd250233a27986fd5c92af8c6aaa0c66de082d6b80bafe76fcb35cf18f0e:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzczNzE4YmUxODA1MTIyODRhZjUyYTZiNzNhMGRkYzUyNjMxZDRkMjAzMDFhOTU2ZjA5MDZjYzIyZWE2ODYxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDQ4NGRiMzU4MzcxNDVjMmQzMjIyMzdkNzA3YjJkN2MyNDlhNzE1YWYzNDc1NWE2ZmFjOTcyMWU5MTQ3YzM4MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTVjNzMyOGQ4NjQxYTZiNjg3YTlkYjMxYjZhMTc4NzZjODg0MGUyMmFmNDA5ZTQyMjYzNjMxODcyZTFiZjk1YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDAxYjg1NDQ2ZTVjOWE5Yjc1YTEyZjQ4N2MzNzJhMDgyMDk5MzEwYTAzNDZhNWU5MzFhNTIwMzk2MDM1YjZhYyJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4598-L4604",
+          "version": "repo-lines-v1:sha256:c61ae9eb29fcdcd3769ef1b33854822401d00dfef8362caebbaffc4ff3556000:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGVlODM1MWY2YTA3ZGFhYmYyNmFjYWNiYmE4ZGZjMWI4MDAwZTU0YmFmMWFmMjQzYWRiMDUzY2Q2YTU5MmNjMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNWIwOWIxNGVlMzZjY2EzODY3YmY2Yzk1MmRlYzFmYWRjNTc1N2JkYzFmNjU1MWQ3YjFhNWJhYjFiODNiNDQ5ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzNhODFkOGMwNDg1ZjM5MWE0YTllZjZkODI4OTBkYzYyM2I1MzY3OWFiNjRmNjQyYzBiYWZlNmI4MjA3MjEwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDM5Njk0YzI4Y2E2YjM4MDQyMjE1OWVkMDJmM2I4NzUyN2M4YTI0MTE3NzVmODhkMmUyM2YxZGRmOWQwN2NhYyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f36dcd2479694322b93af8b2bcbf900d",
+      "statement": "The CLI getStore function syncs the YAML config into SQLite and builds a LlamaCpp whose model URIs are the untrusted resolution unless the local config is fully trusted.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L172-L192",
+          "version": "repo-lines-v1:sha256:bdd123c54fbf1e11dcf2b1b9a4a53275dc20a7b3c2ea763462ebc74ce0d23657:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlNDBkYjMwOTE5MGRmOGU4N2E0NmRlNmRkOTUwYTVkMjQ2NjVkMmJlNDc1YjlkMjY3YzFiNTY3ZmY2NzBmODQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjNjU3ZmI3MzFiOGFkYjljZDIzODI0ODBjMjJhZjhiNzYwYzRmNjM2YTU1MzE3OTFkMGUwMjBjOGE2MTRiMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NjViMGY3ODU3NTE0MzFmY2Y3YzJiOTIyNGIzMDA3MWMxYTE1ODUzZDc1ZGNmZGE1NzJjOWYwNDg0NjhjYTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_83f9fbc5bffc4df887598cd2f6ab4b70",
+      "statement": "The CLI update command skips collections whose path lies outside an untrusted project-local config and runs a collection's update shell hook through bash only when hooks are allowed.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L941-L961",
+          "version": "repo-lines-v1:sha256:211ac3f2e10ff3313e3c4d96638d23db143f0f657989203d68fac6dc0fe2aef3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyYWE4YWU4NTE3MDVhZGE2MGE4NDNiMzliNTUyYzE1NmIyZGYxYTQzNzRkOGRiNzdkMWViNmQyNWYwMmE3MmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiMzZlY2M3NTk3MDZjZGM3N2ZkNjkxZTJiNjlmNjY0YzU1NTY3ZjMwOGNiOGVkZjMxMTQ0Mzk4N2IwY2QyOGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE0MzNhMTBmMTBjOTJiZTU0MmUwMjA4YTc4ZmYyMDgzZTdkOTViMjMxNTYyYzk2YWJmNTU0ZTVhMjVjZTRlMzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNkNDAyMjA3ZjAxMTNlZDczYWNlZDY3YzVlNGIxNzI4OTkzZGRhNjc0NjRmODRjMTZhNmRkOWVlZjExMzUzMjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ab0b2a5fe1854da7b68ab7b68c5ad758",
+      "statement": "The MCP stdio and HTTP entry points each open a store through the SDK createStore facade with the config path only when it exists, and the HTTP transport screens requests with an origin guard that rejects non-loopback Origin or mismatched Host with 403.",
+      "evidence": [
+        {
+          "resource": "repo://src/mcp/server.ts#L1017-L1020",
+          "version": "repo-lines-v1:sha256:c79679176c8a2febd7497a7bba4e3b67ff1d2b8b45650718dd1d983005b58052:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBjYzlhNzQwMzlmYzU1ZTEwMzg3N2U3YTY4OTk3MTRkZGUyZDlhNDQxZWRiZWEyN2E0MDk3ODAzMDZhNDU2MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2EzZTQ2Zjk0Mjc2YjZmNmY0ZWQxZjAyYWY3OGJlZjZhMmVlMWM0MzlkZDU1ODRiOTczOTQ4MzEzMjE0ZDJiNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzAzZTk0MDFmMzE4ZmIzMjU2NTY1OTdhMzJlODRiMDg4MDg4NmYxMmIwZDcwMmUzNWEwOThiNmQzMzM5ZTcwNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDhjOWJhNjIxZDQxYzZhZGE3YjFhYjM5NDNhNjJjMjFiY2I0Y2QyNjJhMzI3NTBiZDA4ZjkzMzkzOWM1Y2FlZCJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L1071-L1071",
+          "version": "repo-lines-v1:sha256:00cc9a74039fc55e103877e7a6899714dde2d9a441edbea27a409780306a4560:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBjYzlhNzQwMzlmYzU1ZTEwMzg3N2U3YTY4OTk3MTRkZGUyZDlhNDQxZWRiZWEyN2E0MDk3ODAzMDZhNDU2MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBjYzlhNzQwMzlmYzU1ZTEwMzg3N2U3YTY4OTk3MTRkZGUyZDlhNDQxZWRiZWEyN2E0MDk3ODAzMDZhNDU2MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWI0M2RiMWY5Y2EwMmQ0MDU3M2IxZGZmNGNmMWE5MTlmNTdiNGI0MmQxODA4MjBjMDgxZDI4YmRmNjY5Y2JiYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGJlNDM4ZWYwYThkOGQ0ODVjNGU4MjNmZTk1NTk2MGU4YTk0NzM5NTE4ZDYwZmI2ZDIyODIyYjQ0ZjkxNzdjYyJ9"
+        },
+        {
+          "resource": "repo://src/mcp/server.ts#L1164-L1164",
+          "version": "repo-lines-v1:sha256:e1d397df4a4b1ad4e66d6e8aefefe550ed69cb7095f8c133a8a3b0850b0edfd4:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTFkMzk3ZGY0YTRiMWFkNGU2NmQ2ZThhZWZlZmU1NTBlZDY5Y2I3MDk1ZjhjMTMzYThhM2IwODUwYjBlZGZkNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTFkMzk3ZGY0YTRiMWFkNGU2NmQ2ZThhZWZlZmU1NTBlZDY5Y2I3MDk1ZjhjMTMzYThhM2IwODUwYjBlZGZkNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODhjNzQ4OTlmM2FmMGE3ZmIwNDcwNWMwY2FkNjgzMjJkYWU2MTA0NGM1ZGNiMjcwYzc2OGUxNzA1YjZkZTZkNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzY1M2ZmOWEzNzY1ODhmZjYzMmU1MDgzMWE4MzEwYzFhZmQ1MjU0YjAzZjFjYTExNTdmNDZhY2RmY2EyMGNhNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f0d2a21c7f554dc7a794e81f8e8b0bdd",
+      "statement": "LlamaCpp loads each model lazily on first use through ensure methods, uses a single-flight promise to prevent duplicate Llama runtimes, and resets an inactivity timer on each operation with a five-minute default.",
+      "evidence": [
+        {
+          "resource": "repo://src/llm.ts#L1138-L1138",
+          "version": "repo-lines-v1:sha256:c16a2780a7295507d94eba854ac214e0f5a57f08a47978e908690906bc25eee6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE2YTI3ODBhNzI5NTUwN2Q5NGViYTg1NGFjMjE0ZTBmNWE1N2YwOGE0Nzk3OGU5MDg2OTA5MDZiYzI1ZWVlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE2YTI3ODBhNzI5NTUwN2Q5NGViYTg1NGFjMjE0ZTBmNWE1N2YwOGE0Nzk3OGU5MDg2OTA5MDZiYzI1ZWVlNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWEwOTYzZjU0NjMyZDYzYTAzMTZlOGRkYTlhNTcxZGNiZWYwOWFjZTM0MTcyZWM0YjUwNjA4ZjUzYWYxYzc1MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjFlYjRkMzRmNDQyMWU3Mjk2OTFhMjUwMmEwNmNmOTYyN2ZmMmQxZGI5YmRhYjc2NDkxMWQ5MTQ3MDJmZWQ4YSJ9"
+        },
+        {
+          "resource": "repo://src/llm.ts#L659-L659",
+          "version": "repo-lines-v1:sha256:c57afb5a29536e4132529b952a38b7d742445d8e3ae47f38332dcbc3fe184107:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzU3YWZiNWEyOTUzNmU0MTMyNTI5Yjk1MmEzOGI3ZDc0MjQ0NWQ4ZTNhZTQ3ZjM4MzMyZGNiYzNmZTE4NDEwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzU3YWZiNWEyOTUzNmU0MTMyNTI5Yjk1MmEzOGI3ZDc0MjQ0NWQ4ZTNhZTQ3ZjM4MzMyZGNiYzNmZTE4NDEwNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzJkZTJiMjg3ODkyYTNmOWU2Y2ExMGY0ZTc2MTE4MzFhNTY0Y2VmYjBhODRlYTU2ZmE3MmI3NzIwYWFiODBjYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTExNDIwYjI0ZTlhYjg4M2QzMjU3YTdlNzVhN2I2ZDIwMjRhN2VhOTYyYWY4YTg4MTU2MDVjMjJjNzljODliMCJ9"
+        },
+        {
+          "resource": "repo://src/llm.ts#L900-L900",
+          "version": "repo-lines-v1:sha256:943f95d6cb74d7cb955c373ec11fc1045a4ad267fa00bb04573399f52c9dc22f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQzZjk1ZDZjYjc0ZDdjYjk1NWMzNzNlYzExZmMxMDQ1YTRhZDI2N2ZhMDBiYjA0NTczMzk5ZjUyYzlkYzIyZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTQzZjk1ZDZjYjc0ZDdjYjk1NWMzNzNlYzExZmMxMDQ1YTRhZDI2N2ZhMDBiYjA0NTczMzk5ZjUyYzlkYzIyZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGVlZGRjNjk4ZTYzZTU5MDBjNWViZDY2ZmQ1NjczOTIyOWNjODM3YjhkOTg5N2RkMDg5NGE5MmY4MzQxODhhMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmI1ZDYzZGJiMjI0OWUyMDM5NjY1YzI5OGEyN2Y5Y2I4MDU3Yjg4MzM2ODQ3MDVkM2NiZWU4YTI4OTJjMDU4YyJ9"
+        },
+        {
+          "resource": "repo://src/llm.ts#L999-L1003",
+          "version": "repo-lines-v1:sha256:b72043ed2caeb2f691983da3751d05bc62cc63e3dda185c48627523e78c222a0:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmZjMGU0NTFhOTY5OTk2N2QxZDAyOWY2Yzg0OWViYTVhZDU1MDhmMmU2YWNmYzA2OGNkOGQ3ZDExMGQyNzcwNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDA0NDQ4MTIwN2NiNzViZWM3NDVlZjkzMzkwMDIzM2JlNTUwZjkwMTIyYjMxMmJiMjEzNzAxMjk1MmNjMDIwMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOThlYWI1NDBjZTAyYTFiNTg0ZDFhNTJjNTVjNDg3NDQ3ZTUzOGU4MzM1MjRkNjQ0NDJiOGNiZTA0NWRkNmRhMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTc2MzQxNzZhNTAzOTljMzcyZjUzYjc4ZTc1YjE3ZDc5YTA4ZmQ2ZDczZmRlN2FlMjVmYmUzMzlmZjZhNDc0ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_496743cb3ab74d2eb63a205abe21e1b0",
+      "statement": "findLocalConfigPath walks upward from the working directory looking for .qmd/index.yaml or .qmd/index.yml, and when found the project database is index.sqlite beside that config.",
+      "evidence": [
+        {
+          "resource": "repo://src/collections.ts#L141-L161",
+          "version": "repo-lines-v1:sha256:8343674bffd56b239b803901a0b17edd0af483e02595308319a44e210038f13e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjMjc1MjBkZDI3Yzg3N2VhM2E2OTM1ODNmM2ZiMWZiNGNkNmM1M2Q3OWI3ZmQzMDg3YjdiZDk4MzM5YzNhNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhODY0MDZhYmRkOGIxYjk0NmZjNDU0MjI1MDYwZDg0ZDg2MjY1ODBiNTdiMTdkZWNlNDYxZGM5OTgzOTNkMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk5MmU3NDQ5OTY2YTJmNThmNjQyOWQ0NGQ0ZDI4MTNjNDY1NjljNGNkNmY2ZTQ2OGJjYjAxZTBhNDMwY2Y2MzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b7bb8a089e9044979299f78574ed2c5f",
+      "statement": "The trust gate treats a config as project-local when its parent directory is named .qmd, gates hooks, out-of-project collection paths and non-default model URIs, and records approval as a digest of that gated set, so reordering collections keeps approval while editing a hook or path re-arms it.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L149-L159",
+          "version": "repo-lines-v1:sha256:985539bca1b6d45f014de7c5f34c454c41d075345231a3918c827a86f07a1b04:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyYTk3ZGI0Zjk1NTVlYTJlNjg3Y2IwY2Y0Nzg4MzNiNDMzOTBiNTRjODY4MDYwMzY2NDI0Yjk4MjMxZTQ0OTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyNzliNjgwNTIwZWQ1MjZkY2M0YzhhYTM3MzUyNzU5MGUyODE5NWU0MGZiZTYxMDdlMWU1YjQ5NWE0NTc3MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiYWVlYWU0NWI3YWJjYWY2YjNjM2M5ZmJjZmY5NGEyYWRiMjUyNmJjNGFmN2YzNzY4NjI4OWRjZjk1YzUxMmMifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L191-L207",
+          "version": "repo-lines-v1:sha256:d5885be3fc580456e71e0e02ca0e8b7afd060e5bc7372f6a640a5c2efd2c5d2a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MWI4YmU5ODIxODdiMTRhZWY3OWNlMzUyZTIxMzUyZDZlMzk3YmNiM2M0MDk3MmZiNmFiZTViZjM5YWRmZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwOGYyZDVmNDVmMjI0OWJiMmViNjIxNjlhYjNjNzc3OWM2OWZmMjIzNmE1YTk5ZjQ3YjczNzE4Y2ZhMDA4YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5Yjg3NzA0Y2ZhMTBkZDkwN2JmYWU2NWYzMWY2Y2E3MjdkMTA1MDVlNjg1YTM4YTBmZjk0OTY2YzU0NTVjNjkifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L82-L86",
+          "version": "repo-lines-v1:sha256:4899d01ab37509bdf505541830b89837e02e7d1a8a90c14d08f839cc61605a30:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWMwM2QyZTEyMjZhMDM2MjIyZmFiZDlkNWVkZGRiYTkxMzA1MDQ4YmI4MzQ1Y2Q4NTFiMGYyMmI2MjBkMTFmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWM0MWQzNWMwNTE3NWQyMzcwMjVhODRjMmY4ZDAyOWE5OTJiNTQ4YmEzMDA5ZGM4OWJlMDM3ZTUwYzAyYjIzNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmNhOTI1NGI2NTQ1ZDVmYThmOGI2Y2U1MTc1NGFlNGJkYzI5MTk2YzMyNDBjYzJkNmIwZGUyOTA3MmFjYzE4NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_148c9a01e44448489eb119ecdc5aaaad",
+      "statement": "Trust approvals are stored per resolved config path in trusted.json inside the QMD config directory, and a corrupt trust file is treated as having no approvals.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L209-L232",
+          "version": "repo-lines-v1:sha256:d32bd9f88c173fb148fc87dc102ec62662341f4d0226933b9ffcce757ba6978f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmNzJjYTRmYzhlNGJlY2YyMjYzNTk4ODNkM2RjOWJjNmI2YmRjNGVmZjY4MWI4MWRjOGFiYzUxODdjYWYzNjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyZWYzNGJmMzc1MTYwOGY5NzdmZjBiNmM3MzFlNmM3YWM5MmE4N2U3Mzk3YWNmMDYwYWZiMmZlN2U5ZTU0ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmMzZiNjc5MzAzMGVhZGVmZDFmZjM2NjQ4MzIxZjBhNjFiZGU5NDQxM2ZmZmNjMTlhZDg4YWMxOWM0ZDU1YTgifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L234-L244",
+          "version": "repo-lines-v1:sha256:fc37195423a79c99c1da9c8086501a158a67c0bab24de81accdf9395577380fb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1NWY1YzNhZjlkM2ZhZWMzMGM3NTlkNjhjMzU1ZTA1NWU2ZmQ3ZTViYmU2NzI0ZmU4OTAxYTZlYzYxNmY3MTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0MzgxMjE0ZGIyZGNiNDZlMDI0NGY4Y2ZhODFhMzNmNmI4Y2IyZTNhNmUzM2NlYjA5ZmY4NjkxM2MzYmMyMGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFkN2ZmY2ZkYWRhNTMwZTQzNzU0YTdlMTY2NDRiMDgxMGRiZTlkNDg4YmE4NTg0YzBkOTc1MDA5NTM2ZDEwNTAifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L70-L72",
+          "version": "repo-lines-v1:sha256:4177862579e8ca16cce9ce8dbd0dfe5cd7dde11de5ed3c0c39c68323293d9002:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWY2ZGUyMmUzMmY3NGFiNjdlNjYyNzUxZWU0YjZlMDYxNWYxNjI3MGVhY2E1MTIxNTIxM2YzMTA3MjFjYzNmZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTIxYzY2YWEyZTM4YTU0MDczMzc2NjQxODMxMTg0OWFhNzQ2NGUyOTkyOWJhMjQxM2I4MTIzOTNiY2VkODhjZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTJiZmE1N2FmMzVkOTlkMjEyNTUzZTFiYTgxNjIzM2UwYzQyNzIzZGRhMDBhYWZhODUyNjAyZDFiOWExYzgxNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a7864c4af2b46ea91f4b557e6e5cb35",
+      "statement": "The CLI treats global configs as fully trusted and treats a project-local config as trusted only when the QMD_TRUST_LOCAL_CONFIG or QMD_TRUST_UPDATE_HOOKS opt-in is set, or when its stored digest matches the current gated set.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L775-L783",
+          "version": "repo-lines-v1:sha256:5525c4fbde438a6eb9da5f157e1f0689d6d684723e4b5afea9de83ee88304d37:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDNjMDY1MTU4NzNjY2QzN2VjMDZmYmQ2NDAxNDcxMWQwZWQ5NWY5ZWRlNjgxMDk2MGI2YTZiMTRmYjk0MWRmMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODhhOTMyMDcwZTEyMDkyZWE0YjVkNDE4NzM0OGJjMWU4MzJjYWM5MGU5NWQxNzdkYTA3YTVhNjg3N2M2MmIzYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWRjZTc0N2M5NzUwYWQyMmZkZjk3ZGQ1MTMyZmFhYjcxM2FlYWQ5OWU2YjliNGFmNzljYzc2NTIyMWJkZmE0NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_19abac38888a462f938068e593ef6b41",
+      "statement": "The Maintenance class wraps housekeeping operations such as vacuum, orphan cleanup, LLM cache clearing, and FTS optimization over an internal Store, and the SDK re-exports it.",
+      "evidence": [
+        {
+          "resource": "repo://src/index.ts#L188-L188",
+          "version": "repo-lines-v1:sha256:9f50589ed6bc5c7abafa0af55330997164640dc52a0a246db7c647e6004d5d9b:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWY1MDU4OWVkNmJjNWM3YWJhZmEwYWY1NTMzMDk5NzE2NDY0MGRjNTJhMGEyNDZkYjdjNjQ3ZTYwMDRkNWQ5YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWY1MDU4OWVkNmJjNWM3YWJhZmEwYWY1NTMzMDk5NzE2NDY0MGRjNTJhMGEyNDZkYjdjNjQ3ZTYwMDRkNWQ5YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmFkOTNmNGQ3NmUyYzQ3MzVjMzkyZjNkOGJiZGMwMTIxYjZlYzg4NzRiNTQzMzgyYjA0NmViZDJiODFhZDA1YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODNmNTUzODkwNmJlMDRiZTRiNjc3Mjk0Y2RiODdjNDExYzZiNGRmNWZlZjU5ZWI0OGNiYjYyMmQxMDNjM2RkNiJ9"
+        },
+        {
+          "resource": "repo://src/maintenance.ts#L25-L30",
+          "version": "repo-lines-v1:sha256:486c21fb2c40b30b0bd1975fd33090222c9d75fe1b54999b01b688441c4bf6af:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDc1YzI0YjY1YzNhZjAzMGQxOWJkMjRjMzZiMjgyNWJjMGQ3MzMxMjFlY2MwYTE3ODRkZWNhZTliMTY4ZWUxMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjFmYTgwZjAzMjdlNTliYmM1NTZjN2FjM2I5ZmVjYmY1NzU2MGQzNjk3ZTZiMWEyYjdmOWNhNDk2MDU5MzRlYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2M1ODcwYzQ1M2VmZTk2Y2U4YWRiNjQxNjZjNTFjNjU2NDk1MzQ0ZDkwZjFlN2Y3MDlmN2U5NjVkMDdkOTZjNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5be6be2f39d341d2be0e78f12e1b8cfd",
+      "statement": "The config directory honours QMD_CONFIG_DIR, then XDG_CONFIG_HOME, then falls back to ~/.config/qmd.",
+      "evidence": [
+        {
+          "resource": "repo://src/collections.ts#L119-L129",
+          "version": "repo-lines-v1:sha256:568c90a1fc07bb55cfc6a5b42f932887c92af120cd799f429944fdb2894559d0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1OGM5NzU5NzFhODU5MTkyOTA5M2FmNzkwYTJmZGQwNDA3MDJiYTYxNzBhNWRiMjRmOTcwN2I0ZDBkOWU5MDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ5ZjcwM2I1ZTIwMWE0NTEzOTJjMTVmMDZjMTE1MTdiYjY3NDk1N2I1MDY1ODc0ZjRjMTFkNmIzZTQzZmE5YzcifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

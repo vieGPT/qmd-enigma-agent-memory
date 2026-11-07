@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:aaea10ed1581d4ebbb6e5f77b9675c3049c3eec5df9a4e327d68263ef686f54a",
+  "claims": [
+    {
+      "id": "claim_fc9fccad435a47ad8ed235246083a817",
+      "statement": "Only three field kinds in a project-local .qmd config are gated: collection update hooks, collection paths resolving outside the project, and model URIs that differ from the built-in defaults. The global config is never gated, and in-project paths and default model URIs need no approval.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L1-L17",
+          "version": "repo-lines-v1:sha256:df10daf3b5163016ad2908c408c0f3f73f45722229964c9cef456ceca013dfc7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5NjA4MjdkOWUwZDBmYmQ0MDg2Y2MxNTY4OWFhZjNlZWMzNmY5OTNmMmVjMDg5N2JkMDI0ZWRhNzU0NDVjOWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1OTY4ODlhYmQ5ZDU2M2Y1NTY0OTIxZGJjNjkyOTdiNTlkYTQxZmQxNGNmZjY3MjExMjliNTU0MGNkOTVlMDQifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L135-L159",
+          "version": "repo-lines-v1:sha256:1a922df10ce56c0a4cd7cb0a289ebf57794b5affaca4ead05f43bf48cf3db513:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0ZWRhYjc2MDkwNjJhYmZkYTlkN2MyOTI1MjQ0MjVkYjAzNWNhMmVhMjk0Mzk1ZTY3NjliMjdhODQxYzc4MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmMjM2ZWE4ODIxNjliMTg4MTg5NzEwNTU2NWM4MjI2Y2ZkYjdhY2M2YTA2ZjA0YzE5NzZkYTgyYmZmYzBlYWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiYWVlYWU0NWI3YWJjYWY2YjNjM2M5ZmJjZmY5NGEyYWRiMjUyNmJjNGFmN2YzNzY4NjI4OWRjZjk1YzUxMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_17a253e3e3b34faf80c82723e728d380",
+      "statement": "A config is treated as project-local only when its parent directory is named .qmd; the CLI discovers it by walking upward from the working directory for .qmd/index.yaml then .qmd/index.yml.",
+      "evidence": [
+        {
+          "resource": "repo://src/collections.ts#L141-L155",
+          "version": "repo-lines-v1:sha256:896f04a0ac2a276de07bff1b0bae7961121740c44023fac6111974adbcb5bfb1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFjMjc1MjBkZDI3Yzg3N2VhM2E2OTM1ODNmM2ZiMWZiNGNkNmM1M2Q3OWI3ZmQzMDg3YjdiZDk4MzM5YzNhNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhODY0MDZhYmRkOGIxYjk0NmZjNDU0MjI1MDYwZDg0ZDg2MjY1ODBiNTdiMTdkZWNlNDYxZGM5OTgzOTNkMDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1NzViYzk0NjQxMjM2ZmJiODZiZWNhOGE1N2NlYzcyOGI0Mzg1YjBjZTNiNzI2MmZlZjI1ZTMxYzFkZTk3YWIifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L82-L85",
+          "version": "repo-lines-v1:sha256:63dd9069f02a82e60f8c7d47c7d6e1b6ae5c6c1af1d64f135ec363a9bc0ecd1c:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWMwM2QyZTEyMjZhMDM2MjIyZmFiZDlkNWVkZGRiYTkxMzA1MDQ4YmI4MzQ1Y2Q4NTFiMGYyMmI2MjBkMTFmMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWM0MWQzNWMwNTE3NWQyMzcwMjVhODRjMmY4ZDAyOWE5OTJiNTQ4YmEzMDA5ZGM4OWJlMDM3ZTUwYzAyYjIzNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjI4OGIyZjlkYTc1ZWMzMjdhNzA5OWJjNjJhZTE2M2E1NjI5Yjg5YWU5OWQ2Nzk4MjEzODkwZWQ4MGUyNzAwZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_022e37163baa49bca006f6d397870be2",
+      "statement": "Approvals persist in trusted.json under getConfigDir(), which honours QMD_CONFIG_DIR, then XDG_CONFIG_HOME/qmd, then ~/.config/qmd. Records are keyed by the resolved absolute config path and hold the approved digest and a trustedAt timestamp.",
+      "evidence": [
+        {
+          "resource": "repo://src/collections.ts#L119-L130",
+          "version": "repo-lines-v1:sha256:bb0132fa85d806c2359257cce712631edeb0ee88fca3d30b2512932241d2828b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1OGM5NzU5NzFhODU5MTkyOTA5M2FmNzkwYTJmZGQwNDA3MDJiYTYxNzBhNWRiMjRmOTcwN2I0ZDBkOWU5MDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZiNTgwZTk2NGY4M2E0NzNmNDNkNDQzODQ2Mjk0OWQ2OGI1NjAwZmRhNzg3ZjE2Mzc0NWQwMGRlODljYmYzNmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA3NDk1M2UxNGQ0MzhjYTU4OWZmMmExNDY0ZmZiM2NkNjkxOWI4NWIzODhlMmVhZjBiNjEwZjUwOWQyNjhkNzEifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L230-L245",
+          "version": "repo-lines-v1:sha256:a15e096bb406b13d02035b92f3302b6584de9e88f5d6b1d236ebd456a50cde6b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYyM2IwZTE5NmU1ZmE4MGEyMGZiZmNkMTA5Yzc0MGVjYWEwYjE2NjJkYTc2MDVjNDA1MjRjOGJiMjkwZjRiNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiMzFkMDBlMDE1ZTdlNzUzYmVlOThhY2E3NzllZWNmZGEyODYyMjFhMzUxZDhlYzk5MjMxZjJiZjkwODBjYTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjN2Y3ZjM3OGVjZjVhYmMwY2NlM2E3ZTc2OTM3YWU0ZDJmNTVjNzA4OTA5OTRhYTZjMmFiMzk0NDAzZDVkNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1ZGM0NzkyNDgyZDE0MWRjMGRiOGJkYTM2MTNjNDEzMzEzYTE4M2UwMTMzY2Q5NDdiNjIwYmM1NjgyMDkyYmYifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L58-L65",
+          "version": "repo-lines-v1:sha256:2c2804e6a2312bd4fe504a12a175230dda79a5478c154157e23503bb79c3b4b1:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTU2ZWZkMmVhYTc2YTIxNmE5NWJiNWFlMTMzN2ZhOTU2NGFjYzkxZTZkNzNkMzI0MTQ3MDZlMmY0ZDc3MmNlYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzJkODhjNTlmOGE0MTBmOGI1ZGU4NjZjOWQ2NzIyMWI1M2Q4OThkYjU1OWVmNTZmMDA3NmYzNDg5M2Q3ZDhmOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmZkNjc5ZjM4MDY3OWExOTg1ZWY5MjdhNTQ0OTI2ZmM4Mjk2NWU2MGNkZGVlYWNjNjMxNTg5ZGRmYzYxN2M4ZCJ9"
+        },
+        {
+          "resource": "repo://src/trust.ts#L70-L72",
+          "version": "repo-lines-v1:sha256:4177862579e8ca16cce9ce8dbd0dfe5cd7dde11de5ed3c0c39c68323293d9002:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWY2ZGUyMmUzMmY3NGFiNjdlNjYyNzUxZWU0YjZlMDYxNWYxNjI3MGVhY2E1MTIxNTIxM2YzMTA3MjFjYzNmZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTIxYzY2YWEyZTM4YTU0MDczMzc2NjQxODMxMTg0OWFhNzQ2NGUyOTkyOWJhMjQxM2I4MTIzOTNiY2VkODhjZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTJiZmE1N2FmMzVkOTlkMjEyNTUzZTFiYTgxNjIzM2UwYzQyNzIzZGRhMDBhYWZhODUyNjAyZDFiOWExYzgxNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ca506b32dfea44cfa9d3f5220b60a860",
+      "statement": "A missing, unparseable, or non-object trust file loads as an empty store, so a corrupt trusted.json never grants blanket trust; an approval is valid only when the stored digest equals the currently computed digest for that config path.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L209-L220",
+          "version": "repo-lines-v1:sha256:b282b21f8409ba4623e29835fd33bb9c9dfa52104c9f403ee953cc428910444c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmNzJjYTRmYzhlNGJlY2YyMjYzNTk4ODNkM2RjOWJjNmI2YmRjNGVmZjY4MWI4MWRjOGFiYzUxODdjYWYzNjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMyZWYzNGJmMzc1MTYwOGY5NzdmZjBiNmM3MzFlNmM3YWM5MmE4N2U3Mzk3YWNmMDYwYWZiMmZlN2U5ZTU0ZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhZmI0NWVjN2E5MjI0NzM2NWIwOGY1MmQxYjgxOGJmNzU2MzQ0NjQyZTNlMTVkZmM0MTQwNGE2NWU5MzU4MDIifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L234-L237",
+          "version": "repo-lines-v1:sha256:6e1726ec52c4ec9e4f7b65fc4be43fb2aca1e1604cf5512540d6886c9b540d1b:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjU1ZjVjM2FmOWQzZmFlYzMwYzc1OWQ2OGMzNTVlMDU1ZTZmZDdlNWJiZTY3MjRmZTg5MDFhNmVjNjE2ZjcxNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDQzODEyMTRkYjJkY2I0NmUwMjQ0ZjhjZmE4MWEzM2Y2YjhjYjJlM2E2ZTMzY2ViMDlmZjg2OTEzYzNiYzIwZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzkyYzlmZmRiNmFmZTAyNDAxYjNjZGJlMzY4NTZkZDZiMTFkZTQ4NzM3MzQ2Y2YzNTFhOTI2YTIwMzMxNWM4ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_564828bfb62e4534bd14ec12e608276a",
+      "statement": "The sensitive digest hashes the sorted hook pairs, the resolved absolute paths of out-of-project collections, and the non-default model URIs, so editing a hook, pointing a collection outside the project, or changing a custom model re-arms the gate, while in-project path edits and setting defaults do not.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L176-L189",
+          "version": "repo-lines-v1:sha256:b06ecdef1ea6557ff9f39cecbe608e957d11753d259040806b84217a72fa8388:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM3ZmUxNmM4N2U5YmFiNmExNWI4ODNjNWMyYTI5MDQ4MzJkMjc0ZWYxODQwNzVjOWEwODQ0NzdkMmI4MzY5MGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlNzY4ZWU5OTc3MDY3OGJmZDFkZDhlYjAzMjYzNmY0ODZmNWRlOWFiYzBiOGJlMzdkOGYyYTc5YTRhNzlhNjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkNjhlYjAwMDNhNzIyYTg5YWI1N2IwZTk2OWI2MTljZTQzOTY4Yzg4OWJjOGY2YjcxOWRmYzY4ZGM0NGViNDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmNmRhZTZiZmJkMGM1NDAyNmEzZmU2ZTA2MDc4ODZjZjUyZjhhOGE1NmFkMWYwMTU3YzA1ZjlkMDdkMGZiYzkifQ"
+        },
+        {
+          "resource": "repo://src/trust.ts#L191-L207",
+          "version": "repo-lines-v1:sha256:d5885be3fc580456e71e0e02ca0e8b7afd060e5bc7372f6a640a5c2efd2c5d2a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MWI4YmU5ODIxODdiMTRhZWY3OWNlMzUyZTIxMzUyZDZlMzk3YmNiM2M0MDk3MmZiNmFiZTViZjM5YWRmZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwOGYyZDVmNDVmMjI0OWJiMmViNjIxNjlhYjNjNzc3OWM2OWZmMjIzNmE1YTk5ZjQ3YjczNzE4Y2ZhMDA4YTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY5Yjg3NzA0Y2ZhMTBkZDkwN2JmYWU2NWYzMWY2Y2E3MjdkMTA1MDVlNjg1YTM4YTBmZjk0OTY2YzU0NTVjNjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_53102e8b6cbd4c41b5612066ca28d971",
+      "statement": "The env opt-ins QMD_TRUST_LOCAL_CONFIG and QMD_TRUST_UPDATE_HOOKS are each read through isTruthyEnv, which treats unset, empty, 0, false, off, no, and none as false after trimming and lowercasing, and treats any other value as opting in.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L266-L274",
+          "version": "repo-lines-v1:sha256:b235bead49e1c4558917c2cf336f9410229dc996e6b6a8023d022deec252abfa:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjc2Y2IyODE2ZjE5ODI1MDQ2NDhlYzE0ODk4NTE1OTEwYWMwYjMxODMxODljNDVlYTU2ZmIwZTRlOGE2MTA2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjcxNzA4ZjdhODJmN2I2YWVjMGFlYTkwODY0YWI2MDY3MDFjMDA1YmE0ZDYxYTc2ZTEwNTEyZWU1NDhmNjUzYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmVkYzFmZmFjZDUwM2U1Yzc0OGQ5NDk1YTkyZWQxNDQyMTM5YzdiZDMyMGZiZTcxZTBkZmFjZWM4YTIyMWMyMSJ9"
+        },
+        {
+          "resource": "repo://test/update-hook-trust.test.ts#L195-L205",
+          "version": "repo-lines-v1:sha256:712f9e59451da93224050ec58afdb9c93a5ce89ef9edcc1cb41a1b5bff63b63b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxNjJmODNmYmQzMGExNGVjOTc4MTNiMTk3NjNkYjIzOTEwMmZlYzFkYmMxZWE2NGJhYzJjYTQyMzE5NTliYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFlYzA1MzQxNzlmMWU3MThiYjhkODEwYTE4OWZmYTc0ZGQyMjcyM2EyODk4YmViMTc3ZTViYTc4YjE4N2RjMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzMmY3MzU0NzhiZDQwZWY5ZjliODkxN2EwZWVhM2M1ZTgxMTlhYjAzNWI3MDc5ZDJjZDBiOGZmNGExYmZmZGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_695305a9afe64cd788f14c1c85cea699",
+      "statement": "decideLocalConfigGate returns run when no gated items exist, run when an env opt-in is set, run for a non-project-local config, and run when the stored digest matches; otherwise it returns prompt for an interactive caller and skip for a non-interactive one.",
+      "evidence": [
+        {
+          "resource": "repo://src/trust.ts#L313-L333",
+          "version": "repo-lines-v1:sha256:80e2ec433eca8ebc2fdd8c94e4af6b9d0b8469af241fc7ea349c1ec768326054:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0YTMxNzE3MjRiNWJmOGQ3MmYzNDFjMTdkZmNkODFlYmNlYzE2NGZlZjlkNzhlYTY4YzM0NzExMzI1NDE1YjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlYzE0Y2MyY2VmYTRjZjBkYTllMzFlYzAyOGVlZTJmMjY3NmI3NTFkMWYwZjQzYjc1NmQxOTRmOTYzOWM5NzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d6d37ac7e23842269c77196985724e80",
+      "statement": "The CLI wrapper resolveLocalConfigTrust treats a terminal as interactive only when stdin and stdout are both TTYs; on prompt, a yes answer records approval for the decision digest, and on skip it prints the gated items and guidance and returns false without failing the command.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L831-L863",
+          "version": "repo-lines-v1:sha256:054a01fa11553f528851d92daf973528351f388977b84418e485721dc2c7d0fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmNmI1ZTYxZGQzY2RmYTdhYmUzMDhlOGY0OGRiNTI3ZjZkMzBhNjE1OGIzZTM0M2M1NWEyNTAzMjUwZWI5NTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhZjU0YWMwMWI5YTEzMmJlYWY4MjAxYzRjNzBlODIwMTRkYmFjNjRhYjhkZTRlNDZjZWM5OTkwYTk2OGFhMGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyOWY1YzBiNmFhMzhmNmQ0M2Q1Mzk2MmE5M2E5ZmI1ZTFiZDY2NDJjNGExODdkZWY2YTM2ZjU3ZDdiMmU2YjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a6c123aa7e4e46ff870a1806d65ff493",
+      "statement": "When update runs untrusted, collections whose path lies outside the project are skipped with a message and in-project collections keep indexing; because the trust result is a single boolean, an untrusted hook or model also causes out-of-project collections to be skipped.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L943-L943",
+          "version": "repo-lines-v1:sha256:4b527ca0d44c55d60fa4f71905f486b176686bacdfc78772e8d78aad3173fb52:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGI1MjdjYTBkNDRjNTVkNjBmYTRmNzE5MDVmNDg2YjE3NjY4NmJhY2RmYzc4NzcyZThkNzhhYWQzMTczZmI1MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGI1MjdjYTBkNDRjNTVkNjBmYTRmNzE5MDVmNDg2YjE3NjY4NmJhY2RmYzc4NzcyZThkNzhhYWQzMTczZmI1MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjE2NTRlODRkMGMxMmYwYWRjY2Y5Y2U1Yzg1NWIxZWFiZTM1OWEzZmEzYWE0Y2RmYjU0ZTk0M2RkZDMwMzU5ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmI3ZjFiMjNkNmQ0MmZmZGZjNTYxYzM1MDc2NTdlNGJhNmEyMDYwMTY3MWI5M2RiODJhMjQ1ZDc4MThiMGE4NiJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L956-L960",
+          "version": "repo-lines-v1:sha256:da769c3f5272d944a949fbc350375b2e351ad59f4dca60d6077a69ab3c441a3b:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDgyN2IzMzhjMzM0OTk0MWQ1Yjc4MWFkM2Q1NzQ5ZTZjZGM1MzMyYjE2ZDVkMjYyZmRhOWY3M2RhOTlhZDE4YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg5M2Y0MGUzNzgxZWI4OTZjODJkMDQ2YTA4MDY3YTExZTM1Y2RmMmYxZGZhZjI2ZmVhOTBiOGRiNjY3NjQxMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGU2MzFjOWI1YzU3NmM0MjAzZTU4ZDhmNWUxZTk2ZjcyM2Y4YzkyNDJkODBlN2JkZTJkMWRiZGM3OTBlNDc0NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWVhYzBhZTc2ZDY2MDRiMjliMGU0OGExNDBmOWRhOGY2YmY1N2ZhZmViNzhhOWQ1NDg0NDA5NDdmMjM1MTExNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf20f413d0a845d8b8fc11ab6c507898",
+      "statement": "Update commands run only when the trust result allows hooks: an allowed hook runs via bash -c in the collection directory, and a non-zero exit prints a failure and terminates the update with that exit code.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L961-L993",
+          "version": "repo-lines-v1:sha256:8d507cf804c144774c6061e6d39134f283a8d256f5e74f7595b63e43b928d502:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiMzZlY2M3NTk3MDZjZGM3N2ZkNjkxZTJiNjlmNjY0YzU1NTY3ZjMwOGNiOGVkZjMxMTQ0Mzk4N2IwY2QyOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmZTg0OTNhODhlM2I5ZDIyMjVjZTdiZjgzZTdlOTg1NWUwYTljZGE2NGE3ZjZkNmI1ZTdmMjkwNzNlYjg1M2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjODIzOGZmM2NkMDI2OTRhNmI3NDk0MGM5MTIxOWU4MTU1MGI5M2QzYjllOWYyNDU4NTkxZDc4MmZiY2EyNGUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9b49af0d2620445393225f5facf6209a",
+      "statement": "When the local config is not fully trusted, the runtime uses resolveModels defaults and env values instead of the YAML custom model URIs, both when building the LLM runtime in getStore and in resolveModelsForRuntime; the status display still shows the YAML values.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L182-L182",
+          "version": "repo-lines-v1:sha256:1e59a751ae5c65591fc362b2997b85c58dc204dddb3d50cee6d7290ab4fd7168:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWU1OWE3NTFhZTVjNjU1OTFmYzM2MmIyOTk3Yjg1YzU4ZGMyMDRkZGRiM2Q1MGNlZTZkNzI5MGFiNGZkNzE2OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWU1OWE3NTFhZTVjNjU1OTFmYzM2MmIyOTk3Yjg1YzU4ZGMyMDRkZGRiM2Q1MGNlZTZkNzI5MGFiNGZkNzE2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzNlMDcxM2YyOWI2YzY1ZWQ3ZjViZjY4ZTQwNmI0OTdmNWU5YTc1YzVmNmE5ZTZhNjQ1Mjc3MzY2MmQ1ZjZkYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWFhMWEwOGJhYWQwODY4N2M3NmM4MjFmMTEzNzViMDZmZDEwOTY5NjUwNTJkNDgwNTc3ZmFjY2JlMDZhZjVjMyJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L2384-L2388",
+          "version": "repo-lines-v1:sha256:832b51b723b1f0abd4830cfdb87926710e7e4b9e6d1b1f4cdb1729f42025f348:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2FjMWNkYTcyYjhiMjYzYjBiMTQxMDY5ZDllOGQxNjQ0YWYwNDZjYTI1MmNhYTM5ZDRiODM4ZDI3ZjM4NDc3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTJjNWY5ZjNiNTU3NTA4NTBkYjJmMDZhZTdiYzVmNTllMTRmOGIyNTgxYzRlZDhlMWJkODY5NzIyY2RlMDBlZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDA5NWFlZGE0OGU5NDNlYWUyOGZmYjAzN2ExYzZjMWEyZGNiYTc3ZjY2OWZhNTA0ZDY2NDRkNzNhMTAwZmJiNSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L775-L783",
+          "version": "repo-lines-v1:sha256:5525c4fbde438a6eb9da5f157e1f0689d6d684723e4b5afea9de83ee88304d37:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDNjMDY1MTU4NzNjY2QzN2VjMDZmYmQ2NDAxNDcxMWQwZWQ5NWY5ZWRlNjgxMDk2MGI2YTZiMTRmYjk0MWRmMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODhhOTMyMDcwZTEyMDkyZWE0YjVkNDE4NzM0OGJjMWU4MzJjYWM5MGU5NWQxNzdkYTA3YTVhNjg3N2M2MmIzYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWRjZTc0N2M5NzUwYWQyMmZkZjk3ZGQ1MTMyZmFhYjcxM2FlYWQ5OWU2YjliNGFmNzljYzc2NTIyMWJkZmE0NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c8fa2188f6e64a57a2036767c7884b9e",
+      "statement": "The embed, pull, vsearch, and query commands call resolveLocalConfigTrust but ignore its boolean result, so their gating effect comes from the model fallback and the approval prompt rather than from skipping work.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L4963-L4963",
+          "version": "repo-lines-v1:sha256:46a99f01276db0e062db8e8f02d9ebd8f70f8577d8dd2d41edf6881fe61ea525:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDZhOTlmMDEyNzZkYjBlMDYyZGI4ZThmMDJkOWViZDhmNzBmODU3N2Q4ZGQyZDQxZWRmNjg4MWZlNjFlYTUyNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDZhOTlmMDEyNzZkYjBlMDYyZGI4ZThmMDJkOWViZDhmNzBmODU3N2Q4ZGQyZDQxZWRmNjg4MWZlNjFlYTUyNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjFjMGNhYzY4Nzg2YzFkZWUyMGJjMDNhMTQ1OGE4NGNiYWI4ZGJmOTMxM2I2YzY2NjZjZTUzZWViY2EzZTE4OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjkzMWViZDAxYmM3OGM5NTQwZTUyMGI1ZDEzZjFjNmE2MTE5YjliNGUxYTdlOWZiN2I0ODIzYzRhYjMxNGVhMSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4987-L4987",
+          "version": "repo-lines-v1:sha256:27ee521167d0c7c5cb4effbc080dbf5d92c97cdcb22bb2e3522fe548093ee626:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlZTUyMTE2N2QwYzdjNWNiNGVmZmJjMDgwZGJmNWQ5MmM5N2NkY2IyMmJiMmUzNTIyZmU1NDgwOTNlZTYyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlZTUyMTE2N2QwYzdjNWNiNGVmZmJjMDgwZGJmNWQ5MmM5N2NkY2IyMmJiMmUzNTIyZmU1NDgwOTNlZTYyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMThiNGFhZDBhZDgyZDk5M2UxNGQwODZiNjEzMWMwODI3MWUyYmRiY2NjMWFhMmYxYTEyNzBmNDUwYzNiOGRhYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2YxOGY1OGM4YTEwYjgxYTAzNDNjNGM0ZGYyYmNmMmQzYjdkMWQwOTNiZWY2ZWVlYjgxY2IyOTNlNmZmM2EwOSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L5029-L5029",
+          "version": "repo-lines-v1:sha256:27ee521167d0c7c5cb4effbc080dbf5d92c97cdcb22bb2e3522fe548093ee626:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlZTUyMTE2N2QwYzdjNWNiNGVmZmJjMDgwZGJmNWQ5MmM5N2NkY2IyMmJiMmUzNTIyZmU1NDgwOTNlZTYyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlZTUyMTE2N2QwYzdjNWNiNGVmZmJjMDgwZGJmNWQ5MmM5N2NkY2IyMmJiMmUzNTIyZmU1NDgwOTNlZTYyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzY3OWNmZDJhNmY5Yzg4ZTI1YTZlMzRiMjE0ZmU5NWQ2NGYxMjJiMmQ5NWEwMWVlMjgzNWY4MzI4OWIwYWFjZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTU5MjljNWFjYjIwNzYxYzE3YjQzNDRhYzRmN2JmYWM2NWRlMGNkZTY5MzQ2NTMxNmI4YWFmMzc2YmZlZTFjYSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L5040-L5040",
+          "version": "repo-lines-v1:sha256:27ee521167d0c7c5cb4effbc080dbf5d92c97cdcb22bb2e3522fe548093ee626:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlZTUyMTE2N2QwYzdjNWNiNGVmZmJjMDgwZGJmNWQ5MmM5N2NkY2IyMmJiMmUzNTIyZmU1NDgwOTNlZTYyNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlZTUyMTE2N2QwYzdjNWNiNGVmZmJjMDgwZGJmNWQ5MmM5N2NkY2IyMmJiMmUzNTIyZmU1NDgwOTNlZTYyNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI0YTYzN2JkODBlZmY5MDhhNWU5ZDIwYTFjNTk4ODlkZGM5NGM0MWQzYTQxZjA1MTdmNGMxN2FjY2Y3OWQzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTg5NGE3M2Q0YmY2OTg2MGQwNWVjNTQyNWU0NTc2ZGRhZWI4Yzk1ZDFkYmFkODNmMGU5ZGNkODAxNjhjNzI0NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_c06d80b56ab5469fa745426954152fed",
+      "statement": "qmd trust with no subcommand records approval for the current gated set without prompting; trust list prints approved records; trust revoke deletes the record for the config in scope; any other argument prints a usage message and exits with status 1.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L869-L919",
+          "version": "repo-lines-v1:sha256:fcbd7ebe45b54f2055cc4c4ba81f678d8626b8397b0805b79d1179615ffcdb72:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZiZTJlOTE5MmFkOGIyMDkxNzllZTUwZWYwZTRiNTA2NjdhNmEzZjc3Mzc5M2NhOWU0ZDRjMWNkOTBkMDdkYWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlOTZhNmUxMWY3ZGQwMmQwMTUwMGMwYWFhOGYzYzc5OWNhMWViOTk0NThlMDRiZGM0YzY4MWM1MDg2ZjRkMWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2NGM4OTI5NGNjZTYzZTE4NmRkNDQ4MmMzN2Q0N2FlMjhlZDZjMDUyODU4YTIwMWUxNzM0YmIxZGRlODJjMmMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_95d2f420ce1a4585844645aefd7e050a",
+      "statement": "collection add and collection update-cmd call trustCurrentConfig, which records approval of the whole current gated set rather than only the changed item, so running either command also approves any other unapproved hooks, outside paths, or custom models already in the YAML.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L1914-L1914",
+          "version": "repo-lines-v1:sha256:c930af27de4338accad9b731c771b2c32056abbab16f539199a28f238ddc6b24:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzkzMGFmMjdkZTQzMzhhY2NhZDliNzMxYzc3MWIyYzMyMDU2YWJiYWIxNmY1MzkxOTlhMjhmMjM4ZGRjNmIyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzkzMGFmMjdkZTQzMzhhY2NhZDliNzMxYzc3MWIyYzMyMDU2YWJiYWIxNmY1MzkxOTlhMjhmMjM4ZGRjNmIyNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjRmMzE4YzRhNGYyNzBiNzM5ZjJhNjZjNzlhYjBiNjE1ZGZkYWE1NjE1MGM2ZDcxNjYwZTFlMjk0NWE4NjQyNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTkwNjA1ZjE1OWU5N2QyMThhN2ZhZGIwOWQwNzFiODhmNGIwYWQ4ZThkOTgxOWJjMmViMGRjZDBjNmQ0MGY3NCJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4830-L4830",
+          "version": "repo-lines-v1:sha256:a845c2b9fad457ce35869e85b31a15c16e68bb2dfe7b7f441a7a74ef6236bdd5:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTg0NWMyYjlmYWQ0NTdjZTM1ODY5ZTg1YjMxYTE1YzE2ZTY4YmIyZGZlN2I3ZjQ0MWE3YTc0ZWY2MjM2YmRkNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTg0NWMyYjlmYWQ0NTdjZTM1ODY5ZTg1YjMxYTE1YzE2ZTY4YmIyZGZlN2I3ZjQ0MWE3YTc0ZWY2MjM2YmRkNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDkzYjI2MjUzMTU2ZTU4ZDQ5YjUzMGNlMDJkYjY2YTA5YjhkZmQ1ZGI0ODM1NzI4MmE2Njk5NzQxNjBiMjdkMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjVhMTdjY2FhZmMxMmU1YTJlOGFlNWVjNjZjN2MyYzMwMGEzODQyNzU1ZGY0OTc2YWY2ZGRiMTkxMTZkMjE0OSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L786-L790",
+          "version": "repo-lines-v1:sha256:0c2608d439526ef5a9e52bdad8b613ddf4a89da9f38e19ae729a8d6877db4d46:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWI3OTQ4YzRjZGQwYTBmMTAwMzNiOWNlMGVjZTBmYjJmZDQ0Y2JlMzRhNjVlYmQyOWUwNDhmMmU5MTliMjNiYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmM5Mzg4YTVlZWU1ZDA2MTNiNzM5YmEzZmVlZjg2Mzk2M2YyM2ZlODQzNTAwMTg5OWE3OTQ1ZTBkNzk4OTdiZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjNlZjM4OTcwZGE0ZWUxN2U3NDVkZTM3OTI2ZDY5MzNkMzZhOTY3ZWM1YzliMTk0ZjAzMGIwNTcyY2JmOTBmMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_98740ce828cf498c8d1462b1aeb59759",
+      "statement": "decideHookGate exists in src/trust.ts with a hook-only contract and hookDigest, but no production source calls it; the CLI uses only decideLocalConfigGate, and decideHookGate is referenced only by unit tests. Its hook-only digest also differs from the sensitiveDigest stored by CLI approvals, so it would not match existing approvals if wired in unchanged.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L837-L837",
+          "version": "repo-lines-v1:sha256:2d4a188a410e1fe13843c99a766a23bb38606528f44fa2dd24e1d33b68e0d0e7:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQ0YTE4OGE0MTBlMWZlMTM4NDNjOTlhNzY2YTIzYmIzODYwNjUyOGY0NGZhMmRkMjRlMWQzM2I2OGUwZDBlNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQ0YTE4OGE0MTBlMWZlMTM4NDNjOTlhNzY2YTIzYmIzODYwNjUyOGY0NGZhMmRkMjRlMWQzM2I2OGUwZDBlNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzIzNDc5N2ZiMjU4NDNhMjlkZTY5OTllY2Q4MTVlOTA2NGEyMDU5NTZlMWE1MzUyNTVmNWU5Y2E3ZTVhNGNhZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmUzZGVkNDE4NTBjNjJmOTNiMmYyNWFkMGUzMGE3NDU2ZGJlOGE4ZWJlNTRkMTliNWY5NWU3NmQ4YzU1ZTY2YiJ9"
+        },
+        {
+          "resource": "repo://src/trust.ts#L283-L303",
+          "version": "repo-lines-v1:sha256:98df7ac13147e4a6a69ce6c0d49e35ce6dc106e9c84d0ef24dd8def095c93829:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBkNzdmYTg3N2NhNWVkNmFiOTY4NjI3ODE5Y2M3YmJkNTMxNThkMTYxZTAxZWU5MzA4YzEyYTg0NjAxNmViZTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ1YjdjMTIwZmJjYWNmZDA0ZjI2YjJlNGFhY2JlMDgyNzdiMGZmZjk5ZDFiYTA0MDMzMDVkZjEzMWNkNDFjOWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhMTkyN2Y1OWFkODQ3OWFlMzhkYzgyMmMwZjk0YjJkNmJhMDY3NmIxOWI3YTdlMzIzZmE4NWM3YmI1NmVmNjUifQ"
+        },
+        {
+          "resource": "repo://test/update-hook-trust.test.ts#L135-L141",
+          "version": "repo-lines-v1:sha256:9319922977924f3510cd1d2f00bc50f89d4ac6b51cde8d15706abf4953da68db:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTZjZmU2M2EzNTdhMWZlMGQzMDU3MmE2NDAxYjE4ZGJmMmQyNjdjZDFhNGQ1M2UyMDE2ZjY5MGRiYTBlNTFlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGY0Y2IyNzVjYzk5MmZiOTc0NjRmMjY4MWIwNWU3MjEzY2E1ODM5ZTk5YTdlNjc0NjRiYzBiN2RhZTdkNzI4NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjc3OWQxMThkNmUzY2JmNDUwNTM5NzQ4ZGVlN2E0MzA3YWNiZTY0NDZjYmEyOTdmMjc2MGZhNWQwYmJhMWJjMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmJmZjNlMTZmY2YxOWE1YjYyZDJjNzY4N2RkMjcxODUwNTM0ZmJhNGM4YjQ2MmVmYzMxYjdmZDFmOTc5ZTliMCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

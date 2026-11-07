@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:b7e23f26094c2250eb2d43c48db4c95fae66856b70b30a2e01d1d4c7f97f34d2",
+  "claims": [
+    {
+      "id": "claim_68553c03fde34de9b284b49b2f2d58b8",
+      "statement": "chunkDocument is the sync, regex-only chunking API with no strategy parameter, while chunkDocumentAsync and chunkDocumentByTokens default chunkStrategy to \"regex\", so AST chunking is opt-in.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L3739-L3778",
+          "version": "repo-lines-v1:sha256:461a2daf4b084b27c52f882df28c7f0c37aa36596d2f139f1fa79ce948eee45a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmMGM0MGJiZDBhMDkyNzc5ZDQyZDA0ZjQ5OWUwMjIwOTdhN2UyNDQwMzViZDYyNGQwNTAxMTY4MzI1NDkyNzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlYTc3NDczYmY4M2NhNjJmYWI3MDk4MzMzM2EzNjJlNWU0YjQ1M2QwMjkzYjZmYjY3MmMxNzdjNjhmZDNiMDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiZTVmYjRlMDA3YjhiYzYwN2E4ZGJhNzEzYTM0MDVlZjQ1NGJjMmJiNzFiMjY5YjI5NTJmMWVjODhjYWU5NTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L3938-L3956",
+          "version": "repo-lines-v1:sha256:45f54a4e49a75c14c0812caf2518292c51fbf65cb5dcd14ab91fbd63e51efdcd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmNTI1OGYxZWEyZjYyYzQ0Yzk4N2U2YmE2NDJiOTRlYzBkNGEzYTc2ZGZlYjEyYjVkMWNmZTA4ZGU2NDAyY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1ZWYwMWJjMDhkYmMzYjYzZTRlNzVlYTNkMjZhNWI5NDE4OTE4NzdlMjdhZDg5MTMyOWM4NDExZDdkOGRjNGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcwZThlNDA0NWM0ZTc5ZjQyMjdlYjY1NGE4MzY3ZTAwNDViYTJkMDUwYjdkZjQwNWM0ODQwMWMzMmVkMTNjYWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmMzJjYzFhNDFmODdjYjViZDVjZDliYzc2MWU4NDM0NDAzODk5MGYwZDliNjAyMDVlMzc1OTNjZmJiZDQyYzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_965ed0a839714aa48e9e46615b8df834",
+      "statement": "AST break points are consulted only when chunkStrategy is \"auto\" and a filepath is provided; chunkDocumentAsync merges AST points with regex points only when getASTBreakPoints returns a non-empty list, otherwise it uses regex points alone.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L3758-L3778",
+          "version": "repo-lines-v1:sha256:b954c363bd2647a411c80506fe01d15f4407bf04a976ed6c195af4920a4850d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5YzE1ZWYzNzA5ZGExNWU3MjI3MDExMjU1YzU5ODM0MDQwNGFlMDIwYzMxOGY3NmRmOGE4OTRmNGI2NDg1ZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlYTc3NDczYmY4M2NhNjJmYWI3MDk4MzMzM2EzNjJlNWU0YjQ1M2QwMjkzYjZmYjY3MmMxNzdjNjhmZDNiMDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJkNWQ5ZTA3NWI4ZjA2NGRiZDI4MGUxODI1NmJkZTVkY2E0ZDJmNDlhMWJlMGUyMzQwNjhkYTQ4ZDU2NGUyOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_468e2c61a68543b1a94e4b1a24aed05a",
+      "statement": "The CLI --chunk-strategy flag accepts only \"auto\" or \"regex\" (default regex), throws on any other value, and is passed to the embed command and to the query path.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli/qmd.ts#L2326-L2331",
+          "version": "repo-lines-v1:sha256:422bde20fbde78aae14aba4768adf958c0557fe3729fb677b0b6c108d919672f:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGY3Y2Q2YmExZDhmNDY1MTMxMDZkMWQ2NzZkODMwODk5MzI4NzBmYWViNzE5OTJkODgwODM3Y2NmMWE5Mjg1ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzM4YjI4Mjc2OWYzNzc4MDRhMzk0YzYyZWI4Mzg2ZjM5OThhMjZkYmY2YmE5NzQ4MWNjYTkzNWYwYmU4ODE1YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDI0NzIyZGRhYjFmZmI3NzQ3ZGY0MDY4ZDQ4YWMzMDAxYmEzNTIwODllMjkxMjI3NzQ3MjA2ZTQ2NjcxOWRiOCJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L3227-L3227",
+          "version": "repo-lines-v1:sha256:d115391dbc5641994f59a47d1102a8cf154e9aebcc03a1c10b562366be5ce374:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDExNTM5MWRiYzU2NDE5OTRmNTlhNDdkMTEwMmE4Y2YxNTRlOWFlYmNjMDNhMWMxMGI1NjIzNjZiZTVjZTM3NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDExNTM5MWRiYzU2NDE5OTRmNTlhNDdkMTEwMmE4Y2YxNTRlOWFlYmNjMDNhMWMxMGI1NjIzNjZiZTVjZTM3NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTFjNzcyZmJlNTk0MmU1MmViYWZjZmFkNDcyNTkwZmVhMDc1Nzc1ODc0ODcxNmFhMjUxYTM0ZmVkOGQxZDFhMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTA4ZjBjMGY0NmY5ODcyOTk5MTZhZTk0YTVjZWU0MzY0ZTgwZjExOTVmMTMwMDk3ZTU5NmJlNmEyNmFmNTdhOCJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L3386-L3386",
+          "version": "repo-lines-v1:sha256:fe5f7c1679039ceb1c9e6db08fa9026e1a49ebcba6c4d7a52e517b52c767540d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmU1ZjdjMTY3OTAzOWNlYjFjOWU2ZGIwOGZhOTAyNmUxYTQ5ZWJjYmE2YzRkN2E1MmU1MTdiNTJjNzY3NTQwZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmU1ZjdjMTY3OTAzOWNlYjFjOWU2ZGIwOGZhOTAyNmUxYTQ5ZWJjYmE2YzRkN2E1MmU1MTdiNTJjNzY3NTQwZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGQyMmM2MDI1ODQzMjgyZWNiYTM1ZmRhNWQyMWI5OTI4Yjk4YjI4NmM4MGJkYTViNGVhOTVlYTZmNDk4ZmNmYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjYxY2Y1NDFjZGQwZTVkYzA4OWNhYTIxMjMwZDFmZTY0ZTBjNjY5MmE5M2FjZGM1MDQxMzQyMmI5YWFhOTJkNSJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L3456-L3456",
+          "version": "repo-lines-v1:sha256:983a50a61e167c72f614de087692138359b68481f32f9107b0731e84fb33f23a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTgzYTUwYTYxZTE2N2M3MmY2MTRkZTA4NzY5MjEzODM1OWI2ODQ4MWYzMmY5MTA3YjA3MzFlODRmYjMzZjIzYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTgzYTUwYTYxZTE2N2M3MmY2MTRkZTA4NzY5MjEzODM1OWI2ODQ4MWYzMmY5MTA3YjA3MzFlODRmYjMzZjIzYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2U2YmM4Mjg5MDcwY2E5ZWU4YWYxMzUzYjUwMDkwODgzODU1MzA5OTcxMzJjMGE0YzhhMDAxMDk2OWM1ZGIwMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjM5YmMzZThhY2NiYjA0MTliMDg4NWI3ZDlmNzIzMWYyYWM3NTI0YjRjNDY2YWVhNGRlMTk3ZDRjMTcxZTRlYiJ9"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L4966-L4977",
+          "version": "repo-lines-v1:sha256:894ac596f8c67c2239e1bd5d1849ad2eb31a4aed97e527e1509302dbb13f6d85:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0ZjE3Y2E1NWNmY2FjMTZlYjA4NjVhZDNkNTU1NTFhMjRlMWI5ODJiYjIxZjdhMDAyMzgzYmJkM2YwNTg3NGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUwNjIyYzBjYWJhMGIzYTc5MzVhNGI0Nzg2MzdkY2I5NjI2NTkyYWQ0NjJlNTIxOTRhYzZmZmMxN2E3N2MwZjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxYWJlOTc0ZmRiYzYzZTU5ODQ1NjFmYTNkYjY1NzI0ODdkYzczMjViZjgyMDdhZWViNDUxODAyYWM3MzVjZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzMzhhOTEwOWVlMTI4NzA0ZmVmOTBjMmJmNDlkZTRmNGUzODYyZmMwOWNhMWJiNGI4MTJhYmQ3OGY3NDk5NTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_666337a180ab4f97943fd96332f8e50b",
+      "statement": "Chunk sizing constants are 900 tokens per chunk, 135-token overlap (15%), a 200-token search window, and character equivalents of 3600 chars, 540 overlap chars, and 800 window chars at 4 characters per token; the token path estimates 3 characters per token for its first pass.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L164-L173",
+          "version": "repo-lines-v1:sha256:003ea1f01e6db781261b7c9db11fdf381241eaf848bde624936af2ba007c5c5f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzNmY3MzNhMTU5Zjc0ZTM2YzljZmIxMGI0NzZmOTgxMzNkNDRhOTg1MDYxM2EzMDg1YzBkZWJiZDlhNmQwYTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZjYTdhYjE4OTg2NGFmZTVjOWYyMmY2NTE4NmIxNmZhNjZkMWY3MTQ2NmZjZDYxMDE4NTdjMDI1Nzc3MGRlNTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhZTAzNzQ0OWFkYTc2Y2MyNTlmMjA2NGNhYjI1ODcxOGRiM2I5ZmVkMmZlYzVhMTZmYzMwMGMyYzczOTE4NDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI4YTBiOGEzNGRiODlmMDVjNjhjZGExZjNlNjVmM2ZiZmEyNTdkMTFmYzYwYmY2NGIwMmY4NzkwOWNlYTU0MjQifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L3852-L3855",
+          "version": "repo-lines-v1:sha256:c557add7db6f74a1d79172136794e66097e45f6f4c8c46266a2a2db8939c6520:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDM4OTVmMDViYTJmN2RmM2QwNjllY2RhZWM2NjlmMDNhOGFjMTY1MTg3ZWZmNmQyOWVhN2MzNWQyZjMxYzdkYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTQ0ODEwZDM0MzIzZWMwMWY3MGYwNDA3NTk3M2NkMjFkMzZhMTUxN2I3YTM3ZGE1ZTZhOGYxZThiNTk4M2RjNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzEyNTlmMDdkZjk0ZGIwMmQ4MDNjZGM2ODA0ZGFkMGFmNzBiZTY1ZjU1ZTk5NjNmNzEyNGY1Yzk4Y2YxMzVmNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDM2ZGY5MDZhMDM5YzI4YzQ5MjdlZjM1ZjRmMTBmNDM1NTg3MDI5NWNiZWNjMjJhZWRhMDliNWMwZDQ0YzNlZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_170df78f7d604ce1a9f8e899a2185d47",
+      "statement": "The regex break-point scores are h1 100, h2 90, h3 80, h4 70, h5 60, h6 50, code fence 80, horizontal rule 60, blank line run 20, list items 5, ordered list items 5, and newline 1, and the README break-point table matches these values.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L1456-L1525",
+          "version": "repo-lines-v1:sha256:3f9ec650808d6125d82751c9b97a1efce97caaefab6f40daaa33935e70481c68:eyJzZWxlY3RlZExpbmVDb3VudCI6NzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwNDM2ODRjOGQ1MjRjMmE5NjMyZDU0NGI2M2UyMTI5YTFlMDIwNzhhM2JiZTI0ZGJiOWRkZGEzNmE3MWY4YWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExMzliYTM0YWI4ZmExMzVkOTFkMmIyMzU0NmIxMGVkZDUxNzA2ZmUwY2Y2NzI1YjViODZmZTE4NGFkYzY0NzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0ZTU0YTg3MjdjZDRkYjkzNDRkOGE0MmVjYzAwNTY1NTkyZThhMTgyZTdlYmNkY2JlZDAzMDRkNmE4NGU2NTMifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L222-L235",
+          "version": "repo-lines-v1:sha256:4d4ae5c9fe354f1c021e1494ab3d61eb04c0c677afaad5c69d2ee65a5cdcf5dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3Y2RlOTBlNzdiZDcwZjE2YzdhMzJlNDk1NzQzNGViZThkZWQ0ZGJjMmZhNzE4ZjY3MjJkYzljYzU5ZmQ2NzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMmQyYzBkNmRjNWU3NGQ5MmZhMTRiOTFkYmVhMjY0MDkwYmViMzVmZGI5MTg4ZDliMzQxMTgxZGNlOWY0Y2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhZWUxMTM0ZTdiZTM5ZTg5NjY5MGFjN2Q3NjJhNjM3YzUxYWIwZjlmODExOWExN2E3NGIxYzhhYTgzN2Y0YTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2Y2QxZGYxMWJhNzM4MDJhZDg2ZTI1MTY5OTYwYzRiYWM1ZmE5MWI0MGY4N2MwNDcyOGRiZGIwYTJmYTFhNzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3c2916681e7f48beb7ccb42b37d772cd",
+      "statement": "scanBreakPoints keeps only the highest-scoring break point at each position and returns the points sorted by position; mergeBreakPoints applies the same highest-score-wins rule when combining regex and AST points.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L237-L262",
+          "version": "repo-lines-v1:sha256:6e3f566e36bdf7125a8680ccb8844f79638a1bd542bb9c250b0b712a7afdf34b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjYmFmNmIyNDIzNTJjNmUxOGExYzJlMWNlYWE1YzAyZDhlNWE2OGQ2MTU3M2QwNDYzM2NlYmRmOWVkOWFlMzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM3MDZlNDFlZmM1ODI0N2QyNTVjY2ZjZmZhNTIzOTU4ODBlZWU1OWY0N2NjMjQ4NDYyNDg5MzI0NWMxNDU3MDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L361-L378",
+          "version": "repo-lines-v1:sha256:e3d37c5a6c1091fe86caf7bd3431e1c303149e38fe00f97f0fa1dad58afaa5b3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNjNjgzOThlNGRhYjVhMDc2MDIwNjZkYjM1OGIzNjM4Y2Y2MjNiYzNmODllYmI2ZDNmYjM3MjY3ZDkwOGE3YjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhZjIyY2YwNzMyNTkyYzI0NzE0MWNiZTYxZWZhMTEwMTI2MTJmNWEzMTIyYjlhZjliYmFmNTJmNTcyNGQxOTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwOTc4ZWNjZjFhNTk5ZDkxY2FkMmU0OWQxZTI2MWVhOGQ5OWUzZTkyZWNiYzNmNDFmOWM5MDJjZmRhY2M3ZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiYjQ2NmMyNDA5MDEyNjYwY2M3N2MxZDUxMzJmOGQ2YTgwMzU0OTRkNzVlYzVlN2VlNzIyZmRjZWQwNjY0NjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_463fdfdc0821450eb5a9907d85fb9975",
+      "statement": "findBestCutoff considers only break points within the window before the target, skips points inside code fences, scores each candidate as score times (1 minus (distance/window) squared times 0.7), and returns the target position when no candidate exists; the squared decay is confirmed by the code.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L313-L350",
+          "version": "repo-lines-v1:sha256:43225a3a6b7044069533c82fa63ad15dc5d107a80c489dd6a69b3a7a3a01df83:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkNWM3YWRhYjI5ZjU1NTBhYjhiMzFmYjA2NTQzYWJhOTBmMzY2NDhjMmRmODMzYzQ4ZGQ1MjI0MDZiZDE5YjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlNzFkMzYyNTIxZDYyNDU0ZjQ0NTA5ZmE0YzlkZjQ1MTJkZmU2NmYyZmIwNDFiMjAyZWQ0YmRjMjMwOTNiNzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwYTdjZWQ3OGE3Y2IzOWQzZDliNDljN2YxNzYxYjM2YjUwYmViYmQ5MmNlMWNkNTE5MmFmMmI0MmQwMTFjZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_60aff8ac1436486886df6dc2b5be513a",
+      "statement": "Code fences are paired ``` markers at line starts, an unclosed fence extends to the end of the document, and break points strictly inside a fence are excluded; fence regions are computed from raw content for every file type, so they also suppress AST break points in code files.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L269-L295",
+          "version": "repo-lines-v1:sha256:7a82cfa7418c99988ec5188dcecc4d336372b89e252c3b75c5ae05ac50834bf1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljMmJkYTdiZWExNWFlODUyMzIwNDgyM2I0YWYwNzYyZGQyZmFlZDc3OTVkYTZlMzYwODc0N2M2NDFhMGQxMGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwYzU1NzEwYTA5NDI5ZTIxODlkZmU0ODc1ZWFlNTFkMzRjZTk0NDE3MjhkYTczNDFjZjg0NTJkYjMzODBkZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3OThmMzJhYWQwMjRhYWVmNWYyMzdhOTk5ZDU0NjAzNmVmYjNmZTRmZmU3OGQ3NjQ2N2E2YmM5ODE3YWE1ZTQifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L3758-L3766",
+          "version": "repo-lines-v1:sha256:f5387b40657b26981a91b842856e3600a3ea4e19aaa175825a765e6e4df4bee2:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjljMTVlZjM3MDlkYTE1ZTcyMjcwMTEyNTVjNTk4MzQwNDA0YWUwMjBjMzE4Zjc2ZGY4YTg5NGY0YjY0ODVmMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTUxOGY4YzQ4N2FjMmU4YzBiNzg2OGFmNjM2YjEwMzJmNzRiZDg2NTc0MTI5NzA3YTYyMGJkYjE1YTI5NzYxNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmQ1ZDllMDc1YjhmMDY0ZGJkMjgwZTE4MjU2YmRlNWRjYTRkMmY0OWExYmUwZTIzNDA2OGRhNDhkNTY0ZTI5MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmRiNmQwMDg1YTNmNzIzYmYzMjlkNTY0NjM1Nzc0MzBlMjhhODliNzRjNmIyNmJjMDEwNTRlOTliNTVhZGMzNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_996554b6b5e5476bb25c4f86895c0b8e",
+      "statement": "chunkDocumentWithBreakPoints returns a single chunk when content fits within maxChars, cuts at the best cutoff when it lies strictly after the chunk start and within the target, otherwise cuts at the target, starts the next chunk at endPos minus overlap while guaranteeing forward progress, and never splits a UTF-16 surrogate pair.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L418-L473",
+          "version": "repo-lines-v1:sha256:38acb5f3998d856e805510d37cadc9986b3ca299b939ef20ec3fc35bf45311e6:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIzZTI4MmY0MjY4NGVkMmVjMGRiMDlhOTFmNGUwMzVmOGE1NmM0MGE5ZWZmN2M0NTU5ZGQ4OTE5NDQ1ZGE3NzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2OGQzM2ViY2RiMzcyZGQ2NDI3YmViYjI1Nzk3MzI5NjFiYzBmMjdmZmY5MWU2MDUyZjE2NGMxYzQ5ZmNhNTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2ZjkzYzU4YjI4ODc0ZjMwNzUzNjFhNTFhNWE5MGZlZmUzZDVlY2M1YTkzZjVmNmNmYmYwZjYwNDk4NzQxMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlhYjA3YjFjNTllZjZkMjg5NjIzODU4NDdlMDAyZTg3NWM4YzU5N2U0ZGI0M2NhNzU3ZjkzYTkzN2Q4NDljMjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0141892899aa4ef1884df8b8fc35ff91",
+      "statement": "Supported AST languages are typescript, tsx, javascript, python, go, and rust; EXTENSION_MAP maps .jsx to tsx, .mts and .cts to typescript, and .mjs and .cjs to javascript, detection is case-insensitive, and .md or unknown extensions return null so markdown always uses regex.",
+      "evidence": [
+        {
+          "resource": "repo://src/ast.ts#L36-L56",
+          "version": "repo-lines-v1:sha256:70a8c2e26fb0eee7b5b245bbdb4a550dc3b9d510531199047025a912b9609335:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2MzE5NjZmM2VmZTEyMGIwMWQ4NzU4NDJkZjZjMTI4MjY4NDJmYzFkM2FmNGJmNmQyYWU5MzUyNGRhMzc1NjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExNzM1NmZhMjFmNmU1YjI4ZjFmNjc0MjUzMzhlNjk3Yjg3MDhlZWU5MWVhOWViNjZhZjU4MmM0M2RkYzczMjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyMzI2N2Q3ZjEyYTY5MzJhMjEwNmEzZjMwNGY4ZDI3Njg3ZGI5NzE1MjUxZGU5N2IzMTg0NmNhZGQyOTM2NjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmMzJjYzFhNDFmODdjYjViZDVjZDliYzc2MWU4NDM0NDAzODk5MGYwZDliNjAyMDVlMzc1OTNjZmJiZDQyYzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bb26c36a2733408184104e6be88b49d2",
+      "statement": "GRAMMAR_MAP maps typescript, tsx, and javascript to the tree-sitter-typescript package with different WASM files, and maps python, go, and rust to their own grammar packages.",
+      "evidence": [
+        {
+          "resource": "repo://src/ast.ts#L66-L73",
+          "version": "repo-lines-v1:sha256:342d70e881937f47711491dcdae6dde6e871be75c9d7ee416215de5f61ab8431:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcxYjc1OWQyMWExMGU0NzcxNTdkNWQ5YmUzNTI5NTI3MzY3MTAwOTNiN2RiZWFmZDM5ZmQ1YTVkODlkYWRjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDc5N2IxOWZmODhhNzJkN2M3ZDVmOGY0MDg1YTgyZDZhZDFmZTYyZTc5YTEzZTZmMzg0OGJhODc1ODczNDYwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzIwM2U5NDRmYWY1YjZlMzBlNzAyZTY5OGFiYjI0OTYxOTdmZjRlYjU1NzllOTdmNDJiN2ViYjYyYWI4NzQyZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_22704b98665343bd95d1cf8d43c0382b",
+      "statement": "AST capture scores are 100 for class, iface, struct, trait, impl, and mod; 90 for export, func, method, and decorated; 80 for type and enum; 60 for import; and 20 for any unmapped capture, and getASTBreakPoints keeps the highest-scoring capture per start position sorted by position.",
+      "evidence": [
+        {
+          "resource": "repo://src/ast.ts#L158-L172",
+          "version": "repo-lines-v1:sha256:703493033eaf31ea166b40895d5a0f836698e940c9504941d58afcb565dcac39:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0MGNjY2I4Y2MwYmNmZDE2ODQzZTZmMWU5N2NkOTUyM2M4ZDUwODFmM2U3NWQzMmE1NDk3YTk3ODY3MWU2Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFhMWQxYTYzMzkwMjI5Yzc5ODM0N2U4M2EwNDA1NDQxYzk0MDAwMzUyODRhZDE2OGMxYmY2Y2RmMWQ3MGEzNzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjYmNiZjY1ZDI0NmNjNmI5YWFmMzQyMzk4YTVhMGIxYWZlMDIwM2ZkZTI2MmE0ZDEyMzUzM2I5NWVmYjkzZmUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxNWQxNTdmMWU0NDBjYjQ0NGM5YWJhMjY5NDA0MmQ1YmQyODdmODFjMTg4N2VhMjNiMjBlYWI1YTNlM2E4MzkifQ"
+        },
+        {
+          "resource": "repo://src/ast.ts#L296-L312",
+          "version": "repo-lines-v1:sha256:6fd0b1689a013103c9c6c4dfd85d7b1197dec943a76d3bd9b8bebfdc1ab3b3c1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4MTEzZjVjYWZjODkwNDZhY2YxNmFjZjkzMjRlOTEwOWMyZDEyODVhMmJmNmQ1ZDlhOWJiYjQ2MmI0YWZiMTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliNjJmNjBkODU5MGE1NzljZjQ2ZjhkNjczNzhjNGM1NzJiOTYyY2VjY2RiOTBjN2E1ZjdiNDJiOTYwNzgyYTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0MGZiMTU3ZWJkZDE0ZDBhZjk2MWE5OTBiMDA0ODg0NzJlNTYzYjUwOGM5MjUyZmNhYWJlZDFmMmE1YTI0YmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmMjFkOWFlYWMwMWY3ZTE3ZTNhNzYxYjYxNmMwMDA0ZjA3ZDA1MmYxMGRmZmQyZTdlZTBhNThiYTk5MWIzYTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e94649ba63f2485f8cac2644081b0f8c",
+      "statement": "getASTBreakPoints returns an empty list for unsupported languages, grammar load failures, parse failures, and any thrown error, so chunking falls back to regex break points and never throws from the AST path.",
+      "evidence": [
+        {
+          "resource": "repo://src/ast.ts#L274-L322",
+          "version": "repo-lines-v1:sha256:c752670205ca06972711c1853c0df20d6fc65a5b3aee5a3b6831c009012b4b54:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg1MThjZTQzZTU4M2RhMWJlNTFjZjMyMjhhMjg4ZmJhYzIwMGIyZjU0NWY3ODc0NTA1MDAyYTUwZjNhMzgyMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdjYjc0MDdiMzA3OGJkNjg4MDkwNjhhYjcxMjdlODAzNmFhYjAzZjllY2UwNjJhMjNhZjU5MWRiYzUyNWNhMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmMzJjYzFhNDFmODdjYjViZDVjZDliYzc2MWU4NDM0NDAzODk5MGYwZDliNjAyMDVlMzc1OTNjZmJiZDQyYzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cca6242366704fb4be8ef84bc18c4378",
+      "statement": "A grammar load failure marks the language as failed for the rest of the process, logs a single warning with a repair command from formatGrammarLoadError, and subsequent calls for that language return no AST break points without retrying.",
+      "evidence": [
+        {
+          "resource": "repo://src/ast.ts#L225-L245",
+          "version": "repo-lines-v1:sha256:5ec6857e0f1f4a29b1d807a995fb06e8edb2ab77390109a5dd756419755a0ba7:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRhNzEyMWVjNTIwMTlmMTZkNzI0NjFmNTE0NTE3NDFmODBkNjg1MmE1MGU2MTU5MjZiZDE5ZmI4Y2U2ODIzYWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUxMzY4OWQ0YzBhMDllOGM5MjliYjg0ODliMmUzNDdjNTJhZTJmZDJlNTRmYTYyM2ViNGYwM2IzZjFmNWY2YjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM3OTI5ZTkxZTBmOTljM2U4MjVkZTY5YjQzNWZiNjQ4NGQxYjBhMWRmMmY0NjU2MWFiZjFhMjlmMDQxODhiODgifQ"
+        },
+        {
+          "resource": "repo://src/ast.ts#L75-L80",
+          "version": "repo-lines-v1:sha256:478d63444f13dd5b034fbaf8742bcb51416c37fe794a148e741c67d75bd5a0fe:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzAwZWRiODlmYmUzZTg1MjdlN2ZlZmU5MDQ2YWUzYTY4ODY4ZTNhZWM2MzFlNmVkNjY3YjU0Njk1MzE2MjE5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNThkOGQ3MjIxYmQ4ZjEwYTc2NWNlNjQxMWJjYzA1ZjE4ZTdmMDkyNjk1ZDE2MzMyNzkyOTg0OWNlMDFhOWQyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDEwZjg5ZGI0YjQ3ZWZhMzllNWE1YTJiMmU3ZjhkN2ZiZThlNjhhMjE1NDM3ZjU4NzZmNDcxNzQ2MTk2MmQ3MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5b8ba1b257f14779a673940b19f844c0",
+      "statement": "In the token-bounded path, AST break points are used only in the first character-based pass; any chunk still over the token limit is re-split with the regex-only chunkDocument and, if needed, halved or truncated via detokenize.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L3840-L3935",
+          "version": "repo-lines-v1:sha256:346e8624f4ca446719d1141e9a50afbbc54c957171eb1314c3c1e8ef91e8a52e:eyJzZWxlY3RlZExpbmVDb3VudCI6OTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmN2ZiNDgxYzgzYjBiZWI4MmRlMmI5NjY5M2U2M2U2M2UxYWI3YWJmYzZmZjUyOGQxZTQ2MGVhODA3ZWZlZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjZjdlMTYyOWVhMmJlNWNkN2NhOTYyMzY2OWQwNDQ4NDliZmYxNzQ5MGUxNGQ4MTMzZTQxZmViMGUwZDM3NWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhMzQwMjM2ODJhOTVmZDE1MTlmMjgwNTMxNDYzNzIzZDZiODViYTM1ZDk3ODIxZTc0YmMwZWY5NzcyNjFkOGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1OTJlN2E5NmI4YTVkOWU3M2Y2YzQ0ODIyYmM1MjFlOGQxNDllMTBiN2UzOTY3YjlmNjY1YTYyYTljZDZjZWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f58b3b810a2a47ae8e10738bdef811f3",
+      "statement": "Embedding and hybrid query both pass the chunk strategy into chunking: embed passes options.chunkStrategy into chunkDocumentByTokensWithLlm for each document, and query chunks each candidate with chunkDocumentAsync to pick the best chunk for reranking.",
+      "evidence": [
+        {
+          "resource": "repo://src/store.ts#L2458-L2478",
+          "version": "repo-lines-v1:sha256:d418b93045c8d52f494332283cc13e6db411af28fb93561e37a0792ec64184f6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMGM0YzM2MTEzYjc4NmQ4NjdhODU1MmMxZTEyMGY0ZDRiNzgzYTU3MTVkY2VmMjQ5MTNmNjQ4NDQ3M2EzNGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhMzdlM2MwOTQxZDE1NzdjMDM5OGUzYjY3ODRlZjNiM2YwMTI4OGJjZGVjOWE0YmJhMWFiZmFhNzQwYWI2ZjUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjZWRjZGQ0ZjRkY2M1NTk2NDNjMDI5ZmJkZTEwOTY4YjYxNWFhNDVlMWFmYWUzNDJkZDRkMjJjZDZkMjliY2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA0MTQ3YWM0MDZkYzBmYmIxNzQzMzAwZDQ5ZmJkYmFkMzA0OTQzZmM0YjA5OGMyYjQ5ZjhiOTkzNTQyMWU0OTAifQ"
+        },
+        {
+          "resource": "repo://src/store.ts#L6412-L6414",
+          "version": "repo-lines-v1:sha256:65d9e666693ccf359814f4532615a277cbdcd2e95db23b825ff2dd0f9c65f756:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg2NWJkNjk3YmY3OWIzNDM1N2U4NzQ1ZjllYmMwMWE4ZjcwZGE0ZTVkYzRhNWU3Y2FhMDU1Mzc0ODk3NGE3NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTc3MmE3MTljYjc3MmFlNDc5NjEwNjExYzcxY2IyNTZmZjIyMzI4YWExMGExNDAxYTM4Mjk1NmY1NDljYmU2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjQ4ZWY5YTVlNDllZGNlOTAwZTc0NTNlY2VlMTZiYTNiZDZhNzE0MzE2MjFkYWNiYzVhNGQ0OTcwMzJhMzVkYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmY2MThlZmQ5ZGIxMmQ4YzJjZTk0NzFiMjkxZTU5ZDVkYzY4OWYwNWMyYTBmN2U4ZWY0ODg3OTQxNjA0OWJlMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_71f4c9955a17468f9b5719fb91eae0a0",
+      "statement": "The tree-sitter grammar packages and web-tree-sitter are declared as regular dependencies in package.json, which contradicts the ast.ts header comment that calls them optionalDependencies.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L59-L72",
+          "version": "repo-lines-v1:sha256:41c6b386cfeef5a1ddcdfddfeef70fd45405333f034cd42cc9cbf48a0bf06cc0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhM2I0NjlkOWUwOTc1NzIyNDY2NjczNGM5ZWY3YjI1NGQ4ODUzNGY1ZDViYjcwOTg5NjA4MDVjNTUzZGMzMDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0MDlmZDJiN2I3ZGQyYWQwY2JmNGQxMTllN2UxYjIzOWE4YTVkYmQzN2Y3YTM3ODMwM2FkMjYyOTc5OThiM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJlYzYzNzhkOTdmZDk3Yzk3OGUwZWEyMTUxZjYyZTQyYjY3MjQ3NDU0MzgxYjdlNGNmYjRiMTFhYTA2ZWZlNTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2NDBjMjk3YmFjNGIxNjgwYjc3YWYwMmY0NGNkZDQ3YmJmYWQyYzMzMGNhNjBkZDdkMjQyYWEwN2ZiYzAwZWMifQ"
+        },
+        {
+          "resource": "repo://src/ast.ts#L8-L19",
+          "version": "repo-lines-v1:sha256:813e2f3280a8bfb58077ae1fdf111fcfb07aec001df12920a767745aa9104bbe:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmMWZlMDA0MTcyYTQ4ZmQ3NGYyNDAwMmU2YmIxZTBjMTVmNTVjMzk5NDc1NDJhYTY0MTYwY2U1NmNkNDFmZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MmE0MjkzODJiMmUxNDcxOGUwZTM3YjA1NzBhOGExNzAyOTkxZmNkODQ5OGNkODQwNjBhOGJmNGYwNTAxN2IiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1NDQ0ZmNmZGNiOTc3YTkwNmJkOTI3ODRkY2E3YmEzOTIyOWY0M2NlYTc2MjZlYmVmZjM3Yjg0MjQxNzVmNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViNDUxNDc0NzBiODhiOTg3YmFmYTUzZGY0YzM2N2JlNmE0NWRmNDAxZGUwNGEyM2IxNTc3YjRjOGVjMDk5N2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc1cc4079ed14c418c6cd2cf239784ff",
+      "statement": "The grammar repair hint in GRAMMAR_MAP names version 0.23.4 for tree-sitter-python and tree-sitter-go, while package.json pins both at 0.25.0, so following the hint may install a version different from the pinned one.",
+      "evidence": [
+        {
+          "resource": "repo://package.json#L66-L68",
+          "version": "repo-lines-v1:sha256:f4845abbbcd4248914abc713f69e2e52a62896f777db90e75629364cb2884fbf:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDkwZDkzMzBmZGRhNjJjYzFlMDg4YjI0YWU0ZWIwNmE0ZDM4NjRhMDM5YTYyMmNiMjIxYTExNzVmYjk3YzM4ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTI4YzBkMDQwM2U0MTI0NmYyMWEwYWRlMzJjYWQyM2I2MzhlMmM3MGY2NWFmYTc0NzA5MjJhYmI2YzM2MzI3MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjViYTEyYjYyMGYxZDczNDg2ZWMwMjY4YjIyMTlhMzAyMmM4ZWJmNTdmZmI1Njc1M2Y4ZmRhZGM2MGZkNGQyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjZmNGEwZDA5NGU3YjkzOTdkYzM3ZjdiOTEyYTJiMjFlMTI3MzZjZGRjMWQ3NDczNTg2YzAwZmI1ZWFhMjdjMyJ9"
+        },
+        {
+          "resource": "repo://src/ast.ts#L66-L73",
+          "version": "repo-lines-v1:sha256:342d70e881937f47711491dcdae6dde6e871be75c9d7ee416215de5f61ab8431:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDcxYjc1OWQyMWExMGU0NzcxNTdkNWQ5YmUzNTI5NTI3MzY3MTAwOTNiN2RiZWFmZDM5ZmQ1YTVkODlkYWRjOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWExZDFhNjMzOTAyMjljNzk4MzQ3ZTgzYTA0MDU0NDFjOTQwMDAzNTI4NGFkMTY4YzFiZjZjZGYxZDcwYTM3MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDc5N2IxOWZmODhhNzJkN2M3ZDVmOGY0MDg1YTgyZDZhZDFmZTYyZTc5YTEzZTZmMzg0OGJhODc1ODczNDYwMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzIwM2U5NDRmYWY1YjZlMzBlNzAyZTY5OGFiYjI0OTYxOTdmZjRlYjU1NzllOTdmNDJiN2ViYjYyYWI4NzQyZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9fd04c32d38d4c349ee9ebdf4c999fdf",
+      "statement": "The qmd status output reports AST chunking availability per grammar language by calling getASTStatus, which checks grammar loading and query compilation for each supported language.",
+      "evidence": [
+        {
+          "resource": "repo://src/ast.ts#L333-L350",
+          "version": "repo-lines-v1:sha256:5f0b7d850c665d10dbcd018262113d7392a74fe8e3b2bdbbee7172c82d76a953:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4YjAyNmIzNDQxMGQ5MTVlNTE5MDJiNDI5NDgxNGJkMTUwM2VjOWQxNDE4YTVkNWJmMGFhYTc2ZjZmMzM3NWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlZTNmOTFkNWQzMDU4OTAyNzNhMzM3ZDNiZDY0YjcxNmQ0ZTdmMzBkMzk0MGFiZWYyZWNjNmI4YzAyMzFiMWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3MThkNTM0MWYxYTcxMDQzZTM3ZmFmMzJlMzRjYWU4YmU0M2ZkYTVhMjQwMGFhOGNkMTNiYzk1ZjI5MTY1ZmMifQ"
+        },
+        {
+          "resource": "repo://src/cli/qmd.ts#L615-L628",
+          "version": "repo-lines-v1:sha256:17fb58143b3198bfb9d941d4fbd7e516c612dd2dfbc44131c69f9904d995ff9c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2NDgwOTAzMWUxYzE4OGI5YzJjNmFmOTJkNWRlMmMxMzI2NDcxMDAxNzRmZWFhYWY5YTNlNGFjZGMzNDMwYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YjA0NDkxNDY5NzIyZTgzNjNhOTRlNDA0NDUzOGUwMTNhMmEyMTdlMzZiMWU1NjhiYTYwYWNiN2I0YzhmMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlMTJiNjExODk0M2UzMGMwMDY4MzNlNzgxNjMwYTUzYjMyZjQxN2VmNWY5Nzk1YzNmMTJmMzMwODAyNGM1ZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjOWM5NzU2ZGY3NzMzMTEwYzNiZjljODg0NTBhYTg3OTM1ZTZhYmYzY2JjOWZkZTk2NWQ0ZjRhMWI5ZjUwMGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_effaab6048434c5095090c4f01cf93da",
+      "statement": "Focused tests cover language detection and AST break-point types and scores per language, plus merge precedence, AST versus regex split counts, markdown identity in auto mode, regex bypass, missing filepath fallback, and equivalence of chunkDocumentWithBreakPoints with chunkDocument.",
+      "evidence": [
+        {
+          "resource": "repo://test/ast-chunking.test.ts#L1-L199",
+          "version": "repo-lines-v1:sha256:aa003e3ec41e4e25e2a958665d7c71e42389fc107c45a380798c61706266086b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTk5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmNmY1YjQwYjE1ODQ1N2QxNzg2NGYyMTc5MDc4NmRkNWEyZWNkYjY0YjY2YTY1MWY3ODhkNGUyNWNkMzMwM2QyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        },
+        {
+          "resource": "repo://test/ast.test.ts#L1-L339",
+          "version": "repo-lines-v1:sha256:dda2ae9e4e43bde1bd43759f0d724a9e8bd6d0984b29e7be088fd580dac415fd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzM5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJlYWYyMmNmMDczMjU5MmMyNDcxNDFjYmU2MWVmYTExMDEyNjEyZjVhMzEyMmI5YWY5YmJhZjUyZjU3MjRkMTk0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJmNmY1YjQwYjE1ODQ1N2QxNzg2NGYyMTc5MDc4NmRkNWEyZWNkYjY0YjY2YTY1MWY3ODhkNGUyNWNkMzMwM2QyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.9.0",
+    "at": "2026-11-07T08:48:37.585Z"
+  }
+}

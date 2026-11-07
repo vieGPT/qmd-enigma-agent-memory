@@ -19,3 +19,7 @@ texts/
 finetune/outputs/
 finetune/data/train/
 .claude/
+
+# OpenWiki wiki on branch openwiki (07/11/2026): the *.md rule above must not hide it
+!openwiki/
+!openwiki/**

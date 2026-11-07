@@ -1,0 +1,29 @@
+# OpenWiki read boundary for the QMD wiki (86d2365)
+# secrets, as the house template asks
+secrets/
+*.env
+*.pem
+*.key
+# lock files: generated, no behaviour to document
+*.lock
+bun.lock
+package-lock.json
+pnpm-lock.yaml
+# model weights and local indexes: binary, large
+*.gguf
+*.safetensors
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+finetune/**/*.gguf
+finetune/**/*.safetensors
+# evaluation corpora: test fixtures, not behaviour
+test/eval-docs/
+# images and large assets
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.svg
+*.mp4
